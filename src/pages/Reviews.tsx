@@ -98,7 +98,7 @@ const Reviews = () => {
             <span className="text-primary">Next Success Story?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
-            15 minutes. No pitch. Let's figure out if Varga Flow is right for your business.
+            20 minutes. No pitch. Let's figure out if Varga Flow is right for your business.
           </p>
           <Link
             to="/contact"

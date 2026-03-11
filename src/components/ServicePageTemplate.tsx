@@ -98,7 +98,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 >
                   Book A Call <ArrowRight className="h-5 w-5" />
                 </Link>
-                <span className="text-sm text-muted-foreground">Free 15-min call. No obligation.</span>
+                <span className="text-sm text-muted-foreground">Free 20-min call. No obligation.</span>
               </div>
             </div>
             {HeroIcon && (
@@ -236,7 +236,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 <span className="text-primary">With {data.title}?</span>
               </h2>
               <p className="mt-6 text-lg text-background/60">
-                Book a call. 15 minutes. We'll walk you through exactly how this works for your business.
+                Book a call. 20 minutes. We'll walk you through exactly how this works for your business.
               </p>
               <ul className="mt-8 space-y-4">
                 {["No contracts or commitments", "Set up in days, not months", "Built for contractors like you"].map((item) => (

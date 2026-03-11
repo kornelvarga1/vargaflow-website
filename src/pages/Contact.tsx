@@ -19,7 +19,7 @@ const Contact = () => {
         <title>Book A Call — Varga Flow</title>
         <meta
           name="description"
-          content="Book a free 15-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+          content="Book a free 20-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
         />
       </Helmet>
 
@@ -39,7 +39,7 @@ const Contact = () => {
               <span className="text-primary">Leads &amp; Customers?</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              No pitch. No pressure. Just a 15-minute conversation about where
+              No pitch. No pressure. Just a 20-minute conversation about where
               you're losing leads — and what we can do about it.
             </p>
           </div>
@@ -47,7 +47,7 @@ const Contact = () => {
           {/* Trust indicators */}
           <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-6">
             {[
-              { icon: Clock, label: "15 Min Call", sub: "Quick & focused" },
+              { icon: Clock, label: "20 Min Call", sub: "Quick & focused" },
               { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
               { icon: Shield, label: "Zero Obligation", sub: "No contracts" },
             ].map((item) => (

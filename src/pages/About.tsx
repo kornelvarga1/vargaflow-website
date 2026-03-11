@@ -145,7 +145,7 @@ const About = () => {
             <span className="text-primary">Proper Marketing Looks Like?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
-            15 minutes. No pitch. Just a conversation about your business and where you're leaving money on the table.
+            20 minutes. No pitch. Just a conversation about your business and where you're leaving money on the table.
           </p>
           <Link
             to="/contact"

@@ -103,7 +103,7 @@ const BookACallForm = ({ className, darkMode }: BookACallFormProps) => {
         >
           {status === "sending" ? "Sending..." : "Book A Call →"}
         </button>
-        <p className={`text-center text-xs ${darkMode ? "text-background/50" : "text-muted-foreground"}`}>Free 15-minute call. No pitch. No obligation.</p>
+        <p className={`text-center text-xs ${darkMode ? "text-background/50" : "text-muted-foreground"}`}>Free 20-minute call. No pitch. No obligation.</p>
         {status === "error" && (
           <p className="text-center text-sm text-destructive">Something went wrong. Please try again.</p>
         )}

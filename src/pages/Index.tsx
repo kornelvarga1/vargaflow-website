@@ -3,7 +3,6 @@ import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
   ArrowRight, CheckCircle, ShieldCheck, TrendingUp, Clock
 } from "lucide-react";
-import BookACallForm from "@/components/BookACallForm";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -23,7 +22,7 @@ const SERVICE_DESCRIPTIONS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Book A Call", desc: "Tell us about your business. 15 minutes. No sales pitch. Just figuring out if we can help.", icon: Phone },
+  { num: "01", title: "Book A Call", desc: "Tell us about your business. 20 minutes. No sales pitch. Just figuring out if we can help.", icon: Phone },
   { num: "02", title: "We Build It", desc: "We set up your website, automations, and follow-up systems. You stay on the job site.", icon: ShieldCheck },
   { num: "03", title: "You Get Leads", desc: "Your phone starts ringing. Your reviews start growing. Your calendar fills up.", icon: TrendingUp },
 ];
@@ -87,7 +86,7 @@ const Index = () => {
               >
                 Book A Call <ArrowRight className="h-5 w-5" />
               </Link>
-              <span className="text-sm text-background/50">Free 15-min strategy call. No pitch.</span>
+              <span className="text-sm text-background/50">Free 20-min strategy call. No pitch.</span>
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
               <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
@@ -195,33 +194,34 @@ const Index = () => {
         <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative">
-          <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
-              <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-                Ready to Stop
-                <br />
-                Losing Leads
-                <br />
-                <span className="text-primary">and Start Growing?</span>
-              </h2>
-              <p className="mt-6 text-lg text-background/60">
-                Book a call. 15 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
-              </p>
-              <ul className="mt-8 space-y-4">
-                {[
-                  { icon: CheckCircle, text: "No contracts or commitments" },
-                  { icon: Clock, text: "See results in days, not months" },
-                  { icon: ShieldCheck, text: "Built specifically for contractors" },
-                ].map((item) => (
-                  <li key={item.text} className="flex items-center gap-3 text-background">
-                    <item.icon className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm font-medium">{item.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <BookACallForm darkMode className="rounded-lg border border-background/10 bg-background/5 p-6 backdrop-blur-sm lg:p-8" />
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
+            <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
+              Ready to Stop Losing Leads
+              <br />
+              <span className="text-primary">and Start Growing?</span>
+            </h2>
+            <p className="mt-6 text-lg text-background/60">
+              Book a call. 20 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
+            </p>
+            <ul className="mt-8 flex flex-wrap justify-center gap-6">
+              {[
+                { icon: CheckCircle, text: "No contracts or commitments" },
+                { icon: Clock, text: "See results in days, not months" },
+                { icon: ShieldCheck, text: "Built specifically for contractors" },
+              ].map((item) => (
+                <li key={item.text} className="flex items-center gap-2 text-background">
+                  <item.icon className="h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-sm font-medium">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/contact"
+              className="mt-10 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+            >
+              Book A Call <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
