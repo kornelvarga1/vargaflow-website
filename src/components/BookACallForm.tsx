@@ -55,40 +55,50 @@ const BookACallForm = ({ className }: BookACallFormProps) => {
   if (status === "success") {
     return (
       <div className={className}>
-        <div className="rounded-lg border border-primary/30 bg-secondary p-8 text-center">
-          <h3 className="text-2xl font-bold text-primary">We'll Be In Touch</h3>
+        <div className="rounded-lg border border-primary/30 bg-primary/10 p-8 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/20">
+            <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-foreground">We'll Be In Touch</h3>
           <p className="mt-2 text-muted-foreground">Thanks for reaching out. We'll get back to you within 24 hours.</p>
         </div>
       </div>
     );
   }
 
-  const inputClass =
-    "w-full rounded-md border border-border bg-navy-deep px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
+  const fields = [
+    { name: "name" as const, type: "text", placeholder: "Your Name" },
+    { name: "company" as const, type: "text", placeholder: "Company Name" },
+    { name: "phone" as const, type: "tel", placeholder: "Phone Number" },
+    { name: "email" as const, type: "email", placeholder: "Email Address" },
+  ];
 
   return (
     <form onSubmit={handleSubmit} className={className}>
       <div className="space-y-4">
-        {(["name", "company", "phone", "email"] as const).map((field) => (
-          <div key={field}>
+        {fields.map((field) => (
+          <div key={field.name}>
             <input
-              name={field}
-              type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
-              placeholder={field === "company" ? "Company Name" : field.charAt(0).toUpperCase() + field.slice(1)}
-              value={formData[field]}
+              name={field.name}
+              type={field.type}
+              placeholder={field.placeholder}
+              value={formData[field.name]}
               onChange={handleChange}
-              className={inputClass}
+              className="w-full rounded-md border border-border bg-secondary px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
-            {errors[field] && <p className="mt-1 text-xs text-destructive">{errors[field]}</p>}
+            {errors[field.name] && <p className="mt-1.5 text-xs font-medium text-destructive">{errors[field.name]}</p>}
           </div>
         ))}
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full rounded-md bg-primary py-3.5 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark disabled:opacity-50"
+          className="w-full rounded-md bg-primary py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30 disabled:opacity-50"
         >
-          {status === "sending" ? "Sending..." : "Book A Call"}
+          {status === "sending" ? "Sending..." : "Book A Call →"}
         </button>
+        <p className="text-center text-xs text-muted-foreground">Free 15-minute call. No pitch. No obligation.</p>
         {status === "error" && (
           <p className="text-center text-sm text-destructive">Something went wrong. Please try again.</p>
         )}
