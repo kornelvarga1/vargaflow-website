@@ -86,7 +86,7 @@ const About = () => {
                   <img
                     src="/src/assets/about-founder.jpg"
                     alt="Kornél Varga - Founder of Varga Flow"
-                    className="h-72 w-72 object-cover lg:h-96 lg:w-96"
+                    className="h-72 w-72 object-cover object-[center_35%] lg:h-96 lg:w-96"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-foreground/80 via-transparent to-transparent p-6">
