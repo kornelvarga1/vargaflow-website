@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-8 w-auto lg:h-20" />
+          <img src={logo} alt="Varga Flow" className="h-8 w-auto lg:h-40" />
         </Link>
 
         {/* Desktop Nav */}
