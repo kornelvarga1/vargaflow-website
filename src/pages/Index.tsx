@@ -157,6 +157,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TRADES WE SERVE */}
+      <TradesWeServe />
+
       {/* HOW IT WORKS */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
