@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
 const SERVICE_DESCRIPTIONS = [
