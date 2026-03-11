@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle, type LucideIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import BookACallForm from "@/components/BookACallForm";
+
 
 export interface ServiceFeature {
   title: string;
