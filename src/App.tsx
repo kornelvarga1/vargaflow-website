@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Reviews from "./pages/Reviews";
 import ServicePage from "./pages/ServicePage";
 import Pricing from "./pages/Pricing";
+import Trades from "./pages/Trades";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
