@@ -7,6 +7,7 @@ import BookACallForm from "@/components/BookACallForm";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
 import heroBg from "@/assets/hero-bg.jpg";
+import TradesWeServe from "@/components/TradesWeServe";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
 
@@ -155,6 +156,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* TRADES WE SERVE */}
+      <TradesWeServe />
 
       {/* HOW IT WORKS */}
       <section className="bg-secondary py-20 lg:py-28">
