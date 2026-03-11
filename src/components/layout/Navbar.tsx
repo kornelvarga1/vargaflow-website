@@ -117,7 +117,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <Link
           to="/contact"
-          className="hidden rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
+          className="hidden rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
         >
           Book A Call
         </Link>
