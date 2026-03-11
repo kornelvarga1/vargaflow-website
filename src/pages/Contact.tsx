@@ -1,59 +1,122 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import BookACallForm from "@/components/BookACallForm";
-import { CheckCircle, Clock, MessageSquare } from "lucide-react";
+import { CheckCircle, Clock, MessageSquare, Shield, Star, Users } from "lucide-react";
 
 const Contact = () => {
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
         <title>Book A Call — Varga Flow</title>
-        <meta name="description" content="Book a free 15-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business." />
+        <meta
+          name="description"
+          content="Book a free 15-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+        />
       </Helmet>
 
-      <section className="bg-navy-deep py-16 lg:py-24">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-start">
-            {/* Left — Copy */}
-            <div>
-              <h1 className="text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl">
-                Let's Talk About
-                <br />
-                <span className="text-primary">Growing Your Business</span>
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                No pitch. No pressure. Just a 15-minute conversation about where you're losing leads — and what we can do about it. If we can help, we'll tell you how. If we can't, we'll tell you that too.
-              </p>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-navy-deep py-16 lg:py-24">
+        {/* Ambient glows */}
+        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/[0.02] to-transparent" />
 
-              <div className="mt-10 space-y-6">
-                <div className="flex items-start gap-4">
-                  <Clock className="mt-1 h-6 w-6 shrink-0 text-primary" />
-                  <div>
-                    <h3 className="text-base font-bold text-foreground">15 Minutes. That's It.</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">We respect your time. You've got jobs to run. We'll keep it tight.</p>
-                  </div>
+        <div className="container relative">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+              Let's Talk
+            </span>
+            <h1 className="text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
+              Ready to Get More
+              <br />
+              <span className="text-primary">Leads &amp; Customers?</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+              No pitch. No pressure. Just a 15-minute conversation about where
+              you're losing leads — and what we can do about it.
+            </p>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-6">
+            {[
+              { icon: Clock, label: "15 Min Call", sub: "Quick & focused" },
+              { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
+              { icon: Shield, label: "Zero Obligation", sub: "No contracts" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-card/50 p-5 text-center transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 transition-colors group-hover:from-primary/25 group-hover:to-primary/10">
+                  <item.icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <MessageSquare className="mt-1 h-6 w-6 shrink-0 text-primary" />
-                  <div>
-                    <h3 className="text-base font-bold text-foreground">Straight Talk Only</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">No jargon. No upsells. Just honest feedback on what's working and what's not.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-primary" />
-                  <div>
-                    <h3 className="text-base font-bold text-foreground">Zero Obligation</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">If we're not the right fit, we'll say so. No contracts. No hard feelings.</p>
-                  </div>
-                </div>
+                <h3 className="text-sm font-bold text-foreground">{item.label}</h3>
+                <p className="text-xs text-muted-foreground">{item.sub}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Right — Form */}
-            <div className="rounded-lg border border-border bg-card p-6 lg:p-8">
-              <h2 className="text-2xl font-bold text-foreground">Book Your Free Call</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Fill this out and we'll get back to you within 24 hours.</p>
-              <BookACallForm className="mt-6" />
+      {/* Calendly Embed */}
+      <section className="relative bg-charcoal py-16 lg:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-background/5" />
+        <div className="container relative">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-10 text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+                Schedule Now
+              </span>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
+                Pick a Time That <span className="text-primary">Works for You</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+                Choose a slot below. You'll get a confirmation email with everything you need.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-primary/5">
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/kornelvarga/free-1-1-coaching-consulting-call-with-kornel-clone?primary_color=ffac00"
+                style={{ minWidth: "320px", height: "700px" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social proof strip */}
+      <section className="relative overflow-hidden bg-background py-16 lg:py-20">
+        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="container relative">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
+              Trusted by <span className="text-primary">Contractors</span> Who Want Results
+            </h2>
+            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-8">
+              {[
+                { icon: Users, value: "50+", label: "Contractors Served" },
+                { icon: Star, value: "5.0", label: "Average Rating" },
+                { icon: CheckCircle, value: "3x", label: "More Leads" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center gap-2">
+                  <stat.icon className="h-8 w-8 text-primary" />
+                  <p className="text-3xl font-extrabold text-primary">{stat.value}</p>
+                  <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
