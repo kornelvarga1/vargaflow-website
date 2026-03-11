@@ -47,7 +47,7 @@ const Contact = () => {
           {/* Trust indicators */}
           <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-6">
             {[
-              { icon: Clock, label: "15 Min Call", sub: "Quick & focused" },
+              { icon: Clock, label: "20 Min Call", sub: "Quick & focused" },
               { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
               { icon: Shield, label: "Zero Obligation", sub: "No contracts" },
             ].map((item) => (

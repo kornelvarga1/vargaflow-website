@@ -86,7 +86,7 @@ const Index = () => {
               >
                 Book A Call <ArrowRight className="h-5 w-5" />
               </Link>
-              <span className="text-sm text-background/50">Free 15-min strategy call. No pitch.</span>
+              <span className="text-sm text-background/50">Free 20-min strategy call. No pitch.</span>
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
               <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
