@@ -189,36 +189,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SOCIAL PROOF - Hidden until we have real reviews */}
-      {/* <section className="bg-background py-20 lg:py-28">
-        <div className="container">
-          <div className="text-center">
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Testimonials</span>
-            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-              Don't Take Our Word for It
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-              Here's what contractors are saying after switching to Varga Flow.
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <div className="flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-foreground/80">"{t.quote}"</p>
-                <div className="mt-5 border-t border-border pt-4">
-                  <p className="text-sm font-bold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.business}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* FINAL CTA — dark section */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
