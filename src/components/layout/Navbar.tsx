@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-12 w-auto lg:h-14" />
+          <img src={logo} alt="Varga Flow" className="h-8 w-auto lg:h-20" />
         </Link>
 
         {/* Desktop Nav */}
@@ -40,7 +40,7 @@ const Navbar = () => {
               to={link.href}
               className={cn(
                 "px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
-                isActive(link.href) ? "text-primary" : "text-foreground/70"
+                isActive(link.href) ? "text-primary" : "text-foreground/70",
               )}
             >
               {link.label}
@@ -56,7 +56,7 @@ const Navbar = () => {
             <button
               className={cn(
                 "flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
-                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70"
+                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70",
               )}
             >
               Services <ChevronDown className={cn("h-4 w-4 transition-transform", servicesOpen && "rotate-180")} />
@@ -64,7 +64,9 @@ const Navbar = () => {
             {servicesOpen && (
               <div className="absolute -left-4 top-full pt-2">
                 <div className="w-[420px] rounded-xl border border-border bg-background p-3 shadow-2xl shadow-foreground/5">
-                  <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Our Services</p>
+                  <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
+                    Our Services
+                  </p>
                   <div className="grid grid-cols-1 gap-0.5">
                     {SERVICES.map((service, i) => {
                       const Icon = SERVICE_ICONS[i];
@@ -75,25 +77,27 @@ const Navbar = () => {
                           to={`/services/${service.slug}`}
                           className={cn(
                             "group flex items-start gap-3 rounded-lg px-3 py-2.5 transition-all duration-150",
-                            isServiceActive
-                              ? "bg-primary/10"
-                              : "hover:bg-muted"
+                            isServiceActive ? "bg-primary/10" : "hover:bg-muted",
                           )}
                           onClick={() => setServicesOpen(false)}
                         >
-                          <div className={cn(
-                            "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors",
-                            isServiceActive
-                              ? "bg-primary/20 text-primary"
-                              : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
-                          )}>
+                          <div
+                            className={cn(
+                              "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors",
+                              isServiceActive
+                                ? "bg-primary/20 text-primary"
+                                : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
+                            )}
+                          >
                             <Icon className="h-[18px] w-[18px]" />
                           </div>
                           <div className="min-w-0">
-                            <p className={cn(
-                              "text-sm font-semibold transition-colors",
-                              isServiceActive ? "text-primary" : "text-foreground group-hover:text-primary"
-                            )}>
+                            <p
+                              className={cn(
+                                "text-sm font-semibold transition-colors",
+                                isServiceActive ? "text-primary" : "text-foreground group-hover:text-primary",
+                              )}
+                            >
                               {service.title}
                             </p>
                             <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
@@ -138,7 +142,7 @@ const Navbar = () => {
                 to={link.href}
                 className={cn(
                   "border-b border-border py-4 text-lg font-semibold transition-colors",
-                  isActive(link.href) ? "text-primary" : "text-foreground/70"
+                  isActive(link.href) ? "text-primary" : "text-foreground/70",
                 )}
                 onClick={() => setMobileOpen(false)}
               >
@@ -163,7 +167,10 @@ const Navbar = () => {
                         key={service.slug}
                         to={`/services/${service.slug}`}
                         className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-foreground/60 hover:bg-muted hover:text-primary"
-                        onClick={() => { setMobileOpen(false); setServicesOpen(false); }}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setServicesOpen(false);
+                        }}
                       >
                         <Icon className="h-4 w-4 text-primary/60" />
                         <span className="text-base font-medium">{service.title}</span>
