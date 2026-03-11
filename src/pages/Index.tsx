@@ -51,33 +51,30 @@ const Index = () => {
         </script>
       </Helmet>
 
-      {/* HERO */}
-      <section className="relative min-h-[600px] overflow-hidden lg:min-h-[700px]">
-        {/* Background image — hidden below 1200px for performance */}
+      {/* HERO — dark section for impact */}
+      <section className="relative min-h-[600px] overflow-hidden bg-foreground lg:min-h-[700px]">
         <div
           className="absolute inset-0 hidden bg-cover bg-center xl:block"
           style={{ backgroundImage: `url(${heroBg})` }}
           aria-hidden="true"
         />
-        {/* Dark scrim over image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/70 xl:from-navy-deep xl:via-navy-deep/90 xl:to-navy-deep/60" />
-        {/* Subtle accent glow */}
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/70 xl:from-foreground xl:via-foreground/90 xl:to-foreground/60" />
+        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
         <div className="container relative z-10 flex flex-col justify-center py-24 lg:py-36">
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
               <Zap className="h-3.5 w-3.5" /> Marketing Systems for Contractors
             </div>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
               Marketing Systems
               <br />
               That Actually Work —
               <br />
               <span className="text-primary">Built for Contractors</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
               You're great at your trade. We're great at getting you leads.
               Done-for-you websites, automations, and follow-up systems — so you can stay on the job site and still win new business.
             </p>
@@ -88,9 +85,9 @@ const Index = () => {
               >
                 Book A Call <ArrowRight className="h-5 w-5" />
               </Link>
-              <span className="text-sm text-muted-foreground">Free 15-min strategy call. No pitch.</span>
+              <span className="text-sm text-background/50">Free 15-min strategy call. No pitch.</span>
             </div>
-            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
               <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
               <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No agency BS</span>
               <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Results in days, not months</span>
@@ -100,8 +97,7 @@ const Index = () => {
       </section>
 
       {/* PROBLEM SECTION */}
-      <section className="relative bg-charcoal py-20 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-background/5" />
+      <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl text-center">
           <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Problem</span>
           <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
@@ -140,7 +136,7 @@ const Index = () => {
                 <Link
                   key={service.slug}
                   to={`/services/${service.slug}`}
-                  className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
+                  className="group relative overflow-hidden rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
                 >
                   <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
                   <div className="relative">
@@ -161,7 +157,7 @@ const Index = () => {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-charcoal py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <div className="text-center">
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Process</span>
@@ -202,13 +198,13 @@ const Index = () => {
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div key={t.name} className="rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="flex gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-foreground/90">"{t.quote}"</p>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/80">"{t.quote}"</p>
                 <div className="mt-5 border-t border-border pt-4">
                   <p className="text-sm font-bold text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.business}</p>
@@ -219,22 +215,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-charcoal py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+      {/* FINAL CTA — dark section */}
+      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
-              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+              <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
                 Ready to Stop
                 <br />
                 Losing Leads
                 <br />
                 <span className="text-primary">and Start Growing?</span>
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
+              <p className="mt-6 text-lg text-background/60">
                 Book a call. 15 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
               </p>
               <ul className="mt-8 space-y-4">
@@ -243,14 +239,14 @@ const Index = () => {
                   { icon: Clock, text: "See results in days, not months" },
                   { icon: ShieldCheck, text: "Built specifically for contractors" },
                 ].map((item) => (
-                  <li key={item.text} className="flex items-center gap-3 text-foreground">
+                  <li key={item.text} className="flex items-center gap-3 text-background">
                     <item.icon className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-sm font-medium">{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <BookACallForm className="rounded-lg border border-border bg-card p-6 shadow-2xl shadow-primary/5 lg:p-8" />
+            <BookACallForm darkMode className="rounded-lg border border-background/10 bg-background/5 p-6 backdrop-blur-sm lg:p-8" />
           </div>
         </div>
       </section>

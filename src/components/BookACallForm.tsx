@@ -13,9 +13,10 @@ type FormData = z.infer<typeof formSchema>;
 
 interface BookACallFormProps {
   className?: string;
+  darkMode?: boolean;
 }
 
-const BookACallForm = ({ className }: BookACallFormProps) => {
+const BookACallForm = ({ className, darkMode }: BookACallFormProps) => {
   const [formData, setFormData] = useState<FormData>({ name: "", company: "", phone: "", email: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -61,8 +62,8 @@ const BookACallForm = ({ className }: BookACallFormProps) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-foreground">We'll Be In Touch</h3>
-          <p className="mt-2 text-muted-foreground">Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          <h3 className={`text-2xl font-bold ${darkMode ? "text-background" : "text-foreground"}`}>We'll Be In Touch</h3>
+          <p className={`mt-2 ${darkMode ? "text-background/60" : "text-muted-foreground"}`}>Thanks for reaching out. We'll get back to you within 24 hours.</p>
         </div>
       </div>
     );
@@ -75,6 +76,10 @@ const BookACallForm = ({ className }: BookACallFormProps) => {
     { name: "email" as const, type: "email", placeholder: "Email Address" },
   ];
 
+  const inputClasses = darkMode
+    ? "w-full rounded-md border border-background/20 bg-background/10 px-4 py-3.5 text-sm text-background placeholder:text-background/40 transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+    : "w-full rounded-md border border-border bg-muted px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
+
   return (
     <form onSubmit={handleSubmit} className={className}>
       <div className="space-y-4">
@@ -86,7 +91,7 @@ const BookACallForm = ({ className }: BookACallFormProps) => {
               placeholder={field.placeholder}
               value={formData[field.name]}
               onChange={handleChange}
-              className="w-full rounded-md border border-border bg-secondary px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className={inputClasses}
             />
             {errors[field.name] && <p className="mt-1.5 text-xs font-medium text-destructive">{errors[field.name]}</p>}
           </div>
@@ -98,7 +103,7 @@ const BookACallForm = ({ className }: BookACallFormProps) => {
         >
           {status === "sending" ? "Sending..." : "Book A Call →"}
         </button>
-        <p className="text-center text-xs text-muted-foreground">Free 15-minute call. No pitch. No obligation.</p>
+        <p className={`text-center text-xs ${darkMode ? "text-background/50" : "text-muted-foreground"}`}>Free 15-minute call. No pitch. No obligation.</p>
         {status === "error" && (
           <p className="text-center text-sm text-destructive">Something went wrong. Please try again.</p>
         )}

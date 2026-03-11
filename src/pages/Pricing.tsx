@@ -35,7 +35,7 @@ const Pricing = () => {
         />
       </Helmet>
 
-      <section className="bg-navy-deep py-20 lg:py-32">
+      <section className="bg-background py-20 lg:py-32">
         <div className="container">
           {/* Heading */}
           <div className="mx-auto max-w-2xl text-center">
@@ -81,26 +81,26 @@ const Pricing = () => {
 
           {/* Card */}
           <div className="mx-auto mt-8 max-w-lg">
-            <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-primary shadow-2xl shadow-primary/20">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-primary bg-foreground shadow-2xl shadow-primary/10">
               {/* Badge */}
               <div className="pt-10 text-center">
-                <span className="inline-block border-b-2 border-primary-foreground/40 pb-1 text-sm font-extrabold uppercase tracking-widest text-primary-foreground/90">
+                <span className="inline-block border-b-2 border-background/20 pb-1 text-sm font-extrabold uppercase tracking-widest text-background/70">
                   Most Popular
                 </span>
-                <h2 className="mt-4 text-2xl font-extrabold text-primary-foreground md:text-3xl">
+                <h2 className="mt-4 text-2xl font-extrabold text-background md:text-3xl">
                   Contractor Advanced
                 </h2>
                 <div className="mt-4">
-                  <p className="text-5xl font-extrabold text-primary-foreground md:text-6xl">
+                  <p className="text-5xl font-extrabold text-primary md:text-6xl">
                     ${currentPrice}
-                    <span className="text-2xl font-bold text-primary-foreground/70">/mo</span>
+                    <span className="text-2xl font-bold text-background/50">/mo</span>
                   </p>
                   {isAnnual ? (
-                    <p className="mt-2 text-sm font-medium text-primary-foreground/60">
+                    <p className="mt-2 text-sm font-medium text-background/50">
                       Billed annually (${annualTotal}/year)
                     </p>
                   ) : (
-                    <p className="mt-2 text-sm font-medium text-primary-foreground/60">
+                    <p className="mt-2 text-sm font-medium text-background/50">
                       Billed monthly
                     </p>
                   )}
@@ -108,17 +108,17 @@ const Pricing = () => {
               </div>
 
               {/* Divider */}
-              <div className="mx-10 mt-6 border-t border-primary-foreground/20" />
+              <div className="mx-10 mt-6 border-t border-background/10" />
 
               {/* Features */}
               <ul className="space-y-0 px-6 py-6 md:px-10">
                 {INCLUDED.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 border-b border-primary-foreground/10 py-4 last:border-0"
+                    className="flex items-center gap-3 border-b border-background/10 py-4 last:border-0"
                   >
-                    <CheckCircle className="h-5 w-5 shrink-0 text-primary-foreground/80" />
-                    <span className="text-sm font-semibold text-primary-foreground md:text-base">
+                    <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-sm font-semibold text-background md:text-base">
                       {item}
                     </span>
                   </li>
@@ -129,7 +129,7 @@ const Pricing = () => {
               <div className="px-6 pb-10 md:px-10">
                 <Link
                   to="/contact"
-                  className="block w-full rounded-lg bg-primary-foreground py-4 text-center text-lg font-extrabold text-primary transition-all hover:opacity-90 hover:shadow-lg"
+                  className="block w-full rounded-lg bg-primary py-4 text-center text-lg font-extrabold text-primary-foreground transition-all hover:bg-gold-dark hover:shadow-lg"
                 >
                   BOOK A CALL
                 </Link>

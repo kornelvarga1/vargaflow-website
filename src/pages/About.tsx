@@ -18,7 +18,7 @@ const About = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-deep py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="container relative max-w-4xl text-center">
@@ -37,7 +37,7 @@ const About = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-b border-t border-border bg-secondary/50">
+      <section className="border-b border-t border-border bg-secondary">
         <div className="container">
           <div className="grid grid-cols-3 divide-x divide-border">
             {STATS.map((stat) => (
@@ -54,7 +54,7 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section className="bg-charcoal py-20 lg:py-28">
+      <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -81,7 +81,6 @@ const About = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative">
-                {/* Decorative frame */}
                 <div className="absolute -inset-3 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent" />
                 <div className="relative overflow-hidden rounded-xl">
                   <img
@@ -90,10 +89,9 @@ const About = () => {
                     className="h-72 w-72 object-cover lg:h-96 lg:w-96"
                     loading="lazy"
                   />
-                  {/* Overlay with initials */}
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent p-6">
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-foreground/80 via-transparent to-transparent p-6">
                     <div>
-                      <p className="text-lg font-extrabold text-foreground">Kornél Varga</p>
+                      <p className="text-lg font-extrabold text-background">Kornél Varga</p>
                       <p className="text-sm text-primary">Founder, Varga Flow</p>
                     </div>
                   </div>
@@ -105,7 +103,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <div className="text-center">
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Our Values</span>
@@ -120,7 +118,7 @@ const About = () => {
               { icon: Wrench, title: "Built for Trades", desc: "We don't work with restaurants or dentists. We work with contractors. That's it. We know the business inside and out." },
               { icon: Heart, title: "Honest Always", desc: "If we can't help you, we'll tell you. No contracts. No lock-ins. No small print. We earn your business every month." },
             ].map((value) => (
-              <div key={value.title} className="group relative overflow-hidden rounded-lg border border-border bg-card p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
+              <div key={value.title} className="group relative overflow-hidden rounded-lg border border-border bg-background p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
                 <div className="relative">
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
@@ -135,18 +133,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden bg-charcoal py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+      {/* CTA — dark */}
+      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative text-center">
           <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Talk</span>
-          <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
             Ready to See What
             <br />
             <span className="text-primary">Proper Marketing Looks Like?</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
             15 minutes. No pitch. Just a conversation about your business and where you're leaving money on the table.
           </p>
           <Link

@@ -4,7 +4,6 @@ import { CheckCircle, Clock, MessageSquare, Shield, Star, Users } from "lucide-r
 
 const Contact = () => {
   useEffect(() => {
-    // Load Calendly widget script
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
@@ -25,11 +24,9 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-deep py-16 lg:py-24">
-        {/* Ambient glows */}
+      <section className="relative overflow-hidden bg-background py-16 lg:py-24">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
         <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/[0.02] to-transparent" />
 
         <div className="container relative">
           <div className="mx-auto max-w-3xl text-center">
@@ -56,9 +53,9 @@ const Contact = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-card/50 p-5 text-center transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-background p-5 text-center transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 transition-colors group-hover:from-primary/25 group-hover:to-primary/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-sm font-bold text-foreground">{item.label}</h3>
@@ -70,8 +67,7 @@ const Contact = () => {
       </section>
 
       {/* Calendly Embed */}
-      <section className="relative bg-charcoal py-16 lg:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-background/5" />
+      <section className="relative bg-secondary py-16 lg:py-24">
         <div className="container relative">
           <div className="mx-auto w-full">
             <div className="mb-10 text-center">
@@ -98,8 +94,6 @@ const Contact = () => {
 
       {/* Social proof strip */}
       <section className="relative overflow-hidden bg-background py-16 lg:py-20">
-        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
