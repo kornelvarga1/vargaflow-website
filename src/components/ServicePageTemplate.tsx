@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle, type LucideIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import BookACallForm from "@/components/BookACallForm";
+
 
 export interface ServiceFeature {
   title: string;
@@ -247,7 +247,12 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 ))}
               </ul>
             </div>
-            <BookACallForm darkMode className="rounded-xl border border-background/10 bg-background/5 p-6 backdrop-blur-sm lg:p-8" />
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+            >
+              Book A Call <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>

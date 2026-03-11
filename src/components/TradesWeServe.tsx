@@ -61,21 +61,21 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
           </p>
         </div>
 
-        <div className={`mt-14 grid gap-4 ${compact ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"}`}>
+        <div className={`mt-14 grid gap-5 ${compact ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"}`}>
           {trades.map((trade) => (
             <div
               key={trade.name}
-              className="group flex flex-col items-center gap-3 rounded-lg border border-border bg-background p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col items-center gap-4 rounded-xl border border-border bg-background p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex h-16 w-16 items-center justify-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 p-3 transition-colors duration-300 group-hover:bg-primary/20">
                 <img
                   src={trade.icon}
                   alt={trade.name}
-                  className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
                 />
               </div>
-              <span className="text-sm font-bold text-foreground">{trade.name}</span>
+              <span className="text-base font-bold text-foreground">{trade.name}</span>
             </div>
           ))}
         </div>
