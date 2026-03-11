@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SERVICES, SITE_EMAIL } from "@/config/constants";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
