@@ -22,7 +22,7 @@ const SERVICE_DESCRIPTIONS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Book A Call", desc: "Tell us about your business. 15 minutes. No sales pitch. Just figuring out if we can help.", icon: Phone },
+  { num: "01", title: "Book A Call", desc: "Tell us about your business. 20 minutes. No sales pitch. Just figuring out if we can help.", icon: Phone },
   { num: "02", title: "We Build It", desc: "We set up your website, automations, and follow-up systems. You stay on the job site.", icon: ShieldCheck },
   { num: "03", title: "You Get Leads", desc: "Your phone starts ringing. Your reviews start growing. Your calendar fills up.", icon: TrendingUp },
 ];
