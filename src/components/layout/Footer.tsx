@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/">
-              <img src={logo} alt="Varga Flow" className="h-8 w-auto" />
+              <img src={logo} alt="Varga Flow" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/60">
               Done-for-you marketing systems for contractors and tradespeople. No fluff. Just systems that work.
