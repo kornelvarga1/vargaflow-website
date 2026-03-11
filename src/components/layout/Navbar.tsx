@@ -33,19 +33,25 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={cn(
-                "px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
-                isActive(link.href) ? "text-primary" : "text-foreground/70",
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-2 lg:flex">
+          <Link
+            to="/pricing"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
+              isActive("/pricing") ? "text-primary" : "text-foreground/70",
+            )}
+          >
+            Pricing
+          </Link>
+          <Link
+            to="/about"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
+              isActive("/about") ? "text-primary" : "text-foreground/70",
+            )}
+          >
+            About
+          </Link>
 
           {/* Services Dropdown */}
           <div
@@ -55,7 +61,7 @@ const Navbar = () => {
           >
             <button
               className={cn(
-                "flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
+                "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
                 location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70",
               )}
             >
@@ -117,7 +123,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <Link
           to="/contact"
-          className="hidden rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
+          className="hidden rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
         >
           Book A Call
         </Link>
@@ -136,25 +142,11 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
           <nav className="flex flex-col p-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "border-b border-border py-4 text-lg font-semibold transition-colors",
-                  isActive(link.href) ? "text-primary" : "text-foreground/70",
-                )}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-
             {/* Mobile Services */}
             <div className="border-b border-border py-4">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between text-lg font-semibold text-foreground/70"
+                className="flex w-full items-center justify-between text-xl font-semibold text-foreground/70"
               >
                 Services <ChevronDown className={cn("h-5 w-5 transition-transform", servicesOpen && "rotate-180")} />
               </button>
@@ -180,6 +172,28 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+
+            <Link
+              to="/pricing"
+              className={cn(
+                "border-b border-border py-4 text-xl font-semibold transition-colors",
+                isActive("/pricing") ? "text-primary" : "text-foreground/70",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              Pricing
+            </Link>
+
+            <Link
+              to="/about"
+              className={cn(
+                "border-b border-border py-4 text-xl font-semibold transition-colors",
+                isActive("/about") ? "text-primary" : "text-foreground/70",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              About
+            </Link>
 
             <Link
               to="/contact"
