@@ -26,10 +26,10 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
-      <div className="container flex h-16 items-center justify-between lg:h-20">
+      <div className="container flex h-20 items-center justify-between lg:h-[72px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-7 w-auto lg:h-9 object-contain" />
+        <Link to="/" className="flex shrink-0 items-center" onClick={() => setMobileOpen(false)}>
+          <img src={logo} alt="Varga Flow" className="h-10 w-auto object-contain sm:h-11 lg:h-14" />
         </Link>
 
         {/* Desktop Nav */}
