@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link to="/" className="text-xl font-extrabold tracking-tight text-background">
-              VARGA <span className="text-primary">FLOW</span>
+            <Link to="/">
+              <img src={logo} alt="Varga Flow" className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/60">
               Done-for-you marketing systems for contractors and tradespeople. No fluff. Just systems that work.
