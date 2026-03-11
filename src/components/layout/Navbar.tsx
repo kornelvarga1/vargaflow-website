@@ -34,25 +34,6 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-2 lg:flex">
-          <Link
-            to="/pricing"
-            className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-              isActive("/pricing") ? "text-primary" : "text-foreground/70",
-            )}
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/about"
-            className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-              isActive("/about") ? "text-primary" : "text-foreground/70",
-            )}
-          >
-            About
-          </Link>
-
           {/* Services Dropdown */}
           <div
             className="relative"
@@ -118,6 +99,25 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
+          <Link
+            to="/pricing"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
+              isActive("/pricing") ? "text-primary" : "text-foreground/70",
+            )}
+          >
+            Pricing
+          </Link>
+          <Link
+            to="/about"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
+              isActive("/about") ? "text-primary" : "text-foreground/70",
+            )}
+          >
+            About
+          </Link>
         </nav>
 
         {/* Desktop CTA */}
