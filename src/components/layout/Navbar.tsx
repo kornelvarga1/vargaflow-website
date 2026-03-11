@@ -12,7 +12,7 @@ const Navbar = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-navy-deep">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
@@ -29,7 +29,7 @@ const Navbar = () => {
               to={link.href}
               className={cn(
                 "px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
-                isActive(link.href) ? "text-primary" : "text-foreground/80"
+                isActive(link.href) ? "text-primary" : "text-foreground/70"
               )}
             >
               {link.label}
@@ -45,18 +45,18 @@ const Navbar = () => {
             <button
               className={cn(
                 "flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
-                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/80"
+                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70"
               )}
             >
               Services <ChevronDown className={cn("h-4 w-4 transition-transform", servicesOpen && "rotate-180")} />
             </button>
             {servicesOpen && (
-              <div className="absolute left-0 top-full w-72 rounded-md border border-border bg-navy-deep py-2 shadow-xl">
+              <div className="absolute left-0 top-full w-72 rounded-md border border-border bg-background py-2 shadow-xl">
                 {SERVICES.map((service) => (
                   <Link
                     key={service.slug}
                     to={`/services/${service.slug}`}
-                    className="block px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
+                    className="block px-4 py-2.5 text-sm font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-primary"
                     onClick={() => setServicesOpen(false)}
                   >
                     {service.title}
@@ -87,7 +87,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-navy-deep lg:hidden">
+        <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
           <nav className="flex flex-col p-6">
             {NAV_LINKS.map((link) => (
               <Link
@@ -95,7 +95,7 @@ const Navbar = () => {
                 to={link.href}
                 className={cn(
                   "border-b border-border py-4 text-lg font-semibold transition-colors",
-                  isActive(link.href) ? "text-primary" : "text-foreground/80"
+                  isActive(link.href) ? "text-primary" : "text-foreground/70"
                 )}
                 onClick={() => setMobileOpen(false)}
               >
@@ -107,7 +107,7 @@ const Navbar = () => {
             <div className="border-b border-border py-4">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between text-lg font-semibold text-foreground/80"
+                className="flex w-full items-center justify-between text-lg font-semibold text-foreground/70"
               >
                 Services <ChevronDown className={cn("h-5 w-5 transition-transform", servicesOpen && "rotate-180")} />
               </button>
@@ -117,7 +117,7 @@ const Navbar = () => {
                     <Link
                       key={service.slug}
                       to={`/services/${service.slug}`}
-                      className="py-2 text-base font-medium text-foreground/70 hover:text-primary"
+                      className="py-2 text-base font-medium text-foreground/60 hover:text-primary"
                       onClick={() => { setMobileOpen(false); setServicesOpen(false); }}
                     >
                       {service.title}

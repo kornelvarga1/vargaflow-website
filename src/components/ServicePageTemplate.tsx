@@ -73,12 +73,10 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 
-      {/* Text-First Hero */}
-      <section className="relative overflow-hidden bg-navy-deep py-20 lg:py-28">
-        {/* Decorative elements */}
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
         <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/[0.02] to-transparent" />
 
         <div className="container relative max-w-5xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -103,12 +101,11 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 <span className="text-sm text-muted-foreground">Free 15-min call. No obligation.</span>
               </div>
             </div>
-            {/* Hero visual accent */}
             {HeroIcon && (
               <div className="hidden lg:flex">
                 <div className="relative">
                   <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/[0.02] blur-xl" />
-                  <div className="relative flex h-40 w-40 items-center justify-center rounded-3xl border border-primary/20 bg-gradient-to-br from-card to-secondary">
+                  <div className="relative flex h-40 w-40 items-center justify-center rounded-3xl border border-primary/20 bg-secondary">
                     <HeroIcon className="h-20 w-20 text-primary/60" strokeWidth={1.2} />
                   </div>
                 </div>
@@ -120,7 +117,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
 
       {/* Stats Bar */}
       {data.stats && data.stats.length > 0 && (
-        <section className="border-b border-t border-border bg-secondary/50">
+        <section className="border-b border-t border-border bg-secondary">
           <div className="container">
             <div className={`grid grid-cols-${data.stats.length} divide-x divide-border`}>
               {data.stats.map((stat) => (
@@ -134,9 +131,8 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         </section>
       )}
 
-      {/* Problem / Agitation */}
-      <section className="relative bg-charcoal py-20 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-background/5" />
+      {/* Problem */}
+      <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl">
           <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
             <div className="hidden lg:block">
@@ -179,17 +175,15 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               return (
                 <div
                   key={feature.title}
-                  className="group relative overflow-hidden rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                  className="group relative overflow-hidden rounded-xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
                 >
-                  {/* Decorative number */}
                   <span className="absolute -right-2 -top-4 text-7xl font-extrabold text-primary/[0.04] transition-transform duration-300 group-hover:scale-110">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  {/* Decorative accent */}
                   <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/[0.03] transition-transform duration-300 group-hover:scale-150" />
 
                   <div className="relative flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 transition-colors duration-300 group-hover:from-primary/25 group-hover:to-primary/10">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
                       <FeatureIcon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
@@ -205,7 +199,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
       </section>
 
       {/* FAQ */}
-      <section className="bg-charcoal py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center">
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">FAQ</span>
@@ -215,7 +209,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
           </div>
           <Accordion type="single" collapsible className="mt-10 space-y-3">
             {data.faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="rounded-lg border border-border bg-card/50 px-5 data-[state=open]:border-primary/30 data-[state=open]:bg-card">
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-primary/30">
                 <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
@@ -228,32 +222,32 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+      {/* Bottom CTA — dark */}
+      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
+        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Get Started</span>
-              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+              <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
                 Ready to Get Started
                 <br />
                 <span className="text-primary">With {data.title}?</span>
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
+              <p className="mt-6 text-lg text-background/60">
                 Book a call. 15 minutes. We'll walk you through exactly how this works for your business.
               </p>
               <ul className="mt-8 space-y-4">
                 {["No contracts or commitments", "Set up in days, not months", "Built for contractors like you"].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-foreground">
+                  <li key={item} className="flex items-center gap-3 text-background">
                     <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-sm font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <BookACallForm className="rounded-xl border border-border bg-card p-6 shadow-2xl shadow-primary/5 lg:p-8" />
+            <BookACallForm darkMode className="rounded-xl border border-background/10 bg-background/5 p-6 backdrop-blur-sm lg:p-8" />
           </div>
         </div>
       </section>

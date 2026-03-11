@@ -23,7 +23,7 @@ const Reviews = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-deep py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="container relative max-w-4xl text-center">
@@ -36,7 +36,6 @@ const Reviews = () => {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             Here's what contractors and tradespeople are saying after switching to Varga Flow. No cherry-picking. No made-up stats. Just honest feedback.
           </p>
-          {/* Aggregate rating */}
           <div className="mx-auto mt-8 inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-6 py-2.5">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -50,7 +49,7 @@ const Reviews = () => {
       </section>
 
       {/* Reviews Grid */}
-      <section className="bg-charcoal py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {REVIEWS.map((review) => (
@@ -58,11 +57,10 @@ const Reviews = () => {
                 key={review.name}
                 className={`group relative overflow-hidden rounded-xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                   review.highlight
-                    ? "border-primary/30 bg-gradient-to-br from-card via-card to-primary/5 shadow-lg shadow-primary/5"
-                    : "border-border bg-card"
+                    ? "border-primary/30 bg-background shadow-lg shadow-primary/5"
+                    : "border-border bg-background"
                 }`}
               >
-                {/* Decorative quote */}
                 <Quote className="absolute -right-2 -top-2 h-20 w-20 rotate-12 text-primary/5 transition-transform duration-300 group-hover:scale-110" />
                 
                 <div className="relative">
@@ -71,7 +69,7 @@ const Reviews = () => {
                       <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <p className="mt-4 text-sm leading-relaxed text-foreground/90">"{review.quote}"</p>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground/80">"{review.quote}"</p>
                   <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                       {review.name.charAt(0)}
@@ -88,18 +86,18 @@ const Reviews = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+      {/* CTA — dark */}
+      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative text-center">
           <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Your Turn</span>
-          <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
             Ready to Be the
             <br />
             <span className="text-primary">Next Success Story?</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
             15 minutes. No pitch. Let's figure out if Varga Flow is right for your business.
           </p>
           <Link
