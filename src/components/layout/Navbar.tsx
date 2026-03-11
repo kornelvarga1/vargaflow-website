@@ -55,7 +55,7 @@ const Navbar = () => {
           >
             <button
               className={cn(
-                "flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors hover:text-primary",
+                "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
                 location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70",
               )}
             >
