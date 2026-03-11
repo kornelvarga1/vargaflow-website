@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SERVICES, SITE_EMAIL } from "@/config/constants";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,8 +9,8 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link to="/" className="text-xl font-extrabold tracking-tight text-background">
-              VARGA <span className="text-primary">FLOW</span>
+            <Link to="/">
+              <img src={logo} alt="Varga Flow" className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/60">
               Done-for-you marketing systems for contractors and tradespeople. No fluff. Just systems that work.
@@ -38,7 +39,6 @@ const Footer = () => {
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-sm text-background/60 hover:text-primary">About</Link></li>
-              <li><Link to="/reviews" className="text-sm text-background/60 hover:text-primary">Reviews</Link></li>
               <li><Link to="/contact" className="text-sm text-background/60 hover:text-primary">Contact</Link></li>
             </ul>
           </div>
