@@ -68,13 +68,13 @@ const Index = () => {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
               <Zap className="h-3.5 w-3.5" /> Marketing Systems for Contractors
             </div>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
-              Marketing Systems
-              <br />
-              That Actually Work —
-              <br />
-              <span className="text-primary">Built for Contractors</span>
-            </h1>
+<h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
+  Website Design &
+  <br />
+  Marketing Systems
+  <br />
+  <span className="text-primary">For Contractors</span>
+</h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
               You're great at your trade. We're great at getting you leads.
               Done-for-you websites, automations, and follow-up systems — so you can stay on the job site and still win new business.
