@@ -151,25 +151,11 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
           <nav className="flex flex-col p-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "border-b border-border py-4 text-lg font-semibold transition-colors",
-                  isActive(link.href) ? "text-primary" : "text-foreground/70",
-                )}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-
             {/* Mobile Services */}
             <div className="border-b border-border py-4">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between text-lg font-semibold text-foreground/70"
+                className="flex w-full items-center justify-between text-xl font-semibold text-foreground/70"
               >
                 Services <ChevronDown className={cn("h-5 w-5 transition-transform", servicesOpen && "rotate-180")} />
               </button>
@@ -195,6 +181,28 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+
+            <Link
+              to="/pricing"
+              className={cn(
+                "border-b border-border py-4 text-xl font-semibold transition-colors",
+                isActive("/pricing") ? "text-primary" : "text-foreground/70",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              Pricing
+            </Link>
+
+            <Link
+              to="/about"
+              className={cn(
+                "border-b border-border py-4 text-xl font-semibold transition-colors",
+                isActive("/about") ? "text-primary" : "text-foreground/70",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              About
+            </Link>
 
             <Link
               to="/contact"
