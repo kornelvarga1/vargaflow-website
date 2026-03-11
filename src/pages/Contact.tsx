@@ -73,7 +73,7 @@ const Contact = () => {
       <section className="relative bg-charcoal py-16 lg:py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-background/5" />
         <div className="container relative">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto w-full">
             <div className="mb-10 text-center">
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
                 Schedule Now
@@ -85,11 +85,11 @@ const Contact = () => {
                 Choose a slot below. You'll get a confirmation email with everything you need.
               </p>
             </div>
-            <div style={{ width: "100%", maxWidth: "1000px", margin: "0 auto" }}>
+            <div style={{ width: "100%", margin: "0 auto" }}>
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1"
-                style={{ minWidth: "320px", height: "660px" }}
+                style={{ minWidth: "900px", height: "700px" }}
               />
             </div>
           </div>
