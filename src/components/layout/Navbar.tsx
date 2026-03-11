@@ -35,15 +35,6 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-2 lg:flex">
           <Link
-            to="/services"
-            className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-              location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70",
-            )}
-          >
-            Services
-          </Link>
-          <Link
             to="/pricing"
             className={cn(
               "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
