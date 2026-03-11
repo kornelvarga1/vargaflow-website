@@ -28,11 +28,12 @@ const STEPS = [
   { num: "03", title: "You Get Leads", desc: "Your phone starts ringing. Your reviews start growing. Your calendar fills up.", icon: TrendingUp },
 ];
 
-const TESTIMONIALS = [
-  { name: "Mike R.", business: "Roofing Contractor", quote: "I was losing half my leads to missed calls. Now every single one gets a text back automatically. Game changer." },
-  { name: "Sarah T.", business: "Plumbing Company", quote: "We went from 12 Google reviews to 47 in three months. The review funnel basically runs itself." },
-  { name: "Dave K.", business: "HVAC Specialist", quote: "I used to spend hours every week on marketing. Now I just check my inbox and the leads are there." },
-];
+// Testimonials section hidden until we have real reviews
+// const TESTIMONIALS = [
+//   { name: "Mike R.", business: "Roofing Contractor", quote: "I was losing half my leads to missed calls. Now every single one gets a text back automatically. Game changer." },
+//   { name: "Sarah T.", business: "Plumbing Company", quote: "We went from 12 Google reviews to 47 in three months. The review funnel basically runs itself." },
+//   { name: "Dave K.", business: "HVAC Specialist", quote: "I used to spend hours every week on marketing. Now I just check my inbox and the leads are there." },
+// ];
 
 const Index = () => {
   return (
