@@ -85,20 +85,11 @@ const Contact = () => {
                 Choose a slot below. You'll get a confirmation email with everything you need.
               </p>
             </div>
-            <div
-              style={{
-                width: "100%",
-                maxWidth: "900px",
-                margin: "0 auto",
-                overflow: "hidden",
-                borderRadius: "8px",
-              }}
-              className="border border-border bg-card shadow-2xl shadow-primary/5"
-            >
+            <div style={{ width: "100%", maxWidth: "1000px", margin: "0 auto" }}>
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e8a743"
-                style={{ minWidth: "320px", height: "700px", overflow: "hidden" }}
+                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1"
+                style={{ minWidth: "320px", height: "660px" }}
               />
             </div>
           </div>
