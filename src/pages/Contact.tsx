@@ -19,7 +19,7 @@ const Contact = () => {
         <title>Book A Call — Varga Flow</title>
         <meta
           name="description"
-          content="Book a free 15-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+          content="Book a free 20-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
         />
       </Helmet>
 
