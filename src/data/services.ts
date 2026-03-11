@@ -1,4 +1,15 @@
 import type { ServicePageData } from "@/components/ServicePageTemplate";
+import {
+  Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
+  Rocket, Smartphone, MousePointerClick, BarChart3,
+  Clock, Send, MessageCircle, Moon,
+  Mail, History, Users, UserCheck,
+  Shield, Headphones, VoicemailIcon, PhoneForwarded,
+  MapPin, FileText, TrendingUp, LineChart,
+  Bell, GitBranch, Eye, Gauge,
+  FileEdit, MailOpen, MousePointer, PieChart,
+  Timer, ListChecks, BrainCircuit, HandshakeIcon,
+} from "lucide-react";
 
 export const serviceData: Record<string, ServicePageData> = {
   "functional-website": {
@@ -8,6 +19,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "Built in Days, Not Months",
     subheadline: "Your website should be your hardest-working employee. If it's not generating leads while you sleep, it's just an expensive business card collecting digital dust.",
     metaDescription: "Get a contractor website that actually generates leads. Built in days, not months. No templates. No fluff. Just a website that works as hard as you do.",
+    icon: Globe,
+    stats: [
+      { value: "< 2s", label: "Load Time" },
+      { value: "5–7 Days", label: "Build Time" },
+      { value: "3x", label: "More Leads" },
+    ],
     problemHeadline: "Your Current Website Is",
     problemAccent: "Costing You Jobs.",
     problemText: [
@@ -19,10 +36,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "While You're on the Job Site.",
     solutionText: "We build fast, clean, mobile-first websites designed for one thing: turning visitors into leads. No bloated templates. No unnecessary pages. Just the stuff that makes your phone ring.",
     features: [
-      { title: "Built for Speed", description: "Loads in under 2 seconds on mobile. Because homeowners won't wait around for your site to load." },
-      { title: "Mobile-First Design", description: "70%+ of your visitors are on their phone. Your site will look perfect on every screen." },
-      { title: "Clear Calls to Action", description: "Every page guides visitors to call, text, or request a quote. No confusion. No dead ends." },
-      { title: "SEO-Ready from Day One", description: "Built with proper structure so Google can actually find you and rank you." },
+      { title: "Built for Speed", description: "Loads in under 2 seconds on mobile. Because homeowners won't wait around for your site to load.", icon: Rocket },
+      { title: "Mobile-First Design", description: "70%+ of your visitors are on their phone. Your site will look perfect on every screen.", icon: Smartphone },
+      { title: "Clear Calls to Action", description: "Every page guides visitors to call, text, or request a quote. No confusion. No dead ends.", icon: MousePointerClick },
+      { title: "SEO-Ready from Day One", description: "Built with proper structure so Google can actually find you and rank you.", icon: BarChart3 },
     ],
     faqs: [
       { question: "How long does it take to build?", answer: "Most sites are live within 5–7 business days. We've done some in 3. It depends on how fast you get us your info." },
@@ -39,6 +56,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "a Missed Call Again.",
     subheadline: "You're on a roof. Under a house. Elbow-deep in a pipe. You can't answer every call. But your competition can — because they have this.",
     metaDescription: "Automatically text back missed calls within seconds. Stop losing leads when you can't answer the phone. Built for contractors who are too busy working to pick up.",
+    icon: MessageSquare,
+    stats: [
+      { value: "< 30s", label: "Response Time" },
+      { value: "85%", label: "Leads Saved" },
+      { value: "24/7", label: "Always On" },
+    ],
     problemHeadline: "Every Missed Call Is",
     problemAccent: "Money Walking Away.",
     problemText: [
@@ -50,10 +73,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Automatic. Every Time.",
     solutionText: "When you miss a call, our system sends a personalized text message within seconds. The lead stays warm. The conversation starts. And you reply when you're off the ladder.",
     features: [
-      { title: "Responds in Seconds", description: "Not minutes. Not hours. Seconds. Before the homeowner even finishes dialing the next contractor." },
-      { title: "Personalized Messages", description: "Not some robotic auto-reply. A natural, friendly text that sounds like you wrote it." },
-      { title: "Two-Way Texting", description: "They can text back. You can reply from your phone or the app. Real conversation, real leads." },
-      { title: "Works 24/7", description: "Evenings. Weekends. Holidays. The system never sleeps, even when you do." },
+      { title: "Responds in Seconds", description: "Not minutes. Not hours. Seconds. Before the homeowner even finishes dialing the next contractor.", icon: Clock },
+      { title: "Personalized Messages", description: "Not some robotic auto-reply. A natural, friendly text that sounds like you wrote it.", icon: Send },
+      { title: "Two-Way Texting", description: "They can text back. You can reply from your phone or the app. Real conversation, real leads.", icon: MessageCircle },
+      { title: "Works 24/7", description: "Evenings. Weekends. Holidays. The system never sleeps, even when you do.", icon: Moon },
     ],
     faqs: [
       { question: "What does the text message say?", answer: "We customize it for your business. Something like: 'Hey, sorry I missed your call! I'm on a job right now — how can I help?' Natural and friendly." },
@@ -69,6 +92,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "Zero Headaches.",
     subheadline: "Texts, emails, Facebook messages, Instagram DMs, Google messages, voicemails — stop juggling six apps and start closing more deals.",
     metaDescription: "Get all your business messages in one unified inbox. Texts, emails, social media DMs, and voicemails — all in one place. Built for busy contractors.",
+    icon: Inbox,
+    stats: [
+      { value: "6+", label: "Channels Unified" },
+      { value: "0", label: "Messages Missed" },
+      { value: "1", label: "Inbox to Check" },
+    ],
     problemHeadline: "You're Drowning in",
     problemAccent: "Message Chaos.",
     problemText: [
@@ -80,10 +109,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Every Conversation.",
     solutionText: "We consolidate every channel into a single, easy-to-use inbox. See everything. Reply to anything. From one screen. On your phone or desktop.",
     features: [
-      { title: "Unified Messages", description: "Texts, emails, Facebook, Instagram, Google — all in one feed. No switching between apps." },
-      { title: "Reply from Anywhere", description: "Phone app or desktop. Reply to any channel from one place. Your customer never knows the difference." },
-      { title: "Conversation History", description: "See every interaction with a customer in one thread. No more 'did they text or email me?'" },
-      { title: "Team Access", description: "If you have office staff, they can see and manage messages too. No more 'did you respond to that lead?'" },
+      { title: "Unified Messages", description: "Texts, emails, Facebook, Instagram, Google — all in one feed. No switching between apps.", icon: Mail },
+      { title: "Reply from Anywhere", description: "Phone app or desktop. Reply to any channel from one place. Your customer never knows the difference.", icon: Send },
+      { title: "Conversation History", description: "See every interaction with a customer in one thread. No more 'did they text or email me?'", icon: History },
+      { title: "Team Access", description: "If you have office staff, they can see and manage messages too. No more 'did you respond to that lead?'", icon: Users },
     ],
     faqs: [
       { question: "Which platforms does it connect to?", answer: "Facebook Messenger, Instagram DMs, Google Business Messages, SMS/text, email, voicemail, and web chat. Basically everything." },
@@ -99,6 +128,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "Personal.",
     subheadline: "Get a dedicated business phone number that works on your existing phone. No second device needed. Professional presence without the hassle.",
     metaDescription: "Get a separate business phone number on your existing phone. No second device. Keep personal and business calls separate. Built for contractors.",
+    icon: Phone,
+    stats: [
+      { value: "1", label: "Phone Needed" },
+      { value: "2", label: "Numbers on It" },
+      { value: "100%", label: "Control" },
+    ],
     problemHeadline: "Your Personal Number",
     problemAccent: "Shouldn't Be Your Business Number.",
     problemText: [
@@ -110,10 +145,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Total Control.",
     solutionText: "We set you up with a dedicated business line that rings on your existing phone. Separate voicemail, separate texts, separate everything — without carrying two devices.",
     features: [
-      { title: "Works on Your Phone", description: "No second device. Your business number rings right on your current phone through the app." },
-      { title: "Business Hours Control", description: "Set business hours. After-hours calls go to voicemail or get a text back. Your evenings are yours again." },
-      { title: "Professional Voicemail", description: "Custom business voicemail greeting. Sound like a company, not a guy with a truck." },
-      { title: "Call Tracking", description: "See which marketing channels are driving calls. Know what's working and what's wasting money." },
+      { title: "Works on Your Phone", description: "No second device. Your business number rings right on your current phone through the app.", icon: Smartphone },
+      { title: "Business Hours Control", description: "Set business hours. After-hours calls go to voicemail or get a text back. Your evenings are yours again.", icon: Shield },
+      { title: "Professional Voicemail", description: "Custom business voicemail greeting. Sound like a company, not a guy with a truck.", icon: Headphones },
+      { title: "Call Tracking", description: "See which marketing channels are driving calls. Know what's working and what's wasting money.", icon: PhoneForwarded },
     ],
     faqs: [
       { question: "Do I need a new phone?", answer: "Nope. It works through an app on your existing phone. iPhone or Android." },
@@ -129,6 +164,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "When Homeowners Search Google.",
     subheadline: "If you're not showing up in the top 3 on Google Maps, you might as well not exist. We fix that.",
     metaDescription: "Local SEO for contractors. Show up when homeowners search Google for your trade. Google Business Profile optimization, citations, and ranking strategies that work.",
+    icon: Search,
+    stats: [
+      { value: "Top 3", label: "Map Pack Goal" },
+      { value: "50+", label: "Directory Listings" },
+      { value: "30 Days", label: "First Results" },
+    ],
     problemHeadline: "You're Invisible on Google.",
     problemAccent: "And It's Killing Your Business.",
     problemText: [
@@ -140,10 +181,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Get Picked.",
     solutionText: "We optimize your entire Google presence — your Business Profile, your website, your citations, your review strategy — so you show up when it matters most.",
     features: [
-      { title: "Google Business Profile Optimization", description: "Fully optimized with the right categories, services, photos, and descriptions. The stuff Google actually cares about." },
-      { title: "Citation Building", description: "Your business listed consistently across 50+ directories. Consistency tells Google you're legit." },
-      { title: "Review Strategy", description: "More reviews = higher rankings. We set up systems to get you reviews on autopilot." },
-      { title: "Monthly Reporting", description: "See exactly where you rank, how many people found you, and what's improving. No guesswork." },
+      { title: "Google Business Profile Optimization", description: "Fully optimized with the right categories, services, photos, and descriptions. The stuff Google actually cares about.", icon: MapPin },
+      { title: "Citation Building", description: "Your business listed consistently across 50+ directories. Consistency tells Google you're legit.", icon: FileText },
+      { title: "Review Strategy", description: "More reviews = higher rankings. We set up systems to get you reviews on autopilot.", icon: TrendingUp },
+      { title: "Monthly Reporting", description: "See exactly where you rank, how many people found you, and what's improving. No guesswork.", icon: LineChart },
     ],
     faqs: [
       { question: "How long does SEO take to work?", answer: "You'll see improvements within 30–60 days. Meaningful ranking changes usually happen in 90 days. SEO is a long game, but we make it faster than most." },
@@ -159,6 +200,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "Stop Bad Ones Before They Go Public.",
     subheadline: "The contractor with the most (and best) reviews wins. Period. We automate the entire process so you don't have to awkwardly ask.",
     metaDescription: "Automated 5-star review funnel for contractors. Get more Google reviews, prevent bad ones from going public, and build the reputation your work deserves.",
+    icon: Star,
+    stats: [
+      { value: "3x", label: "More Reviews" },
+      { value: "98%", label: "Positive Rate" },
+      { value: "Auto", label: "Fully Automated" },
+    ],
     problemHeadline: "Your Reviews Don't Match",
     problemAccent: "the Quality of Your Work.",
     problemText: [
@@ -170,10 +217,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "That Runs Itself.",
     solutionText: "After every job, our system automatically asks your customer for feedback. Happy? They get sent straight to Google to leave a review. Unhappy? The feedback comes to you privately — before it goes public.",
     features: [
-      { title: "Automatic Review Requests", description: "After each job, the system sends a text or email asking for feedback. You don't have to remember or ask awkwardly." },
-      { title: "Smart Routing", description: "5-star feedback → Google review page. Negative feedback → private message to you. Bad reviews never see the light of day." },
-      { title: "Review Monitoring", description: "Get notified instantly when a new review comes in. Respond fast. Google loves that." },
-      { title: "Review Growth Tracking", description: "Watch your review count climb week over week. See the direct impact on your rankings." },
+      { title: "Automatic Review Requests", description: "After each job, the system sends a text or email asking for feedback. You don't have to remember or ask awkwardly.", icon: Bell },
+      { title: "Smart Routing", description: "5-star feedback → Google review page. Negative feedback → private message to you. Bad reviews never see the light of day.", icon: GitBranch },
+      { title: "Review Monitoring", description: "Get notified instantly when a new review comes in. Respond fast. Google loves that.", icon: Eye },
+      { title: "Review Growth Tracking", description: "Watch your review count climb week over week. See the direct impact on your rankings.", icon: Gauge },
     ],
     faqs: [
       { question: "Is this fake reviews?", answer: "Absolutely not. These are real reviews from real customers. We just make it ridiculously easy for them to leave one." },
@@ -189,6 +236,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "Past Customers. One Click.",
     subheadline: "Your past customers are your best lead source. But you never follow up. We make it stupid simple — one click and your campaign goes out.",
     metaDescription: "One-click marketing campaigns for contractors. Email and text campaigns to past customers. Stay top of mind and generate repeat business without the hassle.",
+    icon: Megaphone,
+    stats: [
+      { value: "98%", label: "Text Open Rate" },
+      { value: "5x", label: "Repeat Business" },
+      { value: "1 Click", label: "To Send" },
+    ],
     problemHeadline: "Your Best Leads Are Sitting",
     problemAccent: "in Your Contact List. Ignored.",
     problemText: [
@@ -200,10 +253,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Campaign Sent. Done.",
     solutionText: "We set up pre-built campaigns — seasonal offers, check-in messages, holiday specials — that you can send to your entire customer list with a single click. Text, email, or both.",
     features: [
-      { title: "Pre-Built Templates", description: "Seasonal campaigns, maintenance reminders, holiday promos — all written and ready to go." },
-      { title: "Text + Email", description: "Reach customers where they actually look. Text gets 98% open rates. Email fills in the rest." },
-      { title: "One-Click Send", description: "Pick a campaign. Click send. That's it. No design work. No copywriting. No tech skills needed." },
-      { title: "Track Results", description: "See who opened, who clicked, who booked. Know exactly what's working." },
+      { title: "Pre-Built Templates", description: "Seasonal campaigns, maintenance reminders, holiday promos — all written and ready to go.", icon: FileEdit },
+      { title: "Text + Email", description: "Reach customers where they actually look. Text gets 98% open rates. Email fills in the rest.", icon: MailOpen },
+      { title: "One-Click Send", description: "Pick a campaign. Click send. That's it. No design work. No copywriting. No tech skills needed.", icon: MousePointer },
+      { title: "Track Results", description: "See who opened, who clicked, who booked. Know exactly what's working.", icon: PieChart },
     ],
     faqs: [
       { question: "Do I need to write the campaigns?", answer: "Nope. We write them for you. You just review, tweak if you want, and hit send." },
@@ -219,6 +272,12 @@ export const serviceData: Record<string, ServicePageData> = {
     headlineAccent: "We Follow Up for You.",
     subheadline: "The average contractor takes 44 hours to respond to a lead. By then, the homeowner's already hired someone else. Our system responds in seconds.",
     metaDescription: "Automated lead follow-up for contractors. Respond to new leads instantly via text. Nurture leads automatically until they book. Never lose a lead to slow follow-up again.",
+    icon: Zap,
+    stats: [
+      { value: "< 60s", label: "First Response" },
+      { value: "5–7", label: "Follow-Up Texts" },
+      { value: "2x", label: "Close Rate" },
+    ],
     problemHeadline: "Slow Follow-Up Is",
     problemAccent: "Killing Your Close Rate.",
     problemText: [
@@ -230,10 +289,10 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionAccent: "Relentless Follow-Up.",
     solutionText: "When a new lead comes in — from your website, Google, Facebook, anywhere — our system sends an immediate text. Then it follows up. And follows up again. Until they book or tell you to stop.",
     features: [
-      { title: "Instant First Response", description: "New lead? Text sent within 60 seconds. Before they even finish Googling your competitor." },
-      { title: "Multi-Step Sequences", description: "Not just one text. A series of follow-ups over days — each one natural, helpful, and designed to get a response." },
-      { title: "Smart Timing", description: "Messages go out at the right time of day. No 3am texts. No Sunday morning spam." },
-      { title: "Human Handoff", description: "When the lead replies, you get notified instantly. Take over the conversation whenever you're ready." },
+      { title: "Instant First Response", description: "New lead? Text sent within 60 seconds. Before they even finish Googling your competitor.", icon: Timer },
+      { title: "Multi-Step Sequences", description: "Not just one text. A series of follow-ups over days — each one natural, helpful, and designed to get a response.", icon: ListChecks },
+      { title: "Smart Timing", description: "Messages go out at the right time of day. No 3am texts. No Sunday morning spam.", icon: BrainCircuit },
+      { title: "Human Handoff", description: "When the lead replies, you get notified instantly. Take over the conversation whenever you're ready.", icon: HandshakeIcon },
     ],
     faqs: [
       { question: "What does the follow-up sequence look like?", answer: "Typically 5–7 messages over 7–14 days. First one is instant. Then a check-in after a few hours. Then daily or every-other-day until they respond." },
