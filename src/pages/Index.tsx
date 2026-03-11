@@ -189,8 +189,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
-      <section className="bg-background py-20 lg:py-28">
+      {/* SOCIAL PROOF - Hidden until we have real reviews */}
+      {/* <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <div className="text-center">
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Testimonials</span>
@@ -218,7 +218,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FINAL CTA — dark section */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">

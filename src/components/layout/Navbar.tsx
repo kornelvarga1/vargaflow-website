@@ -29,9 +29,7 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <span className="text-xl font-extrabold tracking-tight text-foreground lg:text-2xl">
-            VARGA <span className="text-primary">FLOW</span>
-          </span>
+          <img src={logo} alt="Varga Flow" className="h-8 w-auto lg:h-10" />
         </Link>
 
         {/* Desktop Nav */}
