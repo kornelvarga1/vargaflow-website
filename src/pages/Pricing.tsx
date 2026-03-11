@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Sparkles } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 const INCLUDED = [
   "Functional Website (10–20 pages)",
@@ -14,13 +16,22 @@ const INCLUDED = [
 ];
 
 const Pricing = () => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
+  const monthlyPrice = 297;
+  const annualPricePerMonth = 247;
+  const annualTotal = annualPricePerMonth * 12;
+
+  const currentPrice = isAnnual ? annualPricePerMonth : monthlyPrice;
+  const savings = isAnnual ? (monthlyPrice - annualPricePerMonth) * 12 : 0;
+
   return (
     <>
       <Helmet>
         <title>Pricing — Varga Flow</title>
         <meta
           name="description"
-          content="One simple plan. $297/month. Everything your contracting business needs to capture more leads and close more jobs."
+          content="One simple plan. $297/month or save with $247/month annual. Everything your contracting business needs to capture more leads and close more jobs."
         />
       </Helmet>
 
@@ -39,8 +50,37 @@ const Pricing = () => {
             </p>
           </div>
 
+          {/* Toggle */}
+          <div className="mx-auto mt-10 flex items-center justify-center gap-4">
+            <span
+              className={`text-sm font-semibold transition-colors ${
+                !isAnnual ? "text-foreground" : "text-muted-foreground"
+              }`}
+            >
+              Monthly
+            </span>
+            <Switch
+              checked={isAnnual}
+              onCheckedChange={setIsAnnual}
+              className="data-[state=checked]:bg-primary"
+            />
+            <span
+              className={`text-sm font-semibold transition-colors ${
+                isAnnual ? "text-foreground" : "text-muted-foreground"
+              }`}
+            >
+              Annual
+            </span>
+            {isAnnual && (
+              <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-primary/20 px-2 py-1 text-xs font-bold text-primary">
+                <Sparkles className="h-3 w-3" />
+                Save ${savings}/year
+              </span>
+            )}
+          </div>
+
           {/* Card */}
-          <div className="mx-auto mt-14 max-w-lg">
+          <div className="mx-auto mt-8 max-w-lg">
             <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-primary shadow-2xl shadow-primary/20">
               {/* Badge */}
               <div className="pt-10 text-center">
@@ -50,13 +90,25 @@ const Pricing = () => {
                 <h2 className="mt-4 text-2xl font-extrabold text-primary-foreground md:text-3xl">
                   Contractor Advanced
                 </h2>
-                <p className="mt-4 text-5xl font-extrabold text-primary-foreground md:text-6xl">
-                  $297<span className="text-2xl font-bold text-primary-foreground/70">/mo</span>
-                </p>
+                <div className="mt-4">
+                  <p className="text-5xl font-extrabold text-primary-foreground md:text-6xl">
+                    ${currentPrice}
+                    <span className="text-2xl font-bold text-primary-foreground/70">/mo</span>
+                  </p>
+                  {isAnnual ? (
+                    <p className="mt-2 text-sm font-medium text-primary-foreground/60">
+                      Billed annually (${annualTotal}/year)
+                    </p>
+                  ) : (
+                    <p className="mt-2 text-sm font-medium text-primary-foreground/60">
+                      Billed monthly
+                    </p>
+                  )}
+                </div>
               </div>
 
               {/* Divider */}
-              <div className="mx-10 mt-8 border-t border-primary-foreground/20" />
+              <div className="mx-10 mt-6 border-t border-primary-foreground/20" />
 
               {/* Features */}
               <ul className="space-y-0 px-6 py-6 md:px-10">
