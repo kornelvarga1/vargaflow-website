@@ -39,7 +39,7 @@ const Contact = () => {
               <span className="text-primary">Leads &amp; Customers?</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              No pitch. No pressure. Just a 15-minute conversation about where
+              No pitch. No pressure. Just a 20-minute conversation about where
               you're losing leads — and what we can do about it.
             </p>
           </div>
