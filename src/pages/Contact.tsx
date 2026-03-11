@@ -89,7 +89,7 @@ const Contact = () => {
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/kornelvarga/free-1-1-coaching-consulting-call-with-kornel-clone?primary_color=ffac00"
-                style={{ minWidth: "320px", height: "700px" }}
+                style={{ minWidth: "320px", height: "580px" }}
               />
             </div>
           </div>
