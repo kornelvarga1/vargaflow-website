@@ -26,10 +26,10 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex shrink-0 items-center" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-10 w-auto object-contain sm:h-11 lg:h-14" />
+        <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+          <img src={logo} alt="Varga Flow" className="h-16 w-auto lg:h-40" />
         </Link>
 
         {/* Desktop Nav */}
@@ -134,7 +134,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-20 z-40 bg-background lg:hidden">
+        <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
           <nav className="flex flex-col p-6">
             {NAV_LINKS.map((link) => (
               <Link
