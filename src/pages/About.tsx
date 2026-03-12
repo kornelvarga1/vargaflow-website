@@ -161,7 +161,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className="h-16 lg:hidden" />
+      <div className="h-4 lg:hidden" />
     </>
   );
 };
