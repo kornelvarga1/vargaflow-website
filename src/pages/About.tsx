@@ -19,7 +19,11 @@ const About = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-12 lg:py-28">
+        {/* Mobile hero image */}
+        <div className="absolute inset-0 lg:hidden">
+          <img src={aboutBg} alt="" className="h-full w-full object-cover opacity-10" />
+        </div>
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="container relative max-w-4xl text-center">
