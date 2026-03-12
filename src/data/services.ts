@@ -83,11 +83,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Texts, emails, Facebook messages, Instagram DMs, Google messages, voicemails — stop juggling six apps and start closing more deals.",
     metaDescription: "Get all your business messages in one unified inbox. Texts, emails, social media DMs, and voicemails — all in one place. Built for busy contractors.",
     icon: Inbox,
-    stats: [
-      { value: "6+", label: "Channels Unified" },
-      { value: "0", label: "Messages Missed" },
-      { value: "1", label: "Inbox to Check" },
-    ],
     problemHeadline: "You're Drowning in",
     problemAccent: "Message Chaos.",
     problemText: [
