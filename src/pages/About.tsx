@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Wrench, Heart, Users, TrendingUp, Zap } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
+import aboutFounder from "@/assets/about-founder.jpg";
 
 const STATS = [
   { icon: Users, value: "100+", label: "Contractors Served" },
@@ -18,7 +19,11 @@ const About = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-12 lg:py-28">
+        {/* Mobile hero image */}
+        <div className="absolute inset-0 lg:hidden">
+          <img src={aboutBg} alt="" className="h-full w-full object-cover opacity-10" />
+        </div>
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="container relative max-w-4xl text-center">
@@ -84,7 +89,7 @@ const About = () => {
                 <div className="absolute -inset-3 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent" />
                 <div className="relative overflow-hidden rounded-xl">
                   <img
-                    src="/src/assets/about-founder.jpg"
+                    src={aboutFounder}
                     alt="Kornél Varga - Founder of Varga Flow"
                     className="h-72 w-72 object-cover object-[center_65%] lg:h-96 lg:w-96"
                     loading="lazy"
@@ -156,7 +161,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className="h-16 lg:hidden" />
+      <div className="h-4 lg:hidden" />
     </>
   );
 };

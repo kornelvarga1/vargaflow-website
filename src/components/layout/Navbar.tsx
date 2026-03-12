@@ -29,7 +29,16 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-8 w-auto lg:h-12" />
+          <img src={logo} alt="Varga Flow" className="h-6 w-auto lg:h-12" />
+        </Link>
+
+        {/* Mobile CTA */}
+        <Link
+          to="/contact"
+          className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        >
+          Book A Call
         </Link>
 
         {/* Desktop Nav */}

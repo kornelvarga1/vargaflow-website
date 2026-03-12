@@ -24,7 +24,7 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-16 lg:py-24">
+      <section className="relative overflow-hidden bg-background py-10 lg:py-24">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
         <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
 
@@ -45,7 +45,7 @@ const Contact = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-6">
+          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-3 gap-3 lg:mt-12 lg:gap-6">
             {[
               { icon: Clock, label: "20 Min Call", sub: "Quick & focused" },
               { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
@@ -81,11 +81,11 @@ const Contact = () => {
                 Choose a slot below. You'll get a confirmation email with everything you need.
               </p>
             </div>
-            <div style={{ width: "100%", margin: "0 auto" }}>
+            <div className="w-full overflow-hidden">
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1"
-                style={{ minWidth: "900px", height: "700px" }}
+                style={{ minWidth: "320px", width: "100%", height: "700px" }}
               />
             </div>
           </div>
@@ -116,7 +116,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <div className="h-16 lg:hidden" />
+      <div className="h-4 lg:hidden" />
     </>
   );
 };
