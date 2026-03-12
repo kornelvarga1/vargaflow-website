@@ -45,7 +45,7 @@ const Contact = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-6">
+          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-3 gap-3 lg:mt-12 lg:gap-6">
             {[
               { icon: Clock, label: "20 Min Call", sub: "Quick & focused" },
               { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
