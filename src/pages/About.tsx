@@ -84,7 +84,7 @@ const About = () => {
                 <div className="absolute -inset-3 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent" />
                 <div className="relative overflow-hidden rounded-xl">
                   <img
-                    src="/src/assets/about-founder.jpg"
+                    src={aboutFounder}
                     alt="Kornél Varga - Founder of Varga Flow"
                     className="h-72 w-72 object-cover object-[center_65%] lg:h-96 lg:w-96"
                     loading="lazy"
