@@ -20,11 +20,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Your website should be your hardest-working employee. If it's not generating leads while you sleep, it's just an expensive business card collecting digital dust.",
     metaDescription: "Get a contractor website that actually generates leads. Built in days, not months. No templates. No fluff. Just a website that works as hard as you do.",
     icon: Globe,
-    stats: [
-      { value: "< 2s", label: "Load Time" },
-      { value: "5–7 Days", label: "Build Time" },
-      { value: "3x", label: "More Leads" },
-    ],
     problemHeadline: "Your Current Website Is",
     problemAccent: "Costing You Jobs.",
     problemText: [
@@ -57,11 +52,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "You're on a roof. Under a house. Elbow-deep in a pipe. You can't answer every call. But your competition can — because they have this.",
     metaDescription: "Automatically text back missed calls within seconds. Stop losing leads when you can't answer the phone. Built for contractors who are too busy working to pick up.",
     icon: MessageSquare,
-    stats: [
-      { value: "< 30s", label: "Response Time" },
-      { value: "85%", label: "Leads Saved" },
-      { value: "24/7", label: "Always On" },
-    ],
     problemHeadline: "Every Missed Call Is",
     problemAccent: "Money Walking Away.",
     problemText: [
@@ -93,11 +83,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Texts, emails, Facebook messages, Instagram DMs, Google messages, voicemails — stop juggling six apps and start closing more deals.",
     metaDescription: "Get all your business messages in one unified inbox. Texts, emails, social media DMs, and voicemails — all in one place. Built for busy contractors.",
     icon: Inbox,
-    stats: [
-      { value: "6+", label: "Channels Unified" },
-      { value: "0", label: "Messages Missed" },
-      { value: "1", label: "Inbox to Check" },
-    ],
     problemHeadline: "You're Drowning in",
     problemAccent: "Message Chaos.",
     problemText: [
@@ -129,11 +114,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Get a dedicated business phone number that works on your existing phone. No second device needed. Professional presence without the hassle.",
     metaDescription: "Get a separate business phone number on your existing phone. No second device. Keep personal and business calls separate. Built for contractors.",
     icon: Phone,
-    stats: [
-      { value: "1", label: "Phone Needed" },
-      { value: "2", label: "Numbers on It" },
-      { value: "100%", label: "Control" },
-    ],
     problemHeadline: "Your Personal Number",
     problemAccent: "Shouldn't Be Your Business Number.",
     problemText: [
@@ -165,11 +145,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "If you're not showing up in the top 3 on Google Maps, you might as well not exist. We fix that.",
     metaDescription: "Local SEO for contractors. Show up when homeowners search Google for your trade. Google Business Profile optimization, citations, and ranking strategies that work.",
     icon: Search,
-    stats: [
-      { value: "Top 3", label: "Map Pack Goal" },
-      { value: "50+", label: "Directory Listings" },
-      { value: "30 Days", label: "First Results" },
-    ],
     problemHeadline: "You're Invisible on Google.",
     problemAccent: "And It's Killing Your Business.",
     problemText: [
@@ -201,11 +176,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "The contractor with the most (and best) reviews wins. Period. We automate the entire process so you don't have to awkwardly ask.",
     metaDescription: "Automated 5-star review funnel for contractors. Get more Google reviews, prevent bad ones from going public, and build the reputation your work deserves.",
     icon: Star,
-    stats: [
-      { value: "3x", label: "More Reviews" },
-      { value: "98%", label: "Positive Rate" },
-      { value: "Auto", label: "Fully Automated" },
-    ],
     problemHeadline: "Your Reviews Don't Match",
     problemAccent: "the Quality of Your Work.",
     problemText: [

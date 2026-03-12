@@ -1,22 +1,16 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Wrench, Heart, Users, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, Target, Wrench, Heart } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import aboutFounder from "@/assets/about-founder.jpg";
 import ScrollReveal from "@/components/ScrollReveal";
-
-const STATS = [
-  { icon: Users, value: "100+", label: "Contractors Served" },
-  { icon: TrendingUp, value: "3x", label: "Avg. Lead Increase" },
-  { icon: Zap, value: "< 7 Days", label: "Setup Time" },
-];
 
 const About = () => {
   return (
     <>
       <Helmet>
         <title>About Varga Flow — Marketing Systems Built for Contractors</title>
-        <meta name="description" content="Varga Flow was built by Kornél Varga after seeing too many skilled tradespeople lose leads to bad marketing. Our mission: give contractors the same tools big companies use." />
+        <meta name="description" content="Varga Flow helps home service contractors grow their business with simple, done-for-you marketing systems." />
       </Helmet>
 
       {/* Hero */}
@@ -40,23 +34,6 @@ const About = () => {
               Varga Flow helps home service contractors and tradespeople grow their business with simple, done-for-you marketing systems. We build the website, set up the automations, and handle the follow-up — so you can stay on the job site and still win new business.
             </p>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="border-b border-t border-border bg-secondary">
-        <div className="container">
-          <div className="grid grid-cols-3 divide-x divide-border">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1 py-8 lg:flex-row lg:justify-center lg:gap-4 lg:py-10">
-                <stat.icon className="h-6 w-6 text-primary lg:h-7 lg:w-7" />
-                <div className="text-center lg:text-left">
-                  <p className="text-2xl font-extrabold text-foreground lg:text-3xl">{stat.value}</p>
-                  <p className="text-xs font-medium text-muted-foreground lg:text-sm">{stat.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
