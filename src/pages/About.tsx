@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Wrench, Heart, Users, TrendingUp, Zap } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
+import aboutFounder from "@/assets/about-founder.jpg";
 
 const STATS = [
   { icon: Users, value: "100+", label: "Contractors Served" },
