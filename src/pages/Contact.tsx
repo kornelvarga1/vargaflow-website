@@ -24,7 +24,7 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-16 lg:py-24">
+      <section className="relative overflow-hidden bg-background py-10 lg:py-24">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
         <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
 
