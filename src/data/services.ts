@@ -176,11 +176,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "The contractor with the most (and best) reviews wins. Period. We automate the entire process so you don't have to awkwardly ask.",
     metaDescription: "Automated 5-star review funnel for contractors. Get more Google reviews, prevent bad ones from going public, and build the reputation your work deserves.",
     icon: Star,
-    stats: [
-      { value: "3x", label: "More Reviews" },
-      { value: "98%", label: "Positive Rate" },
-      { value: "Auto", label: "Fully Automated" },
-    ],
     problemHeadline: "Your Reviews Don't Match",
     problemAccent: "the Quality of Your Work.",
     problemText: [

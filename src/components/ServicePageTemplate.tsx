@@ -117,21 +117,6 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      {data.stats && data.stats.length > 0 && (
-        <section className="border-b border-t border-border bg-secondary">
-          <div className="container">
-            <div className={`grid grid-cols-${data.stats.length} divide-x divide-border`}>
-              {data.stats.map((stat) => (
-                <div key={stat.label} className="flex flex-col items-center gap-1 py-8 lg:py-10">
-                  <p className="text-2xl font-extrabold text-primary lg:text-3xl">{stat.value}</p>
-                  <p className="text-xs font-medium text-muted-foreground lg:text-sm">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Problem */}
       <section className="relative bg-secondary py-20 lg:py-28">
