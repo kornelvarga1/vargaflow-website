@@ -52,11 +52,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "You're on a roof. Under a house. Elbow-deep in a pipe. You can't answer every call. But your competition can — because they have this.",
     metaDescription: "Automatically text back missed calls within seconds. Stop losing leads when you can't answer the phone. Built for contractors who are too busy working to pick up.",
     icon: MessageSquare,
-    stats: [
-      { value: "< 30s", label: "Response Time" },
-      { value: "85%", label: "Leads Saved" },
-      { value: "24/7", label: "Always On" },
-    ],
     problemHeadline: "Every Missed Call Is",
     problemAccent: "Money Walking Away.",
     problemText: [
