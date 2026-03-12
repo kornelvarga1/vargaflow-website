@@ -114,11 +114,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Get a dedicated business phone number that works on your existing phone. No second device needed. Professional presence without the hassle.",
     metaDescription: "Get a separate business phone number on your existing phone. No second device. Keep personal and business calls separate. Built for contractors.",
     icon: Phone,
-    stats: [
-      { value: "1", label: "Phone Needed" },
-      { value: "2", label: "Numbers on It" },
-      { value: "100%", label: "Control" },
-    ],
     problemHeadline: "Your Personal Number",
     problemAccent: "Shouldn't Be Your Business Number.",
     problemText: [
