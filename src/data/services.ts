@@ -145,11 +145,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "If you're not showing up in the top 3 on Google Maps, you might as well not exist. We fix that.",
     metaDescription: "Local SEO for contractors. Show up when homeowners search Google for your trade. Google Business Profile optimization, citations, and ranking strategies that work.",
     icon: Search,
-    stats: [
-      { value: "Top 3", label: "Map Pack Goal" },
-      { value: "50+", label: "Directory Listings" },
-      { value: "30 Days", label: "First Results" },
-    ],
     problemHeadline: "You're Invisible on Google.",
     problemAccent: "And It's Killing Your Business.",
     problemText: [
