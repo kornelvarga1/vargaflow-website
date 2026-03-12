@@ -7,6 +7,7 @@ import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
 import heroBg from "@/assets/hero-bg.jpg";
 import TradesWeServe from "@/components/TradesWeServe";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
 
@@ -27,13 +28,6 @@ const STEPS = [
   { num: "03", title: "You Get Leads", desc: "Your phone starts ringing. Your reviews start growing. Your calendar fills up.", icon: TrendingUp },
 ];
 
-// Testimonials section hidden until we have real reviews
-// const TESTIMONIALS = [
-//   { name: "Mike R.", business: "Roofing Contractor", quote: "I was losing half my leads to missed calls. Now every single one gets a text back automatically. Game changer." },
-//   { name: "Sarah T.", business: "Plumbing Company", quote: "We went from 12 Google reviews to 47 in three months. The review funnel basically runs itself." },
-//   { name: "Dave K.", business: "HVAC Specialist", quote: "I used to spend hours every week on marketing. Now I just check my inbox and the leads are there." },
-// ];
-
 const Index = () => {
   return (
     <>
@@ -53,46 +47,50 @@ const Index = () => {
       </Helmet>
 
       {/* HERO — dark section for impact */}
-      <section className="relative min-h-[600px] overflow-hidden bg-foreground lg:min-h-[700px]">
+      <section className="relative min-h-[500px] overflow-hidden bg-foreground lg:min-h-[700px]">
         <div
-          className="absolute inset-0 hidden bg-cover bg-center xl:block"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/70 xl:from-foreground xl:via-foreground/90 xl:to-foreground/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/80 lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="container relative z-10 flex flex-col justify-center py-24 lg:py-36">
+        <div className="container relative z-10 flex flex-col justify-center py-16 lg:py-36">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-              <Zap className="h-3.5 w-3.5" /> Marketing Systems for Contractors
-            </div>
-<h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
-  Website Design &
-  <br />
-  Marketing Systems
-  <br />
-  <span className="text-primary">For Contractors</span>
-</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
-              You're great at your trade. We're great at getting you leads.
-              Done-for-you websites, automations, and follow-up systems — so you can stay on the job site and still win new business.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
-              >
-                Book A Call <ArrowRight className="h-5 w-5" />
-              </Link>
-              <span className="text-sm text-background/50">Free 20-min strategy call. No pitch.</span>
-            </div>
-            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
-              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
-              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No agency BS</span>
-              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Results in days, not months</span>
-            </div>
+            <ScrollReveal>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+                <Zap className="h-3.5 w-3.5" /> Marketing Systems for Contractors
+              </div>
+              <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
+                Website Design &
+                <br />
+                Marketing Systems
+                <br />
+                <span className="text-primary">For Contractors</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
+                You're great at your trade. We're great at getting you leads.
+                Done-for-you websites, automations, and follow-up systems — so you can stay on the job site and still win new business.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                >
+                  Book A Call <ArrowRight className="h-5 w-5" />
+                </Link>
+                <span className="text-sm text-background/50">Free 20-min strategy call. No pitch.</span>
+              </div>
+              <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
+                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
+                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No agency BS</span>
+                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Results in days, not months</span>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -100,57 +98,62 @@ const Index = () => {
       {/* PROBLEM SECTION */}
       <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl text-center">
-          <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Problem</span>
-          <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-            You're Great at Your Trade.
-            <br />
-            <span className="text-primary">But Leads Keep Slipping
-            <br className="hidden sm:block" /> Through the Cracks.</span>
-          </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            You're not losing jobs because of bad work. You're losing them because nobody picks up when you're elbow-deep in a crawlspace. Your website was built by your nephew in 2017. Your Google reviews are stuck at 8. And your "marketing strategy" is hoping the phone rings.
-          </p>
-          <p className="mt-4 text-lg font-semibold text-foreground">
-            Sound familiar? Yeah. That's why we built Varga Flow.
-          </p>
+          <ScrollReveal>
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Problem</span>
+            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+              You're Great at Your Trade.
+              <br />
+              <span className="text-primary">But Leads Keep Slipping
+              <br className="hidden sm:block" /> Through the Cracks.</span>
+            </h2>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              You're not losing jobs because of bad work. You're losing them because nobody picks up when you're elbow-deep in a crawlspace. Your website was built by your nephew in 2017. Your Google reviews are stuck at 8. And your "marketing strategy" is hoping the phone rings.
+            </p>
+            <p className="mt-4 text-lg font-semibold text-foreground">
+              Sound familiar? Yeah. That's why we built Varga Flow.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* SERVICES GRID */}
       <section className="bg-background py-20 lg:py-28">
         <div className="container">
-          <div className="text-center">
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Our Services</span>
-            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-              Everything You Need to
-              <br />
-              <span className="text-primary">Stop Losing Leads</span>
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Eight systems. One platform. Zero headaches. Each one designed to solve a specific problem contractors face every single day.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Our Services</span>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+                Everything You Need to
+                <br />
+                <span className="text-primary">Stop Losing Leads</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+                Eight systems. One platform. Zero headaches. Each one designed to solve a specific problem contractors face every single day.
+              </p>
+            </div>
+          </ScrollReveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((service, i) => {
               const Icon = SERVICE_ICONS[i];
               return (
-                <Link
-                  key={service.slug}
-                  to={`/services/${service.slug}`}
-                  className="group relative overflow-hidden rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
-                >
-                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
-                  <div className="relative">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-6 w-6 text-primary" />
+                <ScrollReveal key={service.slug} delay={i * 0.05}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="group relative block overflow-hidden rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
+                  >
+                    <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
+                    <div className="relative">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="mt-4 text-lg font-bold text-foreground transition-colors group-hover:text-primary">{service.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{SERVICE_DESCRIPTIONS[i]}</p>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-transform group-hover:translate-x-1">
+                        Learn more <ArrowRight className="h-4 w-4" />
+                      </span>
                     </div>
-                    <h3 className="mt-4 text-lg font-bold text-foreground transition-colors group-hover:text-primary">{service.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{SERVICE_DESCRIPTIONS[i]}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-transform group-hover:translate-x-1">
-                      Learn more <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
+                  </Link>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -163,71 +166,76 @@ const Index = () => {
       {/* HOW IT WORKS */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
-          <div className="text-center">
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Process</span>
-            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-              How It Works —{" "}
-              <span className="text-primary">Dead Simple</span>
-            </h2>
-          </div>
+          <ScrollReveal>
+            <div className="text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Process</span>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+                How It Works —{" "}
+                <span className="text-primary">Dead Simple</span>
+              </h2>
+            </div>
+          </ScrollReveal>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {STEPS.map((step) => {
+            {STEPS.map((step, i) => {
               const StepIcon = step.icon;
               return (
-                <div key={step.num} className="relative text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
-                    <StepIcon className="h-7 w-7 text-primary" />
+                <ScrollReveal key={step.num} delay={i * 0.1}>
+                  <div className="relative text-center">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
+                      <StepIcon className="h-7 w-7 text-primary" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-primary/50">Step {step.num}</span>
+                    <h3 className="mt-2 text-xl font-bold text-foreground">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-primary/50">Step {step.num}</span>
-                  <h3 className="mt-2 text-xl font-bold text-foreground">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
         </div>
       </section>
 
-
       {/* FINAL CTA — dark section */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
         <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
-            <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-              Ready to Stop Losing Leads
-              <br />
-              <span className="text-primary">and Start Growing?</span>
-            </h2>
-            <p className="mt-6 text-lg text-background/60">
-              Book a call. 20 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
-            </p>
-            <ul className="mt-8 flex flex-wrap justify-center gap-6">
-              {[
-                { icon: CheckCircle, text: "No contracts or commitments" },
-                { icon: Clock, text: "See results in days, not months" },
-                { icon: ShieldCheck, text: "Built specifically for contractors" },
-              ].map((item) => (
-                <li key={item.text} className="flex items-center gap-2 text-background">
-                  <item.icon className="h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm font-medium">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contact"
-              className="mt-10 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
-            >
-              Book A Call <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
+          <ScrollReveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
+              <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
+                Ready to Stop Losing Leads
+                <br />
+                <span className="text-primary">and Start Growing?</span>
+              </h2>
+              <p className="mt-6 text-lg text-background/60">
+                Book a call. 20 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
+              </p>
+              <ul className="mt-8 flex flex-wrap justify-center gap-6">
+                {[
+                  { icon: CheckCircle, text: "No contracts or commitments" },
+                  { icon: Clock, text: "See results in days, not months" },
+                  { icon: ShieldCheck, text: "Built specifically for contractors" },
+                ].map((item) => (
+                  <li key={item.text} className="flex items-center gap-2 text-background">
+                    <item.icon className="h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-sm font-medium">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                className="mt-10 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+              >
+                Book A Call <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Bottom padding for mobile sticky CTA */}
-      <div className="h-16 lg:hidden" />
+      <div className="h-4 lg:hidden" />
     </>
   );
 };
