@@ -81,11 +81,11 @@ const Contact = () => {
                 Choose a slot below. You'll get a confirmation email with everything you need.
               </p>
             </div>
-            <div style={{ width: "100%", margin: "0 auto" }}>
+            <div className="w-full overflow-hidden">
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1"
-                style={{ minWidth: "900px", height: "700px" }}
+                style={{ minWidth: "320px", width: "100%", height: "700px" }}
               />
             </div>
           </div>
