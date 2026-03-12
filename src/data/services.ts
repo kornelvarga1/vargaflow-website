@@ -20,11 +20,6 @@ export const serviceData: Record<string, ServicePageData> = {
     subheadline: "Your website should be your hardest-working employee. If it's not generating leads while you sleep, it's just an expensive business card collecting digital dust.",
     metaDescription: "Get a contractor website that actually generates leads. Built in days, not months. No templates. No fluff. Just a website that works as hard as you do.",
     icon: Globe,
-    stats: [
-      { value: "< 2s", label: "Load Time" },
-      { value: "5–7 Days", label: "Build Time" },
-      { value: "3x", label: "More Leads" },
-    ],
     problemHeadline: "Your Current Website Is",
     problemAccent: "Costing You Jobs.",
     problemText: [
