@@ -38,7 +38,7 @@ const Navbar = () => {
           className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:hidden"
           onClick={() => setMobileOpen(false)}
         >
-          Book A Call
+          Free Call
         </Link>
 
         {/* Desktop Nav */}
@@ -134,7 +134,7 @@ const Navbar = () => {
           to="/contact"
           className="hidden rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
         >
-          Book A Call
+          Get a Free Strategy Call
         </Link>
 
         {/* Mobile Toggle */}
@@ -209,7 +209,7 @@ const Navbar = () => {
               className="mt-6 block rounded-md bg-primary py-3.5 text-center text-lg font-bold text-primary-foreground hover:bg-gold-dark"
               onClick={() => setMobileOpen(false)}
             >
-              Book A Call
+              Get a Free Strategy Call
             </Link>
           </nav>
         </div>
