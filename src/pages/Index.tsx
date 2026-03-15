@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, TrendingUp, Clock
+  ArrowRight, CheckCircle, ShieldCheck, TrendingUp, Clock, Timer, Wrench, Users
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
@@ -11,28 +11,47 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
 
+// Lead with the pain each service solves, not just what it does
 const SERVICE_DESCRIPTIONS = [
-  "A lead-generating website that works while you're on the job site.",
-  "Never lose a lead to a missed call again. Automatic text-back in seconds.",
-  "Texts, emails, DMs, voicemails — all in one place. No more juggling apps.",
-  "Keep your personal number personal. One business line, every device.",
-  "Actually show up when homeowners search for your trade on Google.",
-  "Get more 5-star reviews automatically. Stop bad ones before they go public.",
-  "Stay top of mind with past customers. One click, done.",
-  "Leads go cold fast. We follow up for you — by text, automatically.",
+  "Stop losing jobs to contractors with a better-looking site. A fast, professional website that turns visitors into calls.",
+  "Every missed call is a job you're giving to a competitor. We text leads back in seconds — automatically.",
+  "Stop juggling texts, emails, DMs, and voicemails across five apps. One inbox. Everything in one place.",
+  "Keep your personal number private. One business line that rings on every device you already own.",
+  "Your best customers are searching Google right now. We make sure they find you — not the guy down the street.",
+  "8 reviews is invisible. We automate the ask so reviews pile up without you lifting a finger.",
+  "Your past customers are your easiest sales. One click sends a campaign to your whole list.",
+  "Most leads go cold in under an hour. Our follow-up system reaches out automatically so you never lose one.",
 ];
 
 const STEPS = [
-  { num: "01", title: "Book A Call", desc: "Tell us about your business. 20 minutes. No sales pitch. Just figuring out if we can help.", icon: Phone },
-  { num: "02", title: "We Build It", desc: "We set up your website, automations, and follow-up systems. You stay on the job site.", icon: ShieldCheck },
-  { num: "03", title: "You Get Leads", desc: "Your phone starts ringing. Your reviews start growing. Your calendar fills up.", icon: TrendingUp },
+  { num: "01", title: "Book a Call", desc: "20 minutes. Tell us about your business. No pitch, no pressure — just figuring out where you're losing leads.", icon: Phone },
+  { num: "02", title: "We Build It", desc: "We set up your website, automations, and follow-up systems in days. You stay on the job site.", icon: ShieldCheck },
+  { num: "03", title: "Leads Roll In", desc: "Your phone rings. Your reviews grow. Your calendar fills. You focus on the work you're good at.", icon: TrendingUp },
+];
+
+const WHY_US = [
+  {
+    icon: Timer,
+    title: "Live in Days, Not Months",
+    desc: "Most agencies take 6–12 weeks to deliver anything. We have your systems running in days. Because leads don't wait.",
+  },
+  {
+    icon: Wrench,
+    title: "Contractors Only",
+    desc: "We don't work with dentists, restaurants, or anyone else. Only trades. That focus is what makes our systems actually work.",
+  },
+  {
+    icon: Users,
+    title: "No Contracts. Ever.",
+    desc: "Month-to-month, always. No 12-month lock-ins, no cancellation fees. We earn your business every single month or you walk.",
+  },
 ];
 
 const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Varga Flow — Marketing Systems That Actually Work for Contractors</title>
+        <title>Varga Flow — More Leads for Contractors. Done For You.</title>
         <meta name="description" content="Done-for-you marketing systems for home service contractors. Websites, automations, lead generation, and review funnels — built so you can stay on the job site." />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -61,18 +80,18 @@ const Index = () => {
           <div className="max-w-3xl">
             <ScrollReveal>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                <Zap className="h-3.5 w-3.5" /> Marketing Systems for Contractors
+                <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
               </div>
               <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
-                Website Design &
+                More Leads.
                 <br />
-                Marketing Systems
+                More Jobs.
                 <br />
-                <span className="text-primary">For Contractors</span>
+                <span className="text-primary">Zero Extra Work.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
-                You're great at your trade. We're great at getting you leads.
-                Done-for-you websites, automations, and follow-up systems — so you can stay on the job site and still win new business.
+                We build the website, set up the automations, and handle the follow-up —
+                so your phone keeps ringing while you're out on the job site.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
@@ -81,14 +100,14 @@ const Index = () => {
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
                 >
-                  Book A Call <ArrowRight className="h-5 w-5" />
+                  Get a Free Strategy Call <ArrowRight className="h-5 w-5" />
                 </Link>
-                <span className="text-sm text-background/50">Free 20-min strategy call. No pitch.</span>
+                <span className="text-sm text-background/50">20 minutes. No pitch. No obligation.</span>
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
                 <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
-                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No agency BS</span>
-                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Results in days, not months</span>
+                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Live in days</span>
+                <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Built for trades only</span>
               </div>
             </ScrollReveal>
           </div>
@@ -99,18 +118,19 @@ const Index = () => {
       <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Problem</span>
             <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-              You're Great at Your Trade.
+              You're Not Losing Jobs
               <br />
-              <span className="text-primary">But Leads Keep Slipping
-              <br className="hidden sm:block" /> Through the Cracks.</span>
+              Because of Bad Work.
+              <br />
+              <span className="text-primary">You're Losing Them Before You Even Know About It.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              You're not losing jobs because of bad work. You're losing them because nobody picks up when you're elbow-deep in a crawlspace. Your website was built by your nephew in 2017. Your Google reviews are stuck at 8. And your "marketing strategy" is hoping the phone rings.
+              You missed a call while you were elbow-deep in a crawlspace. Your website was built by your nephew in 2017.
+              Your Google reviews are stuck at 8. Three leads came in last week — you followed up two days later and they'd already hired someone else.
             </p>
-            <p className="mt-4 text-lg font-semibold text-foreground">
-              Sound familiar? Yeah. That's why we built Varga Flow.
+            <p className="mt-6 text-lg font-semibold text-foreground">
+              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why we built Varga Flow.
             </p>
           </ScrollReveal>
         </div>
@@ -121,14 +141,14 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Our Services</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What We Build For You</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                Everything You Need to
+                Eight Systems.
                 <br />
-                <span className="text-primary">Stop Losing Leads</span>
+                <span className="text-primary">One Platform. Zero Headaches.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-                Eight systems. One platform. Zero headaches. Each one designed to solve a specific problem contractors face every single day.
+                Each one solves a specific problem that's costing you leads right now.
               </p>
             </div>
           </ScrollReveal>
@@ -160,19 +180,57 @@ const Index = () => {
         </div>
       </section>
 
+      {/* WHY VARGA FLOW */}
+      <section className="bg-secondary py-20 lg:py-28">
+        <div className="container">
+          <ScrollReveal>
+            <div className="text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Why Varga Flow</span>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+                Not Another Agency
+                <br />
+                <span className="text-primary">That Overpromises and Disappears</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-3">
+            {WHY_US.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <ScrollReveal key={item.title} delay={i * 0.1}>
+                  <div className="group relative overflow-hidden rounded-xl border border-border bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 h-full">
+                    <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
+                    <div className="relative">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+                        <Icon className="h-7 w-7 text-primary" />
+                      </div>
+                      <h3 className="mt-5 text-lg font-bold text-foreground">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* TRADES WE SERVE */}
       <TradesWeServe />
 
       {/* HOW IT WORKS */}
-      <section className="bg-secondary py-20 lg:py-28">
+      <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Process</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                How It Works —{" "}
-                <span className="text-primary">Dead Simple</span>
+                Three Steps.{" "}
+                <span className="text-primary">That's It.</span>
               </h2>
+              <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+                We keep it simple because you're busy enough.
+              </p>
             </div>
           </ScrollReveal>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -195,27 +253,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FINAL CTA — dark section */}
+      {/* FINAL CTA */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
         <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Let's Go</span>
               <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-                Ready to Stop Losing Leads
+                Your Competition Is Already
                 <br />
-                <span className="text-primary">and Start Growing?</span>
+                <span className="text-primary">Online and Getting Your Leads.</span>
               </h2>
               <p className="mt-6 text-lg text-background/60">
-                Book a call. 20 minutes. No pitch. We'll look at your current setup and tell you exactly what's costing you leads — and how to fix it.
+                Book a free call. 20 minutes. We'll look at your current setup and show you exactly where
+                you're losing leads — and how fast we can fix it.
               </p>
               <ul className="mt-8 flex flex-wrap justify-center gap-6">
                 {[
                   { icon: CheckCircle, text: "No contracts or commitments" },
-                  { icon: Clock, text: "See results in days, not months" },
-                  { icon: ShieldCheck, text: "Built specifically for contractors" },
+                  { icon: Clock, text: "Systems live in days" },
+                  { icon: ShieldCheck, text: "Built for contractors only" },
                 ].map((item) => (
                   <li key={item.text} className="flex items-center gap-2 text-background">
                     <item.icon className="h-5 w-5 shrink-0 text-primary" />
@@ -227,7 +285,7 @@ const Index = () => {
                 to="/contact"
                 className="mt-10 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
               >
-                Book A Call <ArrowRight className="h-5 w-5" />
+                Claim Your Free Strategy Call <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
           </ScrollReveal>
