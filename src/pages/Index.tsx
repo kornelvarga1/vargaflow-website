@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, TrendingUp, Clock, Timer, Wrench, Users
+  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
@@ -21,12 +21,6 @@ const SERVICE_DESCRIPTIONS = [
   "8 reviews is invisible. We automate the ask so reviews pile up without you lifting a finger.",
   "Your past customers are your easiest sales. One click sends a campaign to your whole list.",
   "Most leads go cold in under an hour. Our follow-up system reaches out automatically so you never lose one.",
-];
-
-const STEPS = [
-  { num: "01", title: "Book a Call", desc: "20 minutes. Tell us about your business. No pitch, no pressure — just figuring out where you're losing leads.", icon: Phone },
-  { num: "02", title: "We Build It", desc: "We set up your website, automations, and follow-up systems in days. You stay on the job site.", icon: ShieldCheck },
-  { num: "03", title: "Leads Roll In", desc: "Your phone rings. Your reviews grow. Your calendar fills. You focus on the work you're good at.", icon: TrendingUp },
 ];
 
 const WHY_US = [
@@ -233,22 +227,54 @@ const Index = () => {
               </p>
             </div>
           </ScrollReveal>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {STEPS.map((step, i) => {
-              const StepIcon = step.icon;
-              return (
-                <ScrollReveal key={step.num} delay={i * 0.1}>
-                  <div className="relative text-center">
-                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
-                      <StepIcon className="h-7 w-7 text-primary" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-primary/50">Step {step.num}</span>
-                    <h3 className="mt-2 text-xl font-bold text-foreground">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+
+          {/* Steps with connectors */}
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                num: "1",
+                title: "Strategy Call",
+                time: "20 min",
+                desc: "Tell us about your business. No pitch, no pressure — just figuring out exactly where you're losing leads and what to fix first.",
+              },
+              {
+                num: "2",
+                title: "We Build Everything",
+                time: "5–7 days",
+                desc: "Website, automations, review funnel, follow-up sequences — all set up and tested. You stay on the job site. We handle it all.",
+              },
+              {
+                num: "3",
+                title: "Launch & Go Live",
+                time: "20 min",
+                desc: "We walk you through everything, flip the switch, and your systems go live. From this point on, leads start coming in automatically.",
+              },
+            ].map((step, i) => (
+              <ScrollReveal key={step.num} delay={i * 0.1}>
+                <div className="relative text-center">
+
+                  {/* Dotted connector line — desktop only */}
+                  {i < 2 && (
+                    <div className="absolute left-[calc(50%+40px)] top-10 hidden w-[calc(100%-80px)] md:block"
+                      style={{ borderTop: "2px dashed", borderColor: "hsl(var(--primary) / 0.25)" }}
+                    />
+                  )}
+
+                  {/* Numbered circle */}
+                  <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/20">
+                    <span className="text-2xl font-extrabold text-primary-foreground">{step.num}</span>
                   </div>
-                </ScrollReveal>
-              );
-            })}
+
+                  {/* Time badge */}
+                  <div className="mt-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1">
+                    <span className="text-xs font-bold text-primary">{step.time}</span>
+                  </div>
+
+                  <h3 className="mt-3 text-xl font-bold text-foreground">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
