@@ -13,7 +13,7 @@ const Footer = () => {
               <img src={logo} alt="Varga Flow" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/60">
-              Done-for-you marketing systems for contractors and tradespeople. No fluff. Just systems that work.
+              Done-for-you marketing systems for contractors. Built lean, run personally, no contracts ever.
             </p>
           </div>
 
@@ -39,6 +39,7 @@ const Footer = () => {
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-sm text-background/60 hover:text-primary">About</Link></li>
+              <li><Link to="/pricing" className="text-sm text-background/60 hover:text-primary">Pricing</Link></li>
               <li><Link to="/contact" className="text-sm text-background/60 hover:text-primary">Contact</Link></li>
             </ul>
           </div>
@@ -49,12 +50,13 @@ const Footer = () => {
             <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-background/60 hover:text-primary">
               {SITE_EMAIL}
             </a>
-            <div className="mt-6">
+            <p className="mt-3 text-xs text-background/40">First clients get free setup.<br />Pay only if you're satisfied.</p>
+            <div className="mt-4">
               <Link
                 to="/contact"
                 className="inline-block rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
               >
-                Book A Call
+                Get a Free Strategy Call
               </Link>
             </div>
           </div>
