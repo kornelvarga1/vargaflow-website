@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Clock, MessageSquare, Shield } from "lucide-react";
+import { Clock, MessageSquare, Zap } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const Contact = () => {
@@ -17,10 +17,10 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Book A Call — Varga Flow</title>
+        <title>Book a Free Strategy Call — Varga Flow</title>
         <meta
           name="description"
-          content="Book a free 20-minute call with Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+          content="Book a free 20-minute call with Kornél at Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
         />
       </Helmet>
 
@@ -32,17 +32,13 @@ const Contact = () => {
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
-                Let's Talk
-              </span>
               <h1 className="text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
-                Ready to Get More
+                Let's Look at Your Business
                 <br />
-                <span className="text-primary">Leads &amp; Customers?</span>
+                <span className="text-primary">and Fix What's Costing You Leads.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                No pitch. No pressure. Just a 20-minute conversation about where
-                you're losing leads — and what we can do about it.
+                20 minutes with Kornél — not a salesperson, not an account manager. Just an honest look at where you're losing leads and what we can do about it. Free setup for first clients.
               </p>
             </div>
           </ScrollReveal>
@@ -51,9 +47,9 @@ const Contact = () => {
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-8 grid max-w-3xl grid-cols-3 gap-3 lg:mt-12 lg:gap-6">
               {[
-                { icon: Clock, label: "20 Min Call", sub: "Quick & focused" },
-                { icon: MessageSquare, label: "Straight Talk", sub: "No jargon or upsells" },
-                { icon: Shield, label: "Zero Obligation", sub: "No contracts" },
+                { icon: Clock, label: "20 Minutes", sub: "Focused, no fluff" },
+                { icon: MessageSquare, label: "Talk to Kornél", sub: "Direct, no middlemen" },
+                { icon: Zap, label: "Free Setup", sub: "Pay only if you're happy" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -77,21 +73,18 @@ const Contact = () => {
           <div className="mx-auto w-full">
             <ScrollReveal>
               <div className="mb-10 text-center">
-                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
-                  Schedule Now
-                </span>
                 <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
                   Pick a Time That <span className="text-primary">Works for You</span>
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                  Choose a slot below. You'll get a confirmation email with everything you need.
+                  On the call we'll look at your current setup, identify exactly where leads are slipping through, and walk you through what it would look like to fix it. No pressure to sign up.
                 </p>
               </div>
             </ScrollReveal>
             <div className="w-full overflow-hidden">
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1"
+                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1&primary_color=e8941a"
                 style={{ minWidth: "320px", width: "100%", height: "950px" }}
               />
             </div>
