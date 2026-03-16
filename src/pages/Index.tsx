@@ -142,8 +142,10 @@ const Index = () => {
               <span className="text-primary">You're Losing Them Before You Even Know About It.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              You missed a call while you were elbow-deep in a crawlspace. Your website was built by your nephew in 2017.
-              Your Google reviews are stuck at 8. Three leads came in last week — you followed up two days later and they'd already hired someone else.
+              You missed a call while you were elbow-deep in a crawlspace. Your website was built by your nephew in 2017 — no chat, no click-to-call, just a contact form nobody fills out. Your Google reviews are stuck at 8. Three leads came in last week and you followed up two days later. They'd already hired someone else.
+            </p>
+            <p className="mt-4 max-w-2xl mx-auto text-lg leading-relaxed text-muted-foreground">
+              Meanwhile you're paying Angi or Thumbtack for leads every month — and building absolutely nothing. No rankings. No reviews. No asset. Just a recurring bill.
             </p>
             <p className="mt-6 text-lg font-semibold text-foreground">
               None of that is your fault. You're a contractor, not a marketing agency. That's exactly why we built Varga Flow.
@@ -164,7 +166,7 @@ const Index = () => {
                 <span className="text-primary">One Platform. Zero Headaches.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-                Each one solves a specific problem that's costing you leads right now.
+                Some work the same day. Others compound over weeks and months. Together they replace paid lead sources with something you actually own.
               </p>
             </div>
           </ScrollReveal>
@@ -262,7 +264,7 @@ const Index = () => {
               {
                 num: "2",
                 title: "We Build Everything",
-                time: "7–10 days",
+                time: "5–7 days",
                 desc: "Website, automations, review funnel, follow-up sequences — all set up and tested. You stay on the job site. We handle it all.",
               },
               {
