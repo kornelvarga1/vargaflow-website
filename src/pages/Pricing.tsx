@@ -230,7 +230,7 @@ const Pricing = () => {
                 color: "bg-primary/40",
                 title: "Organic leads compound — system runs itself",
                 items: [
-                  "Ranking in the top 3 on Google Maps for your trade",
+                  "Climbing Google Maps rankings for your trade and city",
                   "Organic leads coming in that cost you nothing",
                   "Reviews and SEO compounding month over month",
                   "You stop paying Angi, Thumbtack, or Yelp for leads",
