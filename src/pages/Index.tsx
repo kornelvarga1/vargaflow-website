@@ -96,7 +96,10 @@ const Index = () => {
                 >
                   Get a Free Strategy Call <ArrowRight className="h-5 w-5" />
                 </Link>
-                <span className="text-sm text-background/50">20 minutes. No pitch. No obligation.</span>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-sm font-semibold text-background/80">First clients get a free setup.</span>
+                  <span className="text-xs text-background/50">Pay only if you love it. No obligation.</span>
+                </div>
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
                 <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> No contracts</span>
@@ -107,6 +110,25 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* FREE SETUP STRIP */}
+      <div className="bg-primary px-4 py-4">
+        <div className="container flex flex-col items-center justify-center gap-1 text-center sm:flex-row sm:gap-3">
+          <span className="text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
+            🎉 Limited Offer for First Clients
+          </span>
+          <span className="hidden text-primary-foreground/60 sm:inline">—</span>
+          <span className="text-sm text-primary-foreground/90">
+            We build your full website and set up all the systems. You pay nothing until you see it working — and only if you love it.
+          </span>
+          <Link
+            to="/contact"
+            className="mt-2 shrink-0 rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold text-primary-foreground transition-all hover:bg-primary-foreground/20 sm:mt-0"
+          >
+            Claim Free Setup →
+          </Link>
+        </div>
+      </div>
 
       {/* PROBLEM SECTION */}
       <section className="relative bg-secondary py-20 lg:py-28">
