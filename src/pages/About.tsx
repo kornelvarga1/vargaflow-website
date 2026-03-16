@@ -55,7 +55,7 @@ const About = () => {
                     So I built the alternative. Lean. Personal. No fluff. I set everything up myself, I'm available directly, and I don't charge you a cent until you've seen it work and you're happy with it.
                   </p>
                   <p className="font-semibold text-foreground">
-                    I'm not going to pretend I've been doing this for 10 years. What I can tell you is that the systems I build will do more for your business than any agency you've tried — automatically, every day, without you lifting a finger. And if they don't deliver, you don't pay. That's the deal.
+                    I'm not going to pretend I've been doing this for 10 years. What I can tell you is that the systems I build compound over time — more reviews, better rankings, more organic leads — until you're not paying Angi or Thumbtack a cent. Set it up once. Let it run. That's the deal.
                   </p>
                 </div>
               </div>
