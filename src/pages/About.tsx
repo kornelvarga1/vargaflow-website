@@ -33,7 +33,7 @@ const About = () => {
       </section>
 
       {/* Founder Story */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
@@ -55,7 +55,7 @@ const About = () => {
                     So I built the alternative. Lean. Personal. No fluff. I set everything up myself, I'm available directly, and I don't charge you a cent until you've seen it work and you're happy with it.
                   </p>
                   <p className="font-semibold text-foreground">
-                    I'm not going to pretend I've been doing this for 10 years. What I can tell you is that I'll outwork any agency you've tried, and if I don't deliver — you don't pay. That's the deal.
+                    I'm not going to pretend I've been doing this for 10 years. What I can tell you is that the systems I build will do more for your business than any agency you've tried — automatically, every day, without you lifting a finger. And if they don't deliver, you don't pay. That's the deal.
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const About = () => {
       </section>
 
       {/* Risk-Free Offer — the real trust builder */}
-      <section className="bg-secondary py-20 lg:py-28">
+      <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl rounded-2xl border-2 border-primary/30 bg-background p-10 text-center shadow-xl shadow-primary/5">
@@ -125,7 +125,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
