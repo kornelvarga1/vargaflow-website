@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     question: "How fast will I see results?",
-    answer: "The automation systems — missed call text-back, lead follow-up, inbox — go live on day one and work immediately. Your website launches within 7–10 days. Reviews start building in week 1. Google rankings improve over 1–3 months as reviews and SEO compound. It's not overnight, but it's a system that keeps growing — unlike paying Angi every month and building nothing.",
+    answer: "After 7–10 days of setup, everything goes live at once — your website, automations, review funnel, inbox, all of it. From day one, missed calls get answered, leads get followed up automatically, and review requests go out after every job. Google rankings and organic leads build over 1–3 months as reviews and SEO compound. It's not overnight, but unlike paying Angi every month, you're building something you actually own.",
   },
   {
     question: "Do I need to do anything once it's set up?",
