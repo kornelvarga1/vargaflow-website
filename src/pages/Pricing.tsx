@@ -205,42 +205,35 @@ const Pricing = () => {
               {
                 period: "Day 1",
                 color: "bg-primary",
-                title: "Systems go live",
+                title: "Everything goes live — after 7–10 days of setup",
                 items: [
+                  "Website live with chat widget, click-to-call, and booking option",
                   "Missed call text-back active — every missed call gets an instant reply",
                   "Lead follow-up running — new leads get texted within 60 seconds",
-                  "All-in-one inbox live — no more juggling apps",
+                  "Review requests going out automatically after each job",
+                  "All-in-one inbox live — texts, emails, DMs all in one place",
                   "Business phone line active — personal number stays private",
                 ],
               },
               {
-                period: "Week 1–2",
-                color: "bg-primary/80",
-                title: "Website & review funnel launch",
-                items: [
-                  "Your new website goes live with chat widget and click-to-call",
-                  "Review requests start going out automatically after each job",
-                  "First text conversations coming in through the site",
-                ],
-              },
-              {
                 period: "Month 1–3",
-                color: "bg-primary/60",
-                title: "Reviews & rankings build",
+                color: "bg-primary/70",
+                title: "Reviews & rankings start building",
                 items: [
                   "Google review count growing steadily every week",
                   "Google Business Profile gaining traction in local searches",
-                  "Past customers being re-engaged through campaigns",
+                  "Past customers being re-engaged through one-click campaigns",
                 ],
               },
               {
                 period: "Month 3+",
                 color: "bg-primary/40",
-                title: "Organic leads compound",
+                title: "Organic leads compound — system runs itself",
                 items: [
                   "Ranking in the top 3 on Google Maps for your trade",
                   "Organic leads coming in that cost you nothing",
-                  "Reviews and rankings compounding — system runs itself",
+                  "Reviews and SEO compounding month over month",
+                  "You stop paying Angi, Thumbtack, or Yelp for leads",
                 ],
               },
             ].map((phase, i) => (
@@ -250,7 +243,7 @@ const Pricing = () => {
                     <div className={`flex h-12 w-20 shrink-0 items-center justify-center rounded-lg ${phase.color} text-xs font-extrabold text-primary-foreground`}>
                       {phase.period}
                     </div>
-                    {i < 3 && <div className="w-0.5 flex-1 bg-border" />}
+                    {i < 2 && <div className="w-0.5 flex-1 bg-border" />}
                   </div>
                   <div className="flex-1 pb-2">
                     <h3 className="text-base font-bold text-foreground">{phase.title}</h3>
