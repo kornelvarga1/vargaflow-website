@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     question: "How fast will I see results?",
-    answer: "Your systems go live within days of your onboarding call. The missed call text-back and follow-up automation start working immediately. The website and SEO take a few weeks to build momentum — but you'll see activity fast.",
+    answer: "The automation systems — missed call text-back, lead follow-up, inbox — go live on day one and work immediately. Your website launches within 7–10 days. Reviews start building in week 1. Google rankings improve over 1–3 months as reviews and SEO compound. It's not overnight, but it's a system that keeps growing — unlike paying Angi every month and building nothing.",
   },
   {
     question: "Do I need to do anything once it's set up?",
@@ -182,6 +182,91 @@ const Pricing = () => {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 90-DAY TIMELINE */}
+      <section className="bg-background py-20 lg:py-28">
+        <div className="container">
+          <ScrollReveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What to Expect</span>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
+                Honest Timeline.
+                <span className="text-primary"> No Surprises.</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+                Some of it works the day we flip the switch. The rest compounds over time. Here's exactly what to expect.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="mx-auto mt-14 max-w-3xl space-y-4">
+            {[
+              {
+                period: "Day 1",
+                color: "bg-primary",
+                title: "Systems go live",
+                items: [
+                  "Missed call text-back active — every missed call gets an instant reply",
+                  "Lead follow-up running — new leads get texted within 60 seconds",
+                  "All-in-one inbox live — no more juggling apps",
+                  "Business phone line active — personal number stays private",
+                ],
+              },
+              {
+                period: "Week 1–2",
+                color: "bg-primary/80",
+                title: "Website & review funnel launch",
+                items: [
+                  "Your new website goes live with chat widget and click-to-call",
+                  "Review requests start going out automatically after each job",
+                  "First text conversations coming in through the site",
+                ],
+              },
+              {
+                period: "Month 1–3",
+                color: "bg-primary/60",
+                title: "Reviews & rankings build",
+                items: [
+                  "Google review count growing steadily every week",
+                  "Google Business Profile gaining traction in local searches",
+                  "Past customers being re-engaged through campaigns",
+                ],
+              },
+              {
+                period: "Month 3+",
+                color: "bg-primary/40",
+                title: "Organic leads compound",
+                items: [
+                  "Ranking in the top 3 on Google Maps for your trade",
+                  "Organic leads coming in that cost you nothing",
+                  "Reviews and rankings compounding — system runs itself",
+                ],
+              },
+            ].map((phase, i) => (
+              <ScrollReveal key={phase.period} delay={i * 0.08}>
+                <div className="flex gap-4 rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-lg">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className={`flex h-12 w-20 shrink-0 items-center justify-center rounded-lg ${phase.color} text-xs font-extrabold text-primary-foreground`}>
+                      {phase.period}
+                    </div>
+                    {i < 3 && <div className="w-0.5 flex-1 bg-border" />}
+                  </div>
+                  <div className="flex-1 pb-2">
+                    <h3 className="text-base font-bold text-foreground">{phase.title}</h3>
+                    <ul className="mt-3 space-y-2">
+                      {phase.items.map((item, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary/60" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
