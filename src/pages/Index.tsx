@@ -264,7 +264,7 @@ const Index = () => {
               {
                 num: "2",
                 title: "We Build Everything",
-                time: "5–7 days",
+                time: "7–10 days",
                 desc: "Website, automations, review funnel, follow-up sequences — all set up and tested. You stay on the job site. We handle it all.",
               },
               {
