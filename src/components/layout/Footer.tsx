@@ -62,8 +62,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-background/20 pt-6 text-center text-sm text-background/50">
-          © {new Date().getFullYear()} Varga Flow. All rights reserved.
+        <div className="mt-12 border-t border-background/20 pt-6 flex flex-col items-center gap-2 text-center text-sm text-background/50 sm:flex-row sm:justify-between">
+          <span>© {new Date().getFullYear()} Varga Flow. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

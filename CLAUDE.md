@@ -59,3 +59,10 @@ Store in `.env` as `VITE_SUPABASE_ANON_KEY` — never hardcode in source files.
 
 ### Brand Colors
 - Navy, Gold, Charcoal — defined in tailwind.config.ts
+
+## Business Context
+VargaFlow is a done-for-you marketing system for home service contractors.
+Founder: Kornél Varga (22, solo operator).
+Target customer: Roofers, plumbers, HVAC, electricians and other trades.
+Positioning: Personal, no contracts, free setup for first clients, honest about timeline.
+Tone: Direct, contractor-native, no agency BS.

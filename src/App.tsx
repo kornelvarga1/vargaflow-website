@@ -14,6 +14,8 @@ import Pricing from "./pages/Pricing";
 import Trades from "./pages/Trades";
 import NotFound from "./pages/NotFound";
 import OnboardingForm from "./pages/OnboardingForm";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ const App = () => (
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/trades" element={<Trades />} />
               <Route path="/services/:slug" element={<ServicePage />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Route>
