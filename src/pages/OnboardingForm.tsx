@@ -323,7 +323,7 @@ const OnboardingForm = () => {
               <label className={labelClass}>Your Instagram page. Control copy the link into the box below</label>
               <input
                 type="text"
-                placeholder="Example: https://www.instagram.com/stonesystems.io/"
+                placeholder="Example: https://www.instagram.com/vargaflow.com/"
                 value={formData.instagram}
                 onChange={set("instagram")}
                 className={inputClass}
@@ -335,7 +335,7 @@ const OnboardingForm = () => {
               <label className={labelClass}>Your Facebook Page. Control copy the link into the box below</label>
               <input
                 type="text"
-                placeholder="Example: www.facebook.com/stonesystems.io"
+                placeholder="Example: www.facebook.com/vargaflow"
                 value={formData.facebook}
                 onChange={set("facebook")}
                 className={inputClass}
