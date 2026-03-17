@@ -4,7 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Layout from "@/components/layout/Layout";
+import { LayoutRoute } from "@/components/layout/Layout";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -13,6 +13,7 @@ import ServicePage from "./pages/ServicePage";
 import Pricing from "./pages/Pricing";
 import Trades from "./pages/Trades";
 import NotFound from "./pages/NotFound";
+import OnboardingForm from "./pages/OnboardingForm";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +24,11 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Layout>
-            <Routes>
+          <Routes>
+            {/* Standalone pages — no nav/footer */}
+            <Route path="/onboarding-form" element={<OnboardingForm />} />
+            {/* All other pages use the standard Layout */}
+            <Route element={<LayoutRoute />}>
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
@@ -34,8 +38,8 @@ const App = () => (
               <Route path="/services/:slug" element={<ServicePage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
+            </Route>
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
