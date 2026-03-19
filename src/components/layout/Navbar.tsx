@@ -129,13 +129,23 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        {/* Desktop CTA */}
-        <Link
-          to="/contact"
-          className="hidden rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:inline-block"
-        >
-          Get a Free Strategy Call
-        </Link>
+        {/* Desktop right actions */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="https://app.vargaflow.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md border border-border px-4 py-2.5 text-base font-semibold text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
+          >
+            Log in
+          </a>
+          <Link
+            to="/contact"
+            className="rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
+          >
+            Get a Free Strategy Call
+          </Link>
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -204,9 +214,18 @@ const Navbar = () => {
               About
             </Link>
 
+            <a
+              href="https://app.vargaflow.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 block rounded-md border border-border py-3.5 text-center text-lg font-semibold text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
+              onClick={() => setMobileOpen(false)}
+            >
+              Log in
+            </a>
             <Link
               to="/contact"
-              className="mt-6 block rounded-md bg-primary py-3.5 text-center text-lg font-bold text-primary-foreground hover:bg-gold-dark"
+              className="mt-3 block rounded-md bg-primary py-3.5 text-center text-lg font-bold text-primary-foreground hover:bg-gold-dark"
               onClick={() => setMobileOpen(false)}
             >
               Get a Free Strategy Call
