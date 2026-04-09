@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ParallaxBg from "@/components/shared/ParallaxBg";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
   ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users
@@ -43,13 +43,6 @@ const WHY_US = [
 ];
 
 const Index = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
@@ -70,11 +63,7 @@ const Index = () => {
 
       {/* HERO — dark section for impact */}
       <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[700px]">
-        <div
-          className="absolute inset-x-0 -top-[30%] h-[160%] bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})`, transform: `translateY(${scrollY * 0.3}px)` }}
-          aria-hidden="true"
-        />
+        <ParallaxBg imageUrl={heroBg} />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/80 lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
