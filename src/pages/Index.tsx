@@ -54,7 +54,7 @@ const VideoFrame = ({ src }: { src: string }) => {
   };
 
   return (
-    <div className="relative w-full max-w-[240px] mx-auto aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_50px_rgba(0,0,0,0.5)]">
+    <div className="relative w-full max-w-[240px] mx-auto aspect-[9/19.5] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_50px_rgba(0,0,0,0.5)]">
       <video
         ref={videoRef}
         src={src}

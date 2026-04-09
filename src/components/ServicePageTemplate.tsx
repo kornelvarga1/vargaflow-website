@@ -1,6 +1,7 @@
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, CheckCircle, type LucideIcon } from "lucide-react";
+import { ArrowRight, CheckCircle, Play, type LucideIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -37,7 +38,47 @@ export interface ServicePageData {
   stats?: ServiceStat[];
   faqs: ServiceFAQ[];
   icon?: LucideIcon;
+  demoVideo?: string;
 }
+
+const ServiceDemoVideo = ({ src }: { src: string }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const onTimeUpdate = () => {
+    const v = videoRef.current;
+    if (v && v.duration) setProgress(v.currentTime / v.duration);
+  };
+
+  return (
+    <div className="relative w-[180px] aspect-[9/19.5] overflow-hidden rounded-2xl border border-border bg-secondary shadow-xl">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        onCanPlay={() => setLoaded(true)}
+        onTimeUpdate={onTimeUpdate}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
+            <Play className="h-5 w-5 text-primary" fill="currentColor" />
+          </div>
+        </div>
+      )}
+      {loaded && (
+        <div className="absolute bottom-0 inset-x-0 h-0.5 bg-foreground/10">
+          <div className="h-full bg-primary transition-none" style={{ width: `${progress * 100}%` }} />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
   const faqSchema = {
@@ -102,7 +143,11 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                   <span className="text-sm text-muted-foreground">Free 20-min call. No obligation.</span>
                 </div>
               </div>
-              {HeroIcon && (
+              {data.demoVideo ? (
+                <div className="hidden lg:block">
+                  <ServiceDemoVideo src={data.demoVideo} />
+                </div>
+              ) : HeroIcon ? (
                 <div className="hidden lg:flex">
                   <div className="relative">
                     <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/[0.02] blur-xl" />
@@ -111,7 +156,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                     </div>
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
           </ScrollReveal>
         </div>

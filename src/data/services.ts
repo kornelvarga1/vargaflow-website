@@ -15,6 +15,7 @@ export const serviceData: Record<string, ServicePageData> = {
   "functional-website": {
     slug: "functional-website",
     title: "Functional Website",
+    demoVideo: "/demos/website-mobile.mp4",
     headline: "Your Website Should Turn",
     headlineAccent: "Visitors Into Conversations.",
     subheadline: "Most contractor websites lose the visitor the moment they land. No click-to-call. No chat. No way to reach you except a contact form nobody fills out. We fix that.",
@@ -48,6 +49,7 @@ export const serviceData: Record<string, ServicePageData> = {
   "missed-call-text-back": {
     slug: "missed-call-text-back",
     title: "Missed Call Text Back",
+    demoVideo: "/demos/missed-call.mp4",
     headline: "Every Missed Call Is a Job",
     headlineAccent: "Going to Your Competitor.",
     subheadline: "You're on a roof. Under a sink. Elbow-deep in a panel. You can't answer every call — but your competition can, because they have this system.",
@@ -176,6 +178,7 @@ export const serviceData: Record<string, ServicePageData> = {
   "review-funnel": {
     slug: "review-funnel",
     title: "5-Star Magic Review Funnel",
+    demoVideo: "/demos/review-funnel.mp4",
     headline: "More 5-Star Reviews.",
     headlineAccent: "Bad Ones Never See the Light of Day.",
     subheadline: "The contractor with the most reviews wins — even if his work isn't better than yours. We automate the whole process so you never have to awkwardly ask again.",
@@ -208,6 +211,7 @@ export const serviceData: Record<string, ServicePageData> = {
   "one-click-campaigns": {
     slug: "one-click-campaigns",
     title: "One-Click Marketing Campaigns",
+    demoVideo: "/demos/campaign.mp4",
     headline: "Your Best Leads Already Know You.",
     headlineAccent: "You're Just Not Following Up.",
     subheadline: "Past customers are 5x more likely to hire you again — but only if you stay in front of them. One click and your campaign goes out to your entire list.",
