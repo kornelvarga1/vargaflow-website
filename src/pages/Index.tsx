@@ -1,8 +1,9 @@
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import ParallaxBg from "@/components/shared/ParallaxBg";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users
+  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, Play
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
@@ -41,6 +42,58 @@ const WHY_US = [
     desc: "Month-to-month, always. No 12-month lock-ins, no cancellation fees. We earn your business every single month or you walk.",
   },
 ];
+
+const DemoCard = ({ src, label, desc, delay }: { src: string; label: string; desc: string; delay: number }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const onTimeUpdate = () => {
+    const v = videoRef.current;
+    if (v && v.duration) setProgress(v.currentTime / v.duration);
+  };
+
+  return (
+    <ScrollReveal delay={delay}>
+      <div className="group flex flex-col gap-4">
+        <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_40px_rgba(0,0,0,0.4)]">
+          <video
+            ref={videoRef}
+            src={src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onCanPlay={() => setLoaded(true)}
+            onTimeUpdate={onTimeUpdate}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {!loaded && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
+                <Play className="h-6 w-6 text-primary" fill="currentColor" />
+              </div>
+              <span className="text-xs text-white/30">{src.split("/").pop()}</span>
+            </div>
+          )}
+          {/* Progress bar */}
+          {loaded && (
+            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-white/10">
+              <div
+                className="h-full bg-primary transition-none"
+                style={{ width: `${progress * 100}%` }}
+              />
+            </div>
+          )}
+        </div>
+        <div>
+          <p className="font-bold text-background">{label}</p>
+          <p className="mt-1 text-sm leading-relaxed text-background/50">{desc}</p>
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+};
 
 const Index = () => {
 
@@ -192,6 +245,57 @@ const Index = () => {
                 </ScrollReveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* SEE IT IN ACTION */}
+      <section className="bg-foreground py-20 lg:py-28">
+        <div className="container">
+          <ScrollReveal>
+            <div className="text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">See It In Action</span>
+              <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
+                This Is What Your
+                <br />
+                <span className="text-primary">Phone Looks Like After We Set Up.</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-background/60">
+                No fluff. Just the systems running — leads coming in, reviews going out, follow-ups firing automatically.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              {
+                label: "Missed Call Text Back",
+                desc: "Lead calls, you can't answer. They get a text back in seconds — automatically.",
+                src: "/demos/missed-call.mp4",
+              },
+              {
+                label: "5-Star Magic Review Funnel",
+                desc: "Job's done. Customer gets a text, taps once, and lands straight on your Google review page.",
+                src: "/demos/review-funnel.mp4",
+              },
+              {
+                label: "Functional Website",
+                desc: "Fast, professional, built to convert. Looks better than 95% of contractors in your area.",
+                src: "/demos/website-mobile.mp4",
+              },
+              {
+                label: "One-Click Marketing Campaigns",
+                desc: "Re-engage your entire customer list with one click. Jobs booked from people who already trust you.",
+                src: "/demos/campaign.mp4",
+              },
+              {
+                label: "Website Chat Widget",
+                desc: "Visitor lands on your site, asks a question. Gets a reply instantly — even at 2am.",
+                src: "/demos/chat-widget.mp4",
+              },
+            ].map((demo, i) => (
+              <DemoCard key={demo.label} {...demo} delay={i * 0.1} />
+            ))}
           </div>
         </div>
       </section>
