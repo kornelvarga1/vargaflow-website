@@ -43,7 +43,7 @@ const WHY_US = [
   },
 ];
 
-const DemoCard = ({ src, label, desc, delay }: { src: string; label: string; desc: string; delay: number }) => {
+const VideoFrame = ({ src }: { src: string }) => {
   const [loaded, setLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -54,44 +54,32 @@ const DemoCard = ({ src, label, desc, delay }: { src: string; label: string; des
   };
 
   return (
-    <ScrollReveal delay={delay}>
-      <div className="group flex flex-col gap-4">
-        <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_40px_rgba(0,0,0,0.4)]">
-          <video
-            ref={videoRef}
-            src={src}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onCanPlay={() => setLoaded(true)}
-            onTimeUpdate={onTimeUpdate}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          {!loaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
-                <Play className="h-6 w-6 text-primary" fill="currentColor" />
-              </div>
-              <span className="text-xs text-white/30">{src.split("/").pop()}</span>
-            </div>
-          )}
-          {/* Progress bar */}
-          {loaded && (
-            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-white/10">
-              <div
-                className="h-full bg-primary transition-none"
-                style={{ width: `${progress * 100}%` }}
-              />
-            </div>
-          )}
+    <div className="relative w-full max-w-[240px] mx-auto aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_50px_rgba(0,0,0,0.5)]">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        onCanPlay={() => setLoaded(true)}
+        onTimeUpdate={onTimeUpdate}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {!loaded && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
+            <Play className="h-6 w-6 text-primary" fill="currentColor" />
+          </div>
+          <span className="text-xs text-white/30">{src.split("/").pop()}</span>
         </div>
-        <div>
-          <p className="font-bold text-background">{label}</p>
-          <p className="mt-1 text-sm leading-relaxed text-background/50">{desc}</p>
+      )}
+      {loaded && (
+        <div className="absolute bottom-0 inset-x-0 h-0.5 bg-white/10">
+          <div className="h-full bg-primary transition-none" style={{ width: `${progress * 100}%` }} />
         </div>
-      </div>
-    </ScrollReveal>
+      )}
+    </div>
   );
 };
 
@@ -251,7 +239,7 @@ const Index = () => {
 
       {/* SEE IT IN ACTION */}
       <section className="bg-foreground py-20 lg:py-28">
-        <div className="container">
+        <div className="container max-w-5xl">
           <ScrollReveal>
             <div className="text-center">
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">See It In Action</span>
@@ -266,35 +254,46 @@ const Index = () => {
             </div>
           </ScrollReveal>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-16 flex flex-col gap-20 lg:gap-24">
             {[
               {
                 label: "Missed Call Text Back",
-                desc: "Lead calls, you can't answer. They get a text back in seconds — automatically.",
+                desc: "A lead calls while you're on the job. You can't pick up. Within seconds they get a text — automatically. Most of them reply. None of them call your competitor.",
                 src: "/demos/missed-call.mp4",
               },
               {
                 label: "5-Star Magic Review Funnel",
-                desc: "Job's done. Customer gets a text, taps once, and lands straight on your Google review page.",
+                desc: "Job's done, customer's happy. They get a text asking for a review. One tap and they're on your Google page leaving 5 stars. No chasing, no awkward asks — it just happens.",
                 src: "/demos/review-funnel.mp4",
               },
               {
                 label: "Functional Website",
-                desc: "Fast, professional, built to convert. Looks better than 95% of contractors in your area.",
+                desc: "Fast, professional, built for one thing: turning visitors into calls. Click-to-call, instant quote forms, trust signals — everything a contractor site needs and nothing it doesn't.",
                 src: "/demos/website-mobile.mp4",
               },
               {
                 label: "One-Click Marketing Campaigns",
-                desc: "Re-engage your entire customer list with one click. Jobs booked from people who already trust you.",
+                desc: "Your past customers are your easiest sales. Slow week? One click sends a campaign to your whole list. Jobs come back from people who already trust you — no ad spend needed.",
                 src: "/demos/campaign.mp4",
               },
               {
                 label: "Website Chat Widget",
-                desc: "Visitor lands on your site, asks a question. Gets a reply instantly — even at 2am.",
+                desc: "Visitor lands on your site at 10pm, asks about a quote. They get a reply instantly — even when you're asleep. By morning you have a warm lead waiting in your inbox.",
                 src: "/demos/chat-widget.mp4",
               },
             ].map((demo, i) => (
-              <DemoCard key={demo.label} {...demo} delay={i * 0.1} />
+              <ScrollReveal key={demo.label} delay={0.1}>
+                <div className={`flex flex-col items-center gap-10 lg:gap-16 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                  <div className="w-full max-w-[220px] shrink-0 lg:max-w-[200px]">
+                    <VideoFrame src={demo.src} />
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">Feature 0{i + 1}</p>
+                    <h3 className="mt-3 text-2xl font-extrabold text-background lg:text-3xl">{demo.label}</h3>
+                    <p className="mt-4 text-base leading-relaxed text-background/60 lg:text-lg">{demo.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
