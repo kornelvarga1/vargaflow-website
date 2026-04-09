@@ -4,7 +4,7 @@ const Terms = () => {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions — Varga Flow</title>
+        <title>Terms & Conditions — VargaFlow</title>
         <meta name="description" content="Terms and conditions for VargaFlow marketing services." />
       </Helmet>
 

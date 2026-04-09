@@ -6,8 +6,8 @@ import TradesWeServe from "@/components/TradesWeServe";
 const Trades = () => (
   <>
     <Helmet>
-      <title>Trades We Serve — Varga Flow</title>
-      <meta name="description" content="Varga Flow builds marketing systems for roofers, plumbers, HVAC techs, electricians, landscapers, painters, and every other home service trade." />
+      <title>Trades We Serve — VargaFlow</title>
+      <meta name="description" content="VargaFlow builds marketing systems for roofers, plumbers, HVAC techs, electricians, landscapers, painters, and every other home service trade." />
     </Helmet>
 
     {/* Hero */}
@@ -44,7 +44,6 @@ const Trades = () => (
       </div>
     </section>
 
-    <div className="h-16 lg:hidden" />
   </>
 );
 

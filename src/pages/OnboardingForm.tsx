@@ -114,7 +114,7 @@ const OnboardingForm = () => {
     return (
       <>
         <Helmet>
-          <title>Onboarding — Varga Flow</title>
+          <title>Onboarding — VargaFlow</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
         <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-16">
@@ -152,7 +152,7 @@ const OnboardingForm = () => {
   return (
     <>
       <Helmet>
-        <title>Client Onboarding — Varga Flow</title>
+        <title>Client Onboarding — VargaFlow</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -160,7 +160,7 @@ const OnboardingForm = () => {
         {/* Header */}
         <div className="border-b border-border bg-background px-4 py-5">
           <div className="mx-auto flex max-w-2xl items-center gap-3">
-            <img src={logo} alt="Varga Flow" className="h-8 w-auto" />
+            <img src={logo} alt="VargaFlow" className="h-8 w-auto" />
           </div>
         </div>
 

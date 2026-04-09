@@ -8,8 +8,8 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Varga Flow — Meet Kornél</title>
-        <meta name="description" content="Varga Flow is run by Kornél Varga — 22, systems-obsessed, and personally handles every client setup. Free setup, pay only if you're satisfied." />
+        <title>About VargaFlow — Meet Kornél</title>
+        <meta name="description" content="VargaFlow is run by Kornél Varga — 22, systems-obsessed, and personally handles every client setup. Free setup, pay only if you're satisfied." />
       </Helmet>
 
       {/* Hero */}
@@ -26,7 +26,7 @@ const About = () => {
               <span className="text-primary">Just Kornél. And He's Good.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Varga Flow is a one-person operation right now — and that's the point. You deal directly with the person who builds your systems, knows your setup inside out, and actually picks up the phone.
+              VargaFlow is a one-person operation right now — and that's the point. You deal directly with the person who builds your systems, knows your setup inside out, and actually picks up the phone.
             </p>
           </ScrollReveal>
         </div>
@@ -46,7 +46,7 @@ const About = () => {
                 </h2>
                 <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   <p>
-                    My name's Kornél. I'm 22, and I started Varga Flow because I became genuinely obsessed with one thing: building systems that do the manual work for you. Automated follow-ups, websites that convert, review funnels that run themselves — the kind of leverage that lets a small business compete like a big one.
+                    My name's Kornél. I'm 22, and I started VargaFlow because I became genuinely obsessed with one thing: building systems that do the manual work for you. Automated follow-ups, websites that convert, review funnels that run themselves — the kind of leverage that lets a small business compete like a big one.
                   </p>
                   <p>
                     Contractors kept coming up as the most underserved market for exactly these tools. Hardworking people, great at their craft, getting completely ignored by overpriced agencies that lock them into 12-month contracts and disappear after the sale.
@@ -65,14 +65,14 @@ const About = () => {
                   <div className="relative overflow-hidden rounded-xl">
                     <img
                       src={aboutFounder}
-                      alt="Kornél Varga - Founder of Varga Flow"
+                      alt="Kornél Varga - Founder of VargaFlow"
                       className="h-72 w-72 object-cover object-[center_65%] lg:h-96 lg:w-96"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-foreground/80 via-transparent to-transparent p-6">
                       <div>
                         <p className="text-lg font-extrabold text-background">Kornél Varga</p>
-                        <p className="text-sm text-primary">Founder, Varga Flow</p>
+                        <p className="text-sm text-primary">Founder, VargaFlow</p>
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,6 @@ const About = () => {
         </div>
       </section>
 
-      <div className="h-4 lg:hidden" />
     </>
   );
 };

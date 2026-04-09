@@ -98,7 +98,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
     "description": data.metaDescription,
     "provider": {
       "@type": "Organization",
-      "name": "Varga Flow",
+      "name": "VargaFlow",
       "url": "https://vargaflow.com",
     },
   };
@@ -108,7 +108,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
   return (
     <>
       <Helmet>
-        <title>{data.title} — Varga Flow</title>
+        <title>{data.title} — VargaFlow</title>
         <meta name="description" content={data.metaDescription} />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
@@ -298,7 +298,6 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         </div>
       </section>
 
-      <div className="h-4 lg:hidden" />
     </>
   );
 };

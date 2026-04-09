@@ -17,10 +17,10 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Book a Free Strategy Call — Varga Flow</title>
+        <title>Book a Free Strategy Call — VargaFlow</title>
         <meta
           name="description"
-          content="Book a free 20-minute call with Kornél at Varga Flow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+          content="Book a free 20-minute call with Kornél at VargaFlow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
         />
       </Helmet>
 
@@ -92,7 +92,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <div className="h-4 lg:hidden" />
     </>
   );
 };

@@ -88,13 +88,13 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Varga Flow — More Leads for Contractors. Done For You.</title>
+        <title>VargaFlow — More Leads for Contractors. Done For You.</title>
         <meta name="description" content="Done-for-you marketing systems for home service contractors. Websites, automations, lead generation, and review funnels — built so you can stay on the job site." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Varga Flow",
+            "name": "VargaFlow",
             "url": "https://vargaflow.com",
             "email": "kornel@vargaflow.com",
             "description": "Done-for-you marketing systems for home service contractors and tradespeople.",
@@ -187,7 +187,7 @@ const Index = () => {
               Meanwhile you're paying Angi or Thumbtack for leads every month — and building absolutely nothing. No rankings. No reviews. No asset. Just a recurring bill.
             </p>
             <p className="mt-6 text-lg font-semibold text-foreground">
-              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why we built Varga Flow.
+              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why we built VargaFlow.
             </p>
           </ScrollReveal>
         </div>
@@ -304,7 +304,7 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Why Varga Flow</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Why VargaFlow</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
                 Not Another Agency
                 <br />

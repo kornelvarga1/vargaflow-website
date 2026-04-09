@@ -4,7 +4,7 @@ const Privacy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy — Varga Flow</title>
+        <title>Privacy Policy — VargaFlow</title>
         <meta name="description" content="Privacy policy for VargaFlow marketing services." />
       </Helmet>
 

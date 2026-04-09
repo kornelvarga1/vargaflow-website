@@ -6,8 +6,8 @@ const Reviews = () => {
   return (
     <>
       <Helmet>
-        <title>Results — Varga Flow</title>
-        <meta name="description" content="Varga Flow is a new business built to help contractors win more leads. Be one of the first — and help shape what we build." />
+        <title>Results — VargaFlow</title>
+        <meta name="description" content="VargaFlow is a new business built to help contractors win more leads. Be one of the first — and help shape what we build." />
       </Helmet>
 
       <section className="relative overflow-hidden bg-background py-20 lg:py-40">
@@ -23,7 +23,7 @@ const Reviews = () => {
             <span className="text-primary">Being Written Right Now.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Varga Flow is a new business — and we're honest about that. We don't have a wall of testimonials yet.
+            VargaFlow is a new business — and we're honest about that. We don't have a wall of testimonials yet.
             What we do have is a lean, proven set of systems and a founder who will personally set up your account and make sure everything works.
           </p>
           <p className="mt-4 text-base font-semibold text-foreground">
@@ -39,7 +39,6 @@ const Reviews = () => {
         </div>
       </section>
 
-      <div className="h-16 lg:hidden" />
     </>
   );
 };

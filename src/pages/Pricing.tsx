@@ -57,7 +57,7 @@ const Pricing = () => {
   return (
     <>
       <Helmet>
-        <title>Pricing — Varga Flow</title>
+        <title>Pricing — VargaFlow</title>
         <meta
           name="description"
           content="One simple plan. $297/month or save with $247/month annual. Everything your contracting business needs to capture more leads and close more jobs."
@@ -317,7 +317,6 @@ const Pricing = () => {
         </div>
       </section>
 
-      <div className="h-16 lg:hidden" />
     </>
   );
 };
