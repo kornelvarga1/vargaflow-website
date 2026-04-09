@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import { SERVICES, SITE_EMAIL } from "@/config/constants";
-import logo from "@/assets/logo.png";
+import vfIcon from "@/assets/vf-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-foreground">
+    <footer className="border-t border-primary/40 bg-foreground">
       <div className="container py-12 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link to="/">
-              <img src={logo} alt="Varga Flow" className="h-10 w-auto brightness-0 invert" />
+            <Link to="/" className="flex items-center gap-2.5">
+              <img src={vfIcon} alt="VF" className="h-9 w-9 rounded-md" />
+              <span className="text-xl font-bold tracking-tight text-white/90">VargaFlow</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/60">
               Done-for-you marketing systems for contractors. Built lean, run personally, no contracts ever.

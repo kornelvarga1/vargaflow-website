@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png";
+import vfIcon from "@/assets/vf-icon.png";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
 const SERVICE_DESCRIPTIONS = [
@@ -20,16 +20,37 @@ const SERVICE_DESCRIPTIONS = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
+  // Pages whose hero is dark — transparent header needs white text on these
+  const hasDarkHero = isHomePage || location.pathname === "/trades";
+  const isTransparent = !scrolled;
+  // Transparent over a white bg — use dark text so it's readable
+  const needsDarkText = isTransparent && !hasDarkHero;
+
+  useEffect(() => {
+    setScrolled(window.scrollY > 0);
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isTransparent ? "" : "bg-foreground [box-shadow:0_1px_0_0_hsl(var(--primary)/0.4),0_4px_24px_rgba(0,0,0,0.3)]",
+      )}
+    >
       <div className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-          <img src={logo} alt="Varga Flow" className="h-6 w-auto lg:h-12" />
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
+          <img src={vfIcon} alt="VF" className="h-8 w-8 rounded-md lg:h-9 lg:w-9" />
+          <span className={`text-lg font-bold tracking-tight transition-colors duration-300 lg:text-xl ${needsDarkText ? "text-foreground" : "text-white/90"}`}>VargaFlow</span>
         </Link>
 
         {/* Mobile CTA */}
@@ -51,8 +72,10 @@ const Navbar = () => {
           >
             <button
               className={cn(
-                "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70",
+                "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors duration-300",
+                needsDarkText
+                  ? location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70 hover:text-primary"
+                  : location.pathname.startsWith("/services") ? "text-primary" : "text-white/80 hover:text-white",
               )}
             >
               Services <ChevronDown className={cn("h-4 w-4 transition-transform", servicesOpen && "rotate-180")} />
@@ -112,8 +135,8 @@ const Navbar = () => {
           <Link
             to="/pricing"
             className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-              isActive("/pricing") ? "text-primary" : "text-foreground/70",
+              "px-4 py-2 text-base font-semibold transition-colors duration-300",
+              isActive("/pricing") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
             )}
           >
             Pricing
@@ -121,8 +144,8 @@ const Navbar = () => {
           <Link
             to="/about"
             className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors hover:text-primary",
-              isActive("/about") ? "text-primary" : "text-foreground/70",
+              "px-4 py-2 text-base font-semibold transition-colors duration-300",
+              isActive("/about") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
             )}
           >
             About
@@ -135,7 +158,12 @@ const Navbar = () => {
             href="https://app.vargaflow.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border border-border px-4 py-2.5 text-base font-semibold text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
+            className={cn(
+              "rounded-md border px-4 py-2.5 text-base font-semibold transition-colors duration-300",
+              needsDarkText
+                ? "border-border text-foreground/70 hover:border-foreground/40 hover:text-foreground"
+                : "border-white/30 text-white/80 hover:border-white/60 hover:text-white",
+            )}
           >
             Log in
           </a>
@@ -149,7 +177,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-foreground"
+          className={cn("lg:hidden transition-colors duration-300", needsDarkText ? "text-foreground" : "text-white")}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -159,13 +187,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-background lg:hidden">
+        <div className="fixed inset-0 top-16 z-40 bg-foreground lg:hidden">
           <nav className="flex flex-col p-6">
             {/* Mobile Services */}
-            <div className="border-b border-border py-4">
+            <div className="border-b border-white/10 py-4">
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between text-xl font-semibold text-foreground/70"
+                className="flex w-full items-center justify-between text-xl font-semibold text-white/80"
               >
                 Services <ChevronDown className={cn("h-5 w-5 transition-transform", servicesOpen && "rotate-180")} />
               </button>
@@ -177,7 +205,7 @@ const Navbar = () => {
                       <Link
                         key={service.slug}
                         to={`/services/${service.slug}`}
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-foreground/60 hover:bg-muted hover:text-primary"
+                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-primary"
                         onClick={() => {
                           setMobileOpen(false);
                           setServicesOpen(false);
@@ -195,8 +223,8 @@ const Navbar = () => {
             <Link
               to="/pricing"
               className={cn(
-                "border-b border-border py-4 text-xl font-semibold transition-colors",
-                isActive("/pricing") ? "text-primary" : "text-foreground/70",
+                "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
+                isActive("/pricing") ? "text-primary" : "text-white/80",
               )}
               onClick={() => setMobileOpen(false)}
             >
@@ -206,8 +234,8 @@ const Navbar = () => {
             <Link
               to="/about"
               className={cn(
-                "border-b border-border py-4 text-xl font-semibold transition-colors",
-                isActive("/about") ? "text-primary" : "text-foreground/70",
+                "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
+                isActive("/about") ? "text-primary" : "text-white/80",
               )}
               onClick={() => setMobileOpen(false)}
             >
@@ -218,7 +246,7 @@ const Navbar = () => {
               href="https://app.vargaflow.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 block rounded-md border border-border py-3.5 text-center text-lg font-semibold text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
+              className="mt-6 block rounded-md border border-white/20 py-3.5 text-center text-lg font-semibold text-white/70 transition-colors hover:border-white/40 hover:text-white"
               onClick={() => setMobileOpen(false)}
             >
               Log in

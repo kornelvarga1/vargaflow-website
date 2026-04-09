@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
@@ -42,6 +43,14 @@ const WHY_US = [
 ];
 
 const Index = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -60,17 +69,17 @@ const Index = () => {
       </Helmet>
 
       {/* HERO — dark section for impact */}
-      <section className="relative min-h-[500px] overflow-hidden bg-foreground lg:min-h-[700px]">
+      <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[700px]">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-x-0 -top-[30%] h-[160%] bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})`, transform: `translateY(${scrollY * 0.3}px)` }}
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/80 lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="container relative z-10 flex flex-col justify-center py-16 lg:py-36">
+        <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-56 lg:pb-36">
           <div className="max-w-3xl">
             <ScrollReveal>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
