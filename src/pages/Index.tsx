@@ -340,8 +340,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Bottom padding for mobile sticky CTA */}
-      <div className="h-4 lg:hidden" />
     </>
   );
 };

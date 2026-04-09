@@ -26,7 +26,7 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/";
   // Pages whose hero is dark — transparent header needs white text on these
   const hasDarkHero = isHomePage || location.pathname === "/trades";
-  const isTransparent = !scrolled;
+  const isTransparent = !scrolled && !mobileOpen;
   // Transparent over a white bg — use dark text so it's readable
   const needsDarkText = isTransparent && !hasDarkHero;
 

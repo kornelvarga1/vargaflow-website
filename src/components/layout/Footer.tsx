@@ -5,7 +5,7 @@ import vfIcon from "@/assets/vf-icon.png";
 const Footer = () => {
   return (
     <footer className="border-t border-primary/40 bg-foreground">
-      <div className="container py-12 lg:py-16">
+      <div className="container py-12 pb-28 lg:py-16 lg:pb-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
