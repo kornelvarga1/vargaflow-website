@@ -144,7 +144,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 </div>
               </div>
               {data.demoVideo ? (
-                <div className="hidden lg:block">
+                <div className="flex justify-center lg:justify-end">
                   <ServiceDemoVideo src={data.demoVideo} />
                 </div>
               ) : HeroIcon ? (
