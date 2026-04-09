@@ -19,34 +19,39 @@ import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
+/** App shell without Router or HelmetProvider — used by both client and prerender */
+export const AppContent = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <Routes>
+        {/* Standalone pages — no nav/footer */}
+        <Route path="/onboarding-form" element={<OnboardingForm />} />
+        {/* All other pages use the standard Layout */}
+        <Route element={<LayoutRoute />}>
+          <Route path="/" element={<Index />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/trades" element={<Trades />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
 const App = () => (
   <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            {/* Standalone pages — no nav/footer */}
-            <Route path="/onboarding-form" element={<OnboardingForm />} />
-            {/* All other pages use the standard Layout */}
-            <Route element={<LayoutRoute />}>
-              <Route path="/" element={<Index />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/trades" element={<Trades />} />
-              <Route path="/services/:slug" element={<ServicePage />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   </HelmetProvider>
 );
 
