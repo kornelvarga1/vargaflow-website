@@ -41,7 +41,7 @@ export const serviceData: Record<string, ServicePageData> = {
       { question: "How long does it take to build?", answer: "Most sites are live within 7–10 business days. It depends on how quickly you can get me your info — the faster you do, the faster I go." },
       { question: "Do I need to provide content?", answer: "Nope. I write all the copy, pick the images, and handle the design. You just review and approve." },
       { question: "What if I already have a website?", answer: "I'll look at it honestly. If it can be fixed with the right conversion elements, I'll fix it. If it needs to be rebuilt, I'll rebuild it." },
-      { question: "How does the chat widget work exactly?", answer: "A visitor types into the chat on your website and it arrives as a text message on your phone. You reply by text and they see it in the chat. It starts as a website conversation and becomes an SMS thread — no app needed on their end." },
+      { question: "How does the chat widget work exactly?", answer: "A visitor types into the chat on your website — their question comes to your phone as a text, with their number attached. You reply by SMS, they get it on their phone, and the whole conversation continues as a regular text thread from there. It starts on your site and becomes a real SMS conversation — no app, no logins, no friction." },
       { question: "What does it cost?", answer: "It's included in the monthly plan. Book a call and I'll walk you through exactly what you get." },
     ],
   },

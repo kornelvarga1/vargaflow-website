@@ -249,9 +249,9 @@ const Index = () => {
             <div className="text-center">
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">See It In Action</span>
               <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-                This Is What Your
+                A Few Features
                 <br />
-                <span className="text-primary">Phone Looks Like After I Set Up.</span>
+                <span className="text-primary">In Action.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-background/60">
                 No fluff. Just the systems running — leads coming in, reviews going out, follow-ups firing automatically.
@@ -263,27 +263,27 @@ const Index = () => {
             {[
               {
                 label: "Missed Call Text Back",
-                desc: "A lead calls while you're on the job. You can't pick up. Within seconds they get a text — automatically. Most of them reply. None of them call your competitor.",
+                desc: "You're on the ladder. A lead calls. You can't pick up. Within seconds, the system texts them back — before they've even had a chance to call the next contractor. The conversation starts. You jump in when you're off the ladder.",
                 src: "/demos/missed-call.mp4",
               },
               {
                 label: "5-Star Magic Review Funnel",
-                desc: "Job's done, customer's happy. They get a text asking for a review. One tap and they're on your Google page leaving 5 stars. No chasing, no awkward asks — it just happens.",
+                desc: "Job's done. The system texts the customer asking for a review — and keeps politely asking until it lands, then stops the moment it does. Happy customers land on your Google page. Unhappy ones get routed to you privately, before anything goes public.",
                 src: "/demos/review-funnel.mp4",
               },
               {
                 label: "Functional Website",
-                desc: "Fast, professional, built for one thing: turning visitors into calls. Click-to-call, instant quote forms, trust signals — everything a contractor site needs and nothing it doesn't.",
+                desc: "Fast, mobile-first, built for one thing: turning visitors into calls. Click-to-call on every page, chat that routes to your phone, quote booking built in. Everything a contractor site needs, nothing it doesn't.",
                 src: "/demos/website-mobile.mp4",
               },
               {
                 label: "One-Click Marketing Campaigns",
-                desc: "Your past customers are your easiest sales. Slow week? One click sends a campaign to your whole list. Jobs come back from people who already trust you — no ad spend needed.",
+                desc: "Add each customer when the job's done — ten seconds of work. The system handles the rest for a full year: review asks, then referral nudges with discount offers across the months. Past jobs quietly become your next jobs.",
                 src: "/demos/campaign.mp4",
               },
               {
                 label: "Website Chat Widget",
-                desc: "Visitor lands on your site at 10pm, asks about a quote. They get a reply instantly — even when you're asleep. By morning you have a warm lead waiting in your inbox.",
+                desc: "A visitor types into the chat on your site — it comes straight to your phone as a text, with their number attached. You reply by SMS, they get it on their phone, and the conversation continues as a real text thread from there. No more dead contact forms nobody answers.",
                 src: "/demos/chat-widget.mp4",
               },
             ].map((demo, i) => (
