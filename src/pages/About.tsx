@@ -40,9 +40,9 @@ const About = () => {
               <div>
                 <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Founder</span>
                 <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                  22 Years Old.
+                  Systems-Obsessed.
                   <br />
-                  <span className="text-primary">Systems-Obsessed.</span>
+                  <span className="text-primary">Built for Trades.</span>
                 </h2>
                 <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   <p>
@@ -55,7 +55,7 @@ const About = () => {
                     So I built the alternative. Lean. Personal. No fluff. I set everything up myself, I'm available directly, and I don't charge you a cent until you've seen it work and you're happy with it.
                   </p>
                   <p className="font-semibold text-foreground">
-                    I'm not going to pretend I've been doing this for 10 years. What I can tell you is that the systems I build compound over time — more reviews, better rankings, more organic leads — until you're not paying Angi or Thumbtack a cent. Set it up once. Let it run. That's the deal.
+                    What I build compounds. More reviews, better rankings, more organic leads — until you're not paying Angi or Thumbtack a cent. Set it up once. Let it run. That's the deal.
                   </p>
                 </div>
               </div>
@@ -92,10 +92,10 @@ const About = () => {
                 <Zap className="h-8 w-8 text-primary" />
               </div>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-                The First-Client Guarantee
+                The Risk-Free Guarantee
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-                I'm looking for my first clients — and I want to earn them, not just sell them.
+                I want to earn clients, not just sell them.
               </p>
               <div className="mx-auto mt-8 max-w-lg space-y-4 text-left">
                 {[
@@ -111,7 +111,7 @@ const About = () => {
                 ))}
               </div>
               <p className="mt-8 text-sm text-muted-foreground">
-                This offer is limited to the first few clients while I'm building the portfolio. It won't last long.
+                Free setup is on me. I only make money when you do.
               </p>
               <Link
                 to="/contact"

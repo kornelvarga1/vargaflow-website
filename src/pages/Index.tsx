@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ParallaxBg from "@/components/shared/ParallaxBg";
 import {
   Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, Play
+  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, Play, DollarSign
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
@@ -40,6 +40,11 @@ const WHY_US = [
     icon: Users,
     title: "No Contracts. Ever.",
     desc: "Month-to-month, always. No 12-month lock-ins, no cancellation fees. We earn your business every single month or you walk.",
+  },
+  {
+    icon: DollarSign,
+    title: "Priced to Keep You for 10 Years",
+    desc: "No setup fees, no lock-ins, no hidden upsells. One flat monthly rate — built to earn you leads for years, not weeks.",
   },
 ];
 
@@ -136,8 +141,8 @@ const Index = () => {
                   Get a Free Strategy Call <ArrowRight className="h-5 w-5" />
                 </Link>
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-sm font-semibold text-background/80">First clients get a free setup.</span>
-                  <span className="text-xs text-background/50">Pay only if you love it. No obligation.</span>
+                  <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
+                  <span className="text-xs text-background/50">I only make money when you do.</span>
                 </div>
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-background/60">
@@ -154,11 +159,11 @@ const Index = () => {
       <div className="bg-primary px-4 py-4">
         <div className="container flex flex-col items-center justify-center gap-1 text-center sm:flex-row sm:gap-3">
           <span className="text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
-            🎉 Limited Offer for First Clients
+            Free Setup — I Only Win When You Do
           </span>
           <span className="hidden text-primary-foreground/60 sm:inline">—</span>
           <span className="text-sm text-primary-foreground/90">
-            We build your full website and set up all the systems. You pay nothing until you see it working — and only if you love it.
+            We build your website and set up all your systems up front. You don't pay a dollar until it's live and working for you.
           </span>
           <Link
             to="/contact"
@@ -312,7 +317,7 @@ const Index = () => {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-3">
+          <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-4">
             {WHY_US.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -331,6 +336,16 @@ const Index = () => {
               );
             })}
           </div>
+          <ScrollReveal delay={0.3}>
+            <div className="mt-12 text-center">
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+              >
+                See Pricing — No Surprises <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

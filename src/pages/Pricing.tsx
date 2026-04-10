@@ -20,7 +20,7 @@ const INCLUDED = [
 const FAQS = [
   {
     question: "Is there a setup fee?",
-    answer: "Right now, no. We're waiving the setup fee for our first clients — you pay nothing upfront. Just the monthly rate once everything is live.",
+    answer: "No. Setup is on me — I only make money once your systems are live and working for you. Just the flat monthly rate once everything's running.",
   },
   {
     question: "What does 'no contracts' actually mean?",
@@ -122,7 +122,7 @@ const Pricing = () => {
                 {/* Free setup banner */}
                 <div className="bg-primary py-3 text-center">
                   <p className="text-sm font-bold text-primary-foreground">
-                    🎉 Limited Offer — Setup Fee Waived for First Clients
+                    Free setup. You only pay once it's working.
                   </p>
                 </div>
 
@@ -220,7 +220,7 @@ const Pricing = () => {
                 color: "bg-primary/70",
                 title: "Reviews & rankings start building",
                 items: [
-                  "Google review count growing steadily every week",
+                  "Google reviews adding up from completed jobs",
                   "Google Business Profile gaining traction in local searches",
                   "Past customers being re-engaged through one-click campaigns",
                 ],
@@ -228,12 +228,12 @@ const Pricing = () => {
               {
                 period: "Month 3+",
                 color: "bg-primary/40",
-                title: "Organic leads compound — system runs itself",
+                title: "The system compounds — working for you every day",
                 items: [
-                  "Climbing Google Maps rankings for your trade and city",
-                  "Organic leads coming in that cost you nothing",
-                  "Reviews and SEO compounding month over month",
-                  "You stop paying Angi, Thumbtack, or Yelp for leads",
+                  "Improved Google Maps visibility as reviews and signals build",
+                  "Organic leads from your own Google presence — not pay-per-lead marketplaces",
+                  "Reviews and SEO stacking month over month",
+                  "Less dependence on paid lead platforms like Angi or Thumbtack",
                 ],
               },
             ].map((phase, i) => (

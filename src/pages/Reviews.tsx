@@ -7,7 +7,7 @@ const Reviews = () => {
     <>
       <Helmet>
         <title>Results — VargaFlow</title>
-        <meta name="description" content="VargaFlow is a new business built to help contractors win more leads. Be one of the first — and help shape what we build." />
+        <meta name="description" content="Direct access to Kornél, systems built to compound over time, and a setup that pays for itself. No agency middlemen, no account managers." />
       </Helmet>
 
       <section className="relative overflow-hidden bg-background py-20 lg:py-40">
@@ -23,11 +23,10 @@ const Reviews = () => {
             <span className="text-primary">Being Written Right Now.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            VargaFlow is a new business — and we're honest about that. We don't have a wall of testimonials yet.
-            What we do have is a lean, proven set of systems and a founder who will personally set up your account and make sure everything works.
+            Instead of a wall of case studies, here's what you get: systems built to start working from day one, personally set up by Kornél, and a direct line to him the whole way. No account managers. No sales team. Just the work.
           </p>
           <p className="mt-4 text-base font-semibold text-foreground">
-            Be one of our first clients. Get our full attention, a discounted rate, and results you can actually see.
+            Every client gets direct access and his full attention. That's the whole model — built to stay that way.
           </p>
           <Link
             to="/contact"

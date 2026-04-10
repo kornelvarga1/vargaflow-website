@@ -51,7 +51,7 @@ const Footer = () => {
             <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-background/60 hover:text-primary">
               {SITE_EMAIL}
             </a>
-            <p className="mt-3 text-xs text-background/40">First clients get free setup.<br />Pay only if you're satisfied.</p>
+            <p className="mt-3 text-xs text-background/40">Free setup.<br />You only pay once it's working.</p>
             <div className="mt-4">
               <Link
                 to="/contact"
