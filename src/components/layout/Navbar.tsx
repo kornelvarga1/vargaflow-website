@@ -84,7 +84,7 @@ const Navbar = () => {
               <div className="absolute -left-4 top-full pt-2">
                 <div className="w-[420px] rounded-xl border border-border bg-background p-3 shadow-2xl shadow-foreground/5">
                   <p className="mb-2 px-3 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-                    Our Services
+                    Choose a Service
                   </p>
                   <div className="grid grid-cols-1 gap-0.5">
                     {SERVICES.map((service, i) => {

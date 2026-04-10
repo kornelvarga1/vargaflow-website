@@ -102,7 +102,7 @@ const About = () => {
                   "I build your full website and set up all the automations",
                   "You run it, test it, see the leads come in",
                   "If you're not genuinely satisfied — you pay nothing",
-                  "If you love it, we move forward at the standard monthly rate",
+                  "If you love it, you move forward at the standard monthly rate",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -141,7 +141,7 @@ const About = () => {
               {
                 icon: Target,
                 title: "Results or Nothing",
-                desc: "I don't get paid to look busy. Every system I build has one job: get you more leads. If it doesn't, we fix it until it does.",
+                desc: "I don't get paid to look busy. Every system I build has one job: get you more leads. If it doesn't, I fix it until it does.",
               },
               {
                 icon: Wrench,

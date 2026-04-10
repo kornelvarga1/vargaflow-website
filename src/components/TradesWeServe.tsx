@@ -49,15 +49,15 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
       <div className="container">
         <div className="text-center">
           <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
-            Who We Serve
+            Who I Work With
           </span>
           <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
             Built for the Trades —{" "}
             <span className="text-primary">All of Them</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            If you work with your hands and serve homeowners, our systems are built for you.
-            Here are some of the trades we help every day.
+            If you work with your hands and serve homeowners, my systems are built for you.
+            Here are some of the trades I help every day.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
               to="/trades"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
             >
-              See all trades we serve <ArrowRight className="h-4 w-4" />
+              See all trades I work with <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         )}

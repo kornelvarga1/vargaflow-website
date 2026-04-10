@@ -62,8 +62,8 @@ const BookACallForm = ({ className, darkMode }: BookACallFormProps) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className={`text-2xl font-bold ${darkMode ? "text-background" : "text-foreground"}`}>We'll Be In Touch</h3>
-          <p className={`mt-2 ${darkMode ? "text-background/60" : "text-muted-foreground"}`}>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          <h3 className={`text-2xl font-bold ${darkMode ? "text-background" : "text-foreground"}`}>I'll Be In Touch</h3>
+          <p className={`mt-2 ${darkMode ? "text-background/60" : "text-muted-foreground"}`}>Thanks for reaching out. I'll get back to you within 24 hours.</p>
         </div>
       </div>
     );

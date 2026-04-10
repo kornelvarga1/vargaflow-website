@@ -6,7 +6,7 @@ import TradesWeServe from "@/components/TradesWeServe";
 const Trades = () => (
   <>
     <Helmet>
-      <title>Trades We Serve — VargaFlow</title>
+      <title>Trades I Work With — VargaFlow</title>
       <meta name="description" content="VargaFlow builds marketing systems for roofers, plumbers, HVAC techs, electricians, landscapers, painters, and every other home service trade." />
     </Helmet>
 
@@ -14,11 +14,11 @@ const Trades = () => (
     <section className="bg-foreground py-20 lg:py-28">
       <div className="container text-center">
         <h1 className="text-4xl font-extrabold text-background md:text-5xl lg:text-6xl">
-          Trades We <span className="text-primary">Serve</span>
+          Trades I <span className="text-primary">Work With</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-background/60">
-          We work exclusively with home service contractors and tradespeople.
-          If you fix it, build it, install it, or clean it — we've got you covered.
+          I work exclusively with home service contractors and tradespeople.
+          If you fix it, build it, install it, or clean it — I've got you covered.
         </p>
       </div>
     </section>
@@ -30,10 +30,10 @@ const Trades = () => (
     <section className="bg-background py-20 lg:py-28">
       <div className="container text-center">
         <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-          Don't See Your Trade? <span className="text-primary">We Still Got You.</span>
+          Don't See Your Trade? <span className="text-primary">I Still Got You.</span>
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          If you serve homeowners and want more leads, we can help. Book a call and let's talk.
+          If you serve homeowners and want more leads, I can help. Book a call and let's talk.
         </p>
         <Link
           to="/contact"

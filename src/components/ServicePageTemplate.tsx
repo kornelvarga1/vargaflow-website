@@ -276,7 +276,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                   <span className="text-primary">With {data.title}?</span>
                 </h2>
                 <p className="mt-6 text-lg text-background/60">
-                  Book a call. 20 minutes. We'll walk you through exactly how this works for your business.
+                  Book a call. 20 minutes. I'll walk you through exactly how this works for your business.
                 </p>
                 <ul className="mt-8 space-y-4">
                   {["No contracts or commitments", "Set up in days, not months", "Built for contractors like you"].map((item) => (

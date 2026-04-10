@@ -16,30 +16,30 @@ const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megapho
 // Lead with the pain each service solves, not just what it does
 const SERVICE_DESCRIPTIONS = [
   "Stop losing jobs to contractors with a better-looking site. A fast, professional website that turns visitors into calls.",
-  "Every missed call is a job you're giving to a competitor. We text leads back in seconds — automatically.",
+  "Every missed call is a job you're giving to a competitor. The system texts them back in seconds — automatically.",
   "Stop juggling texts, emails, DMs, and voicemails across five apps. One inbox. Everything in one place.",
   "Keep your personal number private. One business line that rings on every device you already own.",
-  "Your best customers are searching Google right now. We make sure they find you — not the guy down the street.",
-  "8 reviews is invisible. We automate the ask so reviews pile up without you lifting a finger.",
+  "Your best customers are searching Google right now. I make sure they find you — not the guy down the street.",
+  "8 reviews is invisible. I automate the ask so reviews pile up without you lifting a finger.",
   "Your past customers are your easiest sales. One click sends a campaign to your whole list.",
-  "Most leads go cold in under an hour. Our follow-up system reaches out automatically so you never lose one.",
+  "Most leads go cold in under an hour. The follow-up system reaches out automatically so you never lose one.",
 ];
 
 const WHY_US = [
   {
     icon: Timer,
     title: "Live in Days, Not Months",
-    desc: "Most agencies take 6–12 weeks to deliver anything. We have your systems running in days. Because leads don't wait.",
+    desc: "Most agencies take 6–12 weeks to deliver anything. I have your systems running in days. Because leads don't wait.",
   },
   {
     icon: Wrench,
     title: "Contractors Only",
-    desc: "We don't work with dentists, restaurants, or anyone else. Only trades. That focus is what makes our systems actually work.",
+    desc: "I don't work with dentists, restaurants, or anyone else. Only trades. That focus is what makes my systems actually work.",
   },
   {
     icon: Users,
     title: "No Contracts. Ever.",
-    desc: "Month-to-month, always. No 12-month lock-ins, no cancellation fees. We earn your business every single month or you walk.",
+    desc: "Month-to-month, always. No 12-month lock-ins, no cancellation fees. I earn your business every single month or you walk.",
   },
   {
     icon: DollarSign,
@@ -125,10 +125,10 @@ const Index = () => {
                 <br />
                 More Jobs.
                 <br />
-                <span className="text-primary">Zero Extra Work.</span>
+                <span className="text-primary">Zero Agency BS.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
-                We build the website, set up the automations, and handle the follow-up —
+                I build the website, set up the automations, and handle the follow-up —
                 so your phone keeps ringing while you're out on the job site.
               </p>
             </ScrollReveal>
@@ -163,7 +163,7 @@ const Index = () => {
           </span>
           <span className="hidden text-primary-foreground/60 sm:inline">—</span>
           <span className="text-sm text-primary-foreground/90">
-            We build your website and set up all your systems up front. You don't pay a dollar until it's live and working for you.
+            I build your website and set up all your systems up front. You don't pay a dollar until it's live and working for you.
           </span>
           <Link
             to="/contact"
@@ -192,7 +192,7 @@ const Index = () => {
               Meanwhile you're paying Angi or Thumbtack for leads every month — and building absolutely nothing. No rankings. No reviews. No asset. Just a recurring bill.
             </p>
             <p className="mt-6 text-lg font-semibold text-foreground">
-              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why we built VargaFlow.
+              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why I built VargaFlow.
             </p>
           </ScrollReveal>
         </div>
@@ -203,7 +203,7 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What We Build For You</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What I Build For You</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
                 Eight Systems.
                 <br />
@@ -251,7 +251,7 @@ const Index = () => {
               <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
                 This Is What Your
                 <br />
-                <span className="text-primary">Phone Looks Like After We Set Up.</span>
+                <span className="text-primary">Phone Looks Like After I Set Up.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-background/60">
                 No fluff. Just the systems running — leads coming in, reviews going out, follow-ups firing automatically.
@@ -363,7 +363,7 @@ const Index = () => {
                 <span className="text-primary">That's It.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                We keep it simple because you're busy enough.
+                I keep it simple because you're busy enough.
               </p>
             </div>
           </ScrollReveal>
@@ -375,19 +375,19 @@ const Index = () => {
                 num: "1",
                 title: "Strategy Call",
                 time: "20 min",
-                desc: "Tell us about your business. No pitch, no pressure — just figuring out exactly where you're losing leads and what to fix first.",
+                desc: "Tell me about your business. No pitch, no pressure — just figuring out exactly where you're losing leads and what to fix first.",
               },
               {
                 num: "2",
-                title: "We Build Everything",
+                title: "I Build Everything",
                 time: "7–10 days",
-                desc: "Website, automations, review funnel, follow-up sequences — all set up and tested. You stay on the job site. We handle it all.",
+                desc: "Website, automations, review funnel, follow-up sequences — all set up and tested. You stay on the job site. I handle it all.",
               },
               {
                 num: "3",
                 title: "Launch & Go Live",
                 time: "20 min",
-                desc: "We walk you through everything, flip the switch, and your systems go live. From this point on, leads start coming in automatically.",
+                desc: "I walk you through everything, flip the switch, and your systems go live. From this point on, leads start coming in automatically.",
               },
             ].map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 0.1}>
@@ -432,8 +432,8 @@ const Index = () => {
                 <span className="text-primary">Online and Getting Your Leads.</span>
               </h2>
               <p className="mt-6 text-lg text-background/60">
-                Book a free call. 20 minutes. We'll look at your current setup and show you exactly where
-                you're losing leads — and how fast we can fix it.
+                Book a free call. 20 minutes. I'll look at your current setup and show you exactly where
+                you're losing leads — and how fast I can fix it.
               </p>
               <ul className="mt-8 flex flex-wrap justify-center gap-6">
                 {[

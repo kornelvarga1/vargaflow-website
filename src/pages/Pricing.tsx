@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     question: "What does 'no contracts' actually mean?",
-    answer: "It means you're never locked in. Cancel any month with no fees, no penalties, no awkward conversations. We believe if we're doing our job, you'll stay. If we're not, you shouldn't have to.",
+    answer: "It means you're never locked in. Cancel any month with no fees, no penalties, no awkward conversations. I believe if I'm doing my job, you'll stay. If I'm not, you shouldn't have to.",
   },
   {
     question: "How fast will I see results?",
@@ -36,11 +36,11 @@ const FAQS = [
   },
   {
     question: "What if I already have a website?",
-    answer: "We can work with it or replace it — your call. If your current site is getting you leads, we can layer our automation systems on top. If it's not, we'll build you something that actually converts.",
+    answer: "I can work with it or replace it — your call. If your current site is getting you leads, I can layer the automation systems on top. If it's not, I'll build you something that actually converts.",
   },
   {
     question: "What makes this different from other marketing agencies?",
-    answer: "We work exclusively with contractors. We don't take months to deliver. There are no contracts. And you deal directly with Kornél — not a junior account manager who doesn't know your industry.",
+    answer: "I work exclusively with contractors. I don't take months to deliver. There are no contracts. And you deal directly with Kornél — not a junior account manager who doesn't know your industry.",
   },
 ];
 
@@ -196,7 +196,7 @@ const Pricing = () => {
                 <span className="text-primary"> No Surprises.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Some of it works the day we flip the switch. The rest compounds over time. Here's exactly what to expect.
+                Some of it works the day I flip the switch. The rest compounds over time. Here's exactly what to expect.
               </p>
             </div>
           </ScrollReveal>

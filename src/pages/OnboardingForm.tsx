@@ -128,7 +128,7 @@ const OnboardingForm = () => {
             </div>
             <h1 className="text-3xl font-extrabold text-foreground">You're All Set!</h1>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Thanks for filling out your onboarding form. We have everything we need to get started.
+              Thanks for filling out your onboarding form. I have everything I need to get started.
             </p>
             <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 px-6 py-5 text-left">
               <p className="text-sm font-semibold text-foreground">One last thing —</p>
@@ -169,7 +169,7 @@ const OnboardingForm = () => {
           <div className="mb-8">
             <h1 className="text-3xl font-extrabold text-foreground">Client Onboarding Form</h1>
             <p className="mt-4 rounded-xl border border-border bg-muted px-5 py-4 text-sm leading-relaxed text-foreground">
-              Please fill out these questions to the best of your ability. This will be the content of your website. If you need clarification on anything or don't want any of this information included just leave it blank/contact us :)!
+              Please fill out these questions to the best of your ability. This will be the content of your website. If you need clarification on anything or don't want any of this information included just leave it blank/contact me :)!
             </p>
           </div>
 
@@ -250,7 +250,7 @@ const OnboardingForm = () => {
                 Your "About Us" section <span className="text-destructive">*</span>
               </label>
               <p className="mb-2 text-xs text-muted-foreground">
-                This should be 3–5 sentences about yourself and how you got started in the business — remember we are trying to build a personal brand around you.
+                This should be 3–5 sentences about yourself and how you got started in the business — remember I'm trying to build a personal brand around you.
               </p>
               <textarea
                 placeholder="About Us"
@@ -294,7 +294,7 @@ const OnboardingForm = () => {
             {/* Business Differentiators */}
             <div>
               <label className={labelClass}>
-                Give us a few special things about your business that we can show off on your website!
+                Give me a few special things about your business that I can show off on your website!
               </label>
               <textarea
                 placeholder="Ex: 10+ Years in business, Veteran Owned, Fully Insured, etc"
@@ -384,7 +384,7 @@ const OnboardingForm = () => {
                 <span className="text-primary">IMPORTANT:</span> Discounts you would offer for return customers or friends of past customers
               </label>
               <p className="mb-2 text-xs text-muted-foreground">
-                Ex: $500 off your next roof / 15% off your next service — we will market these on your behalf to all your past customers.
+                Ex: $500 off your next roof / 15% off your next service — I will market these on your behalf to all your past customers.
               </p>
               <textarea
                 placeholder="This is for your automated re-marketing campaigns"
@@ -396,7 +396,7 @@ const OnboardingForm = () => {
 
             {/* Logo Upload */}
             <div>
-              <label className={labelClass}>Your Company Logo <span className="font-normal text-muted-foreground">(Let us know if you need us to make you one)</span></label>
+              <label className={labelClass}>Your Company Logo <span className="font-normal text-muted-foreground">(Let me know if you need me to make you one)</span></label>
               <div className="mt-1">
                 <label className="flex w-full cursor-pointer items-center gap-3 rounded-md border border-border bg-muted px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
                   <svg className="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -410,7 +410,7 @@ const OnboardingForm = () => {
 
             {/* Need Logo */}
             <div>
-              <label className={labelClass}>Do you need us to make you a logo?</label>
+              <label className={labelClass}>Do you need me to make you a logo?</label>
               <input
                 type="text"
                 placeholder="Yes or No"

@@ -38,7 +38,7 @@ const Contact = () => {
                 <span className="text-primary">and Fix What's Costing You Leads.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                20 minutes with Kornél — not a salesperson, not an account manager. Just an honest look at where you're losing leads and what we can do about it. Free setup, no contracts — you only pay when it's working.
+                20 minutes with Kornél — not a salesperson, not an account manager. Just an honest look at where you're losing leads and what I can do about it. Free setup, no contracts — you only pay when it's working.
               </p>
             </div>
           </ScrollReveal>
@@ -77,7 +77,7 @@ const Contact = () => {
                   Pick a Time That <span className="text-primary">Works for You</span>
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                  On the call we'll look at your current setup, identify exactly where leads are slipping through, and walk you through what it would look like to fix it. No pressure to sign up.
+                  On the call I'll look at your current setup, identify exactly where leads are slipping through, and walk you through what it would look like to fix it. No pressure to sign up.
                 </p>
               </div>
             </ScrollReveal>
