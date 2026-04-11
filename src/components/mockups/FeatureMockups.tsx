@@ -1,7 +1,5 @@
 import {
   useEffect,
-  useLayoutEffect,
-  useRef,
   useState,
   type ReactNode,
   type ComponentType,
@@ -9,24 +7,18 @@ import {
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, PhoneMissed, MousePointer2 } from "lucide-react";
 
-/* useLayoutEffect-with-SSR-fallback so scale is computed synchronously
-   before first paint on the client (no flash of oversized content). */
-const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
 /* ========================================================================== */
 /*  Shared utilities                                                          */
 /* ========================================================================== */
 
 /**
- * Renders children at a fixed design width/height and scales them
- * proportionally so everything inside (absolute cursor coords, fixed
- * pixel sizes) lines up regardless of parent container width.
- *
- * Starts at scale=0 and measures synchronously in a layout effect so
- * the wrapper never renders oversized — otherwise on mobile the 420px
- * Mac design width would push grid/flex parents wider than the
- * viewport before the effect has a chance to run.
+ * Pure-CSS proportional scaler: renders children at fixed design
+ * dimensions and scales them down uniformly when the parent is
+ * narrower than the design width. Uses `container-type: inline-size`
+ * and the `cqi` unit so there is zero JavaScript, no SSR/hydration
+ * flash, and no layout shift — the outer box maintains aspect ratio,
+ * and the inner content (designWidth x designHeight pixels) scales
+ * via a CSS transform derived from the container's current width.
  */
 const ScaledMockup = ({
   designWidth,
@@ -36,46 +28,28 @@ const ScaledMockup = ({
   designWidth: number;
   designHeight: number;
   children: ReactNode;
-}) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0);
-
-  useIsomorphicLayoutEffect(() => {
-    const parent = wrapperRef.current?.parentElement;
-    if (!parent) return;
-    const update = () => {
-      const pw = parent.clientWidth;
-      if (pw > 0) setScale(Math.min(1, pw / designWidth));
-    };
-    update();
-    const observer = new ResizeObserver(update);
-    observer.observe(parent);
-    return () => observer.disconnect();
-  }, [designWidth]);
-
-  return (
+}) => (
+  <div
+    className="relative mx-auto w-full overflow-hidden"
+    style={{
+      maxWidth: `${designWidth}px`,
+      aspectRatio: `${designWidth} / ${designHeight}`,
+      containerType: "inline-size",
+    }}
+  >
     <div
-      ref={wrapperRef}
-      className="overflow-hidden"
+      className="absolute left-0 top-0"
       style={{
-        width: designWidth * scale,
-        height: designHeight * scale,
-        maxWidth: "100%",
+        width: `${designWidth}px`,
+        height: `${designHeight}px`,
+        transformOrigin: "top left",
+        transform: `scale(min(1, calc(100cqi / ${designWidth}px)))`,
       }}
     >
-      <div
-        style={{
-          width: designWidth,
-          height: designHeight,
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </div>
-  );
-};
+  </div>
+);
 
 /** Re-mounts animated children every N ms so delay-based sequences loop. */
 const useLoopKey = (intervalMs: number) => {
