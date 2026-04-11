@@ -1,10 +1,59 @@
-import { useEffect, useState, type ReactNode, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ReactNode, type ComponentType } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, PhoneMissed, MousePointer2 } from "lucide-react";
 
 /* ========================================================================== */
 /*  Shared utilities                                                          */
 /* ========================================================================== */
+
+/**
+ * Renders children at a fixed design width/height and scales them
+ * proportionally so everything inside (absolute cursor coords, fixed
+ * pixel sizes) lines up regardless of parent container width.
+ */
+const ScaledMockup = ({
+  designWidth,
+  designHeight,
+  children,
+}: {
+  designWidth: number;
+  designHeight: number;
+  children: ReactNode;
+}) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const parent = wrapperRef.current?.parentElement;
+    if (!parent) return;
+    const update = () => {
+      const pw = parent.clientWidth;
+      if (pw > 0) setScale(Math.min(1, pw / designWidth));
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(parent);
+    return () => observer.disconnect();
+  }, [designWidth]);
+
+  return (
+    <div
+      ref={wrapperRef}
+      style={{ width: designWidth * scale, height: designHeight * scale }}
+    >
+      <div
+        style={{
+          width: designWidth,
+          height: designHeight,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
 
 /** Re-mounts animated children every N ms so delay-based sequences loop. */
 const useLoopKey = (intervalMs: number) => {
@@ -863,12 +912,12 @@ export const WebsiteMockup = () => {
   return (
     <div className="relative mx-auto flex h-[580px] w-full max-w-[420px] items-center justify-center">
       {(scene === "mac-hero" || scene === "mac-form") && (
-        <div className="w-full">
+        <ScaledMockup designWidth={420} designHeight={290}>
           <MacFrame>
             {scene === "mac-hero" && <MacHeroContent />}
             {scene === "mac-form" && <MacFormContent />}
           </MacFrame>
-        </div>
+        </ScaledMockup>
       )}
       {scene === "phone-sms" && <PhoneFrame><WebsitePhoneSmsContent /></PhoneFrame>}
     </div>
@@ -1253,7 +1302,7 @@ export const ChatWidgetMockup = () => {
   return (
     <div className="relative mx-auto flex h-[580px] w-full max-w-[420px] items-center justify-center">
       {scene !== "phone-sms" && (
-        <div className="w-full">
+        <ScaledMockup designWidth={420} designHeight={290}>
           <MacFrame url="phoenixroofingandrepair.com">
             <MacHeroContent
               chatWidget={
@@ -1263,7 +1312,7 @@ export const ChatWidgetMockup = () => {
               }
             />
           </MacFrame>
-        </div>
+        </ScaledMockup>
       )}
       {scene === "phone-sms" && (
         <PhoneFrame>
