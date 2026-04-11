@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     question: "Why is the monthly so cheap? What's the catch?",
-    answer: "Because it doesn't need to be more. I'm a solo operator — no office, no VPs, no junior account managers eating half the fee. The automations do the heavy lifting, so I can run the system at scale without hiring a team. I'd rather keep you for years at a fair price than squeeze you for six months at a premium one and watch you quit. Anything more than what I charge would be me padding the price to look expensive, and I'm not interested in that game.",
+    answer: "Because it doesn't need to be more. Three reasons. One — I'm a solo operator. No office, no VPs, no junior account managers eating half the fee. Two — I code every piece of this myself. Most marketing agencies rent their whole system from a white-label platform that charges them $200–500 a month per client, then they mark it up and pass it on to you. That cost doesn't exist in my business, so it doesn't exist in your invoice. Three — the automations do the heavy lifting, so I can run the system at scale without hiring a team. I'd rather keep you for years at a fair price than squeeze you for six months at a premium and watch you quit. Anything more than what I charge would be padding to look expensive, and I'm not interested in that game.",
   },
   {
     question: "Can one guy really run all my marketing?",
