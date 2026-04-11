@@ -17,27 +17,27 @@ const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap
 const FAQS = [
   {
     question: "Is this actually going to work for me?",
-    answer: "Depends. If you're doing good work and you answer the phone when it rings, yes — the system brings you more leads and makes sure none of them slip through. If your work is bad, or you ignore leads for two days, no amount of marketing fixes that. I build the foundation. You still have to show up.",
-  },
-  {
-    question: "Why is setup really free? What's the catch?",
-    answer: "No catch. I only make money once your systems are live and working — that's how I know I'm betting on myself, not on your deposit. Most agencies want $3–5k upfront because they know half their clients cancel in month two. I'd rather not get paid than trap someone into paying for nothing. If I can't deliver, I don't deserve the money.",
-  },
-  {
-    question: "Can one guy really run all my marketing?",
-    answer: "After setup, the automations do 90% of the work — missed calls get texted back, reviews get asked for, follow-ups go out, leads get routed to you. I'm not manually running your marketing every day. I built a system that runs itself, and I'm here to keep it tuned. That's exactly why I can work with multiple contractors without dropping the ball on any of them.",
+    answer: "Depends. What I build is a foundation — a website that actually converts, automations that stop leads slipping through, a review funnel that compounds month over month. It's not magic. You still have to do good work, answer the phone when it rings, and keep running the basics every contractor should be running — Google Business, word of mouth, the occasional ad. This makes all of that work harder and pay better. It doesn't replace it. If you think you pay the monthly, close your eyes, and leads just appear, we're not a fit. I build the foundation. You still have to build the business.",
   },
   {
     question: "How is this different from the agency I already tried?",
     answer: "Four things. One — I only work with trades. Plumbers, roofers, HVAC, electricians. I don't touch restaurants or dentists. Two — you deal directly with me, not a junior account manager who's never held a wrench. Three — no contracts, ever. Cancel any month. Four — setup is free. If I can't get it working, you owe me nothing. Most agencies can't say any of that, let alone all four.",
   },
   {
-    question: "What if I already have a website or reviews or a phone number?",
-    answer: "Keep what works, replace what doesn't. If your current site is converting, I'll layer the automations on top and leave it alone. If it's a 2017 template nobody fills out, I'll build you one that actually gets leads. Same with your phone number, your Google Business profile, your review history — I work with what's there. Nothing gets thrown out just to justify a bigger invoice.",
+    question: "Why is setup really free? What's the catch?",
+    answer: "No catch. I only make money once your systems are live and working — that's how I know I'm betting on myself, not on your deposit. Most agencies want $3–5k upfront because they know half their clients cancel in month two. I'd rather not get paid than trap someone into paying for nothing. If I can't deliver, I don't deserve the money.",
+  },
+  {
+    question: "Why is the monthly so cheap? What's the catch?",
+    answer: "Because it doesn't need to be more. I'm a solo operator — no office, no VPs, no junior account managers eating half the fee. The automations do the heavy lifting, so I can run the system at scale without hiring a team. I'd rather keep you for years at a fair price than squeeze you for six months at a premium one and watch you quit. Anything more than what I charge would be me padding the price to look expensive, and I'm not interested in that game.",
+  },
+  {
+    question: "Can one guy really run all my marketing?",
+    answer: "After setup, the automations do 90% of the work — missed calls get texted back, reviews get asked for, follow-ups go out, leads get routed to you. I'm not manually running your marketing every day. I built a system that runs itself, and I'm here to keep it tuned and to jump in when something needs a human. That's exactly why I can work with multiple contractors without dropping the ball on any of them.",
   },
   {
     question: "What if I want to cancel?",
-    answer: "Cancel any month, no fees, no questions. The website stays yours — I hand over the files. Your Google reviews and Google Business profile are yours, always. What stops are the automations: the missed-call text-back, the follow-ups, the review funnel, the inbox. That's it. No lock-in, no hostage situation. If I'm not earning the monthly, you shouldn't be paying it.",
+    answer: "Cancel any month, no fees, no questions. But here's the honest part — you lose everything I built. The website, the automations, the inbox, the review funnel, the follow-up system. All of it stops. You keep what was yours before we started: your Google Business profile, your old site if you had one, the reviews tied to your GMB. Nothing I built stays with you. That's the trade-off of free setup — if I don't charge you up front to build it, I can't let you walk away with it. Clean line: you pay, the system runs. You stop, the system stops. No contracts, no lock-ins, no hidden fees anywhere.",
   },
 ];
 
