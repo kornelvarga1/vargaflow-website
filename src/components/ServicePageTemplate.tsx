@@ -106,7 +106,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               </div>
               {Mockup ? (
                 <div className="flex justify-center lg:justify-end">
-                  <div className="w-full max-w-[240px]">
+                  <div className={`w-full shrink-0 ${data.slug === "functional-website" ? "max-w-[420px] lg:w-[420px]" : "max-w-[260px] lg:w-[260px]"}`}>
                     <Mockup />
                   </div>
                 </div>

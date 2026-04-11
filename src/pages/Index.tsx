@@ -221,9 +221,9 @@ const Index = () => {
           <div className="mt-16 flex flex-col gap-20 lg:gap-24">
             {[
               {
-                label: "Missed Call Text Back",
-                desc: "You're on the ladder. A lead calls. You can't pick up. Within seconds, the system texts them back — before they've even had a chance to call the next contractor. The conversation starts. You jump in when you're off the ladder.",
-                slug: "missed-call-text-back",
+                label: "Functional Website",
+                desc: "Fast, mobile-first, built for one thing: turning visitors into calls. Click-to-call on every page and a chat widget that turns into a real SMS conversation. Everything a contractor site needs, nothing it doesn't.",
+                slug: "functional-website",
               },
               {
                 label: "5-Star Magic Review Funnel",
@@ -231,9 +231,9 @@ const Index = () => {
                 slug: "review-funnel",
               },
               {
-                label: "Functional Website",
-                desc: "Fast, mobile-first, built for one thing: turning visitors into calls. Click-to-call on every page and a chat widget that turns into a real SMS conversation. Everything a contractor site needs, nothing it doesn't.",
-                slug: "functional-website",
+                label: "Missed Call Text Back",
+                desc: "You're on the ladder. A lead calls. You can't pick up. Within seconds, the system texts them back — before they've even had a chance to call the next contractor. The conversation starts. You jump in when you're off the ladder.",
+                slug: "missed-call-text-back",
               },
               {
                 label: "One-Click Marketing Campaigns",
@@ -247,10 +247,11 @@ const Index = () => {
               },
             ].map((demo, i) => {
               const Mockup = MOCKUP_BY_SLUG[demo.slug];
+              const isWide = demo.slug === "functional-website" || demo.slug === "chat-widget";
               return (
                 <ScrollReveal key={demo.label} delay={0.1}>
                   <div className={`flex flex-col items-center gap-10 lg:gap-16 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                    <div className="w-full max-w-[260px] shrink-0">
+                    <div className={`w-full shrink-0 ${isWide ? "max-w-[420px]" : "max-w-[260px]"}`}>
                       {Mockup && <Mockup />}
                     </div>
                     <div className="text-center lg:text-left">
