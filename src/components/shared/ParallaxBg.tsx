@@ -57,7 +57,7 @@ const ParallaxBg = ({ imageUrl }: ParallaxBgProps) => {
     <div
       ref={ref}
       aria-hidden="true"
-      className="absolute inset-0 bg-cover bg-right lg:bg-center"
+      className="absolute inset-0 hidden bg-cover bg-center lg:block"
       style={{ backgroundImage: `url(${imageUrl})`, willChange: "transform" }}
     />
   );
