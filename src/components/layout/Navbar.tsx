@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
 import vfIcon from "@/assets/vf-icon.png";
 
-const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
+const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap];
 const SERVICE_DESCRIPTIONS = [
   "High-converting sites built for leads",
   "Auto-reply when you can't pick up",
-  "Every message in one place",
   "One number, every device",
   "Rank higher on Google Maps",
   "Get 5-star reviews on autopilot",

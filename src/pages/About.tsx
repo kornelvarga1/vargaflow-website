@@ -9,7 +9,7 @@ const About = () => {
     <>
       <Helmet>
         <title>About VargaFlow — Meet Kornél</title>
-        <meta name="description" content="VargaFlow is run by Kornél Varga — 22, systems-obsessed, and personally handles every client setup. Free setup, pay only if you're satisfied." />
+        <meta name="description" content="VargaFlow is run by Kornél Varga — systems-obsessed, and personally handles every client setup. Free setup, pay only if you're satisfied." />
       </Helmet>
 
       {/* Hero */}
@@ -32,6 +32,33 @@ const About = () => {
         </div>
       </section>
 
+      {/* The Flow — category positioning */}
+      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="container relative max-w-4xl text-center">
+          <ScrollReveal>
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">How I See It</span>
+            <h2 className="text-3xl font-extrabold leading-[1.1] text-background md:text-4xl lg:text-5xl">
+              Every Contracting Business
+              <br />
+              <span className="text-primary">Runs on Flow.</span>
+            </h2>
+            <div className="mx-auto mt-10 max-w-2xl space-y-5 text-base leading-relaxed text-background/70 md:text-lg">
+              <p>
+                Leads come in, get answered, turn into jobs, turn into reviews, turn into more leads. When one part jams — a missed call, a lead that sits for two days, a review that never gets asked for — the whole thing backs up. Fewer jobs. Fewer reviews. Phone stops ringing.
+              </p>
+              <p>
+                Not because your work got worse. Because the flow broke.
+              </p>
+              <p className="text-lg font-semibold text-background md:text-xl">
+                VargaFlow is what keeps it moving. Not an agency. Not a consultant. The system your business runs on — so you can keep doing what you're actually good at: the work.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Founder Story */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
@@ -46,7 +73,7 @@ const About = () => {
                 </h2>
                 <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   <p>
-                    My name's Kornél. I'm 22, and I started VargaFlow because I became genuinely obsessed with one thing: building systems that do the manual work for you. Automated follow-ups, websites that convert, review funnels that run themselves — the kind of leverage that lets a small business compete like a big one.
+                    My name's Kornél. I started VargaFlow because I became genuinely obsessed with one thing: building systems that do the manual work for you. Automated follow-ups, websites that convert, review funnels that run themselves — the kind of leverage that lets a small business compete like a big one.
                   </p>
                   <p>
                     Contractors kept coming up as the most underserved market for exactly these tools. Hardworking people, great at their craft, getting completely ignored by overpriced agencies that lock them into 12-month contracts and disappear after the sale.

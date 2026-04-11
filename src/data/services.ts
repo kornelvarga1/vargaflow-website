@@ -1,13 +1,12 @@
 import type { ServicePageData } from "@/components/ServicePageTemplate";
 import {
-  Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
+  Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap,
   Rocket, Smartphone, MousePointerClick, BarChart3,
   Clock, Send, MessageCircle, Moon,
-  Mail, History, Users, UserCheck,
-  Shield, Headphones, VoicemailIcon, PhoneForwarded,
+  Shield, Headphones, PhoneForwarded,
   MapPin, FileText, TrendingUp, LineChart,
   Bell, GitBranch, Eye, Gauge,
-  FileEdit, MailOpen, MousePointer, PieChart,
+  MousePointer, PieChart,
   Timer, ListChecks, BrainCircuit, HandshakeIcon,
 } from "lucide-react";
 
@@ -15,11 +14,10 @@ export const serviceData: Record<string, ServicePageData> = {
   "functional-website": {
     slug: "functional-website",
     title: "Functional Website",
-    demoVideo: "/demos/website-mobile.mp4",
     headline: "Your Website Should Turn",
     headlineAccent: "Visitors Into Conversations.",
     subheadline: "Most contractor websites lose the visitor the moment they land. No click-to-call. No chat. No way to reach you except a contact form nobody fills out. I fix that.",
-    metaDescription: "Get a contractor website that turns visitors into calls and text conversations. Click-to-call, live chat widget, booking — built to convert, not just look good.",
+    metaDescription: "Get a contractor website that turns visitors into calls and text conversations. Click-to-call, live chat widget, mobile-first — built to convert, not just look good.",
     icon: Globe,
     problemHeadline: "Visitors Are Landing on Your Site",
     problemAccent: "And Leaving Without Contacting You.",
@@ -30,7 +28,7 @@ export const serviceData: Record<string, ServicePageData> = {
     ],
     solutionHeadline: "A Website Built to",
     solutionAccent: "Convert Visitors Into Booked Jobs.",
-    solutionText: "I build fast, clean, mobile-first websites with one job: turn visitors into conversations. Click-to-call on every page. A chat widget that starts a text conversation — not an email chain. Booking options. And SEO structure that helps Google find you in the first place.",
+    solutionText: "I build fast, clean, mobile-first websites with one job: turn visitors into conversations. Click-to-call on every page. A chat widget that starts a text conversation — not an email chain. And SEO structure that helps Google find you in the first place.",
     features: [
       { title: "Click-to-Call on Every Page", description: "One tap on mobile and they're calling you. No copying numbers, no friction. The easier you make it, the more calls you get.", icon: Rocket },
       { title: "Chat Widget → Text Conversation", description: "Visitors click the chat, type their question, and it comes straight to your phone as a text. No email delays. Real conversations, instantly.", icon: Smartphone },
@@ -39,17 +37,16 @@ export const serviceData: Record<string, ServicePageData> = {
     ],
     faqs: [
       { question: "How long does it take to build?", answer: "Most sites are live within 7–10 business days. It depends on how quickly you can get me your info — the faster you do, the faster I go." },
-      { question: "Do I need to provide content?", answer: "Nope. I write all the copy, pick the images, and handle the design. You just review and approve." },
+      { question: "Do I need to provide content?", answer: "I write all the copy, handle the design, and use clean stock imagery by default. If you've got real photos of past jobs, send them over — real work photos always land better than stock. Beyond that, just fill out the onboarding form with your business details and I take it from there." },
       { question: "What if I already have a website?", answer: "I'll look at it honestly. If it can be fixed with the right conversion elements, I'll fix it. If it needs to be rebuilt, I'll rebuild it." },
       { question: "How does the chat widget work exactly?", answer: "A visitor types into the chat on your website — their question comes to your phone as a text, with their number attached. You reply by SMS, they get it on their phone, and the whole conversation continues as a regular text thread from there. It starts on your site and becomes a real SMS conversation — no app, no logins, no friction." },
-      { question: "What does it cost?", answer: "It's included in the monthly plan. Book a call and I'll walk you through exactly what you get." },
+      { question: "What does it cost?", answer: "It's included in the monthly plan — no separate website fee, no setup charge. Head over to the pricing page for the full breakdown of what you get for one flat rate." },
     ],
   },
 
   "missed-call-text-back": {
     slug: "missed-call-text-back",
     title: "Missed Call Text Back",
-    demoVideo: "/demos/missed-call.mp4",
     headline: "Every Missed Call Is a Job",
     headlineAccent: "Going to Your Competitor.",
     subheadline: "You're on a roof. Under a sink. Elbow-deep in a panel. You can't answer every call — but your competition can, because they have this system.",
@@ -72,42 +69,10 @@ export const serviceData: Record<string, ServicePageData> = {
       { title: "Works 24/7", description: "Evenings, weekends, holidays. The system never clocks out, even when you do.", icon: Moon },
     ],
     faqs: [
-      { question: "What does the text actually say?", answer: "I customize it for your business. Something like: 'Hey, sorry I missed your call — I'm on a job right now. How can I help?' Natural, not robotic." },
+      { question: "What does the text actually say?", answer: "It's a two-part sequence by default. First text fires within a minute or two of the missed call — something like: 'Hey, sorry I missed you. I'll get back to you as soon as I can. If you want to send me a few details about the job, that'd help. Here's a link for a free quote: [your quote link] — [Your Name] from [Your Business].' A minute or two after that, a soft follow-up: 'In the meantime, are there any questions I can answer here for you?' Name, business, quote link, wording, timing — all customized to you, and easy to tweak whenever." },
       { question: "Does it work with my existing number?", answer: "Yes. I set it up with your current business number or give you a dedicated line — your choice." },
       { question: "What if I answer the call?", answer: "No text gets sent. It only fires on missed calls. Smart enough to know the difference." },
       { question: "Can I control when it's active?", answer: "Absolutely. Business hours only, after hours only, or 24/7 — completely up to you." },
-    ],
-  },
-
-  "all-in-one-inbox": {
-    slug: "all-in-one-inbox",
-    title: "All-In-One Inbox",
-    headline: "Stop Juggling Five Apps.",
-    headlineAccent: "Every Message, One Place.",
-    subheadline: "Texts, emails, Facebook messages, Instagram DMs, Google messages, voicemails — all in one inbox. Stop missing leads because they came in on the wrong platform.",
-    metaDescription: "Get all your business messages in one unified inbox. Texts, emails, social media DMs, and voicemails — all in one place. Built for busy contractors.",
-    icon: Inbox,
-    problemHeadline: "Leads Are Slipping Through",
-    problemAccent: "the Cracks of Your Inbox Chaos.",
-    problemText: [
-      "A lead comes in through Facebook. Another texts your personal number. Someone emails your Gmail. A homeowner leaves a Google message. And your voicemail? You haven't checked that since last week.",
-      "Messages go unanswered. Leads go cold. You look unresponsive — not because you don't care, but because you're managing five different inboxes on a job site while covered in drywall dust.",
-      "There's a better way. One inbox. Everything in it.",
-    ],
-    solutionHeadline: "One Screen.",
-    solutionAccent: "Every Conversation You've Ever Had.",
-    solutionText: "I consolidate every channel — texts, emails, social DMs, Google messages, voicemails — into a single clean inbox. See everything. Reply to anything. From your phone or desktop.",
-    features: [
-      { title: "Every Channel, One Feed", description: "Texts, emails, Facebook, Instagram, Google — all in one place. No switching apps, no missing messages.", icon: Mail },
-      { title: "Reply from Anywhere", description: "Phone or desktop, reply to any channel from one screen. Your customer never knows the difference.", icon: Send },
-      { title: "Full Conversation History", description: "See every interaction with every customer in one thread. No more 'did they text or email me?'", icon: History },
-      { title: "Team Access", description: "Office staff can see and manage messages too. No more dropped balls between you and your team.", icon: Users },
-    ],
-    faqs: [
-      { question: "Which platforms does it connect to?", answer: "Facebook Messenger, Instagram DMs, Google Business Messages, SMS/text, email, voicemail, and web chat. Basically everything you're already using." },
-      { question: "Is it hard to set up?", answer: "I do it for you. Connect your accounts, configure everything, and show you how it works. Usually done in a day." },
-      { question: "Can I use it on my phone?", answer: "Yes. Mobile app, works just like desktop. Notifications, replies, the whole thing — right from your pocket." },
-      { question: "What if I have team members?", answer: "Everyone gets access. You can even assign conversations to specific people so nothing falls through the cracks." },
     ],
   },
 
@@ -133,7 +98,7 @@ export const serviceData: Record<string, ServicePageData> = {
       { title: "Works on Your Current Phone", description: "No second device needed. Your business number rings right on the phone you already have.", icon: Smartphone },
       { title: "Business Hours Control", description: "Set hours and stick to them. After-hours calls go to voicemail or trigger a text-back. Your evenings are yours.", icon: Shield },
       { title: "Professional Voicemail", description: "Custom business greeting. Sound like a real company, not a guy with a truck and a Gmail address.", icon: Headphones },
-      { title: "Call Tracking", description: "See which marketing channels are driving actual calls. Know what's working and stop wasting money on what isn't.", icon: PhoneForwarded },
+      { title: "Call Logs & History", description: "Every incoming call, outgoing call, and voicemail logged automatically. Look back at who called when, pull up past conversations, never lose track of a lead.", icon: PhoneForwarded },
     ],
     faqs: [
       { question: "Do I need to buy a new phone?", answer: "No. It works through an app on your existing phone — iPhone or Android." },
@@ -163,14 +128,13 @@ export const serviceData: Record<string, ServicePageData> = {
     solutionText: "I optimize your full Google presence — Business Profile, website structure, citations, review velocity — so you rank when homeowners are actively searching for exactly what you do.",
     features: [
       { title: "Google Business Profile Optimization", description: "Fully built out with the right categories, services, photos, and copy. The stuff Google actually weights in rankings.", icon: MapPin },
-      { title: "Citation Building", description: "Your business listed consistently across 50+ directories. Consistency is how Google decides you're legitimate.", icon: FileText },
+      { title: "NAP Consistency & Core Listings", description: "Your name, address, and phone set up consistently on the platforms that actually matter — Google, Bing, Apple Business Connect, Yelp, Facebook. That's how Google decides you're legitimate.", icon: FileText },
       { title: "Review Velocity Strategy", description: "More reviews = higher rankings. I set up the system that gets them flowing in on autopilot.", icon: TrendingUp },
-      { title: "Monthly Ranking Reports", description: "See exactly where you rank, how many people found you, and what's improving. No guessing, no smoke and mirrors.", icon: LineChart },
+      { title: "Google Business Profile Insights", description: "Your GBP shows exactly how many people found you, called you, and asked for directions — straight from Google, no third-party tools. Real numbers you can trust.", icon: LineChart },
     ],
     faqs: [
-      { question: "How long until I see results?", answer: "I build your foundation — profile, citations, review system — in 7–10 days. Ranking movement depends on Google and your market, but most clients see real traction within 60–90 days. SEO isn't instant, but it compounds." },
+      { question: "How long until I see results?", answer: "I build your foundation — optimized GBP, core listings, review system — in 7–10 days. Ranking movement depends on Google and your market, but most clients see real traction within 60–90 days. SEO isn't instant, but it compounds." },
       { question: "Do I need a website for this to work?", answer: "It helps significantly. If you don't have one, I build it as part of your plan. But I can still optimize your Google Business Profile without a site." },
-      { question: "What's a citation and why does it matter?", answer: "A citation is any mention of your business name, address, and phone number on another site — Yelp, Yellow Pages, local directories. Google uses these to confirm you're a real, established business." },
       { question: "Can you guarantee I'll rank #1?", answer: "No — and anyone who promises that is lying to you. What I guarantee is that I do everything correctly, report on the progress honestly, and actually move the needle." },
     ],
   },
@@ -178,7 +142,6 @@ export const serviceData: Record<string, ServicePageData> = {
   "review-funnel": {
     slug: "review-funnel",
     title: "5-Star Magic Review Funnel",
-    demoVideo: "/demos/review-funnel.mp4",
     headline: "More 5-Star Reviews.",
     headlineAccent: "Bad Ones Never See the Light of Day.",
     subheadline: "The contractor with the most reviews wins — even if his work isn't better than yours. I automate the whole process so you never have to awkwardly ask again.",
@@ -211,7 +174,6 @@ export const serviceData: Record<string, ServicePageData> = {
   "one-click-campaigns": {
     slug: "one-click-campaigns",
     title: "One-Click Marketing Campaigns",
-    demoVideo: "/demos/campaign.mp4",
     headline: "Your Best Leads Already Know You.",
     headlineAccent: "You're Just Not Following Up.",
     subheadline: "Every finished job is a future job — if you follow up. Add the customer when you wrap up, and the system handles the review ask, the referral nudge, and the 1-year check-in automatically.",
@@ -256,7 +218,7 @@ export const serviceData: Record<string, ServicePageData> = {
     icon: Zap,
     stats: [
       { value: "< 60s", label: "First Response" },
-      { value: "5–7", label: "Follow-Up Texts" },
+      { value: "Multi-Step", label: "Follow-Up Sequence" },
       { value: "24/7", label: "Always Running" },
     ],
     problemHeadline: "By the Time You Follow Up,",
@@ -276,10 +238,10 @@ export const serviceData: Record<string, ServicePageData> = {
       { title: "Hands Off When They Reply", description: "Lead responds? You get an instant notification and take over. Seamless handoff from automation to you.", icon: HandshakeIcon },
     ],
     faqs: [
-      { question: "What does the follow-up sequence look like?", answer: "Usually 5–7 messages over 7–14 days. First one goes out in under 60 seconds. Then a check-in a few hours later. Then every day or two until they respond." },
+      { question: "What does the follow-up sequence look like?", answer: "A multi-step sequence that goes out over several days. First message fires in under 60 seconds. Then check-ins spaced across the following days until they respond or the sequence ends. I tune the exact cadence to how you like to communicate." },
       { question: "Can I customize the messages?", answer: "Yes. I write them for you and you can adjust the wording, timing, and number of follow-ups to fit how you like to communicate." },
       { question: "What happens when a lead writes back?", answer: "You get an instant notification, the automation pauses, and you take over the conversation. It's a clean handoff — they'll never know a system was involved." },
-      { question: "Does it work for leads from different sources?", answer: "Yes. Website forms, Google, Facebook ads, Thumbtack, Angi — any source that gives you a phone number or email." },
+      { question: "Does it work for leads from different sources?", answer: "Website forms, Google Business Profile messages, and Facebook/Instagram leads drop in natively. For Thumbtack and Angi — those platforms don't forward leads automatically, but I can set up email forwarding so their lead emails get parsed into the same system." },
     ],
   },
 };

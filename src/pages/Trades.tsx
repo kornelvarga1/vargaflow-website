@@ -11,7 +11,7 @@ const Trades = () => (
     </Helmet>
 
     {/* Hero */}
-    <section className="bg-foreground py-20 lg:py-28">
+    <section className="relative -mt-16 bg-foreground pt-36 pb-20 lg:-mt-20 lg:pt-48 lg:pb-28">
       <div className="container text-center">
         <h1 className="text-4xl font-extrabold text-background md:text-5xl lg:text-6xl">
           Trades I <span className="text-primary">Work With</span>

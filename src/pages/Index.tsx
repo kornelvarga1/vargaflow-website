@@ -1,23 +1,22 @@
-import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import ParallaxBg from "@/components/shared/ParallaxBg";
 import {
-  Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, Play, DollarSign
+  Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap,
+  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, DollarSign
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.png";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
+import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
 
-const SERVICE_ICONS = [Globe, MessageSquare, Inbox, Phone, Search, Star, Megaphone, Zap];
+const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap];
 
 // Lead with the pain each service solves, not just what it does
 const SERVICE_DESCRIPTIONS = [
   "Stop losing jobs to contractors with a better-looking site. A fast, professional website that turns visitors into calls.",
   "Every missed call is a job you're giving to a competitor. The system texts them back in seconds — automatically.",
-  "Stop juggling texts, emails, DMs, and voicemails across five apps. One inbox. Everything in one place.",
   "Keep your personal number private. One business line that rings on every device you already own.",
   "Your best customers are searching Google right now. I make sure they find you — not the guy down the street.",
   "8 reviews is invisible. I automate the ask so reviews pile up without you lifting a finger.",
@@ -47,46 +46,6 @@ const WHY_US = [
     desc: "No setup fees, no lock-ins, no hidden upsells. One flat monthly rate — built to earn you leads for years, not weeks.",
   },
 ];
-
-const VideoFrame = ({ src }: { src: string }) => {
-  const [loaded, setLoaded] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const onTimeUpdate = () => {
-    const v = videoRef.current;
-    if (v && v.duration) setProgress(v.currentTime / v.duration);
-  };
-
-  return (
-    <div className="relative w-full max-w-[240px] mx-auto aspect-[9/19.5] overflow-hidden rounded-2xl border border-white/10 bg-white/5 [box-shadow:0_0_50px_rgba(0,0,0,0.5)]">
-      <video
-        ref={videoRef}
-        src={src}
-        autoPlay
-        loop
-        muted
-        playsInline
-        onCanPlay={() => setLoaded(true)}
-        onTimeUpdate={onTimeUpdate}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      {!loaded && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
-            <Play className="h-6 w-6 text-primary" fill="currentColor" />
-          </div>
-          <span className="text-xs text-white/30">{src.split("/").pop()}</span>
-        </div>
-      )}
-      {loaded && (
-        <div className="absolute bottom-0 inset-x-0 h-0.5 bg-white/10">
-          <div className="h-full bg-primary transition-none" style={{ width: `${progress * 100}%` }} />
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Index = () => {
 
@@ -205,7 +164,7 @@ const Index = () => {
             <div className="text-center">
               <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What I Build For You</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                Eight Systems.
+                Seven Systems.
                 <br />
                 <span className="text-primary">One Platform. Zero Headaches.</span>
               </h2>
@@ -264,42 +223,45 @@ const Index = () => {
               {
                 label: "Missed Call Text Back",
                 desc: "You're on the ladder. A lead calls. You can't pick up. Within seconds, the system texts them back — before they've even had a chance to call the next contractor. The conversation starts. You jump in when you're off the ladder.",
-                src: "/demos/missed-call.mp4",
+                slug: "missed-call-text-back",
               },
               {
                 label: "5-Star Magic Review Funnel",
                 desc: "Job's done. The system texts the customer asking for a review — and keeps politely asking until it lands, then stops the moment it does. Happy customers land on your Google page. Unhappy ones get routed to you privately, before anything goes public.",
-                src: "/demos/review-funnel.mp4",
+                slug: "review-funnel",
               },
               {
                 label: "Functional Website",
-                desc: "Fast, mobile-first, built for one thing: turning visitors into calls. Click-to-call on every page, chat that routes to your phone, quote booking built in. Everything a contractor site needs, nothing it doesn't.",
-                src: "/demos/website-mobile.mp4",
+                desc: "Fast, mobile-first, built for one thing: turning visitors into calls. Click-to-call on every page and a chat widget that turns into a real SMS conversation. Everything a contractor site needs, nothing it doesn't.",
+                slug: "functional-website",
               },
               {
                 label: "One-Click Marketing Campaigns",
                 desc: "Add each customer when the job's done — ten seconds of work. The system handles the rest for a full year: review asks, then referral nudges with discount offers across the months. Past jobs quietly become your next jobs.",
-                src: "/demos/campaign.mp4",
+                slug: "one-click-campaigns",
               },
               {
                 label: "Website Chat Widget",
                 desc: "A visitor types into the chat on your site — it comes straight to your phone as a text, with their number attached. You reply by SMS, they get it on their phone, and the conversation continues as a real text thread from there. No more dead contact forms nobody answers.",
-                src: "/demos/chat-widget.mp4",
+                slug: "chat-widget",
               },
-            ].map((demo, i) => (
-              <ScrollReveal key={demo.label} delay={0.1}>
-                <div className={`flex flex-col items-center gap-10 lg:gap-16 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                  <div className="w-full max-w-[220px] shrink-0 lg:max-w-[200px]">
-                    <VideoFrame src={demo.src} />
+            ].map((demo, i) => {
+              const Mockup = MOCKUP_BY_SLUG[demo.slug];
+              return (
+                <ScrollReveal key={demo.label} delay={0.1}>
+                  <div className={`flex flex-col items-center gap-10 lg:gap-16 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                    <div className="w-full max-w-[260px] shrink-0">
+                      {Mockup && <Mockup />}
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <p className="text-xs font-bold uppercase tracking-widest text-primary">Feature 0{i + 1}</p>
+                      <h3 className="mt-3 text-2xl font-extrabold text-background lg:text-3xl">{demo.label}</h3>
+                      <p className="mt-4 text-base leading-relaxed text-background/60 lg:text-lg">{demo.desc}</p>
+                    </div>
                   </div>
-                  <div className="text-center lg:text-left">
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary">Feature 0{i + 1}</p>
-                    <h3 className="mt-3 text-2xl font-extrabold text-background lg:text-3xl">{demo.label}</h3>
-                    <p className="mt-4 text-base leading-relaxed text-background/60 lg:text-lg">{demo.desc}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>

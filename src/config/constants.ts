@@ -7,7 +7,6 @@ export const SITE_EMAIL = "kornel@vargaflow.com";
 export const SERVICES = [
   { slug: "functional-website", title: "Functional Website", shortTitle: "Website" },
   { slug: "missed-call-text-back", title: "Missed Call Text Back", shortTitle: "Missed Call Text Back" },
-  { slug: "all-in-one-inbox", title: "All-In-One Inbox", shortTitle: "Unified Inbox" },
   { slug: "business-phone", title: "Business Phone", shortTitle: "Business Phone" },
   { slug: "local-seo", title: "Local SEO", shortTitle: "Local SEO" },
   { slug: "review-funnel", title: "5-Star Magic Review Funnel", shortTitle: "Review Funnel" },

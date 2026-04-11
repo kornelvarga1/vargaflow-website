@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/vf-icon.png";
 import { z } from "zod";
 
 const SUPABASE_BASE = "https://zfmchywjmgykmlhjihls.supabase.co/functions/v1";
