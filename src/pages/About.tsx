@@ -207,7 +207,7 @@ const About = () => {
             <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
               Talk to Me Directly.
               <br />
-              <span className="text-primary">No Gatekeepers. No Pitch.</span>
+              <span className="text-primary">No Gatekeepers. No Pressure.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
               20 minutes. I'll look at your current setup and tell you honestly what's costing you leads — and whether I can fix it.

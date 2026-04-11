@@ -370,7 +370,7 @@ const Index = () => {
                 num: "1",
                 title: "Strategy Call",
                 time: "20 min",
-                desc: "Tell me about your business. No pitch, no pressure — just figuring out exactly where you're losing leads and what to fix first.",
+                desc: "Tell me about your business. Straight talk, no pressure — just figuring out exactly where you're losing leads and what to fix first.",
               },
               {
                 num: "2",

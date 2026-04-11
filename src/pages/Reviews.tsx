@@ -34,7 +34,7 @@ const Reviews = () => {
           >
             Talk to Kornél Directly <ArrowRight className="h-5 w-5" />
           </Link>
-          <p className="mt-4 text-sm text-muted-foreground">20 minutes. No pitch. Just a real conversation.</p>
+          <p className="mt-4 text-sm text-muted-foreground">20 minutes. No pressure. Just a real conversation.</p>
         </div>
       </section>
 

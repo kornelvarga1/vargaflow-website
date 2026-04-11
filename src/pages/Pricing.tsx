@@ -245,7 +245,7 @@ const Pricing = () => {
               <span className="text-primary">Talk to Kornél for 20 Minutes.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
-              No pitch. No pressure. Just an honest look at your business and what's holding you back from more leads.
+              Straight talk, no pressure. Just an honest look at your business and what's holding you back from more leads.
             </p>
             <Link
               to="/contact"

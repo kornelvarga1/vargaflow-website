@@ -20,7 +20,7 @@ const Contact = () => {
         <title>Book a Free Strategy Call — VargaFlow</title>
         <meta
           name="description"
-          content="Book a free 20-minute call with Kornél at VargaFlow. No sales pitch — just a straight conversation about how to get more leads for your contracting business."
+          content="Book a free 20-minute call with Kornél at VargaFlow. No pressure — just a straight conversation about how to get more leads for your contracting business."
         />
       </Helmet>
 
