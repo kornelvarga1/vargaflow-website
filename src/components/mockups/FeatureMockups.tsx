@@ -910,23 +910,25 @@ export const WebsiteMockup = () => {
   }, [loopKey]);
 
   return (
-    <div className="relative mx-auto flex h-[580px] w-full max-w-[420px] items-center justify-center">
-      {(scene === "mac-hero" || scene === "mac-form") && (
-        <ScaledMockup designWidth={420} designHeight={290}>
-          <MacFrame>
-            {scene === "mac-hero" && <MacHeroContent />}
-            {scene === "mac-form" && <MacFormContent />}
-          </MacFrame>
-        </ScaledMockup>
-      )}
-      {scene === "phone-sms" && (
-        <ScaledMockup designWidth={260} designHeight={563}>
-          <PhoneFrame>
-            <WebsitePhoneSmsContent />
-          </PhoneFrame>
-        </ScaledMockup>
-      )}
-    </div>
+    <ScaledMockup designWidth={420} designHeight={580}>
+      <div className="flex h-full w-full items-center justify-center">
+        {(scene === "mac-hero" || scene === "mac-form") && (
+          <div className="w-[420px]">
+            <MacFrame>
+              {scene === "mac-hero" && <MacHeroContent />}
+              {scene === "mac-form" && <MacFormContent />}
+            </MacFrame>
+          </div>
+        )}
+        {scene === "phone-sms" && (
+          <div className="w-[260px]">
+            <PhoneFrame>
+              <WebsitePhoneSmsContent />
+            </PhoneFrame>
+          </div>
+        )}
+      </div>
+    </ScaledMockup>
   );
 };
 
@@ -1308,28 +1310,30 @@ export const ChatWidgetMockup = () => {
   }, [loopKey]);
 
   return (
-    <div className="relative mx-auto flex h-[580px] w-full max-w-[420px] items-center justify-center">
-      {scene !== "phone-sms" && (
-        <ScaledMockup designWidth={420} designHeight={290}>
-          <MacFrame url="phoenixroofingandrepair.com">
-            <MacHeroContent
-              chatWidget={
-                scene === "web-closed" ? <ChatClosedOverlay /> :
-                scene === "web-form" ? <ChatFormOverlay /> :
-                <ChatSuccessOverlay />
-              }
-            />
-          </MacFrame>
-        </ScaledMockup>
-      )}
-      {scene === "phone-sms" && (
-        <ScaledMockup designWidth={260} designHeight={563}>
-          <PhoneFrame>
-            <ChatWidgetPhoneSmsContent />
-          </PhoneFrame>
-        </ScaledMockup>
-      )}
-    </div>
+    <ScaledMockup designWidth={420} designHeight={580}>
+      <div className="flex h-full w-full items-center justify-center">
+        {scene !== "phone-sms" && (
+          <div className="w-[420px]">
+            <MacFrame url="phoenixroofingandrepair.com">
+              <MacHeroContent
+                chatWidget={
+                  scene === "web-closed" ? <ChatClosedOverlay /> :
+                  scene === "web-form" ? <ChatFormOverlay /> :
+                  <ChatSuccessOverlay />
+                }
+              />
+            </MacFrame>
+          </div>
+        )}
+        {scene === "phone-sms" && (
+          <div className="w-[260px]">
+            <PhoneFrame>
+              <ChatWidgetPhoneSmsContent />
+            </PhoneFrame>
+          </div>
+        )}
+      </div>
+    </ScaledMockup>
   );
 };
 
