@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { CheckCircle, Sparkles, ArrowRight, HelpCircle } from "lucide-react";
+import { CheckCircle, Sparkles, ArrowRight } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const INCLUDED = [
@@ -14,33 +13,6 @@ const INCLUDED = [
   { item: "Business Phone Line", note: "Separate from your personal number" },
   { item: "Local SEO Setup", note: "So Google can actually find you" },
   { item: "One-Click Campaigns", note: "Re-engage past customers instantly" },
-];
-
-const FAQS = [
-  {
-    question: "Is there a setup fee?",
-    answer: "No. Setup is on me — I only make money once your systems are live and working for you. Just the flat monthly rate once everything's running.",
-  },
-  {
-    question: "What does 'no contracts' actually mean?",
-    answer: "It means you're never locked in. Cancel any month with no fees, no penalties, no awkward conversations. I believe if I'm doing my job, you'll stay. If I'm not, you shouldn't have to.",
-  },
-  {
-    question: "How fast will I see results?",
-    answer: "After 7–10 days of setup, everything goes live at once — your website, automations, review funnel, inbox, all of it. From day one, missed calls get answered, leads get followed up automatically, and review requests go out after every job. Google rankings and organic leads build over 1–3 months as reviews and SEO compound. It's not overnight, but unlike paying Angi every month, you're building something you actually own.",
-  },
-  {
-    question: "Do I need to do anything once it's set up?",
-    answer: "Very little. The automations run on their own. You'll want to respond to leads when they come in — but chasing them, following up, asking for reviews — that's all handled.",
-  },
-  {
-    question: "What if I already have a website?",
-    answer: "I can work with it or replace it — your call. If your current site is getting you leads, I can layer the automation systems on top. If it's not, I'll build you something that actually converts.",
-  },
-  {
-    question: "What makes this different from other marketing agencies?",
-    answer: "I work exclusively with contractors. I don't take months to deliver. There are no contracts. And you deal directly with Kornél — not a junior account manager who doesn't know your industry.",
-  },
 ];
 
 const Pricing = () => {
@@ -258,36 +230,6 @@ const Pricing = () => {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-secondary py-20 lg:py-28">
-        <div className="container mx-auto max-w-3xl">
-          <ScrollReveal>
-            <div className="mb-10 text-center">
-              <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
-                <HelpCircle className="h-4 w-4" /> Common Questions
-              </span>
-              <h2 className="mt-2 text-3xl font-extrabold text-foreground md:text-4xl">
-                Everything You Want to <span className="text-primary">Know Before You Call</span>
-              </h2>
-            </div>
-          </ScrollReveal>
-          <Accordion type="single" collapsible className="space-y-3">
-            {FAQS.map((faq, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-primary/30">
-                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline py-5">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </ScrollReveal>
-            ))}
-          </Accordion>
         </div>
       </section>
 
