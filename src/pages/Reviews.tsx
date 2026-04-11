@@ -8,6 +8,10 @@ const Reviews = () => {
       <Helmet>
         <title>Results — VargaFlow</title>
         <meta name="description" content="Direct access to Kornél, systems built to compound over time, and a setup that pays for itself. No agency middlemen, no account managers." />
+        {/* Hidden from search while there are no real reviews to show.
+            Remove this noindex and re-add /reviews to public/sitemap.xml
+            once there are 2–3 happy clients worth featuring. */}
+        <meta name="robots" content="noindex" />
       </Helmet>
 
       <section className="relative overflow-hidden bg-background py-20 lg:py-40">
