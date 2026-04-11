@@ -108,7 +108,7 @@ const Index = () => {
         <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-56 lg:pb-36">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-primary sm:px-4 sm:text-xs sm:tracking-wider">
                 <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
               </div>
               <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
@@ -149,7 +149,7 @@ const Index = () => {
       {/* FREE SETUP STRIP */}
       <div className="bg-primary px-4 py-4">
         <div className="container flex flex-col items-center justify-center gap-1 text-center sm:flex-row sm:gap-3">
-          <span className="text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
+          <span className="text-xs font-extrabold uppercase tracking-wide text-primary-foreground sm:text-sm">
             Free Setup — I Only Win When You Do
           </span>
           <span className="hidden text-primary-foreground/60 sm:inline">—</span>
