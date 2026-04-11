@@ -72,6 +72,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/85 to-foreground/40 lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        {/* Mobile-only atmospheric warm glow — makes the dim photo read as
+            an intentional sunset light source instead of a faded image. */}
+        <div className="pointer-events-none absolute -bottom-16 -right-20 h-[26rem] w-[26rem] rounded-full bg-primary/20 blur-3xl lg:hidden" />
+        <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-primary/[0.08] blur-3xl lg:hidden" />
 
         <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-56 lg:pb-36">
           <div className="max-w-3xl">
