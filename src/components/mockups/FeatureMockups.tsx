@@ -63,7 +63,7 @@ const useLoopKey = (intervalMs: number) => {
 
 /** Outer iPhone-style chrome every mockup sits inside. */
 const PhoneFrame = ({ children }: { children: ReactNode }) => (
-  <div className="relative mx-auto w-full max-w-[260px] aspect-[9/19.5] rounded-[2.25rem] border border-white/10 bg-neutral-900 p-[5px] shadow-[0_0_60px_rgba(0,0,0,0.55)]">
+  <div className="relative mx-auto w-full max-w-[260px] aspect-[9/19.5] rounded-[2.25rem] border border-white/10 bg-neutral-900 p-[5px]">
     <div className="relative h-full w-full overflow-hidden rounded-[1.9rem] bg-neutral-950">
       {/* Dynamic island */}
       <div className="absolute left-1/2 top-[7px] z-30 h-[18px] w-[72px] -translate-x-1/2 rounded-full bg-black" />
@@ -586,7 +586,7 @@ const MacFrame = ({
   children: ReactNode;
   url?: string;
 }) => (
-  <div className="overflow-hidden rounded-lg border border-white/10 bg-neutral-900 shadow-[0_0_50px_rgba(0,0,0,0.55)]">
+  <div className="overflow-hidden rounded-lg border border-white/10 bg-neutral-900">
     {/* Browser chrome */}
     <div className="flex items-center gap-2 bg-neutral-800 px-3 py-1.5">
       <div className="flex gap-[5px]">
