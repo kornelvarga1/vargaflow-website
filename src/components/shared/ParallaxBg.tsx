@@ -23,8 +23,8 @@ const ParallaxBg = ({ imageUrl }: ParallaxBgProps) => {
       if (!el || !parent) return;
 
       const mobile = window.innerWidth < 1024;
-      const ext   = mobile ? "20%" : "40%";
-      const speed = mobile ? 0.15  : 0.4;
+      const ext   = mobile ? "20%" : "15%";
+      const speed = mobile ? 0.15  : 0.3;
 
       el.style.top    = `-${ext}`;
       el.style.bottom = `-${ext}`;
