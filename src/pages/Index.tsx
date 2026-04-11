@@ -69,7 +69,7 @@ const Index = () => {
       {/* HERO — dark section for impact */}
       <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[700px]">
         <ParallaxBg imageUrl={heroBg} />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/80 lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/85 via-foreground/55 to-foreground/85 lg:bg-gradient-to-r lg:from-foreground lg:via-foreground/90 lg:to-foreground/60" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
