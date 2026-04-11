@@ -153,6 +153,7 @@ export const MissedCallMockup = () => {
   }, [loopKey]);
 
   return (
+    <ScaledMockup designWidth={260} designHeight={563}>
     <PhoneFrame>
       <div className="relative h-full w-full overflow-hidden">
         {/* ── Scene 1 : Incoming call screen ─────────────────────────── */}
@@ -283,6 +284,7 @@ export const MissedCallMockup = () => {
         )}
       </div>
     </PhoneFrame>
+    </ScaledMockup>
   );
 };
 
@@ -584,15 +586,17 @@ export const ReviewFunnelMockup = () => {
   }, [loopKey]);
 
   return (
-    <PhoneFrame>
-      <div className="relative h-full w-full overflow-hidden">
-        {scene === "card" && <ReviewCardScene />}
-        {scene === "rate-1" && <RateScene targetStar={1} />}
-        {scene === "feedback" && <FeedbackScene />}
-        {scene === "rate-5" && <RateScene targetStar={5} />}
-        {scene === "google" && <GoogleReviewScene />}
-      </div>
-    </PhoneFrame>
+    <ScaledMockup designWidth={260} designHeight={563}>
+      <PhoneFrame>
+        <div className="relative h-full w-full overflow-hidden">
+          {scene === "card" && <ReviewCardScene />}
+          {scene === "rate-1" && <RateScene targetStar={1} />}
+          {scene === "feedback" && <FeedbackScene />}
+          {scene === "rate-5" && <RateScene targetStar={5} />}
+          {scene === "google" && <GoogleReviewScene />}
+        </div>
+      </PhoneFrame>
+    </ScaledMockup>
   );
 };
 
@@ -941,7 +945,13 @@ export const WebsiteMockup = () => {
           </MacFrame>
         </ScaledMockup>
       )}
-      {scene === "phone-sms" && <PhoneFrame><WebsitePhoneSmsContent /></PhoneFrame>}
+      {scene === "phone-sms" && (
+        <ScaledMockup designWidth={260} designHeight={563}>
+          <PhoneFrame>
+            <WebsitePhoneSmsContent />
+          </PhoneFrame>
+        </ScaledMockup>
+      )}
     </div>
   );
 };
@@ -1098,13 +1108,15 @@ export const CampaignMockup = () => {
   }, [loopKey]);
 
   return (
-    <PhoneFrame>
-      <div className="relative h-full w-full overflow-hidden">
-        {scene === "form" && <JobCompleteFormContent />}
-        {scene === "success" && <JobCompleteSuccessContent />}
-        {scene === "sms" && <CampaignPhoneSmsContent />}
-      </div>
-    </PhoneFrame>
+    <ScaledMockup designWidth={260} designHeight={563}>
+      <PhoneFrame>
+        <div className="relative h-full w-full overflow-hidden">
+          {scene === "form" && <JobCompleteFormContent />}
+          {scene === "success" && <JobCompleteSuccessContent />}
+          {scene === "sms" && <CampaignPhoneSmsContent />}
+        </div>
+      </PhoneFrame>
+    </ScaledMockup>
   );
 };
 
@@ -1337,9 +1349,11 @@ export const ChatWidgetMockup = () => {
         </ScaledMockup>
       )}
       {scene === "phone-sms" && (
-        <PhoneFrame>
-          <ChatWidgetPhoneSmsContent />
-        </PhoneFrame>
+        <ScaledMockup designWidth={260} designHeight={563}>
+          <PhoneFrame>
+            <ChatWidgetPhoneSmsContent />
+          </PhoneFrame>
+        </ScaledMockup>
       )}
     </div>
   );
