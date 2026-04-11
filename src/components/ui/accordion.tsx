@@ -38,9 +38,16 @@ const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
+  // forceMount keeps the content in the DOM even when the item is collapsed,
+  // so SSR/prerendered HTML includes the answer text for crawlers and
+  // non-rendering fetchers (Claude.ai, social bots). The explicit
+  // data-[state=closed]:h-0 pins the initial closed height to 0 so real
+  // users never see a flash-of-open-content before JS hydrates — the
+  // open/close animation still plays over it on state change.
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    forceMount
+    className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
