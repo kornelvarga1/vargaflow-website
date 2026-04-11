@@ -23,7 +23,7 @@ const About = () => {
               <br />
               No Account Managers.
               <br />
-              <span className="text-primary">Just Kornél. And He's Good.</span>
+              <span className="text-primary">No BS.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               VargaFlow is a one-person operation — and that's the point. You deal directly with the person who builds your systems, knows your setup inside out, and actually picks up the phone.
