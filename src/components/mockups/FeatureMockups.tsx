@@ -1,6 +1,18 @@
-import { useEffect, useRef, useState, type ReactNode, type ComponentType } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type ComponentType,
+} from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, PhoneMissed, MousePointer2 } from "lucide-react";
+
+/* useLayoutEffect-with-SSR-fallback so scale is computed synchronously
+   before first paint on the client (no flash of oversized content). */
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 /* ========================================================================== */
 /*  Shared utilities                                                          */
@@ -10,6 +22,11 @@ import { Phone, MessageCircle, PhoneMissed, MousePointer2 } from "lucide-react";
  * Renders children at a fixed design width/height and scales them
  * proportionally so everything inside (absolute cursor coords, fixed
  * pixel sizes) lines up regardless of parent container width.
+ *
+ * Starts at scale=0 and measures synchronously in a layout effect so
+ * the wrapper never renders oversized — otherwise on mobile the 420px
+ * Mac design width would push grid/flex parents wider than the
+ * viewport before the effect has a chance to run.
  */
 const ScaledMockup = ({
   designWidth,
@@ -21,9 +38,9 @@ const ScaledMockup = ({
   children: ReactNode;
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(0);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const parent = wrapperRef.current?.parentElement;
     if (!parent) return;
     const update = () => {
@@ -39,7 +56,12 @@ const ScaledMockup = ({
   return (
     <div
       ref={wrapperRef}
-      style={{ width: designWidth * scale, height: designHeight * scale }}
+      className="overflow-hidden"
+      style={{
+        width: designWidth * scale,
+        height: designHeight * scale,
+        maxWidth: "100%",
+      }}
     >
       <div
         style={{
@@ -76,8 +98,8 @@ const PhoneFrame = ({ children }: { children: ReactNode }) => (
         <span className="tabular-nums">9:41</span>
         <span className="tracking-[1px]">●●●●</span>
       </div>
-      {/* Screen content */}
-      <div className="absolute inset-x-0 bottom-0 top-[30px] overflow-hidden">{children}</div>
+      {/* Screen content — stops above the home indicator area */}
+      <div className="absolute inset-x-0 bottom-[14px] top-[30px] overflow-hidden">{children}</div>
       {/* Home indicator */}
       <div className="absolute bottom-[5px] left-1/2 z-40 h-[3px] w-[38%] -translate-x-1/2 rounded-full bg-white/70" />
     </div>
