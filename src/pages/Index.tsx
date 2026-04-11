@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ParallaxBg from "@/components/shared/ParallaxBg";
 import {
   Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap,
-  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, DollarSign
+  ArrowRight, CheckCircle, ShieldCheck, Clock, Timer, Wrench, Users, DollarSign, HelpCircle
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
@@ -10,8 +10,36 @@ import heroBg from "@/assets/hero-bg.png";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
 import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap];
+
+const FAQS = [
+  {
+    question: "Is this actually going to work for me?",
+    answer: "Depends. If you're doing good work and you answer the phone when it rings, yes — the system brings you more leads and makes sure none of them slip through. If your work is bad, or you ignore leads for two days, no amount of marketing fixes that. I build the foundation. You still have to show up.",
+  },
+  {
+    question: "Why is setup really free? What's the catch?",
+    answer: "No catch. I only make money once your systems are live and working — that's how I know I'm betting on myself, not on your deposit. Most agencies want $3–5k upfront because they know half their clients cancel in month two. I'd rather not get paid than trap someone into paying for nothing. If I can't deliver, I don't deserve the money.",
+  },
+  {
+    question: "Can one guy really run all my marketing?",
+    answer: "After setup, the automations do 90% of the work — missed calls get texted back, reviews get asked for, follow-ups go out, leads get routed to you. I'm not manually running your marketing every day. I built a system that runs itself, and I'm here to keep it tuned. That's exactly why I can work with multiple contractors without dropping the ball on any of them.",
+  },
+  {
+    question: "How is this different from the agency I already tried?",
+    answer: "Four things. One — I only work with trades. Plumbers, roofers, HVAC, electricians. I don't touch restaurants or dentists. Two — you deal directly with me, not a junior account manager who's never held a wrench. Three — no contracts, ever. Cancel any month. Four — setup is free. If I can't get it working, you owe me nothing. Most agencies can't say any of that, let alone all four.",
+  },
+  {
+    question: "What if I already have a website or reviews or a phone number?",
+    answer: "Keep what works, replace what doesn't. If your current site is converting, I'll layer the automations on top and leave it alone. If it's a 2017 template nobody fills out, I'll build you one that actually gets leads. Same with your phone number, your Google Business profile, your review history — I work with what's there. Nothing gets thrown out just to justify a bigger invoice.",
+  },
+  {
+    question: "What if I want to cancel?",
+    answer: "Cancel any month, no fees, no questions. The website stays yours — I hand over the files. Your Google reviews and Google Business profile are yours, always. What stops are the automations: the missed-call text-back, the follow-ups, the review funnel, the inbox. That's it. No lock-in, no hostage situation. If I'm not earning the monthly, you shouldn't be paying it.",
+  },
+];
 
 // Lead with the pain each service solves, not just what it does
 const SERVICE_DESCRIPTIONS = [
@@ -383,6 +411,40 @@ const Index = () => {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-secondary py-20 lg:py-28">
+        <div className="container mx-auto max-w-3xl">
+          <ScrollReveal>
+            <div className="mb-10 text-center">
+              <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+                <HelpCircle className="h-4 w-4" /> The Honest Answers
+              </span>
+              <h2 className="mt-2 text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+                What You're Actually{" "}
+                <span className="text-primary">Wondering About.</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+                The questions every contractor asks before booking the call. Answered straight.
+              </p>
+            </div>
+          </ScrollReveal>
+          <Accordion type="single" collapsible className="space-y-3">
+            {FAQS.map((faq, i) => (
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-primary/30">
+                  <AccordionTrigger className="py-5 text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </ScrollReveal>
+            ))}
+          </Accordion>
         </div>
       </section>
 
