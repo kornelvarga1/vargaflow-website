@@ -183,7 +183,7 @@ const Index = () => {
               Meanwhile you're paying Angi or Thumbtack for leads every month — and building absolutely nothing. No rankings. No reviews. No asset. Just a recurring bill.
             </p>
             <p className="mt-6 text-lg font-semibold text-foreground">
-              None of that is your fault. You're a contractor, not a marketing agency. That's exactly why I built VargaFlow.
+              None of that is your fault. You're a contractor, not a marketing expert. That's exactly why I built VargaFlow.
             </p>
           </ScrollReveal>
         </div>
