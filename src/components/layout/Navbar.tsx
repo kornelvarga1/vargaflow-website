@@ -132,6 +132,15 @@ const Navbar = () => {
           </div>
 
           <Link
+            to="/demo"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors duration-300",
+              isActive("/demo") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
+            )}
+          >
+            Demo
+          </Link>
+          <Link
             to="/pricing"
             className={cn(
               "px-4 py-2 text-base font-semibold transition-colors duration-300",
@@ -218,6 +227,17 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+
+            <Link
+              to="/demo"
+              className={cn(
+                "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
+                isActive("/demo") ? "text-primary" : "text-white/80",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              Demo
+            </Link>
 
             <Link
               to="/pricing"

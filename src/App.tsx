@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import OnboardingForm from "./pages/OnboardingForm";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Demo from "./pages/Demo";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ export const AppContent = () => (
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/trades" element={<Trades />} />
+          <Route path="/demo" element={<Demo />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />

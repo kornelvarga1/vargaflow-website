@@ -103,6 +103,14 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                   </Link>
                   <span className="text-sm text-muted-foreground">Free 20-min call. No obligation.</span>
                 </div>
+                {data.slug === "functional-website" && (
+                  <Link
+                    to="/demo"
+                    className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  >
+                    See what yours could look like <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
               </div>
               {Mockup ? (
                 <div className="flex justify-center lg:justify-end">

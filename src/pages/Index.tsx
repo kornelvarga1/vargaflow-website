@@ -290,6 +290,15 @@ const Index = () => {
                       <p className="text-xs font-bold uppercase tracking-widest text-primary">Feature 0{i + 1}</p>
                       <h3 className="mt-3 text-2xl font-extrabold text-background lg:text-3xl">{demo.label}</h3>
                       <p className="mt-4 text-base leading-relaxed text-background/60 lg:text-lg">{demo.desc}</p>
+                      {demo.slug === "functional-website" && (
+                        <Link
+                          to="/demo"
+                          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-bold text-foreground transition-all hover:brightness-110"
+                        >
+                          See what yours could look like
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
