@@ -2,9 +2,10 @@ import { MessageCircle, X } from "lucide-react";
 
 interface MockChatWidgetProps {
   accentColor: string;
+  accentTextColor: string;
 }
 
-const MockChatWidget = ({ accentColor }: MockChatWidgetProps) => (
+const MockChatWidget = ({ accentColor, accentTextColor }: MockChatWidgetProps) => (
   <>
     {/* Teaser popup */}
     <div
@@ -30,7 +31,7 @@ const MockChatWidget = ({ accentColor }: MockChatWidgetProps) => (
         boxShadow: `0 4px 24px ${accentColor}55, 0 2px 8px rgba(0,0,0,0.4)`,
       }}
     >
-      <MessageCircle size={12} className="text-white" />
+      <MessageCircle size={12} style={{ color: accentTextColor }} />
     </div>
   </>
 );

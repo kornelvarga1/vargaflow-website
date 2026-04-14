@@ -7,6 +7,7 @@ import MockChatWidget from "./MockChatWidget";
 interface DemoPreviewProps {
   niche: NicheConfig;
   accentColor: string;
+  accentTextColor: string;
   companyName: string;
   logoUrl: string | null;
 }
@@ -14,6 +15,7 @@ interface DemoPreviewProps {
 const DemoPreview = ({
   niche,
   accentColor,
+  accentTextColor,
   companyName,
   logoUrl,
 }: DemoPreviewProps) => (
@@ -29,11 +31,13 @@ const DemoPreview = ({
     >
       <MockHeader
         accentColor={accentColor}
+        accentTextColor={accentTextColor}
         companyName={companyName}
         logoUrl={logoUrl}
       />
       <MockHero
         accentColor={accentColor}
+        accentTextColor={accentTextColor}
         companyName={companyName}
         headline={niche.headline}
         heroImage={niche.heroImage}
@@ -43,7 +47,7 @@ const DemoPreview = ({
     {/* Trust bar — flush at bottom */}
     <MockTrustBar accentColor={accentColor} />
     {/* Chat widget */}
-    <MockChatWidget accentColor={accentColor} />
+    <MockChatWidget accentColor={accentColor} accentTextColor={accentTextColor} />
   </div>
 );
 

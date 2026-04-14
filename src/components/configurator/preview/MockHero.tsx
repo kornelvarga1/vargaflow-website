@@ -3,6 +3,7 @@ import MockLogo from "./MockLogo";
 
 interface MockHeroProps {
   accentColor: string;
+  accentTextColor: string;
   companyName: string;
   headline: string;
   heroImage: string;
@@ -11,6 +12,7 @@ interface MockHeroProps {
 
 const MockHero = ({
   accentColor,
+  accentTextColor,
   companyName,
   headline,
   logoUrl,
@@ -126,7 +128,7 @@ const MockHero = ({
               className="flex h-[18px] w-full items-center justify-center rounded-sm"
               style={{ backgroundColor: accentColor }}
             >
-              <span className="text-[6px] font-extrabold uppercase tracking-[0.1em] text-[#1a1a1a]">
+              <span className="text-[6px] font-extrabold uppercase tracking-[0.1em]" style={{ color: accentTextColor }}>
                 Send
               </span>
             </div>

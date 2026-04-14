@@ -3,11 +3,12 @@ import MockLogo from "./MockLogo";
 
 interface MockHeaderProps {
   accentColor: string;
+  accentTextColor: string;
   companyName: string;
   logoUrl: string | null;
 }
 
-const MockHeader = ({ accentColor, companyName, logoUrl }: MockHeaderProps) => (
+const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: MockHeaderProps) => (
   <div className="absolute top-0 left-0 right-0 z-20 flex h-[30px] items-center justify-between px-5">
     {/* Logo — far left */}
     <MockLogo
@@ -40,8 +41,8 @@ const MockHeader = ({ accentColor, companyName, logoUrl }: MockHeaderProps) => (
         (602) 555-0100
       </span>
       <span
-        className="inline-flex h-[12px] items-center rounded-sm px-[6px] text-[4.5px] font-semibold text-[#1a1a1a]"
-        style={{ backgroundColor: accentColor }}
+        className="inline-flex h-[12px] items-center rounded-sm px-[6px] text-[4.5px] font-semibold"
+        style={{ backgroundColor: accentColor, color: accentTextColor }}
       >
         Get Free Quote
       </span>

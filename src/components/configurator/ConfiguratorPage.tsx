@@ -12,12 +12,15 @@ import ConfiguratorCTA from "./ConfiguratorCTA";
 const ConfiguratorPage = () => {
   const [activeNiche, setActiveNiche] = useState(DEFAULT_NICHE);
   const [hue, setHue] = useState(355); // warm red default
+  const [lightness, setLightness] = useState(50);
   const [companyName, setCompanyName] = useState("");
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
 
   const niche = NICHES[activeNiche];
   const displayName = companyName.trim() || niche.defaultCompanyName;
-  const accentColor = `hsl(${hue}, 85%, 50%)`;
+  const accentColor = `hsl(${hue}, 85%, ${lightness}%)`;
+  // Auto-contrast: white text on dark accents, dark text on light accents
+  const accentTextColor = lightness < 55 ? "#ffffff" : "#1a1a1a";
 
   // Preload all hero images on mount
   useEffect(() => {
@@ -67,7 +70,7 @@ const ConfiguratorPage = () => {
                   activeNiche={activeNiche}
                   onSelect={handleNicheSelect}
                 />
-                <HueWheel hue={hue} onChange={setHue} />
+                <HueWheel hue={hue} onHueChange={setHue} lightness={lightness} onLightnessChange={setLightness} />
                 <CompanyNameInput
                   value={companyName}
                   placeholder={niche.defaultCompanyName}
@@ -82,6 +85,7 @@ const ConfiguratorPage = () => {
                   <DemoPreview
                     niche={niche}
                     accentColor={accentColor}
+                    accentTextColor={accentTextColor}
                     companyName={displayName}
                     logoUrl={logoUrl}
                   />
