@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useRef,
   useState,
   type ReactNode,
   type ComponentType,
@@ -51,14 +52,41 @@ const ScaledMockup = ({
   </div>
 );
 
-/** Re-mounts animated children every N ms so delay-based sequences loop. */
+/**
+ * Visibility-aware loop: only runs the animation cycle while the mockup
+ * is on screen. Each time the element scrolls into view the key resets,
+ * so the visitor always sees the demo from the very first frame.
+ * When the element leaves the viewport the interval is cleared.
+ */
 const useLoopKey = (intervalMs: number) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   const [key, setKey] = useState(0);
+
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Reset to first frame every time the element enters the viewport
+  useEffect(() => {
+    if (visible) setKey((k) => k + 1);
+  }, [visible]);
+
+  // Only loop while visible
+  useEffect(() => {
+    if (!visible) return;
     const id = setInterval(() => setKey((k) => k + 1), intervalMs);
     return () => clearInterval(id);
-  }, [intervalMs]);
-  return key;
+  }, [visible, intervalMs]);
+
+  return { key, ref };
 };
 
 /** Outer iPhone-style chrome every mockup sits inside. */
@@ -113,7 +141,7 @@ const TypingDots = () => (
 /* ========================================================================== */
 
 export const MissedCallMockup = () => {
-  const loopKey = useLoopKey(18000);
+  const { key: loopKey, ref: loopRef } = useLoopKey(18000);
   const [scene, setScene] = useState<"call" | "lock" | "messages">("call");
 
   useEffect(() => {
@@ -127,6 +155,7 @@ export const MissedCallMockup = () => {
   }, [loopKey]);
 
   return (
+    <div ref={loopRef}>
     <ScaledMockup designWidth={260} designHeight={563}>
     <PhoneFrame>
       <div className="relative h-full w-full overflow-hidden">
@@ -259,6 +288,7 @@ export const MissedCallMockup = () => {
       </div>
     </PhoneFrame>
     </ScaledMockup>
+    </div>
   );
 };
 
@@ -540,7 +570,7 @@ const GoogleReviewScene = () => (
 );
 
 export const ReviewFunnelMockup = () => {
-  const loopKey = useLoopKey(15000);
+  const { key: loopKey, ref: loopRef } = useLoopKey(15000);
   const [scene, setScene] = useState<"card" | "rate-1" | "feedback" | "rate-5" | "google">(
     "card"
   );
@@ -560,6 +590,7 @@ export const ReviewFunnelMockup = () => {
   }, [loopKey]);
 
   return (
+    <div ref={loopRef}>
     <ScaledMockup designWidth={260} designHeight={563}>
       <PhoneFrame>
         <div className="relative h-full w-full overflow-hidden">
@@ -571,6 +602,7 @@ export const ReviewFunnelMockup = () => {
         </div>
       </PhoneFrame>
     </ScaledMockup>
+    </div>
   );
 };
 
@@ -896,7 +928,7 @@ const WebsitePhoneSmsContent = () => (
 );
 
 export const WebsiteMockup = () => {
-  const loopKey = useLoopKey(22000);
+  const { key: loopKey, ref: loopRef } = useLoopKey(22000);
   const [scene, setScene] = useState<"mac-hero" | "mac-form" | "phone-sms">("mac-hero");
 
   useEffect(() => {
@@ -910,6 +942,7 @@ export const WebsiteMockup = () => {
   }, [loopKey]);
 
   return (
+    <div ref={loopRef}>
     <ScaledMockup designWidth={420} designHeight={580}>
       <div className="flex h-full w-full items-center justify-center">
         {(scene === "mac-hero" || scene === "mac-form") && (
@@ -929,6 +962,7 @@ export const WebsiteMockup = () => {
         )}
       </div>
     </ScaledMockup>
+    </div>
   );
 };
 
@@ -1070,7 +1104,7 @@ const CampaignPhoneSmsContent = () => (
 );
 
 export const CampaignMockup = () => {
-  const loopKey = useLoopKey(20000);
+  const { key: loopKey, ref: loopRef } = useLoopKey(20000);
   const [scene, setScene] = useState<"form" | "success" | "sms">("form");
 
   useEffect(() => {
@@ -1084,6 +1118,7 @@ export const CampaignMockup = () => {
   }, [loopKey]);
 
   return (
+    <div ref={loopRef}>
     <ScaledMockup designWidth={260} designHeight={563}>
       <PhoneFrame>
         <div className="relative h-full w-full overflow-hidden">
@@ -1093,6 +1128,7 @@ export const CampaignMockup = () => {
         </div>
       </PhoneFrame>
     </ScaledMockup>
+    </div>
   );
 };
 
@@ -1292,7 +1328,7 @@ const ChatWidgetPhoneSmsContent = () => (
 );
 
 export const ChatWidgetMockup = () => {
-  const loopKey = useLoopKey(24000);
+  const { key: loopKey, ref: loopRef } = useLoopKey(24000);
   const [scene, setScene] = useState<"web-closed" | "web-form" | "web-success" | "phone-sms">(
     "web-closed"
   );
@@ -1310,6 +1346,7 @@ export const ChatWidgetMockup = () => {
   }, [loopKey]);
 
   return (
+    <div ref={loopRef}>
     <ScaledMockup designWidth={420} designHeight={580}>
       <div className="flex h-full w-full items-center justify-center">
         {scene !== "phone-sms" && (
@@ -1334,6 +1371,7 @@ export const ChatWidgetMockup = () => {
         )}
       </div>
     </ScaledMockup>
+    </div>
   );
 };
 

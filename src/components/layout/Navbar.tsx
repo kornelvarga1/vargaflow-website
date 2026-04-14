@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, Building2, Wrench, Calendar } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
 import vfIcon from "@/assets/vf-icon.png";
@@ -19,6 +19,7 @@ const SERVICE_DESCRIPTIONS = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -149,15 +150,63 @@ const Navbar = () => {
           >
             Pricing
           </Link>
-          <Link
-            to="/about"
-            className={cn(
-              "px-4 py-2 text-base font-semibold transition-colors duration-300",
-              isActive("/about") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
-            )}
+          {/* About Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
           >
-            About
-          </Link>
+            <button
+              className={cn(
+                "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors duration-300",
+                needsDarkText
+                  ? (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-primary" : "text-foreground/70 hover:text-primary"
+                  : (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-primary" : "text-white/80 hover:text-white",
+              )}
+            >
+              About <ChevronDown className={cn("h-4 w-4 transition-transform", aboutOpen && "rotate-180")} />
+            </button>
+            {aboutOpen && (
+              <div className="absolute -left-4 top-full pt-2">
+                <div className="w-[260px] rounded-xl border border-border bg-background p-3 shadow-2xl shadow-foreground/5">
+                  {[
+                    { to: "/about", label: "About VargaFlow", icon: Building2 },
+                    { to: "/trades", label: "Trades I Serve", icon: Wrench },
+                    { to: "/contact", label: "Contact", icon: Calendar },
+                  ].map(({ to, label, icon: Icon }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className={cn(
+                        "flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-150",
+                        isActive(to) ? "bg-primary/10" : "hover:bg-muted",
+                      )}
+                      onClick={() => setAboutOpen(false)}
+                    >
+                      <div
+                        className={cn(
+                          "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors",
+                          isActive(to)
+                            ? "bg-primary/20 text-primary"
+                            : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
+                        )}
+                      >
+                        <Icon className="h-[18px] w-[18px]" />
+                      </div>
+                      <p
+                        className={cn(
+                          "text-sm font-semibold transition-colors",
+                          isActive(to) ? "text-primary" : "text-foreground hover:text-primary",
+                        )}
+                      >
+                        {label}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Desktop right actions */}
@@ -195,8 +244,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-foreground lg:hidden">
-          <nav className="flex flex-col p-6">
+        <div className="fixed inset-0 top-16 z-40 overflow-y-auto bg-foreground lg:hidden">
+          <nav className="flex flex-col p-6 pb-24">
             {/* Mobile Services */}
             <div className="border-b border-white/10 py-4">
               <button
@@ -250,16 +299,37 @@ const Navbar = () => {
               Pricing
             </Link>
 
-            <Link
-              to="/about"
-              className={cn(
-                "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
-                isActive("/about") ? "text-primary" : "text-white/80",
+            {/* Mobile About */}
+            <div className="border-b border-white/10 py-4">
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="flex w-full items-center justify-between text-xl font-semibold text-white/80"
+              >
+                About <ChevronDown className={cn("h-5 w-5 transition-transform", aboutOpen && "rotate-180")} />
+              </button>
+              {aboutOpen && (
+                <div className="mt-3 flex flex-col gap-1 pl-1">
+                  {[
+                    { to: "/about", label: "About VargaFlow", icon: Building2 },
+                    { to: "/trades", label: "Trades I Serve", icon: Wrench },
+                    { to: "/contact", label: "Contact", icon: Calendar },
+                  ].map(({ to, label, icon: Icon }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-primary"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setAboutOpen(false);
+                      }}
+                    >
+                      <Icon className="h-4 w-4 text-primary/60" />
+                      <span className="text-base font-medium">{label}</span>
+                    </Link>
+                  ))}
+                </div>
               )}
-              onClick={() => setMobileOpen(false)}
-            >
-              About
-            </Link>
+            </div>
 
             <a
               href="https://app.vargaflow.com"
