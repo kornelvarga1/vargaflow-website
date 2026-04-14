@@ -11,7 +11,7 @@ import ConfiguratorCTA from "./ConfiguratorCTA";
 
 const ConfiguratorPage = () => {
   const [activeNiche, setActiveNiche] = useState(DEFAULT_NICHE);
-  const [hue, setHue] = useState(355); // warm red default
+  const [hue, setHue] = useState(210); // matches default niche (plumbing)
   const [lightness, setLightness] = useState(50);
   const [companyName, setCompanyName] = useState("");
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
@@ -30,10 +30,30 @@ const ConfiguratorPage = () => {
     });
   }, []);
 
+  const NICHE_COLORS: Record<string, { hue: number; lightness: number }> = {
+    plumbing: { hue: 210, lightness: 50 },
+    roofing: { hue: 355, lightness: 50 },
+    hvac: { hue: 200, lightness: 45 },
+    electrical: { hue: 45, lightness: 50 },
+    landscaping: { hue: 140, lightness: 40 },
+    painting: { hue: 25, lightness: 50 },
+    fencing: { hue: 30, lightness: 35 },
+    "pest-control": { hue: 160, lightness: 40 },
+    "garage-doors": { hue: 215, lightness: 45 },
+    concrete: { hue: 220, lightness: 40 },
+    "windows-doors": { hue: 185, lightness: 45 },
+    gutters: { hue: 220, lightness: 40 },
+  };
+
   const handleNicheSelect = (slug: string) => {
     setActiveNiche(slug);
     setCompanyName("");
     setLogoUrl(null);
+    const colors = NICHE_COLORS[slug];
+    if (colors) {
+      setHue(colors.hue);
+      setLightness(colors.lightness);
+    }
   };
 
   return (
