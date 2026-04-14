@@ -241,16 +241,6 @@ const OnboardingForm = () => {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Thanks for filling out your onboarding form. I have everything I need to get started.
             </p>
-            <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 px-6 py-5 text-left">
-              <p className="text-sm font-semibold text-foreground">One last thing —</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                Please send 25–60 of your best photos to{" "}
-                <a href="mailto:kornel@vargaflow.com" className="font-semibold text-primary hover:underline">
-                  kornel@vargaflow.com
-                </a>
-                . Include a nice photo of yourself and/or your team. High-quality photos make a huge difference on your website and listings.
-              </p>
-            </div>
             <p className="mt-6 text-sm text-muted-foreground">
               You'll hear from Kornél within 1 business day with next steps.
             </p>
