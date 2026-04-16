@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Wrench, Heart, CheckCircle, Zap } from "lucide-react";
-import aboutFounder from "@/assets/about-founder.jpg";
+import aboutFounder from "@/assets/about-founder.webp";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const About = () => {

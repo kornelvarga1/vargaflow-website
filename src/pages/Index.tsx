@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { SERVICES } from "@/config/constants";
 import { Helmet } from "react-helmet-async";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/hero-bg.webp";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
 import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
