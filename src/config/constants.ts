@@ -1,6 +1,3 @@
-// Webhook URL for form submissions — swap this when the real endpoint is ready
-export const WEBHOOK_URL = "https://placeholder-webhook.example.com/form";
-
 export const SITE_NAME = "VargaFlow";
 export const SITE_EMAIL = "kornel@vargaflow.com";
 

@@ -17,7 +17,6 @@ const routes = [
   "/onboarding-form",
   "/services/functional-website",
   "/services/missed-call-text-back",
-  "/services/all-in-one-inbox",
   "/services/business-phone",
   "/services/local-seo",
   "/services/review-funnel",
