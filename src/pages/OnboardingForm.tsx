@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import logo from "@/assets/vf-icon.png";
 import { z } from "zod";
@@ -7,6 +7,10 @@ const SUPABASE_URL = "https://zfmchywjmgykmlhjihls.supabase.co";
 const SUPABASE_BASE = `${SUPABASE_URL}/functions/v1`;
 const STORAGE_BUCKET = "onboarding-photos";
 const MAX_FILE_SIZE_MB = 25;
+
+// Version the key so if the form schema changes in a breaking way we can bump
+// it and old drafts are ignored instead of hydrating half-filled garbage.
+const DRAFT_STORAGE_KEY = "vargaflow-onboarding-draft-v1";
 
 interface UploadedPhoto {
   id: string;
@@ -94,12 +98,30 @@ const textareaClass = inputClass + " min-h-[100px] resize-y";
 const labelClass = "mb-1.5 block text-sm font-semibold text-foreground";
 const errorClass = "mt-1.5 text-xs font-medium text-destructive";
 
+type PersistedDraft = {
+  formData?: Partial<FormData>;
+  photos?: UploadedPhoto[];
+  termsAgreed?: boolean;
+};
+
+function readDraft(): PersistedDraft {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem(DRAFT_STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as PersistedDraft) : {};
+  } catch {
+    return {};
+  }
+}
+
 const OnboardingForm = () => {
-  const [formData, setFormData] = useState<FormData>(initialForm);
+  const draft = useMemo(readDraft, []);
+
+  const [formData, setFormData] = useState<FormData>(() => ({ ...initialForm, ...(draft.formData ?? {}) }));
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
-  const [termsAgreed, setTermsAgreed] = useState(false);
+  const [termsAgreed, setTermsAgreed] = useState<boolean>(() => !!draft.termsAgreed);
   const [termsError, setTermsError] = useState(false);
-  const [photos, setPhotos] = useState<UploadedPhoto[]>([]);
+  const [photos, setPhotos] = useState<UploadedPhoto[]>(() => draft.photos ?? []);
   const [uploading, setUploading] = useState<UploadingPhoto[]>([]);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -172,6 +194,37 @@ const OnboardingForm = () => {
   };
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
+  // Autosave draft to localStorage so a refresh/crash/close doesn't wipe progress.
+  // Stops saving once status === "success" (the data has reached the server).
+  useEffect(() => {
+    if (status === "success") return;
+    try {
+      const payload: PersistedDraft = { formData, photos, termsAgreed };
+      window.localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(payload));
+    } catch {
+      // Quota/private-mode: silently skip — form still works in-memory.
+    }
+  }, [formData, photos, termsAgreed, status]);
+
+  // Warn before leaving if the form has any user input and hasn't been submitted.
+  const isDirty = useMemo(() => {
+    if (termsAgreed) return true;
+    if (photos.length > 0) return true;
+    return (Object.keys(initialForm) as (keyof FormData)[]).some(
+      (k) => formData[k] !== initialForm[k],
+    );
+  }, [formData, photos, termsAgreed]);
+
+  useEffect(() => {
+    if (!isDirty || status === "success") return;
+    const handler = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, [isDirty, status]);
+
   const set = (field: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -215,6 +268,7 @@ const OnboardingForm = () => {
         }),
       });
       if (!res.ok) throw new Error("Request failed");
+      try { window.localStorage.removeItem(DRAFT_STORAGE_KEY); } catch { /* ignore */ }
       setStatus("success");
     } catch {
       setStatus("error");
