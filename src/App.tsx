@@ -14,6 +14,7 @@ import Pricing from "./pages/Pricing";
 import Trades from "./pages/Trades";
 import NotFound from "./pages/NotFound";
 import OnboardingForm from "./pages/OnboardingForm";
+import SmsOptin from "./pages/SmsOptin";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Demo from "./pages/Demo";
@@ -29,6 +30,7 @@ export const AppContent = () => (
       <Routes>
         {/* Standalone pages — no nav/footer */}
         <Route path="/onboarding-form" element={<OnboardingForm />} />
+        <Route path="/sms-optin" element={<SmsOptin />} />
         {/* All other pages use the standard Layout */}
         <Route element={<LayoutRoute />}>
           <Route path="/" element={<Index />} />
@@ -39,6 +41,10 @@ export const AppContent = () => (
           <Route path="/trades" element={<Trades />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/services/:slug" element={<ServicePage />} />
+          {/* Canonical legal paths (used in TCR / A2P submissions). /terms and /privacy
+              are kept as aliases so any pre-existing links don't break. */}
+          <Route path="/terms-of-service" element={<Terms />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
