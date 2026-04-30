@@ -127,7 +127,7 @@ const Index = () => {
       <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
               You're Not Losing Jobs
               <br />
               Because of Bad Work.
