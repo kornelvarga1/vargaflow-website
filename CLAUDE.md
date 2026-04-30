@@ -24,7 +24,7 @@ npm run preview      # Preview production build locally
 
 **Data flow:** Service content lives in `src/data/services.ts` (8 services with slugs, FAQs, feature cards). Site-wide constants (webhook URL, nav links, service list) live in `src/config/constants.ts`. Pages consume this data directly — no API calls.
 
-**Layout:** All pages are wrapped by `src/components/layout/Layout.tsx`, which includes Navbar, Footer, and `StickyMobileCTA`. Providers (HelmetProvider, QueryClientProvider, TooltipProvider, BrowserRouter) are in `src/App.tsx`.
+**Layout:** All pages are wrapped by `src/components/layout/Layout.tsx`, which includes Navbar and Footer. The mobile CTA is the "Free Call" button in `Navbar.tsx` (lg:hidden, sticky via the header). Providers (HelmetProvider, QueryClientProvider, TooltipProvider, BrowserRouter) are in `src/App.tsx`.
 
 **UI components:** `src/components/ui/` contains shadcn-ui components — edit these only if customizing behavior, not just styling. Custom site components live in `src/components/`.
 
