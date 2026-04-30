@@ -35,7 +35,7 @@ const NicheSwitcher = ({ activeNiche, onSelect }: NicheSwitcherProps) => {
         {/* Trigger */}
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          className="flex h-10 w-full items-center justify-between rounded-md border-2 border-foreground/20 bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
         >
           <span className="flex items-center gap-2">
             <CurrentIcon size={14} />

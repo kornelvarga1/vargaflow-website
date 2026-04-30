@@ -18,6 +18,7 @@ import SmsOptin from "./pages/SmsOptin";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Demo from "./pages/Demo";
+import HowItWorks from "./pages/HowItWorks";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ export const AppContent = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/trades" element={<Trades />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           {/* Canonical legal paths (used in TCR / A2P submissions). /terms and /privacy
               are kept as aliases so any pre-existing links don't break. */}

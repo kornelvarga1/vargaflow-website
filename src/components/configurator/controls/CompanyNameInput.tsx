@@ -20,7 +20,7 @@ const CompanyNameInput = ({
       value={value}
       placeholder={placeholder}
       onChange={(e) => onChange(e.target.value)}
-      className="bg-background"
+      className="border-2 border-foreground/20 bg-background"
     />
   </div>
 );

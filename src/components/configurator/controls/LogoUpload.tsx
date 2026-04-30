@@ -36,7 +36,7 @@ const LogoUpload = ({ logoUrl, onUpload }: LogoUploadProps) => {
           <img
             src={logoUrl}
             alt="Uploaded logo"
-            className="h-10 w-auto rounded border border-border object-contain bg-white p-1"
+            className="h-10 w-auto rounded border-2 border-foreground/20 object-contain bg-white p-1"
           />
           <button
             onClick={() => onUpload(null)}
@@ -49,7 +49,7 @@ const LogoUpload = ({ logoUrl, onUpload }: LogoUploadProps) => {
       ) : (
         <button
           onClick={() => inputRef.current?.click()}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-dashed border-border text-sm text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-dashed border-foreground/20 text-sm text-muted-foreground hover:border-foreground/40 hover:text-foreground transition-colors"
         >
           <Upload size={16} />
           Upload logo

@@ -21,7 +21,7 @@ const ConfiguratorCTA = () => (
             to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-foreground shadow-lg transition-all hover:brightness-110"
           >
-            Book Your Free Call
+            Book Your Free Walkthrough
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

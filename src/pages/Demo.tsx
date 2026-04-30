@@ -4,10 +4,10 @@ import ConfiguratorPage from "@/components/configurator/ConfiguratorPage";
 const Demo = () => (
   <>
     <Helmet>
-      <title>See It In Action — VargaFlow</title>
+      <title>Configure Your Website — VargaFlow</title>
       <meta
         name="description"
-        content="Build your contractor website live. Pick your trade, choose your colors, see your site come to life — free setup, no contracts."
+        content="Configure your contractor website live. Pick your trade, choose your colors, type your name — see exactly what yours would look like. Free setup, no contracts."
       />
     </Helmet>
     <ConfiguratorPage />

@@ -9,7 +9,7 @@ const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap
 const SERVICE_DESCRIPTIONS = [
   "High-converting sites built for leads",
   "Auto-reply when you can't pick up",
-  "One number, every device",
+  "A public number that's not your cell",
   "Rank higher on Google Maps",
   "Get 5-star reviews on autopilot",
   "Email & SMS in one click",
@@ -59,7 +59,7 @@ const Navbar = () => {
           className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:hidden"
           onClick={() => setMobileOpen(false)}
         >
-          Free Call
+          Free Walkthrough
         </Link>
 
         {/* Desktop Nav */}
@@ -140,6 +140,15 @@ const Navbar = () => {
             )}
           >
             Demo
+          </Link>
+          <Link
+            to="/how-it-works"
+            className={cn(
+              "px-4 py-2 text-base font-semibold transition-colors duration-300",
+              isActive("/how-it-works") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
+            )}
+          >
+            How It Works
           </Link>
           <Link
             to="/pricing"
@@ -228,7 +237,7 @@ const Navbar = () => {
             to="/contact"
             className="rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
           >
-            Get a Free Strategy Call
+            Book Your Free Walkthrough
           </Link>
         </div>
 
@@ -289,6 +298,17 @@ const Navbar = () => {
             </Link>
 
             <Link
+              to="/how-it-works"
+              className={cn(
+                "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
+                isActive("/how-it-works") ? "text-primary" : "text-white/80",
+              )}
+              onClick={() => setMobileOpen(false)}
+            >
+              How It Works
+            </Link>
+
+            <Link
               to="/pricing"
               className={cn(
                 "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
@@ -345,7 +365,7 @@ const Navbar = () => {
               className="mt-3 block rounded-md bg-primary py-3.5 text-center text-lg font-bold text-primary-foreground hover:bg-gold-dark"
               onClick={() => setMobileOpen(false)}
             >
-              Get a Free Strategy Call
+              Book Your Free Walkthrough
             </Link>
           </nav>
         </div>

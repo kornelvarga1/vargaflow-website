@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Book a Free Strategy Call — VargaFlow</title>
+        <title>Book Your Free Walkthrough — VargaFlow</title>
         <meta
           name="description"
           content="Book a free 20-minute call with Kornél at VargaFlow. No pressure — just a straight conversation about how to get more leads for your contracting business."

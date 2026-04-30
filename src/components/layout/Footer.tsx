@@ -42,6 +42,7 @@ const Footer = () => {
               <li><Link to="/about" className="text-sm text-background/60 hover:text-primary">About VargaFlow</Link></li>
               <li><Link to="/trades" className="text-sm text-background/60 hover:text-primary">Trades I Serve</Link></li>
               <li><Link to="/demo" className="text-sm text-background/60 hover:text-primary">Demo</Link></li>
+              <li><Link to="/how-it-works" className="text-sm text-background/60 hover:text-primary">How It Works</Link></li>
               <li><Link to="/pricing" className="text-sm text-background/60 hover:text-primary">Pricing</Link></li>
               <li><Link to="/contact" className="text-sm text-background/60 hover:text-primary">Contact</Link></li>
             </ul>
@@ -59,7 +60,7 @@ const Footer = () => {
                 to="/contact"
                 className="inline-block rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
               >
-                Get a Free Strategy Call
+                Book Your Free Walkthrough
               </Link>
             </div>
           </div>

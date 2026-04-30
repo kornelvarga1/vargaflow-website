@@ -12,6 +12,7 @@ const routes = [
   "/pricing",
   "/reviews",
   "/trades",
+  "/how-it-works",
   "/terms",
   "/terms-of-service",
   "/privacy",

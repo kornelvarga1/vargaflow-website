@@ -144,7 +144,7 @@ const Pricing = () => {
                     to="/contact"
                     className="block w-full rounded-lg bg-primary py-4 text-center text-lg font-extrabold text-primary-foreground transition-all hover:bg-gold-dark hover:shadow-lg"
                   >
-                    Get Started — Free Strategy Call
+                    Get Started — Free Walkthrough
                   </Link>
                   <p className="mt-3 text-center text-xs text-background/40">
                     No credit card required to book your call.
@@ -251,7 +251,7 @@ const Pricing = () => {
               to="/contact"
               className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
             >
-              Book Your Free Call <ArrowRight className="h-5 w-5" />
+              Book Your Free Walkthrough <ArrowRight className="h-5 w-5" />
             </Link>
           </ScrollReveal>
         </div>
