@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import ParallaxBg from "@/components/shared/ParallaxBg";
 import { Zap, ArrowRight, CheckCircle, ShieldCheck, Clock, HelpCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import heroBg from "@/assets/hero-bg.webp";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
 import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
@@ -59,51 +57,59 @@ const Index = () => {
         </script>
       </Helmet>
 
-      {/* HERO — dark section for impact */}
-      <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[700px]">
-        <ParallaxBg imageUrl={heroBg} />
-        <div className="absolute inset-0 hidden bg-gradient-to-r from-foreground via-foreground/90 to-foreground/60 lg:block" />
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        {/* Mobile-only atmospheric warm glow — makes the dim photo read as
-            an intentional sunset light source instead of a faded image. */}
-        <div className="pointer-events-none absolute -bottom-16 -right-20 h-[26rem] w-[26rem] rounded-full bg-primary/20 blur-3xl lg:hidden" />
-        <div className="pointer-events-none absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-primary/[0.08] blur-3xl lg:hidden" />
+      {/* HERO — typographic, no photo. Warm gold glow blobs against dark
+          bg-foreground carry the mood (Linear / Anthropic / Stripe-style). */}
+      <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[620px]">
+        {/* Subtle vertical pinstripe — Linear-style premium texture */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: "linear-gradient(to right, hsl(var(--background) / 0.08) 1px, transparent 1px)",
+            backgroundSize: "100px 100%",
+          }}
+        />
+        {/* Vertical light columns — premium showroom spotlights from above */}
+        <div className="pointer-events-none absolute -top-20 left-[12%] h-[75%] w-32 bg-gradient-to-b from-primary/20 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 left-1/2 h-full w-64 -translate-x-1/2 bg-gradient-to-b from-primary/25 via-primary/10 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute -top-20 right-[12%] h-[75%] w-32 bg-gradient-to-b from-primary/20 to-transparent blur-3xl" />
 
-        <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-56 lg:pb-36">
-          <div className="max-w-3xl">
+        <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-44 lg:pb-24">
+          <div className="mx-auto max-w-4xl">
             <ScrollReveal>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-primary sm:px-4 sm:text-xs sm:tracking-wider">
-                <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
+              <div className="flex justify-center">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-primary sm:px-4 sm:text-xs sm:tracking-wider">
+                  <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
+                </div>
               </div>
-              <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-center text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
                 More Leads.
                 <br />
                 More Jobs.
                 <br />
                 <span className="text-primary">Zero Agency BS.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/60 md:text-xl">
+              <p className="mx-auto mt-6 max-w-xl text-center text-lg leading-relaxed text-background/60 md:text-xl">
                 I build the website, set up the automations, and handle the follow-up —
                 so your phone keeps ringing while you're out on the job site.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30 sm:px-8 sm:text-lg"
                 >
-                  Book Your Free Walkthrough <ArrowRight className="h-5 w-5" />
+                  Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
                 </Link>
-                <div className="flex flex-col gap-0.5">
+                <div className="flex flex-col items-center gap-0.5 sm:items-start">
                   <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
                   <span className="text-xs text-background/50">I only make money when you do.</span>
                 </div>
               </div>
-              <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6">
+              <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6">
                 {HERO_BADGES.map((b) => (
-                  <div key={b.title} className="flex items-start gap-2.5">
+                  <div key={b.title} className="flex items-start justify-center gap-2.5 sm:justify-start">
                     <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <div>
                       <p className="text-sm font-bold text-background">{b.title}</p>
