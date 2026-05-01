@@ -15,16 +15,16 @@ const Reviews = () => {
       </Helmet>
 
       <section className="relative overflow-hidden bg-background py-20 lg:py-40">
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="container relative max-w-2xl text-center">
-          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/10">
-            <MessageSquare className="h-10 w-10 text-primary" />
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-secondary">
+            <MessageSquare className="h-10 w-10 text-foreground" />
           </div>
           <h1 className="mt-8 text-4xl font-extrabold leading-[1.08] text-foreground md:text-5xl">
             Results Are
             <br />
-            <span className="text-primary">Being Written Right Now.</span>
+            Being Written Right Now.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Instead of a wall of case studies, here's what you get: systems built to start working from day one, personally set up by Kornél, and a direct line to him the whole way. No account managers. No sales team. Just the work.
@@ -34,7 +34,7 @@ const Reviews = () => {
           </p>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+            className="mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
           >
             Talk to Kornél Directly <ArrowRight className="h-5 w-5" />
           </Link>

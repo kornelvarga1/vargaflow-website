@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, CheckCircle, type LucideIcon } from "lucide-react";
+import { ArrowRight, CheckCircle, AlertTriangle, type LucideIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
@@ -77,27 +77,27 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
+        <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
 
         <div className="container relative max-w-5xl">
           <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+                <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted-foreground">
                   {HeroIcon && <HeroIcon className="h-4 w-4" />}
                   Service
                 </span>
                 <h1 className="text-4xl font-extrabold leading-[1.08] text-foreground md:text-5xl lg:text-6xl">
                   {data.headline}
                   <br />
-                  <span className="text-primary">{data.headlineAccent}</span>
+                  {data.headlineAccent}
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">{data.subheadline}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
                   >
                     Book A Call <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -106,7 +106,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 {data.slug === "functional-website" && (
                   <Link
                     to="/demo"
-                    className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                    className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-foreground/70"
                   >
                     See what yours could look like <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -121,9 +121,9 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               ) : HeroIcon ? (
                 <div className="hidden lg:flex">
                   <div className="relative">
-                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/[0.02] blur-xl" />
-                    <div className="relative flex h-40 w-40 items-center justify-center rounded-3xl border border-primary/20 bg-secondary">
-                      <HeroIcon className="h-20 w-20 text-primary/60" strokeWidth={1.2} />
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-foreground/10 to-foreground/[0.02] blur-xl" />
+                    <div className="relative flex h-40 w-40 items-center justify-center rounded-3xl border border-border bg-secondary">
+                      <HeroIcon className="h-20 w-20 text-muted-foreground" strokeWidth={1.2} />
                     </div>
                   </div>
                 </div>
@@ -140,16 +140,16 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
           <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
               <div className="hidden lg:block">
-                <div className="sticky top-32 flex h-16 w-16 items-center justify-center rounded-2xl border border-destructive/20 bg-destructive/10">
-                  <span className="text-2xl">⚠️</span>
+                <div className="sticky top-32 flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-secondary">
+                  <AlertTriangle className="h-7 w-7 text-muted-foreground" strokeWidth={1.8} />
                 </div>
               </div>
               <div>
-                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Problem</span>
+                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">The Problem</span>
                 <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
                   {data.problemHeadline}
                   <br />
-                  <span className="text-primary">{data.problemAccent}</span>
+                  {data.problemAccent}
                 </h2>
                 <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   {data.problemText.map((p, i) => (
@@ -167,11 +167,11 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-4xl">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Solution</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">The Solution</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
                 {data.solutionHeadline}
                 <br />
-                <span className="text-primary">{data.solutionAccent}</span>
+                {data.solutionAccent}
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{data.solutionText}</p>
             </div>
@@ -181,18 +181,18 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               const FeatureIcon = feature.icon || CheckCircle;
               return (
                 <ScrollReveal key={feature.title} delay={idx * 0.05}>
-                  <div className="group relative overflow-hidden rounded-xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 h-full">
-                    <span className="absolute right-2 top-2 text-5xl font-extrabold leading-none text-primary/[0.04] transition-transform duration-300 group-hover:scale-110 md:text-7xl md:-right-2 md:-top-4">
+                  <div className="group relative overflow-hidden rounded-xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl h-full">
+                    <span className="absolute right-2 top-2 text-5xl font-extrabold leading-none text-foreground/[0.04] transition-transform duration-300 group-hover:scale-110 md:text-7xl md:-right-2 md:-top-4">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/[0.03] transition-transform duration-300 group-hover:scale-150" />
+                    <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-foreground/[0.03] transition-transform duration-300 group-hover:scale-150" />
 
                     <div className="relative flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
-                        <FeatureIcon className="h-6 w-6 text-primary" />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary transition-colors duration-300 group-hover:bg-muted">
+                        <FeatureIcon className="h-6 w-6 text-foreground" />
                       </div>
                       <div>
-                        <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-primary">{feature.title}</h3>
+                        <h3 className="text-base font-bold text-foreground">{feature.title}</h3>
                         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
                       </div>
                     </div>
@@ -209,17 +209,17 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">FAQ</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">FAQ</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-                Frequently Asked <span className="text-primary">Questions</span>
+                Frequently Asked Questions
               </h2>
             </div>
           </ScrollReveal>
           <Accordion type="single" collapsible className="mt-10 space-y-3">
             {data.faqs.map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-primary/30">
-                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline py-5">
+                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-foreground/20">
+                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
@@ -234,17 +234,17 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
 
       {/* Bottom CTA — dark */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-background/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-background/10 blur-3xl" />
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
               <div>
-                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">Get Started</span>
+                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-background/50">Get Started</span>
                 <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
                   Ready to Get Started
                   <br />
-                  <span className="text-primary">With {data.title}?</span>
+                  With {data.title}?
                 </h2>
                 <p className="mt-6 text-lg text-background/60">
                   Book a call. 20 minutes. I'll walk you through exactly how this works for your business.
@@ -252,7 +252,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 <ul className="mt-8 space-y-4">
                   {["No contracts or commitments", "Set up in days, not months", "Built for contractors like you"].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-background">
-                      <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
+                      <CheckCircle className="h-5 w-5 shrink-0 text-background/40" />
                       <span className="text-sm font-medium">{item}</span>
                     </li>
                   ))}
@@ -260,7 +260,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
               >
                 Book A Call <ArrowRight className="h-5 w-5" />
               </Link>

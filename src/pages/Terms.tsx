@@ -77,7 +77,7 @@ const Terms = () => {
               <h2 className="text-lg font-bold text-foreground">8. Privacy</h2>
               <p>
                 Your use of the Services is also governed by our{" "}
-                <a href="/privacy-policy" className="font-semibold text-primary hover:underline">
+                <a href="/privacy-policy" className="font-semibold text-foreground hover:underline">
                   Privacy Policy
                 </a>
                 , which is incorporated by reference into these Terms.
@@ -150,7 +150,7 @@ const Terms = () => {
               <ul className="ml-5 list-disc space-y-1.5">
                 <li>
                   <span className="font-semibold text-foreground">Email:</span>{" "}
-                  <a href="mailto:kornel@vargaflow.com" className="font-semibold text-primary hover:underline">kornel@vargaflow.com</a>
+                  <a href="mailto:kornel@vargaflow.com" className="font-semibold text-foreground hover:underline">kornel@vargaflow.com</a>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Phone:</span> +1 307 374 9123

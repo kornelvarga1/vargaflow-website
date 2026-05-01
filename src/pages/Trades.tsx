@@ -14,7 +14,7 @@ const Trades = () => (
     <section className="relative -mt-16 bg-foreground pt-36 pb-20 lg:-mt-20 lg:pt-48 lg:pb-28">
       <div className="container text-center">
         <h1 className="text-4xl font-extrabold text-background md:text-5xl lg:text-6xl">
-          Trades I <span className="text-primary">Work With</span>
+          Trades I Work With
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-background/60">
           I work exclusively with home service contractors and tradespeople.
@@ -30,14 +30,14 @@ const Trades = () => (
     <section className="bg-background py-20 lg:py-28">
       <div className="container text-center">
         <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-          Don't See Your Trade? <span className="text-primary">I Still Got You.</span>
+          Don't See Your Trade? I Still Got You.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
           If you serve homeowners and want more leads, I can help. Book a call and let's talk.
         </p>
         <Link
           to="/contact"
-          className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl"
+          className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
         >
           Book A Call <ArrowRight className="h-5 w-5" />
         </Link>

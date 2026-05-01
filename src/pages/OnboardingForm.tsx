@@ -161,7 +161,7 @@ const labelClass = "mb-1.5 block text-sm font-semibold text-foreground";
 const errorClass = "mt-1.5 text-xs font-medium text-destructive";
 
 const primaryBtn =
-  "inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-md shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50";
+  "inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-all hover:bg-gold-dark disabled:opacity-50";
 const secondaryBtn =
   "inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted disabled:opacity-50";
 
@@ -830,7 +830,7 @@ const OnboardingForm = () => {
 
                 <div>
                   <label className={labelClass}>
-                    <span className="text-primary">IMPORTANT:</span> Discounts you would offer for return customers or friends of past customers
+                    <span className="font-bold text-foreground">IMPORTANT:</span> Discounts you would offer for return customers or friends of past customers
                   </label>
                   <p className="mb-2 text-xs text-muted-foreground">
                     Ex: $500 off your next roof / 15% off your next service — I will market these on your behalf to all your past customers.
@@ -964,8 +964,8 @@ const OnboardingForm = () => {
                   </p>
 
                   {!logoFile ? (
-                    <label className="flex w-full cursor-pointer items-center gap-3 rounded-md border border-border bg-muted px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
-                      <svg className="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <label className="flex w-full cursor-pointer items-center gap-3 rounded-md border border-border bg-muted px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground">
+                      <svg className="h-5 w-5 shrink-0 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                       </svg>
                       <span>Click to upload your logo</span>
@@ -1044,7 +1044,7 @@ const OnboardingForm = () => {
 
                 <div>
                   <label className={labelClass}>
-                    Your Photos <span className="text-primary">📸</span>
+                    Your Photos 📸
                   </label>
                   <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
                     Upload 25–60 of your best project photos. Include at least one nice picture of yourself or your team — customers want to see who they'll be working with. Max {MAX_FILE_SIZE_MB}MB per photo.
@@ -1063,11 +1063,11 @@ const OnboardingForm = () => {
                     }}
                     className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed px-4 py-8 text-center transition-colors ${
                       isDragging
-                        ? "border-primary bg-primary/10"
-                        : "border-border bg-muted hover:border-primary/60 hover:bg-primary/5"
+                        ? "border-foreground bg-secondary"
+                        : "border-border bg-muted hover:border-foreground/40 hover:bg-secondary"
                     }`}
                   >
-                    <svg className="mb-2 h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="mb-2 h-8 w-8 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                     </svg>
                     <p className="text-sm font-semibold text-foreground">Click to upload or drag & drop</p>
@@ -1196,7 +1196,7 @@ const OnboardingForm = () => {
                 <div className="rounded-xl border border-border bg-muted/40 p-4">
                   <div className="mb-3 flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-foreground">Brand & Photos</h3>
-                    <button type="button" onClick={() => jumpToStep(4)} className="text-xs font-semibold text-primary hover:underline">
+                    <button type="button" onClick={() => jumpToStep(4)} className="text-xs font-semibold text-foreground hover:underline">
                       Edit
                     </button>
                   </div>
@@ -1241,7 +1241,7 @@ const OnboardingForm = () => {
                     />
                     <span className="text-sm text-foreground">
                       I agree to the{" "}
-                      <a href="/terms" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+                      <a href="/terms" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:underline">
                         Terms & Conditions
                       </a>
                     </span>
@@ -1308,7 +1308,7 @@ function ReviewSection({ title, stepIndex, onEdit, items }: ReviewSectionProps) 
     <div className="rounded-xl border border-border bg-muted/40 p-4">
       <div className="mb-3 flex items-center justify-between">
         <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-        <button type="button" onClick={() => onEdit(stepIndex)} className="text-xs font-semibold text-primary hover:underline">
+        <button type="button" onClick={() => onEdit(stepIndex)} className="text-xs font-semibold text-foreground hover:underline">
           Edit
         </button>
       </div>

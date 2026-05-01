@@ -9,11 +9,11 @@ const ConfiguratorPage = () => (
       <div className="container">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">
               Interactive Demo
             </span>
             <h1 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-              Configure Your <span className="text-primary">Website.</span>
+              Configure Your Website.
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground lg:text-lg">
               Pick your trade, choose your color, type your name — watch your

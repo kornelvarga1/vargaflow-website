@@ -82,7 +82,7 @@ const ConfiguratorWidget = () => {
         <div className="mt-2 flex flex-col gap-1.5">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-md shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-lg"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-all hover:bg-gold-dark"
           >
             Build This For Me — Free
             <ArrowRight className="h-4 w-4" />

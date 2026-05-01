@@ -50,12 +50,11 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
     <section className="bg-secondary py-20 lg:py-28">
       <div className="container">
         <div className="text-center">
-          <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+          <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">
             Who I Work With
           </span>
           <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-            Built for the Trades —{" "}
-            <span className="text-primary">All of Them</span>
+            Built for the Trades — All of Them
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             If you work with your hands and serve homeowners, my systems are built for you.
@@ -69,11 +68,11 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
             return (
               <div
                 key={trade.name}
-                className="group flex flex-col items-center gap-4 rounded-xl border border-border bg-background p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+                className="group flex flex-col items-center gap-4 rounded-xl border border-border bg-background p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-secondary transition-colors duration-300 group-hover:bg-muted">
                   <Icon
-                    className="h-9 w-9 text-primary transition-transform duration-300 group-hover:scale-110"
+                    className="h-9 w-9 text-foreground transition-transform duration-300 group-hover:scale-110"
                     strokeWidth={1.5}
                     aria-label={trade.name}
                   />
@@ -88,7 +87,7 @@ const TradesWeServe = ({ compact = true }: TradesWeServeProps) => {
           <div className="mt-10 text-center">
             <Link
               to="/trades"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-foreground/70"
             >
               See all trades I work with <ArrowRight className="h-4 w-4" />
             </Link>

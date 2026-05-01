@@ -4,7 +4,7 @@ import vfIcon from "@/assets/vf-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-primary/40 bg-foreground">
+    <footer className="border-t border-background/10 bg-foreground">
       <div className="container py-12 pb-28 lg:py-16 lg:pb-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -20,13 +20,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary">Services</h4>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-background/90">Services</h4>
             <ul className="space-y-2">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-sm text-background/60 transition-colors hover:text-primary"
+                    className="text-sm text-background/60 transition-colors hover:text-background"
                   >
                     {service.title}
                   </Link>
@@ -37,21 +37,21 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary">Company</h4>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-background/90">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-sm text-background/60 hover:text-primary">About VargaFlow</Link></li>
-              <li><Link to="/trades" className="text-sm text-background/60 hover:text-primary">Trades I Serve</Link></li>
-              <li><Link to="/demo" className="text-sm text-background/60 hover:text-primary">Demo</Link></li>
-              <li><Link to="/how-it-works" className="text-sm text-background/60 hover:text-primary">How It Works</Link></li>
-              <li><Link to="/pricing" className="text-sm text-background/60 hover:text-primary">Pricing</Link></li>
-              <li><Link to="/contact" className="text-sm text-background/60 hover:text-primary">Contact</Link></li>
+              <li><Link to="/about" className="text-sm text-background/60 hover:text-background">About VargaFlow</Link></li>
+              <li><Link to="/trades" className="text-sm text-background/60 hover:text-background">Trades I Serve</Link></li>
+              <li><Link to="/demo" className="text-sm text-background/60 hover:text-background">Demo</Link></li>
+              <li><Link to="/how-it-works" className="text-sm text-background/60 hover:text-background">How It Works</Link></li>
+              <li><Link to="/pricing" className="text-sm text-background/60 hover:text-background">Pricing</Link></li>
+              <li><Link to="/contact" className="text-sm text-background/60 hover:text-background">Contact</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary">Get In Touch</h4>
-            <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-background/60 hover:text-primary">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-background/90">Get In Touch</h4>
+            <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-background/60 hover:text-background">
               {SITE_EMAIL}
             </a>
             <p className="mt-3 text-xs text-background/40">Free setup.<br />You only pay once it's working.</p>
@@ -69,8 +69,8 @@ const Footer = () => {
         <div className="mt-12 border-t border-background/20 pt-6 flex flex-col items-center gap-2 text-center text-sm text-background/50 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} VargaFlow LLC. All rights reserved.</span>
           <div className="flex gap-4">
-            <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-background transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-background transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>

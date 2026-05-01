@@ -38,6 +38,61 @@ const ALSO_INCLUDES = [
   { slug: "automated-follow-up", label: "Automated Lead Follow-Up" },
 ];
 
+// Path d-strings shared between visible cream currents and the orb motion paths.
+// Using `path` attribute on <animateMotion> directly (not <mpath href>) means
+// no SVG IDs are needed — the visual can render in multiple DOM positions
+// (mobile bg + desktop column) without ID-collision warnings.
+const FLOW_PATH_1 = "M-50,90 Q120,160 260,110 Q380,70 580,200";
+const FLOW_PATH_2 = "M-50,260 Q140,210 280,300 Q420,380 580,280";
+const FLOW_PATH_3 = "M-50,420 Q160,380 320,470 Q450,540 580,420";
+const FLOW_PATH_4 = "M-50,560 Q180,530 360,580 Q470,610 580,540";
+
+const HeroFlowVisual = () => (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 500 600"
+    preserveAspectRatio="xMidYMid slice"
+    className="h-full w-full"
+  >
+    {/* Cream current lines — ambient backdrop */}
+    <g opacity="0.14">
+      <path d={FLOW_PATH_1} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d={FLOW_PATH_2} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d={FLOW_PATH_3} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d={FLOW_PATH_4} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+    </g>
+
+    {/* Terracotta particles drifting along the currents */}
+    <circle r="4" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="13s" repeatCount="indefinite" path={FLOW_PATH_1} />
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="13s" repeatCount="indefinite" />
+    </circle>
+    <circle r="2.5" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="13s" repeatCount="indefinite" begin="-7s" path={FLOW_PATH_1} />
+      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="13s" repeatCount="indefinite" begin="-7s" />
+    </circle>
+
+    <circle r="3" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="17s" repeatCount="indefinite" begin="-4s" path={FLOW_PATH_2} />
+      <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.85;1" dur="17s" repeatCount="indefinite" begin="-4s" />
+    </circle>
+
+    <circle r="3.5" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="-9s" path={FLOW_PATH_3} />
+      <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.85;1" dur="15s" repeatCount="indefinite" begin="-9s" />
+    </circle>
+    <circle r="2" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="-2s" path={FLOW_PATH_3} />
+      <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.15;0.85;1" dur="15s" repeatCount="indefinite" begin="-2s" />
+    </circle>
+
+    <circle r="2.5" fill="hsl(var(--primary))" opacity="0">
+      <animateMotion dur="19s" repeatCount="indefinite" begin="-13s" path={FLOW_PATH_4} />
+      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="19s" repeatCount="indefinite" begin="-13s" />
+    </circle>
+  </svg>
+);
+
 const Index = () => {
 
   return (
@@ -57,68 +112,71 @@ const Index = () => {
         </script>
       </Helmet>
 
-      {/* HERO — typographic, no photo. Warm gold glow blobs against dark
-          bg-foreground carry the mood (Linear / Anthropic / Stripe-style). */}
+      {/* HERO — text-left + abstract flow visual.
+          Mobile: flow renders full-bleed behind text as ambient atmosphere (dimmed).
+          Desktop: flow lives inside container's right grid column, naturally aligned
+          to text — no viewport-edge anchor that breaks layout on wide screens. */}
       <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[620px]">
-        {/* Subtle vertical pinstripe — Linear-style premium texture */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "linear-gradient(to right, hsl(var(--background) / 0.08) 1px, transparent 1px)",
-            backgroundSize: "100px 100%",
-          }}
-        />
-        {/* Vertical light columns — premium showroom spotlights from above */}
-        <div className="pointer-events-none absolute -top-20 left-[12%] h-[75%] w-32 bg-gradient-to-b from-primary/20 to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute -top-32 left-1/2 h-full w-64 -translate-x-1/2 bg-gradient-to-b from-primary/25 via-primary/10 to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute -top-20 right-[12%] h-[75%] w-32 bg-gradient-to-b from-primary/20 to-transparent blur-3xl" />
+        {/* MOBILE: full-bleed atmospheric bg behind text. Dimmed via opacity
+            so the headline reads cleanly on top. */}
+        <div className="pointer-events-none absolute inset-0 opacity-55 lg:hidden">
+          <HeroFlowVisual />
+        </div>
 
-        <div className="container relative z-10 flex flex-col justify-center pt-32 pb-16 lg:pt-44 lg:pb-24">
-          <div className="mx-auto max-w-4xl">
-            <ScrollReveal>
-              <div className="flex justify-center">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-primary sm:px-4 sm:text-xs sm:tracking-wider">
-                  <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
-                </div>
-              </div>
-              <h1 className="text-center text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
-                More Leads.
-                <br />
-                More Jobs.
-                <br />
-                <span className="text-primary">Zero Agency BS.</span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-xl text-center text-lg leading-relaxed text-background/60 md:text-xl">
-                I build the website, set up the automations, and handle the follow-up —
-                so your phone keeps ringing while you're out on the job site.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30 sm:px-8 sm:text-lg"
-                >
-                  Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
-                </Link>
-                <div className="flex flex-col items-center gap-0.5 sm:items-start">
-                  <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
-                  <span className="text-xs text-background/50">I only make money when you do.</span>
-                </div>
-              </div>
-              <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6">
-                {HERO_BADGES.map((b) => (
-                  <div key={b.title} className="flex items-start justify-center gap-2.5 sm:justify-start">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <p className="text-sm font-bold text-background">{b.title}</p>
-                      <p className="mt-0.5 text-xs leading-snug text-background/60">{b.desc}</p>
-                    </div>
+        <div className="container relative z-10 pt-32 pb-16 lg:pt-44 lg:pb-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+            {/* LEFT: Text + CTA + badges */}
+            <div>
+              <ScrollReveal>
+                <div className="flex justify-center lg:justify-start">
+                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-background/15 bg-background/5 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-background/70 sm:px-4 sm:text-xs sm:tracking-wider">
+                    <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
+                </div>
+                <h1 className="text-center text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-left lg:text-6xl xl:text-7xl">
+                  More Leads.
+                  <br />
+                  More Jobs.
+                  <br />
+                  Zero Agency BS.
+                </h1>
+                <p className="mx-auto mt-6 max-w-xl text-center text-lg leading-relaxed text-background/60 md:text-xl lg:mx-0 lg:text-left">
+                  I build the website, set up the automations, and handle the follow-up —
+                  so your phone keeps ringing while you're out on the job site.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark sm:px-8 sm:text-lg"
+                  >
+                    Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
+                  </Link>
+                  <div className="flex flex-col items-center gap-0.5 sm:items-start">
+                    <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
+                    <span className="text-xs text-background/50">I only make money when you do.</span>
+                  </div>
+                </div>
+                <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6 lg:mx-0">
+                  {HERO_BADGES.map((b) => (
+                    <div key={b.title} className="flex items-start justify-center gap-2.5 sm:justify-start">
+                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-background/40" />
+                      <div>
+                        <p className="text-sm font-bold text-background">{b.title}</p>
+                        <p className="mt-0.5 text-xs leading-snug text-background/60">{b.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* DESKTOP: flow visual lives inside the grid right column.
+                Aligns naturally with container width, no viewport-edge anchor. */}
+            <div className="pointer-events-none relative hidden aspect-[4/5] w-full lg:block">
+              <HeroFlowVisual />
+            </div>
           </div>
         </div>
       </section>
@@ -132,7 +190,7 @@ const Index = () => {
               <br />
               Because of Bad Work.
               <br />
-              <span className="text-primary">You're Losing Them Before You Even Know About It.</span>
+              You're Losing Them Before You Even Know About It.
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
               You missed a call while you were elbow-deep in a crawlspace. Your website was built by your nephew in 2017 — no chat, no click-to-call, just a contact form nobody fills out. Your Google reviews are stuck at 8. Three leads came in last week and you followed up two days later. They'd already hired someone else.
@@ -149,11 +207,11 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">
                 Interactive Demo
               </span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                Configure Your <span className="text-primary">Website.</span>
+                Configure Your Website.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Pick your trade, choose your color, type your name — watch your site build itself in real time.
@@ -179,10 +237,9 @@ const Index = () => {
         <div className="container max-w-5xl">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What I Build For You</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-background/50">What I Build For You</span>
               <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-                The Systems{" "}
-                <span className="text-primary">In Action.</span>
+                The Systems In Action.
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-background/60">
                 Some work the same day. Others compound over weeks and months. Together they replace paid lead sources with something you actually own.
@@ -222,7 +279,7 @@ const Index = () => {
                       {Mockup && <Mockup />}
                     </div>
                     <div className="text-center lg:text-left">
-                      <p className="text-xs font-bold uppercase tracking-widest text-primary">Feature 0{i + 1}</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-background/50">Feature 0{i + 1}</p>
                       <h3 className="mt-3 text-2xl font-extrabold text-background lg:text-3xl">{demo.label}</h3>
                       <p className="mt-4 text-base leading-relaxed text-background/60 lg:text-lg">{demo.desc}</p>
                     </div>
@@ -235,13 +292,13 @@ const Index = () => {
           {/* Also includes — chip row for the abstract services */}
           <ScrollReveal delay={0.2}>
             <div className="mt-20 text-center">
-              <p className="mb-5 text-xs font-bold uppercase tracking-widest text-primary">Also Includes</p>
+              <p className="mb-5 text-xs font-bold uppercase tracking-widest text-background/50">Also Includes</p>
               <div className="flex flex-wrap justify-center gap-2.5">
                 {ALSO_INCLUDES.map((s) => (
                   <Link
                     key={s.slug}
                     to={`/services/${s.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-background/15 bg-background/5 px-4 py-2 text-sm font-semibold text-background/80 transition-colors hover:bg-background/10 hover:text-background"
                   >
                     {s.label}
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -261,10 +318,9 @@ const Index = () => {
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Process</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">The Process</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                Three Steps.{" "}
-                <span className="text-primary">Free Until You Keep It.</span>
+                Three Steps. Free Until You Keep It.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 You shouldn't have to take my word for it — so you don't.
@@ -300,18 +356,18 @@ const Index = () => {
                   {/* Dotted connector line — desktop only */}
                   {i < 2 && (
                     <div className="absolute left-[calc(50%+40px)] top-10 hidden w-[calc(100%-80px)] md:block"
-                      style={{ borderTop: "2px dashed", borderColor: "hsl(var(--primary) / 0.25)" }}
+                      style={{ borderTop: "2px dashed", borderColor: "hsl(var(--foreground) / 0.15)" }}
                     />
                   )}
 
                   {/* Numbered circle */}
-                  <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/20">
-                    <span className="text-2xl font-extrabold text-primary-foreground">{step.num}</span>
+                  <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-foreground shadow-lg">
+                    <span className="text-2xl font-extrabold text-background">{step.num}</span>
                   </div>
 
                   {/* Time badge */}
-                  <div className="mt-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1">
-                    <span className="text-xs font-bold text-primary">{step.time}</span>
+                  <div className="mt-4 inline-flex items-center rounded-full border border-border bg-secondary px-3 py-1">
+                    <span className="text-xs font-bold text-muted-foreground">{step.time}</span>
                   </div>
 
                   <h3 className="mt-3 text-xl font-bold text-foreground">{step.title}</h3>
@@ -325,7 +381,7 @@ const Index = () => {
             <div className="mt-12 text-center">
               <Link
                 to="/how-it-works"
-                className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-secondary px-6 py-3 text-sm font-bold text-foreground transition-all hover:bg-foreground hover:text-background"
               >
                 See the Full Process <ArrowRight className="h-4 w-4" />
               </Link>
@@ -339,12 +395,11 @@ const Index = () => {
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal>
             <div className="mb-10 text-center">
-              <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+              <span className="mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted-foreground">
                 <HelpCircle className="h-4 w-4" /> The Honest Answers
               </span>
               <h2 className="mt-2 text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                What You're Actually{" "}
-                <span className="text-primary">Wondering About.</span>
+                What You're Actually Wondering About.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 The questions every contractor asks before booking the call. Answered straight.
@@ -354,8 +409,8 @@ const Index = () => {
           <Accordion type="single" collapsible className="space-y-3">
             {FAQS.map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-primary/30">
-                  <AccordionTrigger className="py-5 text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline">
+                <AccordionItem value={`faq-${i}`} className="rounded-lg border border-border bg-background px-5 data-[state=open]:border-foreground/20">
+                  <AccordionTrigger className="py-5 text-left text-base font-semibold text-foreground hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
@@ -370,15 +425,15 @@ const Index = () => {
 
       {/* FINAL CTA */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
                 Your Competition Is Already
                 <br />
-                <span className="text-primary">Online and Getting Your Leads.</span>
+                Online and Getting Your Leads.
               </h2>
               <p className="mt-6 text-lg text-background/60">
                 Book a free call. 20 minutes. I'll look at your current setup and show you exactly where
@@ -391,17 +446,17 @@ const Index = () => {
                   { icon: ShieldCheck, text: "Built for contractors only" },
                 ].map((item) => (
                   <li key={item.text} className="flex items-center gap-2 text-background">
-                    <item.icon className="h-5 w-5 shrink-0 text-primary" />
+                    <item.icon className="h-5 w-5 shrink-0 text-background/40" />
                     <span className="text-sm font-medium">{item.text}</span>
                   </li>
                 ))}
               </ul>
               <p className="mt-10 text-base font-semibold text-background md:text-lg">
-                $297 a month. <span className="text-primary">Free until you keep it.</span> No contracts.
+                $297 a month. Free until you keep it. No contracts.
               </p>
               <Link
                 to="/contact"
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
               >
                 Claim Your Free Walkthrough <ArrowRight className="h-5 w-5" />
               </Link>

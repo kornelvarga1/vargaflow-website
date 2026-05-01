@@ -241,7 +241,7 @@ export const MissedCallMockup = () => {
                 initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
                 animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                 transition={{ delay: 1, duration: 0.45, ease: "easeOut" }}
-                className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+                className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
               >
                 <p className="text-[8px] leading-snug text-black">
                   Hey, sorry I missed you. I'll get back to you as soon as possible. If you want to give me a few details about the job, that would be great. You can click this link for a free quote:{" "}
@@ -254,7 +254,7 @@ export const MissedCallMockup = () => {
                 initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
                 animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                 transition={{ delay: 4, duration: 0.45, ease: "easeOut" }}
-                className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+                className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
               >
                 <p className="text-[8px] leading-snug text-black">
                   Look forward to hearing from you. In the meantime, are there any questions I can answer here for you?
@@ -392,7 +392,7 @@ const ReviewCardScene = () => (
             <GoldStar key={i} size={17} />
           ))}
         </div>
-        <div className="mt-3 rounded-sm bg-gold-light py-2 text-[9px] font-extrabold uppercase tracking-wide text-black">
+        <div className="mt-3 rounded-sm bg-primary py-2 text-[9px] font-extrabold uppercase tracking-wide text-black">
           Leave Us a Review
         </div>
       </div>
@@ -409,12 +409,12 @@ const RateScene = ({ targetStar }: { targetStar: 1 | 5 }) => {
 
   return (
     <div className="relative h-full w-full bg-[#111] px-3 pt-4">
-      <p className="text-center text-[8px] font-extrabold uppercase tracking-wider text-gold-light">
+      <p className="text-center text-[8px] font-extrabold uppercase tracking-wider text-primary">
         Arizona Roofing Pro
       </p>
 
       {/* Funnel container */}
-      <div className="mt-2.5 overflow-hidden rounded-xl border-2 border-gold-light shadow-[0_0_30px_rgba(194,145,71,0.15)]">
+      <div className="mt-2.5 overflow-hidden rounded-xl border-2 border-primary shadow-[0_0_30px_rgba(198,97,63,0.15)]">
         {/* Dark header */}
         <div className="bg-[#1a1a1a] px-3 py-2.5 text-center">
           <p className="text-[10px] font-bold text-white">How would you rate us?</p>
@@ -423,7 +423,7 @@ const RateScene = ({ targetStar }: { targetStar: 1 | 5 }) => {
         {/* White card with rating rows */}
         <div className="bg-white px-3 py-3">
           <p className="mb-2 text-[8px] font-bold text-neutral-900">
-            Please Rate Us <span className="text-gold-light">*</span>
+            Please Rate Us <span className="text-primary">*</span>
           </p>
           <div className="space-y-[5px]">
             {[5, 4, 3, 2, 1].map((n) => (
@@ -448,10 +448,10 @@ const RateScene = ({ targetStar }: { targetStar: 1 | 5 }) => {
       <div className="mt-3 px-1">
         <div className="flex justify-between">
           <span className="text-[6px] uppercase tracking-widest text-white/30">Progress</span>
-          <span className="text-[6px] font-semibold text-gold-light">0%</span>
+          <span className="text-[6px] font-semibold text-primary">0%</span>
         </div>
         <div className="mt-0.5 h-[3px] w-full rounded-full bg-white/10">
-          <div className="h-full w-[2%] rounded-full bg-gold-light" />
+          <div className="h-full w-[2%] rounded-full bg-primary" />
         </div>
       </div>
 
@@ -463,11 +463,11 @@ const RateScene = ({ targetStar }: { targetStar: 1 | 5 }) => {
 /* ── Scene: Private feedback form (after 1★) ──────────────────────── */
 const FeedbackScene = () => (
   <div className="relative h-full w-full bg-[#111] px-3 pt-4">
-    <p className="text-center text-[8px] font-extrabold uppercase tracking-wider text-gold-light">
+    <p className="text-center text-[8px] font-extrabold uppercase tracking-wider text-primary">
       Arizona Roofing Pro
     </p>
 
-    <div className="mt-2.5 overflow-hidden rounded-xl border-2 border-gold-light shadow-[0_0_30px_rgba(194,145,71,0.15)]">
+    <div className="mt-2.5 overflow-hidden rounded-xl border-2 border-primary shadow-[0_0_30px_rgba(198,97,63,0.15)]">
       {/* Dark header */}
       <div className="bg-[#1a1a1a] px-3 py-3 text-center">
         <p className="text-[10px] font-bold leading-tight text-white">
@@ -503,10 +503,10 @@ const FeedbackScene = () => (
     <div className="mt-3 px-1">
       <div className="flex justify-between">
         <span className="text-[6px] uppercase tracking-widest text-white/30">Progress</span>
-        <span className="text-[6px] font-semibold text-gold-light">50%</span>
+        <span className="text-[6px] font-semibold text-primary">50%</span>
       </div>
       <div className="mt-0.5 h-[3px] w-full rounded-full bg-white/10">
-        <div className="h-full w-[50%] rounded-full bg-gold-light" />
+        <div className="h-full w-[50%] rounded-full bg-primary" />
       </div>
     </div>
   </div>
@@ -651,9 +651,9 @@ const BrandLogo = ({
     { w: 22, h: 18, main: 10, sub: 6 };
   const isDark = variant === "dark";
   const bodyFill = isDark ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.12)";
-  const roofFill = isDark ? "#1a1a1a" : "#C29147";
+  const roofFill = isDark ? "#1a1a1a" : "#c6613f";
   const mainClass = isDark ? "text-black" : "text-white";
-  const subClass = isDark ? "text-black/75" : "text-gold-light";
+  const subClass = isDark ? "text-black/75" : "text-primary";
   return (
     <div className="flex items-center gap-1.5">
       <svg
@@ -708,7 +708,7 @@ const MacHeroContent = ({ chatWidget }: { chatWidget?: ReactNode } = {}) => (
         <span>AREAS</span>
         <span>REVIEWS</span>
         <span>ABOUT</span>
-        <span className="rounded-sm bg-gold-light px-2 py-[2px] text-[6px] font-extrabold uppercase tracking-wide text-black">
+        <span className="rounded-sm bg-primary px-2 py-[2px] text-[6px] font-extrabold uppercase tracking-wide text-black">
           Get Quote
         </span>
       </div>
@@ -728,7 +728,7 @@ const MacHeroContent = ({ chatWidget }: { chatWidget?: ReactNode } = {}) => (
           <span className="flex items-center gap-1 text-[7px] font-semibold text-white">
             🛡 Licensed &amp; Insured
           </span>
-          <span className="flex items-center gap-1 text-[8px] font-bold text-gold-light">
+          <span className="flex items-center gap-1 text-[8px] font-bold text-primary">
             📞 (602) 497-0154
           </span>
         </div>
@@ -736,7 +736,7 @@ const MacHeroContent = ({ chatWidget }: { chatWidget?: ReactNode } = {}) => (
 
       {/* Right: quote form widget (matches QuoteForm.tsx) */}
       <div className="col-span-2 flex items-center">
-        <div className="w-full rounded border border-white/10 bg-neutral-900 p-2 shadow-[0_12px_32px_rgba(0,0,0,0.6)] ring-1 ring-gold-light/25">
+        <div className="w-full rounded border border-white/10 bg-neutral-900 p-2 shadow-[0_12px_32px_rgba(0,0,0,0.6)] ring-1 ring-primary/25">
           <div className="flex justify-center">
             <BrandLogo size="sm" />
           </div>
@@ -748,7 +748,7 @@ const MacHeroContent = ({ chatWidget }: { chatWidget?: ReactNode } = {}) => (
             <div className="h-[10px] rounded-sm bg-white" />
             <div className="h-[16px] rounded-sm bg-white" />
           </div>
-          <div className="mt-1.5 rounded-sm bg-gold-light py-[3px] text-center text-[7px] font-extrabold uppercase text-black">
+          <div className="mt-1.5 rounded-sm bg-primary py-[3px] text-center text-[7px] font-extrabold uppercase text-black">
             SEND
           </div>
         </div>
@@ -757,7 +757,7 @@ const MacHeroContent = ({ chatWidget }: { chatWidget?: ReactNode } = {}) => (
 
     {/* Chat widget slot (overridable per scene) */}
     {chatWidget ?? (
-      <div className="absolute bottom-2 right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-gold-light shadow-[0_4px_14px_rgba(194,145,71,0.45),0_2px_6px_rgba(0,0,0,0.35)]">
+      <div className="absolute bottom-2 right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-primary shadow-[0_4px_14px_rgba(198,97,63,0.45),0_2px_6px_rgba(0,0,0,0.35)]">
         <MessageCircle className="h-[14px] w-[14px] text-black" strokeWidth={2.5} />
       </div>
     )}
@@ -774,7 +774,7 @@ const MacFormContent = () => (
     <div className="absolute inset-0 bg-black/80" />
 
     <div className="relative z-10 flex h-full items-center justify-center px-6">
-      <div className="w-full max-w-[240px] rounded border border-white/10 bg-neutral-900 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.7),0_0_80px_rgba(194,145,71,0.08)] ring-1 ring-gold-light/25">
+      <div className="w-full max-w-[240px] rounded border border-white/10 bg-neutral-900 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.7),0_0_80px_rgba(198,97,63,0.08)] ring-1 ring-primary/25">
         {/* Logo centered */}
         <div className="flex justify-center">
           <BrandLogo size="md" />
@@ -788,7 +788,7 @@ const MacFormContent = () => (
         {/* Name field */}
         <div className="mt-2.5">
           <p className="text-[7px] font-medium text-white/75">
-            Full Name <span className="text-gold-light">*</span>
+            Full Name <span className="text-primary">*</span>
           </p>
           <div className="mt-0.5 flex h-[17px] items-center rounded-sm border border-white/15 bg-white px-2 text-[8px] text-neutral-900">
             <motion.span
@@ -804,7 +804,7 @@ const MacFormContent = () => (
         {/* Phone field */}
         <div className="mt-1.5">
           <p className="text-[7px] font-medium text-white/75">
-            Phone <span className="text-gold-light">*</span>
+            Phone <span className="text-primary">*</span>
           </p>
           <div className="mt-0.5 flex h-[17px] items-center rounded-sm border border-white/15 bg-white px-2 text-[8px] text-neutral-900">
             <motion.span
@@ -820,7 +820,7 @@ const MacFormContent = () => (
         {/* Message field */}
         <div className="mt-1.5">
           <p className="text-[7px] font-medium text-white/75">
-            Short message about your needs <span className="text-gold-light">*</span>
+            Short message about your needs <span className="text-primary">*</span>
           </p>
           <div className="mt-0.5 h-[30px] rounded-sm border border-white/15 bg-white px-2 py-1 text-[7px] leading-snug text-neutral-900">
             <motion.span
@@ -837,7 +837,7 @@ const MacFormContent = () => (
         <div className="mt-1.5 flex items-start gap-1.5">
           <motion.div
             initial={{ backgroundColor: "rgba(255,255,255,0)" }}
-            animate={{ backgroundColor: "#C29147" }}
+            animate={{ backgroundColor: "#c6613f" }}
             transition={{ delay: 3.4, duration: 0.1 }}
             className="mt-[1px] flex h-[9px] w-[9px] shrink-0 items-center justify-center rounded-[1px] border border-white/30"
           >
@@ -852,12 +852,12 @@ const MacFormContent = () => (
           </motion.div>
           <p className="text-[6px] leading-snug text-white/55">
             I agree to the{" "}
-            <span className="text-gold-light underline">terms &amp; conditions</span>.
+            <span className="text-primary underline">terms &amp; conditions</span>.
           </p>
         </div>
 
         {/* SEND button */}
-        <div className="mt-2 rounded-sm bg-gold-light py-[7px] text-center text-[11px] font-extrabold uppercase tracking-wide text-black shadow-md">
+        <div className="mt-2 rounded-sm bg-primary py-[7px] text-center text-[11px] font-extrabold uppercase tracking-wide text-black shadow-md">
           SEND
         </div>
       </div>
@@ -883,7 +883,7 @@ const WebsitePhoneSmsContent = () => (
         initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
         animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.45, ease: "easeOut" }}
-        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
       >
         <p className="text-[8px] leading-snug text-black">
           Hey John, just got your quote form. I will be in touchh shortly — Mike, Phoenix Roofing &amp; Repair
@@ -895,7 +895,7 @@ const WebsitePhoneSmsContent = () => (
         initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
         animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
         transition={{ delay: 3, duration: 0.45, ease: "easeOut" }}
-        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
       >
         <p className="text-[8px] leading-snug text-black">
           *I will be in touch shortly. Sorry I haven't had enough coffee today haha. Talk soon.
@@ -980,7 +980,7 @@ const JobCompleteCardShell = ({ children }: { children: ReactNode }) => (
       </h1>
 
       {/* Info box — borderLeft amber */}
-      <div className="mb-2 rounded-md border-l-[3px] border-[#C29147] bg-[#1c1c1e] px-2 py-1.5 text-[7px] leading-[1.5] text-[#8e8e93]">
+      <div className="mb-2 rounded-md border-l-[3px] border-[#c6613f] bg-[#1c1c1e] px-2 py-1.5 text-[7px] leading-[1.5] text-[#8e8e93]">
         <p className="font-semibold text-white">
           1. ⭐ This will send out your 5 star review request funnel
         </p>
@@ -1037,7 +1037,7 @@ const JobCompleteFormContent = () => (
     </div>
 
     {/* Submit button */}
-    <div className="rounded-xl bg-[#C29147] py-2 text-center text-[12px] font-extrabold text-white">
+    <div className="rounded-xl bg-[#c6613f] py-2 text-center text-[12px] font-extrabold text-white">
       Submit!
     </div>
 
@@ -1070,7 +1070,7 @@ const CampaignPhoneSmsContent = () => (
         initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
         animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.45, ease: "easeOut" }}
-        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
       >
         <p className="text-[8px] leading-snug text-black">
           Hey Sarah, I'm running a seasonal special this week and giving 10% off. It's only for the first 3 people — so if you're interested or know someone who might be, just tap the link:{" "}
@@ -1140,9 +1140,9 @@ export const CampaignMockup = () => {
 const MiniHouseMark = () => (
   <svg width="12" height="10" viewBox="0 0 38 32" fill="none" className="shrink-0">
     <rect x="3" y="17" width="32" height="15" rx="1.5" fill="rgba(26,26,26,0.15)" />
-    <path d="M0 18.5L19 1L38 18.5H0Z" fill="#C29147" />
-    <rect x="25" y="2.5" width="5" height="10" rx="1" fill="#C29147" />
-    <rect x="13.5" y="22" width="11" height="10" rx="1" fill="#C29147" fillOpacity="0.3" />
+    <path d="M0 18.5L19 1L38 18.5H0Z" fill="#c6613f" />
+    <rect x="25" y="2.5" width="5" height="10" rx="1" fill="#c6613f" />
+    <rect x="13.5" y="22" width="11" height="10" rx="1" fill="#c6613f" fillOpacity="0.3" />
   </svg>
 );
 
@@ -1150,14 +1150,14 @@ const MiniHouseMark = () => (
 const ChatClosedOverlay = () => (
   <>
     {/* Teaser popup */}
-    <div className="absolute bottom-[38px] right-2 z-20 max-w-[150px] rounded-xl rounded-br-sm border border-white/10 bg-neutral-900 px-2 py-1.5 shadow-[0_6px_20px_rgba(0,0,0,0.45)] ring-1 ring-gold-light/25">
+    <div className="absolute bottom-[38px] right-2 z-20 max-w-[150px] rounded-xl rounded-br-sm border border-white/10 bg-neutral-900 px-2 py-1.5 shadow-[0_6px_20px_rgba(0,0,0,0.45)] ring-1 ring-primary/25">
       <p className="text-[6px] leading-snug text-white/90">
         Shoot me any questions and I'll get back to you as soon as I'm free!{" "}
         <span className="text-white/60">(I promise)</span>
       </p>
     </div>
     {/* Floating button */}
-    <div className="absolute bottom-2 right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-gold-light shadow-[0_4px_14px_rgba(194,145,71,0.45),0_2px_6px_rgba(0,0,0,0.35)]">
+    <div className="absolute bottom-2 right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-primary shadow-[0_4px_14px_rgba(198,97,63,0.45),0_2px_6px_rgba(0,0,0,0.35)]">
       <MessageCircle className="h-[14px] w-[14px] text-black" strokeWidth={2.5} />
     </div>
     {/* Cursor slides to the chat button and clicks */}
@@ -1168,9 +1168,9 @@ const ChatClosedOverlay = () => (
 /* Scene 2 overlay: open chat widget modal, fields fill in, cursor clicks Send */
 const ChatFormOverlay = () => (
   <>
-    <div className="absolute bottom-2 right-2 z-30 w-[178px] overflow-hidden rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(194,145,71,0.12)] ring-1 ring-gold-light/25">
+    <div className="absolute bottom-2 right-2 z-30 w-[178px] overflow-hidden rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(198,97,63,0.12)] ring-1 ring-primary/25">
       {/* Modal header (amber) */}
-      <div className="flex items-center justify-between bg-gold-light px-2 py-[5px]">
+      <div className="flex items-center justify-between bg-primary px-2 py-[5px]">
         <BrandLogo size="sm" variant="dark" />
         <span className="text-[10px] leading-none text-black/70">⌄</span>
       </div>
@@ -1220,7 +1220,7 @@ const ChatFormOverlay = () => (
         <div className="mt-1.5 flex items-start gap-1">
           <motion.div
             initial={{ backgroundColor: "rgba(255,255,255,0)" }}
-            animate={{ backgroundColor: "#C29147" }}
+            animate={{ backgroundColor: "#c6613f" }}
             transition={{ delay: 3.3, duration: 0.1 }}
             className="mt-[1px] flex h-[8px] w-[8px] shrink-0 items-center justify-center rounded-[1px] border border-neutral-300"
           >
@@ -1239,13 +1239,13 @@ const ChatFormOverlay = () => (
         </div>
 
         {/* Send button */}
-        <div className="mt-1.5 flex items-center justify-center gap-1 rounded bg-gold-light py-1.5 text-[8px] font-bold text-black">
+        <div className="mt-1.5 flex items-center justify-center gap-1 rounded bg-primary py-1.5 text-[8px] font-bold text-black">
           Send :) <span className="text-[9px]">→</span>
         </div>
 
         {/* Footer */}
         <p className="mt-1 text-center text-[5px] text-neutral-400">
-          Powered by <span className="font-medium text-gold-light">VargaFlow</span>
+          Powered by <span className="font-medium text-primary">VargaFlow</span>
         </p>
       </div>
     </div>
@@ -1257,8 +1257,8 @@ const ChatFormOverlay = () => (
 
 /* Scene 3 overlay: success state ("Thanks! We'll be in touch soon.") */
 const ChatSuccessOverlay = () => (
-  <div className="absolute bottom-2 right-2 z-30 w-[178px] overflow-hidden rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(194,145,71,0.12)] ring-1 ring-gold-light/25">
-    <div className="flex items-center justify-between bg-gold-light px-2 py-[5px]">
+  <div className="absolute bottom-2 right-2 z-30 w-[178px] overflow-hidden rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(198,97,63,0.12)] ring-1 ring-primary/25">
+    <div className="flex items-center justify-between bg-primary px-2 py-[5px]">
       <BrandLogo size="sm" variant="dark" />
       <span className="text-[10px] leading-none text-black/70">⌄</span>
     </div>
@@ -1268,7 +1268,7 @@ const ChatSuccessOverlay = () => (
       </p>
     </div>
     <p className="bg-white pb-1 text-center text-[5px] text-neutral-400">
-      Powered by <span className="font-medium text-gold-light">VargaFlow</span>
+      Powered by <span className="font-medium text-primary">VargaFlow</span>
     </p>
   </div>
 );
@@ -1283,7 +1283,7 @@ const ChatWidgetPhoneSmsContent = () => (
         initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
         animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.45, ease: "easeOut" }}
-        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
       >
         <p className="text-[8px] leading-snug text-black">
           Hey John, just got your text through my web chat. Thankzs for reaching out 😊 I will be in touch as soon as I am free. — Mike, Phoenix Roofing &amp; Repair
@@ -1295,7 +1295,7 @@ const ChatWidgetPhoneSmsContent = () => (
         initial={{ opacity: 0, x: 12, y: 6, scale: 0.94 }}
         animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
         transition={{ delay: 3, duration: 0.45, ease: "easeOut" }}
-        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-gold-light/90 px-3 py-2"
+        className="max-w-[85%] self-end rounded-2xl rounded-br-sm bg-neutral-300 px-3 py-2"
       >
         <p className="text-[8px] leading-snug text-black">
           *thanks for reaching out. Sorry I haven't had enough coffee today haha. By the way, if you have any other questions in the meantime, feel free to message me here.

@@ -294,7 +294,7 @@ const SmsOptin = () => {
             <button
               type="submit"
               disabled={!canSubmit || status === "sending"}
-              className="w-full rounded-md bg-primary py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+              className="w-full rounded-md bg-primary py-4 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "sending" ? "Submitting..." : "Submit"}
             </button>
@@ -314,10 +314,10 @@ const SmsOptinFooter = () => (
     <div className="mx-auto flex max-w-2xl flex-col items-center gap-2 text-center text-xs text-muted-foreground sm:flex-row sm:justify-between">
       <span>© {new Date().getFullYear()} VargaFlow LLC. All rights reserved.</span>
       <div className="flex gap-4">
-        <a href="/terms-of-service" className="hover:text-primary transition-colors">
+        <a href="/terms-of-service" className="hover:text-foreground transition-colors">
           Terms of Service
         </a>
-        <a href="/privacy-policy" className="hover:text-primary transition-colors">
+        <a href="/privacy-policy" className="hover:text-foreground transition-colors">
           Privacy Policy
         </a>
       </div>

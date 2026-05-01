@@ -1,9 +1,41 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, Building2, Wrench, Calendar } from "lucide-react";
+import { ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, Building2, Wrench, Calendar } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
 import vfIcon from "@/assets/vf-icon.png";
+
+const HamburgerIcon = ({ open }: { open: boolean }) => (
+  <div className="relative h-5 w-5" aria-hidden="true">
+    <span
+      className={cn(
+        "absolute left-0 h-[1.5px] w-full bg-current transition-all duration-300 ease-out",
+        open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-1",
+      )}
+    />
+    <span
+      className={cn(
+        "absolute left-0 h-[1.5px] w-full bg-current transition-all duration-300 ease-out",
+        open ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-3",
+      )}
+    />
+  </div>
+);
+
+const PlusIcon = ({ open, size = "sm" }: { open: boolean; size?: "sm" | "md" }) => (
+  <div
+    className={cn("relative shrink-0", size === "md" ? "h-4 w-4" : "h-3.5 w-3.5")}
+    aria-hidden="true"
+  >
+    <span className="absolute left-0 top-1/2 h-[1.5px] w-full -translate-y-1/2 bg-current" />
+    <span
+      className={cn(
+        "absolute left-1/2 top-0 h-full w-[1.5px] -translate-x-1/2 bg-current transition-transform duration-300 ease-out",
+        open ? "rotate-90" : "rotate-0",
+      )}
+    />
+  </div>
+);
 
 const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap];
 const SERVICE_DESCRIPTIONS = [
@@ -43,7 +75,7 @@ const Navbar = () => {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isTransparent ? "" : "bg-foreground [box-shadow:0_1px_0_0_hsl(var(--primary)/0.4),0_4px_24px_rgba(0,0,0,0.3)]",
+        isTransparent ? "" : "bg-foreground [box-shadow:0_1px_0_0_hsl(var(--background)/0.1),0_4px_24px_rgba(0,0,0,0.3)]",
       )}
     >
       <div className="container flex h-16 items-center justify-between lg:h-20">
@@ -74,8 +106,8 @@ const Navbar = () => {
               className={cn(
                 "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors duration-300",
                 needsDarkText
-                  ? location.pathname.startsWith("/services") ? "text-primary" : "text-foreground/70 hover:text-primary"
-                  : location.pathname.startsWith("/services") ? "text-primary" : "text-white/80 hover:text-white",
+                  ? location.pathname.startsWith("/services") ? "text-foreground" : "text-foreground/70 hover:text-foreground"
+                  : location.pathname.startsWith("/services") ? "text-white" : "text-white/80 hover:text-white",
               )}
             >
               Services <ChevronDown className={cn("h-4 w-4 transition-transform", servicesOpen && "rotate-180")} />
@@ -96,7 +128,7 @@ const Navbar = () => {
                           to={`/services/${service.slug}`}
                           className={cn(
                             "group flex items-start gap-3 rounded-lg px-3 py-2.5 transition-all duration-150",
-                            isServiceActive ? "bg-primary/10" : "hover:bg-muted",
+                            isServiceActive ? "bg-secondary" : "hover:bg-muted",
                           )}
                           onClick={() => setServicesOpen(false)}
                         >
@@ -104,8 +136,8 @@ const Navbar = () => {
                             className={cn(
                               "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors",
                               isServiceActive
-                                ? "bg-primary/20 text-primary"
-                                : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
+                                ? "bg-foreground text-background"
+                                : "bg-muted text-muted-foreground group-hover:bg-secondary group-hover:text-foreground",
                             )}
                           >
                             <Icon className="h-[18px] w-[18px]" />
@@ -114,7 +146,7 @@ const Navbar = () => {
                             <p
                               className={cn(
                                 "text-sm font-semibold transition-colors",
-                                isServiceActive ? "text-primary" : "text-foreground group-hover:text-primary",
+                                isServiceActive ? "text-foreground" : "text-foreground group-hover:text-foreground/70",
                               )}
                             >
                               {service.title}
@@ -136,7 +168,7 @@ const Navbar = () => {
             to="/demo"
             className={cn(
               "px-4 py-2 text-base font-semibold transition-colors duration-300",
-              isActive("/demo") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
+              isActive("/demo") ? (needsDarkText ? "text-foreground" : "text-white") : needsDarkText ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white",
             )}
           >
             Demo
@@ -145,7 +177,7 @@ const Navbar = () => {
             to="/how-it-works"
             className={cn(
               "px-4 py-2 text-base font-semibold transition-colors duration-300",
-              isActive("/how-it-works") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
+              isActive("/how-it-works") ? (needsDarkText ? "text-foreground" : "text-white") : needsDarkText ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white",
             )}
           >
             How It Works
@@ -154,7 +186,7 @@ const Navbar = () => {
             to="/pricing"
             className={cn(
               "px-4 py-2 text-base font-semibold transition-colors duration-300",
-              isActive("/pricing") ? "text-primary" : needsDarkText ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white",
+              isActive("/pricing") ? (needsDarkText ? "text-foreground" : "text-white") : needsDarkText ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white",
             )}
           >
             Pricing
@@ -169,8 +201,8 @@ const Navbar = () => {
               className={cn(
                 "flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors duration-300",
                 needsDarkText
-                  ? (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-primary" : "text-foreground/70 hover:text-primary"
-                  : (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-primary" : "text-white/80 hover:text-white",
+                  ? (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-foreground" : "text-foreground/70 hover:text-foreground"
+                  : (isActive("/about") || isActive("/trades") || isActive("/contact")) ? "text-white" : "text-white/80 hover:text-white",
               )}
             >
               About <ChevronDown className={cn("h-4 w-4 transition-transform", aboutOpen && "rotate-180")} />
@@ -188,7 +220,7 @@ const Navbar = () => {
                       to={to}
                       className={cn(
                         "flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-150",
-                        isActive(to) ? "bg-primary/10" : "hover:bg-muted",
+                        isActive(to) ? "bg-secondary" : "hover:bg-muted",
                       )}
                       onClick={() => setAboutOpen(false)}
                     >
@@ -196,8 +228,8 @@ const Navbar = () => {
                         className={cn(
                           "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors",
                           isActive(to)
-                            ? "bg-primary/20 text-primary"
-                            : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
+                            ? "bg-foreground text-background"
+                            : "bg-muted text-muted-foreground group-hover:bg-secondary group-hover:text-foreground",
                         )}
                       >
                         <Icon className="h-[18px] w-[18px]" />
@@ -205,7 +237,7 @@ const Navbar = () => {
                       <p
                         className={cn(
                           "text-sm font-semibold transition-colors",
-                          isActive(to) ? "text-primary" : "text-foreground hover:text-primary",
+                          isActive(to) ? "text-foreground" : "text-foreground hover:text-foreground/70",
                         )}
                       >
                         {label}
@@ -247,7 +279,7 @@ const Navbar = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <HamburgerIcon open={mobileOpen} />
         </button>
       </div>
 
@@ -261,7 +293,7 @@ const Navbar = () => {
                 onClick={() => setServicesOpen(!servicesOpen)}
                 className="flex w-full items-center justify-between text-xl font-semibold text-white/80"
               >
-                Services <ChevronDown className={cn("h-5 w-5 transition-transform", servicesOpen && "rotate-180")} />
+                Services <PlusIcon open={servicesOpen} size="md" />
               </button>
               {servicesOpen && (
                 <div className="mt-3 flex flex-col gap-1 pl-1">
@@ -271,13 +303,13 @@ const Navbar = () => {
                       <Link
                         key={service.slug}
                         to={`/services/${service.slug}`}
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-primary"
+                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-white"
                         onClick={() => {
                           setMobileOpen(false);
                           setServicesOpen(false);
                         }}
                       >
-                        <Icon className="h-4 w-4 text-primary/60" />
+                        <Icon className="h-4 w-4 text-white/40" />
                         <span className="text-base font-medium">{service.title}</span>
                       </Link>
                     );
@@ -290,7 +322,7 @@ const Navbar = () => {
               to="/demo"
               className={cn(
                 "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
-                isActive("/demo") ? "text-primary" : "text-white/80",
+                isActive("/demo") ? "text-white" : "text-white/80",
               )}
               onClick={() => setMobileOpen(false)}
             >
@@ -301,7 +333,7 @@ const Navbar = () => {
               to="/how-it-works"
               className={cn(
                 "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
-                isActive("/how-it-works") ? "text-primary" : "text-white/80",
+                isActive("/how-it-works") ? "text-white" : "text-white/80",
               )}
               onClick={() => setMobileOpen(false)}
             >
@@ -312,7 +344,7 @@ const Navbar = () => {
               to="/pricing"
               className={cn(
                 "border-b border-white/10 py-4 text-xl font-semibold transition-colors",
-                isActive("/pricing") ? "text-primary" : "text-white/80",
+                isActive("/pricing") ? "text-white" : "text-white/80",
               )}
               onClick={() => setMobileOpen(false)}
             >
@@ -325,7 +357,7 @@ const Navbar = () => {
                 onClick={() => setAboutOpen(!aboutOpen)}
                 className="flex w-full items-center justify-between text-xl font-semibold text-white/80"
               >
-                About <ChevronDown className={cn("h-5 w-5 transition-transform", aboutOpen && "rotate-180")} />
+                About <PlusIcon open={aboutOpen} size="md" />
               </button>
               {aboutOpen && (
                 <div className="mt-3 flex flex-col gap-1 pl-1">
@@ -337,13 +369,13 @@ const Navbar = () => {
                     <Link
                       key={to}
                       to={to}
-                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-primary"
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white/60 hover:bg-white/5 hover:text-white"
                       onClick={() => {
                         setMobileOpen(false);
                         setAboutOpen(false);
                       }}
                     >
-                      <Icon className="h-4 w-4 text-primary/60" />
+                      <Icon className="h-4 w-4 text-white/40" />
                       <span className="text-base font-medium">{label}</span>
                     </Link>
                   ))}

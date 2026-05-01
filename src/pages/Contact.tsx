@@ -26,8 +26,8 @@ const Contact = () => {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-background py-10 lg:py-24">
-        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
-        <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-primary/[0.03] blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
+        <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
 
         <div className="container relative">
           <ScrollReveal>
@@ -35,7 +35,7 @@ const Contact = () => {
               <h1 className="text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
                 Let's Look at Your Business
                 <br />
-                <span className="text-primary">and Fix What's Costing You Leads.</span>
+                and Fix What's Costing You Leads.
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 20 minutes with Kornél — not a salesperson, not an account manager. Just an honest look at where you're losing leads and what I can do about it. Free setup, no contracts — you only pay when it's working.
@@ -53,10 +53,10 @@ const Contact = () => {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-background p-5 text-center transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                  className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-background p-5 text-center transition-all duration-300 hover:border-foreground/30 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary transition-colors group-hover:bg-muted">
+                    <item.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="text-sm font-bold text-foreground">{item.label}</h3>
                   <p className="text-xs text-muted-foreground">{item.sub}</p>
@@ -74,7 +74,7 @@ const Contact = () => {
             <ScrollReveal>
               <div className="mb-10 text-center">
                 <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-                  Pick a Time That <span className="text-primary">Works for You</span>
+                  Pick a Time That Works for You
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                   On the call I'll look at your current setup, identify exactly where leads are slipping through, and walk you through what it would look like to fix it. No pressure to sign up.
@@ -84,7 +84,7 @@ const Contact = () => {
             <div className="w-full overflow-hidden">
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1&primary_color=e8941a"
+                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1&primary_color=1a1a1a"
                 style={{ minWidth: "320px", width: "100%", height: "950px" }}
               />
             </div>

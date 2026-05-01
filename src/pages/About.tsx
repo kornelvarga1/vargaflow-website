@@ -14,8 +14,8 @@ const About = () => {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-background py-12 lg:py-28">
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
             <h1 className="text-4xl font-extrabold leading-[1.08] text-foreground md:text-5xl lg:text-6xl">
@@ -23,7 +23,7 @@ const About = () => {
               <br />
               No Account Managers.
               <br />
-              <span className="text-primary">No BS.</span>
+              No BS.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               VargaFlow is a one-person operation — and that's the point. You deal directly with the person who builds your systems, knows your setup inside out, and actually picks up the phone.
@@ -34,15 +34,15 @@ const About = () => {
 
       {/* The Flow — category positioning */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
-            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">How I See It</span>
+            <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-background/50">How I See It</span>
             <h2 className="text-3xl font-extrabold leading-[1.1] text-background md:text-4xl lg:text-5xl">
               Every Contracting Business
               <br />
-              <span className="text-primary">Runs on Flow.</span>
+              Runs on Flow.
             </h2>
             <div className="mx-auto mt-10 max-w-2xl space-y-5 text-base leading-relaxed text-background/70 md:text-lg">
               <p>
@@ -65,11 +65,11 @@ const About = () => {
           <ScrollReveal>
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
               <div>
-                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">The Founder</span>
+                <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">The Founder</span>
                 <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
                   Systems-Obsessed.
                   <br />
-                  <span className="text-primary">Built for Trades.</span>
+                  Built for Trades.
                 </h2>
                 <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   <p>
@@ -88,7 +88,7 @@ const About = () => {
               </div>
               <div className="flex items-center justify-center">
                 <div className="relative">
-                  <div className="absolute -inset-3 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent" />
+                  <div className="absolute -inset-3 rounded-2xl border border-foreground/20 bg-gradient-to-br from-foreground/5 to-transparent" />
                   <div className="relative overflow-hidden rounded-xl">
                     <img
                       src={aboutFounder}
@@ -99,7 +99,7 @@ const About = () => {
                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-foreground/80 via-transparent to-transparent p-6">
                       <div>
                         <p className="text-lg font-extrabold text-background">Kornél Varga</p>
-                        <p className="text-sm text-primary">Founder, VargaFlow</p>
+                        <p className="text-sm text-background/70">Founder, VargaFlow</p>
                       </div>
                     </div>
                   </div>
@@ -114,9 +114,9 @@ const About = () => {
       <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
-            <div className="mx-auto max-w-3xl rounded-2xl border-2 border-primary/30 bg-background p-10 text-center shadow-xl shadow-primary/5">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-                <Zap className="h-8 w-8 text-primary" />
+            <div className="mx-auto max-w-3xl rounded-2xl border-2 border-foreground/15 bg-background p-10 text-center shadow-xl">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary">
+                <Zap className="h-8 w-8 text-foreground" />
               </div>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
                 The Risk-Free Guarantee
@@ -132,7 +132,7 @@ const About = () => {
                   "If you love it, you move forward at the standard monthly rate",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
                     <span className="text-base text-foreground">{item}</span>
                   </div>
                 ))}
@@ -142,7 +142,7 @@ const About = () => {
               </p>
               <Link
                 to="/contact"
-                className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+                className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
               >
                 Claim Your Free Setup <ArrowRight className="h-5 w-5" />
               </Link>
@@ -156,10 +156,9 @@ const About = () => {
         <div className="container">
           <ScrollReveal>
             <div className="text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">How I Work</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">How I Work</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
-                Three Things I'll
-                <span className="text-primary"> Never Compromise On</span>
+                Three Things I'll Never Compromise On
               </h2>
             </div>
           </ScrollReveal>
@@ -182,11 +181,11 @@ const About = () => {
               },
             ].map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 0.1}>
-                <div className="group relative overflow-hidden rounded-lg border border-border bg-background p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl h-full">
-                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform duration-300 group-hover:scale-150" />
+                <div className="group relative overflow-hidden rounded-lg border border-border bg-background p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl h-full">
+                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-foreground/5 transition-transform duration-300 group-hover:scale-150" />
                   <div className="relative">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                      <value.icon className="h-7 w-7 text-primary" />
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary">
+                      <value.icon className="h-7 w-7 text-foreground" />
                     </div>
                     <h3 className="mt-5 text-lg font-bold text-foreground">{value.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{value.desc}</p>
@@ -200,21 +199,21 @@ const About = () => {
 
       {/* CTA */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
         <div className="container relative text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
               Talk to Me Directly.
               <br />
-              <span className="text-primary">No Gatekeepers. No Pressure.</span>
+              No Gatekeepers. No Pressure.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
               20 minutes. I'll look at your current setup and tell you honestly what's costing you leads — and whether I can fix it.
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
             >
               Book a Call With Kornél <ArrowRight className="h-5 w-5" />
             </Link>

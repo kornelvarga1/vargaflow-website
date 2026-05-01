@@ -23,7 +23,7 @@ const Privacy = () => {
               <h2 className="text-lg font-bold text-foreground">SMS Disclaimer</h2>
               <p>
                 SMS messages are sent by VargaFlow LLC. VargaFlow LLC provides done-for-you marketing automation services for home service businesses. By opting into messaging from VargaFlow LLC regarding customer support and marketing messages, you understand that our message frequency may vary, you may reach out to{" "}
-                <a href="mailto:kornel@vargaflow.com" className="font-semibold text-primary hover:underline">kornel@vargaflow.com</a>{" "}
+                <a href="mailto:kornel@vargaflow.com" className="font-semibold text-foreground hover:underline">kornel@vargaflow.com</a>{" "}
                 with any questions, message and data rates may apply, and can reply "STOP" to opt out from messaging from VargaFlow LLC.
               </p>
             </section>
@@ -105,7 +105,7 @@ const Privacy = () => {
               </ul>
               <p>
                 To exercise your CCPA rights, please contact us at{" "}
-                <a href="mailto:kornel@vargaflow.com" className="font-semibold text-primary hover:underline">kornel@vargaflow.com</a>.
+                <a href="mailto:kornel@vargaflow.com" className="font-semibold text-foreground hover:underline">kornel@vargaflow.com</a>.
                 We will respond to your request within the timeframe required by law.
               </p>
             </section>
@@ -123,7 +123,7 @@ const Privacy = () => {
               <ul className="ml-5 list-disc space-y-1.5">
                 <li>
                   <span className="font-semibold text-foreground">Email:</span>{" "}
-                  <a href="mailto:kornel@vargaflow.com" className="font-semibold text-primary hover:underline">kornel@vargaflow.com</a>
+                  <a href="mailto:kornel@vargaflow.com" className="font-semibold text-foreground hover:underline">kornel@vargaflow.com</a>
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Phone:</span> +1 307 374 9123

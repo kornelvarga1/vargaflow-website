@@ -40,13 +40,13 @@ const Pricing = () => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
-              <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
+              <span className="inline-block rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                 Simple Pricing
               </span>
               <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
                 One Plan.
                 <br />
-                <span className="text-primary">Everything Included.</span>
+                Everything Included.
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
                 No tiers. No hidden fees. No à la carte upsells. Just everything you need to stop losing leads — in one flat monthly rate.
@@ -77,7 +77,7 @@ const Pricing = () => {
                 Annual
               </span>
               {isAnnual && (
-                <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-primary/20 px-2 py-1 text-xs font-bold text-primary">
+                <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-xs font-bold text-foreground">
                   <Sparkles className="h-3 w-3" />
                   Save ${savings}/year
                 </span>
@@ -88,7 +88,7 @@ const Pricing = () => {
           {/* Card */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-8 max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl border-2 border-primary bg-foreground shadow-2xl shadow-primary/10">
+              <div className="relative overflow-hidden rounded-2xl bg-foreground shadow-2xl">
 
                 {/* Free setup banner */}
                 <div className="bg-primary py-3 text-center">
@@ -103,7 +103,7 @@ const Pricing = () => {
                   </h2>
                   <p className="mt-1 text-sm text-background/50">Everything. One price. No surprises.</p>
                   <div className="mt-4">
-                    <p className="text-5xl font-extrabold text-primary md:text-6xl">
+                    <p className="text-5xl font-extrabold text-background md:text-6xl">
                       ${currentPrice}
                       <span className="text-2xl font-bold text-background/50">/mo</span>
                     </p>
@@ -129,7 +129,7 @@ const Pricing = () => {
                       key={entry.item}
                       className="flex items-start gap-3 border-b border-background/10 py-4 last:border-0"
                     >
-                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-background/40" />
                       <div>
                         <span className="text-sm font-semibold text-background md:text-base">{entry.item}</span>
                         <p className="text-xs text-background/40">{entry.note}</p>
@@ -142,7 +142,7 @@ const Pricing = () => {
                 <div className="px-6 pb-10 md:px-10">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-lg bg-primary py-4 text-center text-lg font-extrabold text-primary-foreground transition-all hover:bg-gold-dark hover:shadow-lg"
+                    className="block w-full rounded-lg bg-primary py-4 text-center text-lg font-extrabold text-primary-foreground transition-all hover:bg-gold-dark"
                   >
                     Get Started — Free Walkthrough
                   </Link>
@@ -161,10 +161,9 @@ const Pricing = () => {
         <div className="container">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary">What to Expect</span>
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">What to Expect</span>
               <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-                Honest Timeline.
-                <span className="text-primary"> No Surprises.</span>
+                Honest Timeline. No Surprises.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Some of it works the day I flip the switch. The rest compounds over time. Here's exactly what to expect.
@@ -175,7 +174,7 @@ const Pricing = () => {
             {[
               {
                 period: "Day 1",
-                color: "bg-primary",
+                color: "bg-foreground",
                 title: "Everything goes live — after 7–10 days of setup",
                 items: [
                   "Website live with click-to-call and a chat widget that turns into a real SMS conversation",
@@ -187,7 +186,7 @@ const Pricing = () => {
               },
               {
                 period: "Month 1–3",
-                color: "bg-primary/70",
+                color: "bg-foreground/70",
                 title: "Reviews & rankings start building",
                 items: [
                   "Google reviews adding up from completed jobs",
@@ -197,7 +196,7 @@ const Pricing = () => {
               },
               {
                 period: "Month 3+",
-                color: "bg-primary/40",
+                color: "bg-foreground/40",
                 title: "The system compounds — working for you every day",
                 items: [
                   "Improved Google Maps visibility as reviews and signals build",
@@ -208,9 +207,9 @@ const Pricing = () => {
               },
             ].map((phase, i) => (
               <ScrollReveal key={phase.period} delay={i * 0.08}>
-                <div className="flex gap-4 rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-lg">
+                <div className="flex gap-4 rounded-xl border border-border bg-background p-6 transition-all hover:border-foreground/30 hover:shadow-lg">
                   <div className="flex flex-col items-center gap-2">
-                    <div className={`flex h-12 w-20 shrink-0 items-center justify-center rounded-lg ${phase.color} text-xs font-extrabold text-primary-foreground`}>
+                    <div className={`flex h-12 w-20 shrink-0 items-center justify-center rounded-lg ${phase.color} text-xs font-extrabold text-background`}>
                       {phase.period}
                     </div>
                     {i < 2 && <div className="w-0.5 flex-1 bg-border" />}
@@ -220,7 +219,7 @@ const Pricing = () => {
                     <ul className="mt-3 space-y-2">
                       {phase.items.map((item, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary/60" />
+                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                           {item}
                         </li>
                       ))}
@@ -235,21 +234,21 @@ const Pricing = () => {
 
       {/* CTA */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
         <div className="container relative text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
               Still Not Sure?
               <br />
-              <span className="text-primary">Talk to Kornél for 20 Minutes.</span>
+              Talk to Kornél for 20 Minutes.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
               Straight talk, no pressure. Just an honest look at your business and what's holding you back from more leads.
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-primary/30"
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
             >
               Book Your Free Walkthrough <ArrowRight className="h-5 w-5" />
             </Link>

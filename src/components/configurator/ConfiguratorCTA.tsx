@@ -4,14 +4,13 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const ConfiguratorCTA = () => (
   <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-    <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-    <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+    <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+    <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
     <div className="container relative">
       <ScrollReveal>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
-            Want This for{" "}
-            <span className="text-primary">Your Business?</span>
+            Want This for Your Business?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-background/60">
             Free call, free setup. No contracts, no catch. I'll build your site,
@@ -19,7 +18,7 @@ const ConfiguratorCTA = () => (
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-foreground shadow-lg transition-all hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-foreground transition-all hover:brightness-110"
           >
             Book Your Free Walkthrough
             <ArrowRight className="h-5 w-5" />
