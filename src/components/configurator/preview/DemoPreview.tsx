@@ -19,7 +19,7 @@ const DemoPreview = ({
   companyName,
   logoUrl,
 }: DemoPreviewProps) => (
-  <div className="relative w-[700px] h-[440px] select-none pointer-events-none flex flex-col">
+  <div className="relative w-[700px] h-[500px] select-none pointer-events-none flex flex-col">
     {/* Hero — fills all space above trust bar */}
     <div
       className="relative flex-1"

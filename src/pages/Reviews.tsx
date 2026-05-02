@@ -14,7 +14,7 @@ const Reviews = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
 
-      <section className="relative overflow-hidden bg-background py-20 lg:py-40">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="container relative max-w-2xl text-center">
@@ -34,7 +34,7 @@ const Reviews = () => {
           </p>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+            className="mt-10 inline-flex items-center gap-2 rounded-md bg-foreground px-8 py-4 text-lg font-bold text-background transition-all hover:bg-foreground/90"
           >
             Talk to Kornél Directly <ArrowRight className="h-5 w-5" />
           </Link>

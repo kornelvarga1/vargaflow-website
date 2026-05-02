@@ -3,9 +3,7 @@ import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const ConfiguratorCTA = () => (
-  <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-    <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-    <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+  <section className="relative bg-foreground py-20 lg:py-28">
     <div className="container relative">
       <ScrollReveal>
         <div className="mx-auto max-w-3xl text-center">
@@ -18,7 +16,7 @@ const ConfiguratorCTA = () => (
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-foreground transition-all hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-background px-8 py-4 text-base font-bold text-foreground transition-all hover:bg-background/90"
           >
             Book Your Free Walkthrough
             <ArrowRight className="h-5 w-5" />

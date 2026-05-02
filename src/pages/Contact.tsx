@@ -25,7 +25,7 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-10 lg:py-24">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
         <div className="absolute -bottom-48 -left-48 h-[500px] w-[500px] rounded-full bg-foreground/[0.02] blur-3xl" />
 
@@ -68,7 +68,7 @@ const Contact = () => {
       </section>
 
       {/* Calendly Embed */}
-      <section className="relative bg-secondary py-16 lg:py-24">
+      <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative">
           <div className="mx-auto w-full">
             <ScrollReveal>

@@ -10,38 +10,37 @@ import LogoUpload from "./controls/LogoUpload";
 import MacFrame from "./preview/MacFrame";
 import DemoPreview from "./preview/DemoPreview";
 
-const NICHE_HSL: Record<string, { hue: number; lightness: number }> = {
-  plumbing: { hue: 210, lightness: 50 },
-  roofing: { hue: 355, lightness: 50 },
-  hvac: { hue: 200, lightness: 45 },
-  electrical: { hue: 45, lightness: 50 },
-  landscaping: { hue: 140, lightness: 40 },
-  painting: { hue: 25, lightness: 50 },
-  fencing: { hue: 30, lightness: 35 },
-  "pest-control": { hue: 160, lightness: 40 },
-  "garage-doors": { hue: 215, lightness: 45 },
-  concrete: { hue: 220, lightness: 40 },
-  "windows-doors": { hue: 185, lightness: 45 },
-  gutters: { hue: 220, lightness: 40 },
+// Premium curated palette — each trade gets its own saturation/lightness so the
+// presets read as real brand colors rather than crayon stereotypes. Users
+// override freely once they touch the picker.
+const NICHE_HSL: Record<string, { hue: number; saturation: number; lightness: number }> = {
+  plumbing: { hue: 210, saturation: 32, lightness: 38 },        // muted slate-blue
+  roofing: { hue: 8, saturation: 45, lightness: 38 },           // oxblood
+  hvac: { hue: 195, saturation: 30, lightness: 42 },            // dusty teal
+  electrical: { hue: 42, saturation: 55, lightness: 48 },       // rich ochre
+  landscaping: { hue: 145, saturation: 25, lightness: 32 },     // forest sage
+  painting: { hue: 22, saturation: 32, lightness: 42 },         // muted rust-clay
+  fencing: { hue: 28, saturation: 22, lightness: 30 },          // wood brown
+  "pest-control": { hue: 155, saturation: 28, lightness: 32 },  // deep teal-green
+  "garage-doors": { hue: 220, saturation: 22, lightness: 35 },  // slate
+  concrete: { hue: 25, saturation: 8, lightness: 38 },          // warm gray
+  "windows-doors": { hue: 188, saturation: 28, lightness: 42 }, // dusty cyan
+  gutters: { hue: 32, saturation: 40, lightness: 35 },          // copper-bronze
 };
-
-// Saturation kept fixed at 85% for the niche presets (matches the original
-// HueWheel design). Users override freely once they touch the picker.
-const PRESET_SATURATION = 85;
 
 const ConfiguratorWidget = () => {
   const NICHE_HEX = useMemo(() => {
     const out: Record<string, string> = {};
-    for (const [slug, { hue, lightness }] of Object.entries(NICHE_HSL)) {
-      out[slug] = hslToHex(hue, PRESET_SATURATION, lightness);
+    for (const [slug, { hue, saturation, lightness }] of Object.entries(NICHE_HSL)) {
+      out[slug] = hslToHex(hue, saturation, lightness);
     }
     return out;
   }, []);
 
   const [activeNiche, setActiveNiche] = useState(DEFAULT_NICHE);
   const [accentColor, setAccentColor] = useState(() => {
-    const fallback = NICHE_HSL[DEFAULT_NICHE] ?? { hue: 210, lightness: 50 };
-    return hslToHex(fallback.hue, PRESET_SATURATION, fallback.lightness);
+    const fallback = NICHE_HSL[DEFAULT_NICHE] ?? { hue: 210, saturation: 32, lightness: 38 };
+    return hslToHex(fallback.hue, fallback.saturation, fallback.lightness);
   });
   const [companyName, setCompanyName] = useState("");
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
@@ -82,7 +81,7 @@ const ConfiguratorWidget = () => {
         <div className="mt-2 flex flex-col gap-1.5">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-5 py-3 text-sm font-bold text-background transition-all hover:bg-foreground/90"
           >
             Build This For Me — Free
             <ArrowRight className="h-4 w-4" />

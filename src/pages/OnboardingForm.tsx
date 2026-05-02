@@ -155,13 +155,13 @@ const STEPS: StepConfig[] = [
 ];
 
 const inputClass =
-  "w-full rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
+  "w-full rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/15";
 const textareaClass = inputClass + " min-h-[100px] resize-y";
 const labelClass = "mb-1.5 block text-sm font-semibold text-foreground";
 const errorClass = "mt-1.5 text-xs font-medium text-destructive";
 
 const primaryBtn =
-  "inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-all hover:bg-gold-dark disabled:opacity-50";
+  "inline-flex items-center justify-center rounded-md bg-foreground px-6 py-3 text-sm font-bold text-background transition-all hover:bg-foreground/90 disabled:opacity-50";
 const secondaryBtn =
   "inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted disabled:opacity-50";
 
@@ -1237,7 +1237,7 @@ const OnboardingForm = () => {
                         setTermsAgreed(e.target.checked);
                         if (e.target.checked) setTermsError(false);
                       }}
-                      className="accent-primary mt-0.5 h-4 w-4 shrink-0"
+                      className="accent-foreground mt-0.5 h-4 w-4 shrink-0"
                     />
                     <span className="text-sm text-foreground">
                       I agree to the{" "}

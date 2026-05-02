@@ -42,7 +42,7 @@ const initialForm: FormData = {
 };
 
 const inputClass =
-  "w-full rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
+  "w-full rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/15";
 const labelClass = "mb-1.5 block text-sm font-semibold text-foreground";
 const errorClass = "mt-1.5 text-xs font-medium text-destructive";
 
@@ -238,7 +238,7 @@ const SmsOptin = () => {
                   value={formData.phone}
                   onChange={set("phone")}
                   className={
-                    "w-full rounded-r-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    "w-full rounded-r-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/15"
                   }
                   autoComplete="tel-national"
                   inputMode="tel"
@@ -256,7 +256,7 @@ const SmsOptin = () => {
                   type="checkbox"
                   checked={customerCareConsent}
                   onChange={(e) => setCustomerCareConsent(e.target.checked)}
-                  className="accent-primary mt-1 h-4 w-4 shrink-0"
+                  className="accent-foreground mt-1 h-4 w-4 shrink-0"
                 />
                 <span className="text-xs leading-relaxed text-foreground/80">
                   {CUSTOMER_CARE_CONSENT_TEXT}
@@ -268,7 +268,7 @@ const SmsOptin = () => {
                   type="checkbox"
                   checked={marketingConsent}
                   onChange={(e) => setMarketingConsent(e.target.checked)}
-                  className="accent-primary mt-1 h-4 w-4 shrink-0"
+                  className="accent-foreground mt-1 h-4 w-4 shrink-0"
                 />
                 <span className="text-xs leading-relaxed text-foreground/80">
                   {MARKETING_CONSENT_TEXT}
@@ -294,7 +294,7 @@ const SmsOptin = () => {
             <button
               type="submit"
               disabled={!canSubmit || status === "sending"}
-              className="w-full rounded-md bg-primary py-4 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full rounded-md bg-foreground py-4 text-base font-bold text-background transition-all hover:bg-foreground/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "sending" ? "Submitting..." : "Submit"}
             </button>

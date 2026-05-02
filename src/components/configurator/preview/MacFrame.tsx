@@ -7,7 +7,7 @@ interface MacFrameProps {
 
 /** Design dimensions of the mock website content */
 const DESIGN_W = 700;
-const DESIGN_H = 440;
+const DESIGN_H = 500;
 
 const MacFrame = ({ displayName, children }: MacFrameProps) => {
   const viewportRef = useRef<HTMLDivElement>(null);

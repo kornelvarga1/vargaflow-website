@@ -85,15 +85,6 @@ const Navbar = () => {
           <span className={`text-lg font-bold tracking-tight transition-colors duration-300 lg:text-xl ${needsDarkText ? "text-foreground" : "text-white/90"}`}>VargaFlow</span>
         </Link>
 
-        {/* Mobile CTA */}
-        <Link
-          to="/contact"
-          className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark lg:hidden"
-          onClick={() => setMobileOpen(false)}
-        >
-          Free Walkthrough
-        </Link>
-
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-2 lg:flex">
           {/* Services Dropdown */}
@@ -267,7 +258,12 @@ const Navbar = () => {
           </a>
           <Link
             to="/contact"
-            className="rounded-md bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
+            className={cn(
+              "rounded-md px-7 py-3 text-base font-bold transition-colors",
+              needsDarkText
+                ? "bg-foreground text-background hover:bg-foreground/90"
+                : "bg-background text-foreground hover:bg-background/90",
+            )}
           >
             Book Your Free Walkthrough
           </Link>
@@ -394,7 +390,7 @@ const Navbar = () => {
             </a>
             <Link
               to="/contact"
-              className="mt-3 block rounded-md bg-primary py-3.5 text-center text-lg font-bold text-primary-foreground hover:bg-gold-dark"
+              className="mt-3 block rounded-md bg-background py-3.5 text-center text-lg font-bold text-foreground hover:bg-background/90"
               onClick={() => setMobileOpen(false)}
             >
               Book Your Free Walkthrough

@@ -97,7 +97,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-8 py-4 text-lg font-bold text-background transition-all hover:bg-foreground/90"
                   >
                     Book A Call <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -181,14 +181,13 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               const FeatureIcon = feature.icon || CheckCircle;
               return (
                 <ScrollReveal key={feature.title} delay={idx * 0.05}>
-                  <div className="group relative overflow-hidden rounded-xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl h-full">
-                    <span className="absolute right-2 top-2 text-5xl font-extrabold leading-none text-foreground/[0.04] transition-transform duration-300 group-hover:scale-110 md:text-7xl md:-right-2 md:-top-4">
+                  <div className="group relative h-full overflow-hidden rounded-xl border border-border bg-background p-7 transition-colors duration-300 hover:border-foreground/30">
+                    <span className="absolute right-2 top-2 text-5xl font-extrabold leading-none text-foreground/[0.04] md:text-7xl md:-right-2 md:-top-4">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-foreground/[0.03] transition-transform duration-300 group-hover:scale-150" />
 
                     <div className="relative flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary transition-colors duration-300 group-hover:bg-muted">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary">
                         <FeatureIcon className="h-6 w-6 text-foreground" />
                       </div>
                       <div>
@@ -233,9 +232,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
       </section>
 
       {/* Bottom CTA — dark */}
-      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-[500px] w-[500px] rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-background/10 blur-3xl" />
+      <section className="relative bg-foreground py-20 lg:py-28">
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
@@ -260,7 +257,7 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-background px-10 py-4 text-lg font-bold text-foreground transition-all hover:bg-background/90"
               >
                 Book A Call <ArrowRight className="h-5 w-5" />
               </Link>

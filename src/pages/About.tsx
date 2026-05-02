@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Target, Wrench, Heart, CheckCircle, Zap } from "lucide-react";
 import aboutFounder from "@/assets/about-founder.webp";
 import ScrollReveal from "@/components/ScrollReveal";
+import FlowVisual from "@/components/FlowVisual";
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-12 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="container relative max-w-4xl text-center">
@@ -34,8 +35,12 @@ const About = () => {
 
       {/* The Flow — category positioning */}
       <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-55 lg:hidden">
+          <FlowVisual />
+        </div>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden opacity-55 lg:block">
+          <FlowVisual wide />
+        </div>
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-background/50">How I See It</span>
@@ -142,7 +147,7 @@ const About = () => {
               </p>
               <Link
                 to="/contact"
-                className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                className="mt-6 inline-flex items-center gap-2 rounded-md bg-foreground px-8 py-4 text-lg font-bold text-background transition-all hover:bg-foreground/90"
               >
                 Claim Your Free Setup <ArrowRight className="h-5 w-5" />
               </Link>
@@ -181,8 +186,7 @@ const About = () => {
               },
             ].map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 0.1}>
-                <div className="group relative overflow-hidden rounded-lg border border-border bg-background p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl h-full">
-                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-foreground/5 transition-transform duration-300 group-hover:scale-150" />
+                <div className="relative h-full rounded-lg border border-border bg-background p-8 text-center transition-colors duration-300 hover:border-foreground/30">
                   <div className="relative">
                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary">
                       <value.icon className="h-7 w-7 text-foreground" />
@@ -198,9 +202,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+      <section className="relative bg-foreground py-20 lg:py-28">
         <div className="container relative text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
@@ -213,7 +215,7 @@ const About = () => {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-background px-8 py-4 text-lg font-bold text-foreground transition-all hover:bg-background/90"
             >
               Book a Call With Kornél <ArrowRight className="h-5 w-5" />
             </Link>

@@ -3,6 +3,7 @@ import { Zap, ArrowRight, CheckCircle, ShieldCheck, Clock, HelpCircle } from "lu
 import { Helmet } from "react-helmet-async";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
+import FlowVisual from "@/components/FlowVisual";
 import { MOCKUP_BY_SLUG } from "@/components/mockups/FeatureMockups";
 import ConfiguratorWidget from "@/components/configurator/ConfiguratorWidget";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -17,7 +18,7 @@ const FAQS = [
     answer: "Four things. One — I only work with trades. Plumbers, roofers, HVAC, electricians. I don't touch restaurants or dentists. Two — you deal directly with me, not a junior account manager who's never held a wrench. Three — no contracts, ever. Cancel any month. Four — setup is free. If I can't get it working, you owe me nothing. Most agencies can't say any of that, let alone all four.",
   },
   {
-    question: "Why is setup free and the monthly so reasonable?",
+    question: "Why is setup free and the monthly so low?",
     answer: "No catch. Setup is free because I only get paid once your systems are live and earning — I'm betting on myself, not on your deposit. The monthly stays low because I'm a solo operator who codes everything: no office, no junior account managers, no white-label platform charging me $200/mo per client and getting marked up to you. I'd rather keep you for years at a fair price than squeeze you for six months and watch you quit.",
   },
   {
@@ -38,61 +39,6 @@ const ALSO_INCLUDES = [
   { slug: "automated-follow-up", label: "Automated Lead Follow-Up" },
 ];
 
-// Path d-strings shared between visible cream currents and the orb motion paths.
-// Using `path` attribute on <animateMotion> directly (not <mpath href>) means
-// no SVG IDs are needed — the visual can render in multiple DOM positions
-// (mobile bg + desktop column) without ID-collision warnings.
-const FLOW_PATH_1 = "M-50,90 Q120,160 260,110 Q380,70 580,200";
-const FLOW_PATH_2 = "M-50,260 Q140,210 280,300 Q420,380 580,280";
-const FLOW_PATH_3 = "M-50,420 Q160,380 320,470 Q450,540 580,420";
-const FLOW_PATH_4 = "M-50,560 Q180,530 360,580 Q470,610 580,540";
-
-const HeroFlowVisual = () => (
-  <svg
-    aria-hidden="true"
-    viewBox="0 0 500 600"
-    preserveAspectRatio="xMidYMid slice"
-    className="h-full w-full"
-  >
-    {/* Cream current lines — ambient backdrop */}
-    <g opacity="0.14">
-      <path d={FLOW_PATH_1} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <path d={FLOW_PATH_2} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <path d={FLOW_PATH_3} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <path d={FLOW_PATH_4} stroke="hsl(var(--background))" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-    </g>
-
-    {/* Terracotta particles drifting along the currents */}
-    <circle r="4" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="13s" repeatCount="indefinite" path={FLOW_PATH_1} />
-      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="13s" repeatCount="indefinite" />
-    </circle>
-    <circle r="2.5" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="13s" repeatCount="indefinite" begin="-7s" path={FLOW_PATH_1} />
-      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="13s" repeatCount="indefinite" begin="-7s" />
-    </circle>
-
-    <circle r="3" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="17s" repeatCount="indefinite" begin="-4s" path={FLOW_PATH_2} />
-      <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.85;1" dur="17s" repeatCount="indefinite" begin="-4s" />
-    </circle>
-
-    <circle r="3.5" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="15s" repeatCount="indefinite" begin="-9s" path={FLOW_PATH_3} />
-      <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.85;1" dur="15s" repeatCount="indefinite" begin="-9s" />
-    </circle>
-    <circle r="2" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="15s" repeatCount="indefinite" begin="-2s" path={FLOW_PATH_3} />
-      <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.15;0.85;1" dur="15s" repeatCount="indefinite" begin="-2s" />
-    </circle>
-
-    <circle r="2.5" fill="hsl(var(--primary))" opacity="0">
-      <animateMotion dur="19s" repeatCount="indefinite" begin="-13s" path={FLOW_PATH_4} />
-      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="19s" repeatCount="indefinite" begin="-13s" />
-    </circle>
-  </svg>
-);
-
 const Index = () => {
 
   return (
@@ -112,15 +58,15 @@ const Index = () => {
         </script>
       </Helmet>
 
-      {/* HERO — text-left + abstract flow visual.
-          Mobile: flow renders full-bleed behind text as ambient atmosphere (dimmed).
-          Desktop: flow lives inside container's right grid column, naturally aligned
-          to text — no viewport-edge anchor that breaks layout on wide screens. */}
+      {/* HERO — text-left, full-bleed flow as ambient atmosphere.
+          Mobile uses the portrait variant; desktop uses the wide variant so all 4
+          currents flow uninterrupted across the full hero. */}
       <section className="relative -mt-16 min-h-[500px] overflow-hidden bg-foreground lg:-mt-20 lg:min-h-[620px]">
-        {/* MOBILE: full-bleed atmospheric bg behind text. Dimmed via opacity
-            so the headline reads cleanly on top. */}
         <div className="pointer-events-none absolute inset-0 opacity-55 lg:hidden">
-          <HeroFlowVisual />
+          <FlowVisual />
+        </div>
+        <div className="pointer-events-none absolute inset-0 hidden opacity-55 lg:block">
+          <FlowVisual wide />
         </div>
 
         <div className="container relative z-10 pt-32 pb-16 lg:pt-44 lg:pb-24">
@@ -149,7 +95,7 @@ const Index = () => {
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark sm:px-8 sm:text-lg"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-background px-6 py-4 text-base font-bold text-foreground transition-all hover:bg-background/90 sm:px-8 sm:text-lg"
                   >
                     Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
                   </Link>
@@ -171,12 +117,6 @@ const Index = () => {
                 </div>
               </ScrollReveal>
             </div>
-
-            {/* DESKTOP: flow visual lives inside the grid right column.
-                Aligns naturally with container width, no viewport-edge anchor. */}
-            <div className="pointer-events-none relative hidden aspect-[4/5] w-full lg:block">
-              <HeroFlowVisual />
-            </div>
           </div>
         </div>
       </section>
@@ -185,14 +125,12 @@ const Index = () => {
       <section className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative max-w-4xl text-center">
           <ScrollReveal>
-            <h2 className="text-2xl font-extrabold text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
-              You're Not Losing Jobs
+            <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+              Most Jobs Are Lost
               <br />
-              Because of Bad Work.
-              <br />
-              You're Losing Them Before You Even Know About It.
+              Before the Phone Rings.
             </h2>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-8 max-w-[720px] text-lg leading-relaxed text-muted-foreground">
               You missed a call while you were elbow-deep in a crawlspace. Your website was built by your nephew in 2017 — no chat, no click-to-call, just a contact form nobody fills out. Your Google reviews are stuck at 8. Three leads came in last week and you followed up two days later. They'd already hired someone else.
             </p>
             <p className="mt-6 text-lg font-semibold text-foreground">
@@ -424,9 +362,7 @@ const Index = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+      <section className="relative bg-foreground py-20 lg:py-28">
         <div className="container relative">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -456,7 +392,7 @@ const Index = () => {
               </p>
               <Link
                 to="/contact"
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-background px-10 py-4 text-lg font-bold text-foreground transition-all hover:bg-background/90"
               >
                 Claim Your Free Walkthrough <ArrowRight className="h-5 w-5" />
               </Link>

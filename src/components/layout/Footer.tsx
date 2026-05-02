@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="mt-4">
               <Link
                 to="/contact"
-                className="inline-block rounded-md bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold-dark"
+                className="inline-block rounded-md bg-background px-6 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-background/90"
               >
                 Book Your Free Walkthrough
               </Link>

@@ -9,7 +9,7 @@ interface MockHeaderProps {
 }
 
 const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: MockHeaderProps) => (
-  <div className="absolute top-0 left-0 right-0 z-20 flex h-[30px] items-center justify-between px-5">
+  <div className="absolute top-0 left-0 right-0 z-20 flex h-[42px] items-center justify-between px-7">
     {/* Logo — far left */}
     <MockLogo
       accentColor={accentColor}
@@ -23,11 +23,11 @@ const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: Mock
         (item) => (
           <span
             key={item}
-            className="flex items-center gap-[1px] px-[4px] py-[3px] text-[5px] font-medium text-white/90"
+            className="flex items-center gap-[2px] px-[6px] py-[4px] text-[7px] font-medium text-white/90"
           >
             {item}
             {(item === "Services" || item === "Service Areas") && (
-              <ChevronDown size={3.5} className="text-white/60" />
+              <ChevronDown size={5} className="text-white/60" />
             )}
           </span>
         )
@@ -35,13 +35,13 @@ const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: Mock
     </nav>
 
     {/* Right — phone + CTA */}
-    <div className="flex items-center gap-2">
-      <span className="flex items-center gap-[2px] text-[5px] font-bold text-white tracking-wide">
-        <Phone size={4} style={{ color: accentColor }} />
+    <div className="flex items-center gap-3">
+      <span className="flex items-center gap-[3px] text-[7px] font-bold text-white tracking-wide">
+        <Phone size={6} className="text-white/80" />
         (602) 555-0100
       </span>
       <span
-        className="inline-flex h-[12px] items-center rounded-sm px-[6px] text-[4.5px] font-semibold"
+        className="inline-flex h-[18px] items-center rounded-sm px-[10px] text-[6.5px] font-semibold"
         style={{ backgroundColor: accentColor, color: accentTextColor }}
       >
         Get Free Quote

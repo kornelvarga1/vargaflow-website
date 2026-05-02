@@ -81,7 +81,7 @@ const HowItWorks = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background py-16 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
         <div className="container relative max-w-4xl text-center">
@@ -99,7 +99,7 @@ const HowItWorks = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                className="inline-flex items-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-base font-bold text-background transition-all hover:bg-foreground/90"
               >
                 Book Your Free Walkthrough <ArrowRight className="h-4 w-4" />
               </Link>
@@ -167,9 +167,7 @@ const HowItWorks = () => {
       </section>
 
       {/* Why I do it this way */}
-      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+      <section className="relative bg-foreground py-20 lg:py-28">
         <div className="container relative max-w-3xl">
           <ScrollReveal>
             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-background/50">
@@ -233,7 +231,7 @@ const HowItWorks = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-secondary py-16 lg:py-24">
+      <section className="bg-secondary py-20 lg:py-28">
         <div className="container max-w-3xl text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
@@ -245,7 +243,7 @@ const HowItWorks = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+                className="inline-flex items-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-base font-bold text-background transition-all hover:bg-foreground/90"
               >
                 Book Your Free Walkthrough <ArrowRight className="h-4 w-4" />
               </Link>

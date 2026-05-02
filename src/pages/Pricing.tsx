@@ -67,7 +67,7 @@ const Pricing = () => {
               <Switch
                 checked={isAnnual}
                 onCheckedChange={setIsAnnual}
-                className="data-[state=checked]:bg-primary"
+                className="data-[state=checked]:bg-foreground"
               />
               <span
                 className={`text-sm font-semibold transition-colors ${
@@ -88,31 +88,31 @@ const Pricing = () => {
           {/* Card */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-8 max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl bg-foreground shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-foreground/[0.04]">
 
                 {/* Free setup banner */}
-                <div className="bg-primary py-3 text-center">
-                  <p className="text-sm font-bold text-primary-foreground">
+                <div className="bg-foreground py-3 text-center">
+                  <p className="text-sm font-bold text-background">
                     Free setup. You only pay once it's working.
                   </p>
                 </div>
 
                 <div className="pt-8 text-center">
-                  <h2 className="text-2xl font-extrabold text-background md:text-3xl">
+                  <h2 className="text-2xl font-extrabold text-foreground md:text-3xl">
                     The Full System
                   </h2>
-                  <p className="mt-1 text-sm text-background/50">Everything. One price. No surprises.</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Everything. One price. No surprises.</p>
                   <div className="mt-4">
-                    <p className="text-5xl font-extrabold text-background md:text-6xl">
+                    <p className="text-5xl font-extrabold text-foreground md:text-6xl">
                       ${currentPrice}
-                      <span className="text-2xl font-bold text-background/50">/mo</span>
+                      <span className="text-2xl font-bold text-muted-foreground">/mo</span>
                     </p>
                     {isAnnual ? (
-                      <p className="mt-2 text-sm font-medium text-background/50">
+                      <p className="mt-2 text-sm font-medium text-muted-foreground">
                         Billed annually (${annualTotal}/year)
                       </p>
                     ) : (
-                      <p className="mt-2 text-sm font-medium text-background/50">
+                      <p className="mt-2 text-sm font-medium text-muted-foreground">
                         Billed monthly · Cancel anytime
                       </p>
                     )}
@@ -120,19 +120,19 @@ const Pricing = () => {
                 </div>
 
                 {/* Divider */}
-                <div className="mx-10 mt-6 border-t border-background/10" />
+                <div className="mx-10 mt-6 border-t border-border" />
 
                 {/* Features */}
                 <ul className="space-y-0 px-6 py-6 md:px-10">
                   {INCLUDED.map((entry) => (
                     <li
                       key={entry.item}
-                      className="flex items-start gap-3 border-b border-background/10 py-4 last:border-0"
+                      className="flex items-start gap-3 border-b border-border py-4 last:border-0"
                     >
-                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-background/40" />
+                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
                       <div>
-                        <span className="text-sm font-semibold text-background md:text-base">{entry.item}</span>
-                        <p className="text-xs text-background/40">{entry.note}</p>
+                        <span className="text-sm font-semibold text-foreground md:text-base">{entry.item}</span>
+                        <p className="text-xs text-muted-foreground">{entry.note}</p>
                       </div>
                     </li>
                   ))}
@@ -142,11 +142,11 @@ const Pricing = () => {
                 <div className="px-6 pb-10 md:px-10">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-lg bg-primary py-4 text-center text-lg font-extrabold text-primary-foreground transition-all hover:bg-gold-dark"
+                    className="block w-full rounded-lg bg-foreground py-4 text-center text-lg font-extrabold text-background transition-all hover:bg-foreground/90"
                   >
                     Get Started — Free Walkthrough
                   </Link>
-                  <p className="mt-3 text-center text-xs text-background/40">
+                  <p className="mt-3 text-center text-xs text-muted-foreground">
                     No credit card required to book your call.
                   </p>
                 </div>
@@ -233,9 +233,7 @@ const Pricing = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-foreground py-20 lg:py-28">
-        <div className="absolute -left-48 -top-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
-        <div className="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-background/10 blur-3xl" />
+      <section className="relative bg-foreground py-20 lg:py-28">
         <div className="container relative text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-extrabold text-background md:text-4xl lg:text-5xl">
@@ -248,7 +246,7 @@ const Pricing = () => {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-gold-dark"
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-background px-8 py-4 text-lg font-bold text-foreground transition-all hover:bg-background/90"
             >
               Book Your Free Walkthrough <ArrowRight className="h-5 w-5" />
             </Link>

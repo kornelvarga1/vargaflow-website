@@ -10,17 +10,17 @@ const MockLogo = ({ accentColor, companyName, logoUrl }: MockLogoProps) => {
     : [companyName, null];
 
   return (
-    <div className="flex items-center gap-[3px]">
+    <div className="flex items-center gap-[4px]">
       {logoUrl ? (
         <img
           src={logoUrl}
           alt=""
-          className="h-[14px] w-auto object-contain shrink-0"
+          className="h-[20px] w-auto object-contain shrink-0"
         />
       ) : (
         <svg
-          width="16"
-          height="13"
+          width="22"
+          height="18"
           viewBox="0 0 38 32"
           fill="none"
           aria-hidden="true"
@@ -32,13 +32,13 @@ const MockLogo = ({ accentColor, companyName, logoUrl }: MockLogoProps) => {
           <rect x="13.5" y="22" width="11" height="10" rx="1" fill={accentColor} fillOpacity={0.35} />
         </svg>
       )}
-      <div className="flex flex-col leading-none gap-[1px]">
-        <span className="text-[6px] font-extrabold tracking-tight leading-none text-white">
+      <div className="flex flex-col leading-none gap-[1.5px]">
+        <span className="text-[8.5px] font-extrabold tracking-tight leading-none text-white">
           {mainName}
         </span>
         {subName && (
           <span
-            className="text-[4px] font-bold tracking-[0.18em] uppercase leading-none"
+            className="text-[5.5px] font-bold tracking-[0.18em] uppercase leading-none"
             style={{ color: accentColor }}
           >
             &amp; {subName}

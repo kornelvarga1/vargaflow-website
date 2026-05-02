@@ -11,13 +11,13 @@ const ITEMS = [
 ];
 
 const MockTrustBar = ({ accentColor }: MockTrustBarProps) => (
-  <div className="bg-white py-[6px] px-5 shrink-0">
-    <p className="text-center text-[5.5px] font-semibold tracking-wide text-[#1a1a1a]">
+  <div className="bg-white py-[10px] px-7 shrink-0">
+    <p className="text-center text-[8px] font-semibold tracking-wide text-[#1a1a1a]">
       {ITEMS.map((item, i) => (
         <span key={item}>
           {i > 0 && (
             <span
-              className="mx-[5px] inline-block h-[3px] w-[3px] rotate-45 align-middle"
+              className="mx-[7px] inline-block h-[4px] w-[4px] rotate-45 align-middle"
               style={{ backgroundColor: accentColor }}
               aria-hidden="true"
             />
