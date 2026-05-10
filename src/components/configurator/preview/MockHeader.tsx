@@ -23,11 +23,11 @@ const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: Mock
         (item) => (
           <span
             key={item}
-            className="flex items-center gap-[2px] px-[6px] py-[4px] text-[7px] font-medium text-white/90"
+            className="flex items-center gap-[3px] px-[7px] py-[4px] text-[9px] font-semibold text-white/90"
           >
             {item}
             {(item === "Services" || item === "Service Areas") && (
-              <ChevronDown size={5} className="text-white/60" />
+              <ChevronDown size={6} className="text-white/60" />
             )}
           </span>
         )
@@ -36,12 +36,12 @@ const MockHeader = ({ accentColor, accentTextColor, companyName, logoUrl }: Mock
 
     {/* Right — phone + CTA */}
     <div className="flex items-center gap-3">
-      <span className="flex items-center gap-[3px] text-[7px] font-bold text-white tracking-wide">
-        <Phone size={6} className="text-white/80" />
+      <span className="inline-flex h-[20px] items-center gap-[4px] rounded-sm bg-white px-[9px] text-[7.5px] font-bold text-foreground">
+        <Phone size={7} />
         (602) 555-0100
       </span>
       <span
-        className="inline-flex h-[18px] items-center rounded-sm px-[10px] text-[6.5px] font-semibold"
+        className="inline-flex h-[20px] items-center rounded-sm px-[11px] text-[7.5px] font-semibold"
         style={{ backgroundColor: accentColor, color: accentTextColor }}
       >
         Get Free Quote

@@ -74,39 +74,39 @@ const Index = () => {
             {/* LEFT: Text + CTA + badges */}
             <div>
               <ScrollReveal>
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-start">
                   <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-background/15 bg-background/5 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-background/70 sm:px-4 sm:text-xs sm:tracking-wider">
                     <Zap className="h-3.5 w-3.5" /> Done-for-you marketing for contractors
                   </div>
                 </div>
-                <h1 className="text-center text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-left lg:text-6xl xl:text-7xl">
+                <h1 className="text-left text-4xl font-extrabold leading-[1.08] tracking-tight text-background md:text-5xl lg:text-6xl xl:text-7xl">
                   More Leads.
                   <br />
                   More Jobs.
                   <br />
                   Zero Agency BS.
                 </h1>
-                <p className="mx-auto mt-6 max-w-xl text-center text-lg leading-relaxed text-background/60 md:text-xl lg:mx-0 lg:text-left">
+                <p className="mt-6 max-w-xl text-left text-lg leading-relaxed text-background/60 md:text-xl">
                   I build the website, set up the automations, and handle the follow-up —
                   so your phone keeps ringing while you're out on the job site.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:justify-start">
                   <Link
                     to="/contact"
                     className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-background px-6 py-4 text-base font-bold text-foreground transition-all hover:bg-background/90 sm:px-8 sm:text-lg"
                   >
                     Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
                   </Link>
-                  <div className="flex flex-col items-center gap-0.5 sm:items-start">
+                  <div className="flex flex-col items-start gap-0.5">
                     <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
                     <span className="text-xs text-background/50">I only make money when you do.</span>
                   </div>
                 </div>
-                <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6 lg:mx-0">
+                <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6">
                   {HERO_BADGES.map((b) => (
-                    <div key={b.title} className="flex items-start justify-center gap-2.5 sm:justify-start">
+                    <div key={b.title} className="flex items-start justify-start gap-2.5">
                       <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-background/40" />
                       <div>
                         <p className="text-sm font-bold text-background">{b.title}</p>
@@ -213,7 +213,7 @@ const Index = () => {
               return (
                 <ScrollReveal key={demo.label} delay={0.1}>
                   <div className={`flex flex-col items-center gap-10 lg:gap-16 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                    <div className={`w-full shrink-0 ${isWide ? "max-w-[420px]" : "max-w-[260px]"}`}>
+                    <div className={`w-full shrink-0 ${isWide ? "max-w-[280px] lg:max-w-[420px]" : "max-w-[200px] lg:max-w-[260px]"}`}>
                       {Mockup && <Mockup />}
                     </div>
                     <div className="text-center lg:text-left">

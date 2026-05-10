@@ -37,12 +37,12 @@ const MockHero = ({
             {" "}{companyName} — your trusted local experts.
           </p>
           {/* Trust badges + phone */}
-          <div className="mt-[16px] flex items-center gap-[12px]">
+          <div className="mt-[16px] flex items-center gap-[8px]">
             <span className="flex items-center gap-[3px] text-[9px] font-semibold text-white">
               <ShieldCheck size={12} className="text-white/80" />
               Licensed &amp; Insured
             </span>
-            <span className="flex items-center gap-[3px] text-[9px] font-bold text-white">
+            <span className="inline-flex h-[20px] items-center gap-[4px] rounded-[2px] bg-white px-[8px] text-[9px] font-bold text-foreground">
               <Phone size={9} />
               (602) 555-0100
             </span>
