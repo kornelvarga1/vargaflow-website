@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { z } from "zod";
 import logo from "@/assets/vf-icon.png";
 
 const SUPABASE_URL = "https://zfmchywjmgykmlhjihls.supabase.co";
@@ -21,18 +20,12 @@ const MARKETING_CONSENT_TEXT =
 const CLOSING_CONSENT_TEXT =
   "Consent is provided exclusively for VargaFlow LLC to contact the user based on the selection, not any other third parties mentioned on the site. SMS opt-in data is not shared/sold to third parties for promotional/marketing purposes.";
 
-const formSchema = z.object({
-  first_name: z.string().trim().min(1, "First name is required"),
-  last_name: z.string().trim().min(1, "Last name is required"),
-  email: z.string().trim().min(1, "Email is required").email("Enter a valid email"),
-  phone: z
-    .string()
-    .trim()
-    .min(1, "Phone is required")
-    .refine((v) => v.replace(/\D/g, "").length === 10, "Enter a valid 10-digit US phone number"),
-});
-
-type FormData = z.infer<typeof formSchema>;
+type FormData = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+};
 
 const initialForm: FormData = {
   first_name: "",
@@ -44,48 +37,22 @@ const initialForm: FormData = {
 const inputClass =
   "w-full rounded-md border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/15";
 const labelClass = "mb-1.5 block text-sm font-semibold text-foreground";
-const errorClass = "mt-1.5 text-xs font-medium text-destructive";
 
 const SmsOptin = () => {
   const [formData, setFormData] = useState<FormData>(initialForm);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [customerCareConsent, setCustomerCareConsent] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const set = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-    setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
-
-  const allFieldsFilled =
-    formData.first_name.trim() !== "" &&
-    formData.last_name.trim() !== "" &&
-    formData.email.trim() !== "" &&
-    formData.phone.trim() !== "";
-  const bothConsents = customerCareConsent && marketingConsent;
-  const canSubmit = allFieldsFilled && bothConsents;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!canSubmit) return;
-
-    const result = formSchema.safeParse(formData);
-    if (!result.success) {
-      const fieldErrors: Partial<Record<keyof FormData, string>> = {};
-      result.error.issues.forEach((issue) => {
-        const field = issue.path[0] as keyof FormData;
-        if (!fieldErrors[field]) fieldErrors[field] = issue.message;
-      });
-      setErrors(fieldErrors);
-      const firstErrorEl = document.querySelector("[data-error]");
-      firstErrorEl?.scrollIntoView({ behavior: "smooth", block: "center" });
-      return;
-    }
-
-    const digits = result.data.phone.replace(/\D/g, "");
-    const phoneE164 = `+1${digits}`;
+    const digits = formData.phone.replace(/\D/g, "");
+    const phone = digits ? `+1${digits}` : "";
 
     setStatus("sending");
     try {
@@ -96,10 +63,10 @@ const SmsOptin = () => {
           Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
         },
         body: JSON.stringify({
-          first_name: result.data.first_name,
-          last_name: result.data.last_name,
-          email: result.data.email,
-          phone: phoneE164,
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          email: formData.email,
+          phone,
           customer_care_consent: customerCareConsent,
           marketing_consent: marketingConsent,
         }),
@@ -129,7 +96,7 @@ const SmsOptin = () => {
                 </div>
               </div>
               <p className="text-lg leading-relaxed text-foreground">
-                ✓ Thank you for submitting! We'll be in touch with you soon.
+                ✓ Thank you for submitting.
               </p>
             </div>
           </div>
@@ -172,10 +139,8 @@ const SmsOptin = () => {
 
           <form onSubmit={handleSubmit} noValidate className="space-y-5">
             {/* First Name */}
-            <div data-error={errors.first_name ? true : undefined}>
-              <label className={labelClass}>
-                First name <span className="text-destructive">*</span>
-              </label>
+            <div>
+              <label className={labelClass}>First name</label>
               <input
                 type="text"
                 placeholder="First name"
@@ -184,14 +149,11 @@ const SmsOptin = () => {
                 className={inputClass}
                 autoComplete="given-name"
               />
-              {errors.first_name && <p className={errorClass}>{errors.first_name}</p>}
             </div>
 
             {/* Last Name */}
-            <div data-error={errors.last_name ? true : undefined}>
-              <label className={labelClass}>
-                Last name <span className="text-destructive">*</span>
-              </label>
+            <div>
+              <label className={labelClass}>Last name</label>
               <input
                 type="text"
                 placeholder="Last name"
@@ -200,14 +162,11 @@ const SmsOptin = () => {
                 className={inputClass}
                 autoComplete="family-name"
               />
-              {errors.last_name && <p className={errorClass}>{errors.last_name}</p>}
             </div>
 
             {/* Email */}
-            <div data-error={errors.email ? true : undefined}>
-              <label className={labelClass}>
-                Email <span className="text-destructive">*</span>
-              </label>
+            <div>
+              <label className={labelClass}>Email</label>
               <input
                 type="email"
                 placeholder="you@example.com"
@@ -216,14 +175,11 @@ const SmsOptin = () => {
                 className={inputClass}
                 autoComplete="email"
               />
-              {errors.email && <p className={errorClass}>{errors.email}</p>}
             </div>
 
             {/* Phone */}
-            <div data-error={errors.phone ? true : undefined}>
-              <label className={labelClass}>
-                Phone <span className="text-destructive">*</span>
-              </label>
+            <div>
+              <label className={labelClass}>Phone</label>
               <div className="flex">
                 <span
                   aria-hidden="true"
@@ -244,7 +200,6 @@ const SmsOptin = () => {
                   inputMode="tel"
                 />
               </div>
-              {errors.phone && <p className={errorClass}>{errors.phone}</p>}
             </div>
 
             {/* Consent Checkboxes */}
@@ -293,7 +248,7 @@ const SmsOptin = () => {
 
             <button
               type="submit"
-              disabled={!canSubmit || status === "sending"}
+              disabled={status === "sending"}
               className="w-full rounded-md bg-foreground py-4 text-base font-bold text-background transition-all hover:bg-foreground/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "sending" ? "Submitting..." : "Submit"}
