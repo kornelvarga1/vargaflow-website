@@ -1,0 +1,76 @@
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import vfIcon from "@/assets/vf-icon.png";
+
+const VIDEO_URL =
+  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough.mp4";
+const POSTER_URL =
+  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough-poster.jpg";
+
+const Video = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>VargaFlow — Walkthrough</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+      <header className="border-b border-border bg-background">
+        <div className="container flex h-16 items-center gap-2.5">
+          <img src={vfIcon} alt="VargaFlow" className="h-8 w-8 rounded-md" />
+          <span className="text-lg font-bold tracking-tight text-foreground">VargaFlow</span>
+        </div>
+      </header>
+
+      <main className="bg-background py-10 md:py-16">
+        <div className="container max-w-3xl">
+          <h1 className="text-center text-3xl font-extrabold leading-[1.15] text-foreground md:text-4xl lg:text-5xl">
+            Here's exactly what I'd build for your business.
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-muted-foreground md:text-lg">
+            Watch the walkthrough, then pick a time below.
+          </p>
+
+          <div className="mt-8 overflow-hidden rounded-xl border border-border bg-black shadow-lg md:mt-10">
+            <video
+              className="aspect-video w-full"
+              src={VIDEO_URL}
+              poster={POSTER_URL}
+              controls
+              playsInline
+              preload="metadata"
+            />
+          </div>
+
+          <div className="mt-12 md:mt-16">
+            <h2 className="text-center text-2xl font-extrabold text-foreground md:text-3xl">
+              Book a call
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-center text-muted-foreground">
+              20 minutes with Kornél. Free setup, no contracts.
+            </p>
+            <div className="mt-6 w-full overflow-hidden">
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1&primary_color=1a1a1a"
+                style={{ minWidth: "320px", width: "100%", height: "950px" }}
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default Video;
