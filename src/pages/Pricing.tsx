@@ -76,12 +76,6 @@ const Pricing = () => {
               >
                 Annual
               </span>
-              {isAnnual && (
-                <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-xs font-bold text-foreground">
-                  <Sparkles className="h-3 w-3" />
-                  Save ${savings}/year
-                </span>
-              )}
             </div>
           </ScrollReveal>
 
@@ -108,9 +102,15 @@ const Pricing = () => {
                       <span className="text-2xl font-bold text-muted-foreground">/mo</span>
                     </p>
                     {isAnnual ? (
-                      <p className="mt-2 text-sm font-medium text-muted-foreground">
-                        Billed annually (${annualTotal}/year)
-                      </p>
+                      <>
+                        <p className="mt-2 text-sm font-medium text-muted-foreground">
+                          Billed annually (${annualTotal}/year)
+                        </p>
+                        <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-foreground">
+                          <Sparkles className="h-3 w-3" />
+                          Save ${savings}/year
+                        </span>
+                      </>
                     ) : (
                       <p className="mt-2 text-sm font-medium text-muted-foreground">
                         Billed monthly · Cancel anytime
