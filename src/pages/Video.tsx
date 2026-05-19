@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import vfIcon from "@/assets/vf-icon.png";
-
-const VIDEO_URL =
-  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough.mp4";
-const POSTER_URL =
-  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough-poster.jpg";
+import { WALKTHROUGH_VIDEO_URL, WALKTHROUGH_POSTER_URL } from "@/config/constants";
 
 const Video = () => {
   useEffect(() => {
@@ -44,8 +40,8 @@ const Video = () => {
           <div className="mt-8 overflow-hidden rounded-xl border border-border bg-black shadow-lg md:mt-10">
             <video
               className="aspect-video w-full"
-              src={VIDEO_URL}
-              poster={POSTER_URL}
+              src={WALKTHROUGH_VIDEO_URL}
+              poster={WALKTHROUGH_POSTER_URL}
               controls
               playsInline
               preload="metadata"

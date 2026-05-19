@@ -1,6 +1,11 @@
 export const SITE_NAME = "VargaFlow";
 export const SITE_EMAIL = "kornel@vargaflow.com";
 
+export const WALKTHROUGH_VIDEO_URL =
+  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough.mp4";
+export const WALKTHROUGH_POSTER_URL =
+  "https://zfmchywjmgykmlhjihls.supabase.co/storage/v1/object/public/public-assets/vargaflow-walkthrough-poster.jpg";
+
 export const SERVICES = [
   { slug: "functional-website", title: "Functional Website", shortTitle: "Website" },
   { slug: "missed-call-text-back", title: "Missed Call Text Back", shortTitle: "Missed Call Text Back" },

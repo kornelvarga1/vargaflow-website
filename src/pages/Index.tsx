@@ -92,18 +92,30 @@ const Index = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:justify-start">
+                <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-start">
                   <Link
                     to="/contact"
                     className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-background px-6 py-4 text-base font-bold text-foreground transition-all hover:bg-background/90 sm:px-8 sm:text-lg"
                   >
                     Book Your Free Walkthrough <ArrowRight className="hidden h-5 w-5 sm:inline-block" />
                   </Link>
-                  <div className="flex flex-col items-start gap-0.5">
+                  {/* Desktop-only side text (sits next to button) */}
+                  <div className="hidden flex-col items-start gap-0.5 sm:flex">
                     <span className="text-sm font-semibold text-background/80">Free setup. You only pay once it's working.</span>
                     <span className="text-xs text-background/50">I only make money when you do.</span>
                   </div>
                 </div>
+                <Link
+                  to="/contact"
+                  className="group mt-3 inline-flex items-center gap-1.5 text-sm text-background/60 transition-colors hover:text-background sm:mt-4"
+                >
+                  or watch a 7-min walkthrough first
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                {/* Mobile-only condensed tagline */}
+                <p className="mt-4 text-sm text-background/60 sm:hidden">
+                  Free setup. You only pay once it's working.
+                </p>
                 <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3 sm:gap-6">
                   {HERO_BADGES.map((b) => (
                     <div key={b.title} className="flex items-start justify-start gap-2.5">
