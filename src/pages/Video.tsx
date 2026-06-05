@@ -30,10 +30,10 @@ const Video = () => {
 
       <main className="bg-background py-10 md:py-16">
         <div className="container max-w-3xl">
-          <h1 className="text-center text-3xl font-extrabold leading-[1.15] text-foreground md:text-4xl lg:text-5xl">
+          <h1 className="text-center text-xl font-extrabold leading-[1.2] text-foreground md:text-4xl md:leading-[1.15] lg:text-5xl">
             I help contractors get more jobs with smart websites, 5-star reviews, and automated lead follow-up
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-center text-lg font-medium text-foreground md:text-xl">
+          <p className="mx-auto mt-3 max-w-xl text-center text-base font-medium text-foreground md:text-lg md:mt-4 lg:text-xl">
             For just $297/mo · free setup · no contracts.
           </p>
 
