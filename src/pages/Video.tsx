@@ -33,7 +33,7 @@ const Video = () => {
           <h1 className="text-center text-3xl font-extrabold leading-[1.15] text-foreground md:text-4xl lg:text-5xl">
             I help contractors get more jobs with smart websites, 5-star reviews, and automated lead follow-up
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-center text-base text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-4 max-w-xl text-center text-lg font-medium text-foreground md:text-xl">
             For just $297/mo · free setup · no contracts.
           </p>
 
