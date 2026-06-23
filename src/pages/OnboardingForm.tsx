@@ -38,14 +38,14 @@ const formSchema = z.object({
   business_name: z.string().trim().min(1, "Business name is required"),
   trade_type: z.string().trim().min(1, "Trade type is required"),
   trade_type_other: z.string().trim().optional(),
-  license_number: z.string().trim().min(1, "Contractor license number is required"),
-  tax_id: z.string().trim().optional(),
+  tax_id: z.string().trim().min(1, "Tax ID / EIN is required"),
   street_address: z.string().trim().min(1, "Street address is required"),
   city: z.string().trim().min(1, "City is required"),
   state: z.string().trim().min(1, "State is required"),
   zip: z.string().trim().min(1, "ZIP is required"),
   years_in_business: z.string().trim().min(1, "Years in business is required"),
   current_website: z.string().trim().optional(),
+  domain_registrar: z.string().trim().optional(),
   google_business_url: z.string().trim().optional(),
   about_us: z.string().trim().min(1, "About Us is required"),
   service_areas: z.string().trim().optional(),
@@ -72,7 +72,6 @@ const initialForm: FormData = {
   business_name: "",
   trade_type: "",
   trade_type_other: "",
-  license_number: "",
   tax_id: "",
   street_address: "",
   city: "",
@@ -80,6 +79,7 @@ const initialForm: FormData = {
   zip: "",
   years_in_business: "",
   current_website: "",
+  domain_registrar: "",
   google_business_url: "",
   about_us: "",
   service_areas: "",
@@ -115,17 +115,17 @@ const STEPS: StepConfig[] = [
   {
     id: "business",
     title: "Your Business",
-    subtitle: "Identity, license, and where you operate.",
+    subtitle: "Your business identity and where you operate.",
     required: [
       "business_name",
       "trade_type",
-      "license_number",
       "street_address",
       "city",
       "state",
       "zip",
       "years_in_business",
       "business_hours",
+      "tax_id",
     ],
   },
   {
@@ -658,25 +658,9 @@ const OnboardingForm = () => {
                   </div>
                 )}
 
-                <div data-error={errors.license_number ? true : undefined}>
-                  <label className={labelClass}>
-                    Contractor License Number <span className="text-destructive">*</span>
-                  </label>
-                  <p className="mb-2 text-xs text-muted-foreground">
-                    The license number issued by your state's contractor board (e.g. ROC # in Arizona, CSLB # in California).
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="License # from your state contractor board"
-                    value={formData.license_number}
-                    onChange={set("license_number")}
-                    className={inputClass}
-                  />
-                  {errors.license_number && <p className={errorClass}>{errors.license_number}</p>}
-                </div>
 
                 <div>
-                  <label className={labelClass}>Your Businesses Tax ID or EIN #</label>
+                  <label className={labelClass}>Your Businesses Tax ID or EIN # <span className="text-destructive">*</span></label>
                   <input
                     type="text"
                     placeholder="Input business Tax ID or EIN #"
@@ -684,6 +668,7 @@ const OnboardingForm = () => {
                     onChange={set("tax_id")}
                     className={inputClass}
                   />
+                  {errors.tax_id && <p className={errorClass}>{errors.tax_id}</p>}
                 </div>
 
                 <div className="space-y-3">
@@ -854,6 +839,22 @@ const OnboardingForm = () => {
                     placeholder="Paste the link to your current site"
                     value={formData.current_website}
                     onChange={set("current_website")}
+                    className={inputClass}
+                  />
+                </div>
+
+                <div>
+                  <label className={labelClass}>
+                    Where did you register your domain? <span className="font-normal text-muted-foreground">(if you have one)</span>
+                  </label>
+                  <p className="mb-2 text-xs text-muted-foreground">
+                    e.g. GoDaddy, Namecheap, Wix, Squarespace, Google Domains — or "I don't have one."
+                  </p>
+                  <input
+                    type="text"
+                    placeholder="GoDaddy, Namecheap, Wix, other..."
+                    value={formData.domain_registrar}
+                    onChange={set("domain_registrar")}
                     className={inputClass}
                   />
                 </div>
@@ -1163,7 +1164,6 @@ const OnboardingForm = () => {
                         : TRADE_LABELS[formData.trade_type] ?? formData.trade_type
                       : "",
                   },
-                  { label: "License #", value: formData.license_number },
                   { label: "Tax ID / EIN", value: formData.tax_id },
                   {
                     label: "Address",
@@ -1185,6 +1185,7 @@ const OnboardingForm = () => {
 
                 <ReviewSection title="Online Presence" stepIndex={3} onEdit={jumpToStep} items={[
                   { label: "Current Website", value: formData.current_website },
+                  { label: "Domain Registrar", value: formData.domain_registrar },
                   { label: "Google Business", value: formData.google_business_url },
                   { label: "Instagram", value: formData.instagram },
                   { label: "Facebook", value: formData.facebook },
