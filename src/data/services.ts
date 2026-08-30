@@ -7,6 +7,7 @@ import {
   Bell, GitBranch, Eye, Gauge,
   MousePointer, PieChart,
   Timer, ListChecks, BrainCircuit, HandshakeIcon,
+  PhoneCall, CalendarCheck, ShieldCheck, Bot,
 } from "lucide-react";
 
 export const serviceData: Record<string, ServicePageData> = {
@@ -242,6 +243,44 @@ export const serviceData: Record<string, ServicePageData> = {
       { question: "Can I customize the messages?", answer: "Yes. I write them for you and you can adjust the wording, timing, and number of follow-ups to fit how you like to communicate." },
       { question: "What happens when a lead writes back?", answer: "You get an instant notification, the automation pauses, and you take over the conversation. It's a clean handoff — they'll never know a system was involved." },
       { question: "Does it work for leads from different sources?", answer: "Website forms, Google Business Profile messages, and Facebook/Instagram leads drop in natively. For Thumbtack and Angi — those platforms don't forward leads automatically, but I can set up email forwarding so their lead emails get parsed into the same system." },
+    ],
+  },
+
+  "ai-receptionist": {
+    slug: "ai-receptionist",
+    title: "AI Receptionist",
+    headline: "Never Miss Another Job",
+    headlineAccent: "Because You Missed a Call.",
+    subheadline: "You can't answer the phone from a roof. Now you don't have to — an AI receptionist answers every call, books the appointment, and hands you a job that's already on your calendar.",
+    metaDescription: "AI receptionist for contractors. Answers every call 24/7, books appointments straight onto your calendar, and knows when to hand off to a human. Call the live demo and hear it work.",
+    icon: PhoneCall,
+    stats: [
+      { value: "24/7", label: "Always Answering" },
+      { value: "Live", label: "Calendar Booking" },
+      { value: "Honest", label: "No Guessed Answers" },
+    ],
+    problemHeadline: "Every Call You Miss",
+    problemAccent: "Is a Job Someone Else Just Got.",
+    problemText: [
+      "You're up a ladder, under a sink, mid-install — the phone rings and there's nothing you can do about it. The homeowner doesn't wait. They call the next name on Google, and that contractor picks up.",
+      "A text-back after the fact helps, but it's not the same as someone actually answering, asking the right questions, and getting the job booked while the homeowner's still on the phone and still interested.",
+      "You need someone answering your phone who never gets busy, never takes lunch, and never misses a call — without hiring a full-time receptionist you can't afford yet.",
+    ],
+    solutionHeadline: "An AI Receptionist That",
+    solutionAccent: "Actually Books the Job.",
+    solutionText: "Every call gets answered — day, night, weekend. It figures out what the caller needs, checks your real calendar, and books the appointment right then, no waiting for you to call back. If it hits something it doesn't know, it says so honestly and flags you for a callback instead of guessing.",
+    features: [
+      { title: "Answers Every Call, 24/7", description: "Nights, weekends, mid-job — every call gets picked up and handled, not sent to voicemail.", icon: PhoneCall },
+      { title: "Books Straight Onto Your Calendar", description: "Checks your real availability and books the appointment during the call — no back-and-forth, no double-booking.", icon: CalendarCheck },
+      { title: "Never Fakes an Answer", description: "If it doesn't know something, it says so and flags you for a callback instead of guessing or promising something you didn't agree to.", icon: ShieldCheck },
+      { title: "Sounds Like a Real Person", description: "A natural conversation, not a phone tree. Callers ask questions and get real answers, not a robotic menu.", icon: Bot },
+    ],
+    faqs: [
+      { question: "Can I hear it before I decide?", answer: "Yes — call the live demo yourself: (213) 238-5364. Try to trip it up, ask it something weird, see how it actually handles a conversation. No pitch first, just call it." },
+      { question: "Does it replace me answering calls?", answer: "No — it answers when you can't, which is most of the time you're actually working. You still run the business; it just makes sure a ringing phone never turns into a missed job." },
+      { question: "What if it doesn't know the answer to something?", answer: "It says so, right on the call, and flags you for a callback instead of guessing. It's built to be honest about what it doesn't know, not to bluff." },
+      { question: "Does it work with my calendar?", answer: "Yes — it connects to your real Google Calendar and books appointments based on your actual open slots, not a static schedule." },
+      { question: "Is this included in the main plan?", answer: "No — this is a separate product with its own price. It works great alongside everything else I offer, but you can get it on its own too." },
     ],
   },
 };

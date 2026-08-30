@@ -27,6 +27,7 @@ const routes = [
   "/services/review-funnel",
   "/services/one-click-campaigns",
   "/services/automated-follow-up",
+  "/services/ai-receptionist",
 ];
 
 async function prerender() {

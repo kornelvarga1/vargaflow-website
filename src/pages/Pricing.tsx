@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { CheckCircle, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle, Sparkles, ArrowRight, PhoneCall } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -153,6 +153,71 @@ const Pricing = () => {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* AI Receptionist add-on */}
+      <section className="bg-secondary py-20 lg:py-28">
+        <div className="container">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="inline-block rounded-full bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                Also Available
+              </span>
+              <h2 className="mt-4 text-3xl font-extrabold text-foreground md:text-4xl">
+                Want an AI Receptionist Too?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                A separate product, priced on its own — not part of the plan above. Answers every call, books the job straight onto your calendar, never guesses when it doesn't know something.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mx-auto mt-10 grid max-w-3xl gap-6 md:grid-cols-2">
+            <ScrollReveal delay={0.05}>
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
+                <PhoneCall className="h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
+                <h3 className="mt-4 text-xl font-bold text-foreground">AI Receptionist Alone</h3>
+                <p className="mt-3 text-4xl font-extrabold text-foreground">
+                  $297<span className="text-xl font-bold text-muted-foreground">/mo</span>
+                </p>
+                <p className="mt-4 flex-1 text-sm text-muted-foreground">
+                  Just the AI receptionist, on its own — no website or CRM required.
+                </p>
+                <a href="tel:+12132385364" className="mt-6 text-sm font-semibold text-foreground hover:text-foreground/70">
+                  Call the live demo: (213) 238-5364 →
+                </a>
+                <Link
+                  to="/services/ai-receptionist"
+                  className="mt-4 block w-full rounded-lg border border-border py-3 text-center text-sm font-bold text-foreground transition-colors hover:border-foreground/40"
+                >
+                  See How It Works
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="relative flex h-full flex-col rounded-2xl border-2 border-foreground bg-card p-8">
+                <span className="absolute -top-3 left-8 rounded-full bg-foreground px-3 py-1 text-xs font-bold text-background">
+                  Save $94/mo
+                </span>
+                <Sparkles className="h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
+                <h3 className="mt-4 text-xl font-bold text-foreground">Full System + AI Receptionist</h3>
+                <p className="mt-3 text-4xl font-extrabold text-foreground">
+                  $500<span className="text-xl font-bold text-muted-foreground">/mo</span>
+                </p>
+                <p className="mt-4 flex-1 text-sm text-muted-foreground">
+                  Everything in the plan above, plus the AI receptionist — both for less than buying them separately.
+                </p>
+                <Link
+                  to="/contact"
+                  className="mt-6 block w-full rounded-lg bg-foreground py-3 text-center text-sm font-bold text-background transition-all hover:bg-foreground/90"
+                >
+                  Book A Call
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

@@ -111,6 +111,14 @@ const ServicePageTemplate = ({ data }: { data: ServicePageData }) => {
                     See what yours could look like <ArrowRight className="h-4 w-4" />
                   </Link>
                 )}
+                {data.slug === "ai-receptionist" && (
+                  <a
+                    href="tel:+12132385364"
+                    className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-foreground/70"
+                  >
+                    Call the live demo: (213) 238-5364 <ArrowRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
               {Mockup ? (
                 <div className="flex justify-center lg:justify-end">

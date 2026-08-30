@@ -14,6 +14,7 @@ export const SERVICES = [
   { slug: "review-funnel", title: "5-Star Magic Review Funnel", shortTitle: "Review Funnel" },
   { slug: "one-click-campaigns", title: "One-Click Marketing Campaigns", shortTitle: "Campaigns" },
   { slug: "automated-follow-up", title: "Automated Lead Follow Up", shortTitle: "Lead Follow Up" },
+  { slug: "ai-receptionist", title: "AI Receptionist", shortTitle: "AI Receptionist" },
 ] as const;
 
 export const NAV_LINKS = [
