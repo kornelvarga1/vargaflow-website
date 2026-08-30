@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, Building2, Wrench, Calendar } from "lucide-react";
+import { ChevronDown, Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, Building2, Wrench, Calendar, PhoneCall } from "lucide-react";
 import { SERVICES, NAV_LINKS } from "@/config/constants";
 import { cn } from "@/lib/utils";
 import vfIcon from "@/assets/vf-icon.png";
@@ -37,7 +37,7 @@ const PlusIcon = ({ open, size = "sm" }: { open: boolean; size?: "sm" | "md" }) 
   </div>
 );
 
-const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap];
+const SERVICE_ICONS = [Globe, MessageSquare, Phone, Search, Star, Megaphone, Zap, PhoneCall];
 const SERVICE_DESCRIPTIONS = [
   "High-converting sites built for leads",
   "Auto-reply when you can't pick up",
@@ -46,6 +46,7 @@ const SERVICE_DESCRIPTIONS = [
   "Get 5-star reviews on autopilot",
   "Email & SMS in one click",
   "Never let a lead go cold",
+  "Answers calls and books the job",
 ];
 
 const Navbar = () => {
