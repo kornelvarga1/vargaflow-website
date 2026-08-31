@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { CheckCircle, Sparkles, ArrowRight, PhoneCall } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { CheckCircle, Sparkles, ArrowRight, PhoneCall, Blocks } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const INCLUDED = [
@@ -15,27 +13,31 @@ const INCLUDED = [
   { item: "One-Click Campaigns", note: "Re-engage past customers instantly" },
 ];
 
+const AI_RECEPTIONIST_INCLUDED = [
+  { item: "Answers Every Call", note: "24/7, never misses one" },
+  { item: "Books Straight to Your Calendar", note: "Real appointments, not just messages" },
+  { item: "Never Guesses", note: "Flags anything it's not sure about" },
+  { item: "Works Completely On Its Own", note: "No website or CRM required" },
+];
+
+const BUNDLE_INCLUDED = [
+  { item: "Everything in Foundation", note: "The full website + CRM system" },
+  { item: "Plus the AI Receptionist", note: "Answers every call, books the job" },
+  { item: "One Bill, Not Two", note: "$100/mo cheaper than buying separately" },
+];
+
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
-
-  const monthlyPrice = 297;
-  const annualPricePerMonth = 247;
-  const annualTotal = annualPricePerMonth * 12;
-
-  const currentPrice = isAnnual ? annualPricePerMonth : monthlyPrice;
-  const savings = isAnnual ? (monthlyPrice - annualPricePerMonth) * 12 : 0;
-
   return (
     <>
       <Helmet>
         <title>Pricing — VargaFlow</title>
         <meta
           name="description"
-          content="One simple plan. $297/month or save with $247/month annual. Everything your contracting business needs to capture more leads and close more jobs."
+          content="Foundation ($300/mo), AI Receptionist ($300/mo), or the bundle ($500/mo). Flat monthly rates, no contracts, no hidden fees."
         />
       </Helmet>
 
-      {/* Hero */}
+      {/* Hero + Pricing */}
       <section className="bg-background py-20 lg:py-28">
         <div className="container">
           <ScrollReveal>
@@ -44,105 +46,57 @@ const Pricing = () => {
                 Simple Pricing
               </span>
               <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
-                One Plan.
+                Simple Pricing.
                 <br />
-                Everything Included.
+                Pick What Fits.
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                No tiers. No hidden fees. No à la carte upsells. Just everything you need to stop losing leads — in one flat monthly rate.
+                No hidden fees. No à la carte upsells. Three options, all flat monthly rates, no contracts.
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Toggle */}
-          <ScrollReveal delay={0.1}>
-            <div className="mx-auto mt-10 flex items-center justify-center gap-4">
-              <span
-                className={`text-sm font-semibold transition-colors ${
-                  !isAnnual ? "text-foreground" : "text-muted-foreground"
-                }`}
-              >
-                Monthly
-              </span>
-              <Switch
-                checked={isAnnual}
-                onCheckedChange={setIsAnnual}
-                className="data-[state=checked]:bg-foreground"
-              />
-              <span
-                className={`text-sm font-semibold transition-colors ${
-                  isAnnual ? "text-foreground" : "text-muted-foreground"
-                }`}
-              >
-                Annual
-              </span>
-            </div>
-          </ScrollReveal>
-
-          {/* Card */}
-          <ScrollReveal delay={0.15}>
-            <div className="mx-auto mt-8 max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-foreground/[0.04]">
-
-                {/* Free setup banner */}
-                <div className="bg-foreground py-3 text-center">
-                  <p className="text-sm font-bold text-background">
-                    Free setup. You only pay once it's working.
-                  </p>
-                </div>
-
+          {/* Three cards, side by side */}
+          <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-3">
+            {/* Foundation */}
+            <ScrollReveal delay={0.05}>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-foreground/[0.04]">
                 <div className="pt-8 text-center">
-                  <h2 className="text-2xl font-extrabold text-foreground md:text-3xl">
-                    The Full System
-                  </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">Everything. One price. No surprises.</p>
+                  <Blocks className="mx-auto h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
+                  <h2 className="mt-4 text-2xl font-extrabold text-foreground">Foundation</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">The full website + CRM system</p>
                   <div className="mt-4">
-                    <p className="text-5xl font-extrabold text-foreground md:text-6xl">
-                      ${currentPrice}
-                      <span className="text-2xl font-bold text-muted-foreground">/mo</span>
+                    <p className="text-4xl font-extrabold text-foreground md:text-5xl">
+                      $300
+                      <span className="text-xl font-bold text-muted-foreground">/mo</span>
                     </p>
-                    {isAnnual ? (
-                      <>
-                        <p className="mt-2 text-sm font-medium text-muted-foreground">
-                          Billed annually (${annualTotal}/year)
-                        </p>
-                        <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-foreground">
-                          <Sparkles className="h-3 w-3" />
-                          Save ${savings}/year
-                        </span>
-                      </>
-                    ) : (
-                      <p className="mt-2 text-sm font-medium text-muted-foreground">
-                        Billed monthly · Cancel anytime
-                      </p>
-                    )}
+                    <p className="mt-2 text-sm font-medium text-muted-foreground">
+                      Billed monthly · Cancel anytime
+                    </p>
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="mx-10 mt-6 border-t border-border" />
+                <div className="mx-8 mt-6 border-t border-border" />
 
-                {/* Features */}
-                <ul className="space-y-0 px-6 py-6 md:px-10">
+                <ul className="flex-1 space-y-0 px-6 py-6">
                   {INCLUDED.map((entry) => (
                     <li
                       key={entry.item}
-                      className="flex items-start gap-3 border-b border-border py-4 last:border-0"
+                      className="flex items-start gap-3 border-b border-border py-3 last:border-0"
                     >
-                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                       <div>
-                        <span className="text-sm font-semibold text-foreground md:text-base">{entry.item}</span>
+                        <span className="text-sm font-semibold text-foreground">{entry.item}</span>
                         <p className="text-xs text-muted-foreground">{entry.note}</p>
                       </div>
                     </li>
                   ))}
                 </ul>
 
-                {/* CTA */}
-                <div className="px-6 pb-10 md:px-10">
+                <div className="px-6 pb-8">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-lg bg-foreground py-4 text-center text-lg font-extrabold text-background transition-all hover:bg-foreground/90"
+                    className="block w-full rounded-lg bg-foreground py-4 text-center text-base font-extrabold text-background transition-all hover:bg-foreground/90"
                   >
                     Get Started — Free Walkthrough
                   </Link>
@@ -151,70 +105,106 @@ const Pricing = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+            </ScrollReveal>
 
-      {/* AI Receptionist add-on */}
-      <section className="bg-secondary py-20 lg:py-28">
-        <div className="container">
-          <ScrollReveal>
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="inline-block rounded-full bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                Also Available
-              </span>
-              <h2 className="mt-4 text-3xl font-extrabold text-foreground md:text-4xl">
-                Want an AI Receptionist Too?
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                A separate product, priced on its own — not part of the plan above. Answers every call, books the job straight onto your calendar, never guesses when it doesn't know something.
-              </p>
-            </div>
-          </ScrollReveal>
+            {/* AI Receptionist */}
+            <ScrollReveal delay={0.1}>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-foreground/[0.04]">
+                <div className="pt-8 text-center">
+                  <PhoneCall className="mx-auto h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
+                  <h2 className="mt-4 text-2xl font-extrabold text-foreground">AI Receptionist</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Answers every call, books the job</p>
+                  <div className="mt-4">
+                    <p className="text-4xl font-extrabold text-foreground md:text-5xl">
+                      $300
+                      <span className="text-xl font-bold text-muted-foreground">/mo</span>
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-muted-foreground">
+                      Billed monthly · Cancel anytime
+                    </p>
+                  </div>
+                </div>
 
-          <div className="mx-auto mt-10 grid max-w-3xl gap-6 md:grid-cols-2">
-            <ScrollReveal delay={0.05}>
-              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
-                <PhoneCall className="h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
-                <h3 className="mt-4 text-xl font-bold text-foreground">AI Receptionist Alone</h3>
-                <p className="mt-3 text-4xl font-extrabold text-foreground">
-                  $297<span className="text-xl font-bold text-muted-foreground">/mo</span>
-                </p>
-                <p className="mt-4 flex-1 text-sm text-muted-foreground">
-                  Just the AI receptionist, on its own — no website or CRM required.
-                </p>
-                <a href="tel:+12132385364" className="mt-6 text-sm font-semibold text-foreground hover:text-foreground/70">
-                  Call the live demo: (213) 238-5364 →
-                </a>
-                <Link
-                  to="/services/ai-receptionist"
-                  className="mt-4 block w-full rounded-lg border border-border py-3 text-center text-sm font-bold text-foreground transition-colors hover:border-foreground/40"
-                >
-                  See How It Works
-                </Link>
+                <div className="mx-8 mt-6 border-t border-border" />
+
+                <ul className="flex-1 space-y-0 px-6 py-6">
+                  {AI_RECEPTIONIST_INCLUDED.map((entry) => (
+                    <li
+                      key={entry.item}
+                      className="flex items-start gap-3 border-b border-border py-3 last:border-0"
+                    >
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                      <div>
+                        <span className="text-sm font-semibold text-foreground">{entry.item}</span>
+                        <p className="text-xs text-muted-foreground">{entry.note}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="px-6 pb-8">
+                  <a
+                    href="tel:+12132385364"
+                    className="block text-center text-sm font-semibold text-foreground hover:text-foreground/70"
+                  >
+                    Call the live demo: (213) 238-5364 →
+                  </a>
+                  <Link
+                    to="/services/ai-receptionist"
+                    className="mt-4 block w-full rounded-lg border border-border py-3 text-center text-sm font-bold text-foreground transition-colors hover:border-foreground/40"
+                  >
+                    See How It Works
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.1}>
-              <div className="relative flex h-full flex-col rounded-2xl border-2 border-foreground bg-card p-8">
-                <span className="absolute -top-3 left-8 rounded-full bg-foreground px-3 py-1 text-xs font-bold text-background">
-                  Save $94/mo
+            {/* Bundle */}
+            <ScrollReveal delay={0.15}>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-foreground bg-card shadow-xl shadow-foreground/[0.04]">
+                <span className="absolute left-8 top-4 rounded-full bg-foreground px-3 py-1 text-xs font-bold text-background">
+                  Save $100/mo
                 </span>
-                <Sparkles className="h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
-                <h3 className="mt-4 text-xl font-bold text-foreground">Full System + AI Receptionist</h3>
-                <p className="mt-3 text-4xl font-extrabold text-foreground">
-                  $500<span className="text-xl font-bold text-muted-foreground">/mo</span>
-                </p>
-                <p className="mt-4 flex-1 text-sm text-muted-foreground">
-                  Everything in the plan above, plus the AI receptionist — both for less than buying them separately.
-                </p>
-                <Link
-                  to="/contact"
-                  className="mt-6 block w-full rounded-lg bg-foreground py-3 text-center text-sm font-bold text-background transition-all hover:bg-foreground/90"
-                >
-                  Book A Call
-                </Link>
+                <div className="pt-8 text-center">
+                  <Sparkles className="mx-auto h-8 w-8 text-muted-foreground" strokeWidth={1.5} />
+                  <h2 className="mt-4 text-2xl font-extrabold text-foreground">Bundle</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Foundation + AI Receptionist</p>
+                  <div className="mt-4">
+                    <p className="text-4xl font-extrabold text-foreground md:text-5xl">
+                      $500
+                      <span className="text-xl font-bold text-muted-foreground">/mo</span>
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-muted-foreground">
+                      Billed monthly · Cancel anytime
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mx-8 mt-6 border-t border-border" />
+
+                <ul className="flex-1 space-y-0 px-6 py-6">
+                  {BUNDLE_INCLUDED.map((entry) => (
+                    <li
+                      key={entry.item}
+                      className="flex items-start gap-3 border-b border-border py-3 last:border-0"
+                    >
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                      <div>
+                        <span className="text-sm font-semibold text-foreground">{entry.item}</span>
+                        <p className="text-xs text-muted-foreground">{entry.note}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="px-6 pb-8">
+                  <Link
+                    to="/contact"
+                    className="block w-full rounded-lg bg-foreground py-4 text-center text-base font-extrabold text-background transition-all hover:bg-foreground/90"
+                  >
+                    Book A Call
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
           </div>

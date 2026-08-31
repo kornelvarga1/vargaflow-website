@@ -34,7 +34,7 @@ const Video = () => {
             I help contractors get more jobs with smart websites, 5-star reviews, and automated lead follow-up
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-center text-base font-medium text-foreground md:text-lg md:mt-4 lg:text-xl">
-            For just $297/mo · free setup · no contracts.
+            For just $300/mo · free setup · no contracts.
           </p>
 
           <div className="mt-8 overflow-hidden rounded-xl border border-border bg-black shadow-lg md:mt-10">

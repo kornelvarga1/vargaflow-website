@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, ArrowRight, CheckCircle, ShieldCheck, Clock, HelpCircle } from "lucide-react";
+import { Zap, ArrowRight, CheckCircle, ShieldCheck, Clock, HelpCircle, PhoneCall } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import TradesWeServe from "@/components/TradesWeServe";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -260,6 +260,49 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AI RECEPTIONIST — separate product, teaser + link out */}
+      <section className="bg-background py-20 lg:py-28">
+        <div className="container">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                Also Available
+              </span>
+              <PhoneCall className="mx-auto h-10 w-10 text-muted-foreground" strokeWidth={1.5} />
+              <h2 className="mt-4 text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+                Answers Every Call.
+                <br />
+                Even When You Can't.
+              </h2>
+              <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
+                A separate product — an AI that answers every call, books the job straight onto your calendar, and never guesses when it doesn't know something. Don't take my word for it, call the live demo yourself.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <a
+                  href="tel:+12132385364"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-8 py-4 text-lg font-bold text-background transition-all hover:bg-foreground/90"
+                >
+                  Call the Live Demo: (213) 238-5364
+                </a>
+                <Link
+                  to="/services/ai-receptionist"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-foreground/70"
+                >
+                  See How It Works <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+              <p className="mt-6 text-xs text-muted-foreground">
+                Starting at $300/mo, on its own — or bundled with the system above. See{" "}
+                <Link to="/pricing" className="font-semibold text-foreground hover:text-foreground/70">
+                  full pricing
+                </Link>
+                .
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* TRADES WE SERVE */}
       <TradesWeServe />
 
@@ -400,7 +443,7 @@ const Index = () => {
                 ))}
               </ul>
               <p className="mt-10 text-base font-semibold text-background md:text-lg">
-                $297 a month. Free until you keep it. No contracts.
+                $300 a month. Free until you keep it. No contracts.
               </p>
               <Link
                 to="/contact"
