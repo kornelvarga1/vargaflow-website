@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { Clock, MessageSquare, Zap } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import BookingWidget from "@/components/BookingWidget";
-import { WALKTHROUGH_VIDEO_URL, WALKTHROUGH_POSTER_URL } from "@/config/constants";
 
 const Contact = () => {
   return (
@@ -58,38 +57,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Walkthrough Video — bridges intent to booking */}
-      <section className="relative bg-background pb-20 lg:pb-28">
-        <div className="container">
-          <ScrollReveal>
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                Before You Book
-              </span>
-              <h2 className="text-3xl font-extrabold text-foreground md:text-4xl">
-                Here's Exactly What I'd Build.
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                7 minutes. Full walkthrough — the system, the pricing, how it all fits together. Then pick a time below.
-              </p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-xl border border-border bg-black shadow-lg">
-              <video
-                className="aspect-video w-full"
-                src={WALKTHROUGH_VIDEO_URL}
-                poster={WALKTHROUGH_POSTER_URL}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Calendly Embed */}
+      {/* Booking */}
       <section id="book" className="relative bg-secondary py-20 lg:py-28">
         <div className="container relative">
           <div className="mx-auto w-full">

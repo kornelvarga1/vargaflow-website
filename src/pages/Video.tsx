@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import vfIcon from "@/assets/vf-icon.png";
 import BookingWidget from "@/components/BookingWidget";
-import { WALKTHROUGH_VIDEO_URL, WALKTHROUGH_POSTER_URL } from "@/config/constants";
 
 const Video = () => {
   return (
@@ -27,18 +26,7 @@ const Video = () => {
             For just $300/mo · free setup · no contracts.
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-xl border border-border bg-black shadow-lg md:mt-10">
-            <video
-              className="aspect-video w-full"
-              src={WALKTHROUGH_VIDEO_URL}
-              poster={WALKTHROUGH_POSTER_URL}
-              controls
-              playsInline
-              preload="metadata"
-            />
-          </div>
-
-          <div className="mt-12 md:mt-16">
+          <div className="mt-8 md:mt-10">
             <h2 className="text-center text-2xl font-extrabold text-foreground md:text-3xl">
               Book a call
             </h2>

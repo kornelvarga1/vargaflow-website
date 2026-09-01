@@ -105,13 +105,6 @@ const Index = () => {
                     <span className="text-xs text-background/50">I only make money when you do.</span>
                   </div>
                 </div>
-                <Link
-                  to="/contact"
-                  className="group mt-3 inline-flex items-center gap-1.5 text-sm text-background/60 transition-colors hover:text-background sm:mt-4"
-                >
-                  or watch a 7-min walkthrough first
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                </Link>
                 {/* Mobile-only condensed tagline */}
                 <p className="mt-4 text-sm text-background/60 sm:hidden">
                   Free setup. You only pay once it's working.
