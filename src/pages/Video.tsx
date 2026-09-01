@@ -1,19 +1,9 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import vfIcon from "@/assets/vf-icon.png";
+import BookingWidget from "@/components/BookingWidget";
 import { WALKTHROUGH_VIDEO_URL, WALKTHROUGH_POSTER_URL } from "@/config/constants";
 
 const Video = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -55,12 +45,8 @@ const Video = () => {
             <p className="mx-auto mt-3 max-w-lg text-center text-muted-foreground">
               20 minutes with Kornél.
             </p>
-            <div className="mt-6 w-full overflow-hidden">
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/kornelvarga/vargaflow-consulting-call?hide_gdpr_banner=1&primary_color=1a1a1a"
-                style={{ minWidth: "320px", width: "100%", height: "950px" }}
-              />
+            <div className="mt-6">
+              <BookingWidget />
             </div>
           </div>
         </div>

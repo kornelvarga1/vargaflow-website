@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import OnboardingForm from "./pages/OnboardingForm";
 import SmsOptin from "./pages/SmsOptin";
 import Video from "./pages/Video";
+import ManageBooking from "./pages/ManageBooking";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Demo from "./pages/Demo";
@@ -34,6 +35,7 @@ export const AppContent = () => (
         <Route path="/onboarding-form" element={<OnboardingForm />} />
         <Route path="/sms-optin" element={<SmsOptin />} />
         <Route path="/video" element={<Video />} />
+        <Route path="/manage-call/:token" element={<ManageBooking />} />
         {/* All other pages use the standard Layout */}
         <Route element={<LayoutRoute />}>
           <Route path="/" element={<Index />} />
