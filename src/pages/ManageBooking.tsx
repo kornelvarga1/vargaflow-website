@@ -197,7 +197,7 @@ const ManageBooking = () => {
 
       {mode === "reschedule" && (
         <div className="mt-6 space-y-4">
-          <SlotPicker onSelect={(start_iso, end_iso) => setSelected({ start_iso, end_iso })} />
+          <SlotPicker selectedStartIso={selected?.start_iso} onSelect={(start_iso, end_iso) => setSelected({ start_iso, end_iso })} />
           <div className="flex gap-3">
             <button
               type="button"
