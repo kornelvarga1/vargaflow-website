@@ -21,7 +21,7 @@ const ManageBooking = () => {
   const { token } = useParams<{ token: string }>();
   const [state, setState] = useState<"loading" | "not_found" | "loaded" | "error">("loading");
   const [booking, setBooking] = useState<BookingInfo | null>(null);
-  const [mode, setMode] = useState<"view" | "reschedule">("view");
+  const [mode, setMode] = useState<"view" | "reschedule" | "confirm_cancel">("view");
   const [selected, setSelected] = useState<{ start_iso: string; end_iso: string } | null>(null);
   const [action, setAction] = useState<"idle" | "sending" | "cancelled" | "rescheduled" | "error">("idle");
 
@@ -51,7 +51,11 @@ const ManageBooking = () => {
   if (!token) return <Navigate to="/" replace />;
 
   const handleCancel = async () => {
-    if (!window.confirm("Cancel this call?")) return;
+    // Deliberately no window.confirm() here — native browser dialogs get
+    // silently suppressed or auto-rejected in a lot of mobile webviews
+    // (SMS apps' in-message browser especially), which would make this
+    // button appear to do nothing at all with zero feedback. Confirming
+    // in-page (see the "confirm_cancel" mode below) works everywhere.
     setAction("sending");
     try {
       const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/manage-booking`, {
@@ -182,9 +186,23 @@ const ManageBooking = () => {
           <button type="button" onClick={() => setMode("reschedule")} className={primaryBtn}>
             Reschedule
           </button>
-          <button type="button" onClick={handleCancel} disabled={action === "sending"} className={secondaryBtn}>
-            {action === "sending" ? "Cancelling..." : "Cancel Call"}
+          <button type="button" onClick={() => setMode("confirm_cancel")} className={secondaryBtn}>
+            Cancel Call
           </button>
+        </div>
+      )}
+
+      {mode === "confirm_cancel" && (
+        <div className="mt-6 rounded-md border border-border bg-muted/40 p-4">
+          <p className="text-sm text-foreground">Cancel this call?</p>
+          <div className="mt-3 flex gap-3">
+            <button type="button" onClick={handleCancel} disabled={action === "sending"} className={secondaryBtn}>
+              {action === "sending" ? "Cancelling..." : "Yes, cancel it"}
+            </button>
+            <button type="button" onClick={() => setMode("view")} disabled={action === "sending"} className={secondaryBtn}>
+              Never mind
+            </button>
+          </div>
         </div>
       )}
 
