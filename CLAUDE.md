@@ -46,8 +46,8 @@ Base URL: `https://zfmchywjmgykmlhjihls.supabase.co/functions/v1`
   - Body: `{ name, phone, email, source }`
 - Onboarding form submission: `POST /flow-ob-form-submitted`  
   - Body: `{ contact_id }`
-- Call booked (Calendly webhook): `POST /flow-call-booked`
-  - Handled automatically by Calendly → no code needed
+- Call booking: self-built widget (`BookingWidget.tsx` + `SlotPicker.tsx` on `/contact#book` and `/video`), backed by `get-availability` / `book-call` edge functions and Kornél's Google Calendar — replaced Calendly 2026-09
+  - Self-serve reschedule/cancel: `/manage-call/:token` (`ManageBooking.tsx`) → `manage-booking` edge function
 
 ### Form Wiring
 - `BookACallForm.tsx` → currently posts to `WEBHOOK_URL` in constants.ts → should trigger `flow-lead-form-submitted`
