@@ -17,6 +17,7 @@ import OnboardingForm from "./pages/OnboardingForm";
 import SmsOptin from "./pages/SmsOptin";
 import Video from "./pages/Video";
 import ManageBooking from "./pages/ManageBooking";
+import CalendarConnected from "./pages/CalendarConnected";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Demo from "./pages/Demo";
@@ -36,6 +37,7 @@ export const AppContent = () => (
         <Route path="/sms-optin" element={<SmsOptin />} />
         <Route path="/video" element={<Video />} />
         <Route path="/manage-call/:token" element={<ManageBooking />} />
+        <Route path="/calendar-connected" element={<CalendarConnected />} />
         {/* All other pages use the standard Layout */}
         <Route element={<LayoutRoute />}>
           <Route path="/" element={<Index />} />
